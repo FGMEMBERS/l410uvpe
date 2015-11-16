@@ -1,0 +1,1392 @@
+<?xml version="1.0"?>
+<!--
+
+L410 WARNING DISPLAY - MOTOR(nas!)
+
+-->
+
+<PropertyList>
+ <name>Warning display engine</name>
+ <w-base>280</w-base>
+ <h-base>140</h-base>
+
+ <params>
+  <wde-fire>/instrumentation/warn-disp/wde1-fire</wde-fire>
+  <wde-oilpress>/instrumentation/warn-disp/wde1-oilpress</wde-oilpress>
+  <wde-fuelpress>/instrumentation/warn-disp/wde1-fuelpress</wde-fuelpress>
+  <wde-minfuel>/instrumentation/warn-disp/wde1-minfuel</wde-minfuel>
+  
+  <wde-ieluint>/instrumentation/warn-disp/wde1-ieluint</wde-ieluint>
+  <wde-chips>/instrumentation/warn-disp/wde1-chips</wde-chips>
+  <wde-isolval>/instrumentation/warn-disp/wde1-isolval</wde-isolval>
+  <wde-fuelbypass>/instrumentation/warn-disp/wde1-fuelbypass</wde-fuelbypass>
+  
+  <wde-beta>/instrumentation/warn-disp/wde1-beta</wde-beta>
+  <wde-ielu>/instrumentation/warn-disp/wde1-ielu</wde-ielu>
+  <wde-autofeat>/instrumentation/warn-disp/wde1-autofeat</wde-autofeat>
+  <wde-featpump>/instrumentation/warn-disp/wde1-featpump</wde-featpump>
+  
+  <wde-hydraulics>/instrumentation/warn-disp/wde1-hydraulics</wde-hydraulics>
+  <wde-propdeicing>/instrumentation/warn-disp/wde1-propdeicing</wde-propdeicing>
+  <wde-start>/instrumentation/warn-disp/wde1-start</wde-start>
+<!--  <wde-wateri>/instrumentation/warn-disp/wde1-wateri</wde-wateri> -->
+<!--  <wde-oil>/instrumentation/warn-disp/wde1-oil</wde-oil> -->
+<!--  <wde-fuelcross>/instrumentation/warn-disp/wde1-fuelcross</wde-fuelcross> -->
+
+  <wde-chck-sw>/controls/switches/chck-engine1-sw</wde-chck-sw>
+  <wde-el-input>/systems/electrical/outputs/cwd-englh</wde-el-input>
+ </params>
+
+ <layers>
+ <!--podklad-->
+   <layer>
+   <name>Podklad</name>
+   <texture>
+    <path>Aircraft/l410uvpe/Instruments/Textures/l410-wd.rgb</path>
+    <x1>0.0</x1>
+    <y1>0.0</y1>
+    <x2>1.0</x2>
+    <y2>0.77</y2>
+   </texture>
+  <w>242</w>
+  <h>150</h>
+          <transformations>
+            <transformation>
+              <type>y-shift</type>
+              <offset>-12</offset>
+            </transformation>
+            <transformation>
+              <type>x-shift</type>
+              <offset>-24</offset>
+            </transformation>
+          </transformations>
+  </layer> 
+
+<!-- sloupek 0 -->
+  <layer>
+   <name>Pozadi s rameckem 03</name>
+   <texture>
+    <path>Aircraft/l410uvpe/Instruments/Textures/l410-svet.rgb</path>
+    <x1>0.0</x1>
+    <y1>0.0</y1>
+    <x2>0.18945</x2>
+    <y2>0.09570</y2>
+   </texture>
+  <w>48</w>
+  <h>24</h>
+          <transformations>
+            <transformation>
+              <type>y-shift</type>
+              <offset>+25</offset>
+            </transformation>
+            <transformation>
+              <type>x-shift</type>
+              <offset>-98</offset>
+            </transformation>
+          </transformations>
+  </layer>
+  <layer>
+   <name>Pozadi s rameckem 00</name>
+   <texture>
+    <path>Aircraft/l410uvpe/Instruments/Textures/l410-svet.rgb</path>
+    <x1>0.0</x1>
+    <y1>0.0</y1>
+    <x2>0.18945</x2>
+    <y2>0.09570</y2>
+   </texture>
+  <w>48</w>
+  <h>24</h>
+          <transformations>
+            <transformation>
+              <type>x-shift</type>
+              <offset>-98</offset>
+            </transformation>
+          </transformations>
+  </layer>
+  <layer>
+   <name>Pozadi s rameckem 01</name>
+   <texture>
+    <path>Aircraft/l410uvpe/Instruments/Textures/l410-svet.rgb</path>
+    <x1>0.0</x1>
+    <y1>0.0</y1>
+    <x2>0.18945</x2>
+    <y2>0.09570</y2>
+   </texture>
+  <w>48</w>
+  <h>24</h>
+          <transformations>
+            <transformation>
+              <type>y-shift</type>
+              <offset>-25</offset>
+            </transformation>
+            <transformation>
+              <type>x-shift</type>
+              <offset>-98</offset>
+            </transformation>
+          </transformations>
+  </layer>
+  <layer>
+   <name>Pozadi s rameckem 02</name>
+   <texture>
+    <path>Aircraft/l410uvpe/Instruments/Textures/l410-svet.rgb</path>
+    <x1>0.0</x1>
+    <y1>0.0</y1>
+    <x2>0.18945</x2>
+    <y2>0.09570</y2>
+   </texture>
+  <w>48</w>
+  <h>24</h>
+          <transformations>
+            <transformation>
+              <type>y-shift</type>
+              <offset>-50</offset>
+            </transformation>
+            <transformation>
+              <type>x-shift</type>
+              <offset>-98</offset>
+            </transformation>
+          </transformations>
+  </layer>
+
+<!-- sloupek 1 -->
+  <layer>
+   <name>Pozadi s rameckem 13</name>
+   <texture>
+    <path>Aircraft/l410uvpe/Instruments/Textures/l410-svet.rgb</path>
+    <x1>0.0</x1>
+    <y1>0.0</y1>
+    <x2>0.18945</x2>
+    <y2>0.09570</y2>
+   </texture>
+  <w>48</w>
+  <h>24</h>
+          <transformations>
+            <transformation>
+              <type>y-shift</type>
+              <offset>+25</offset>
+            </transformation>
+            <transformation>
+              <type>x-shift</type>
+              <offset>-49</offset>
+            </transformation>
+          </transformations>
+  </layer>
+  <layer>
+   <name>Pozadi s rameckem 10</name>
+   <texture>
+    <path>Aircraft/l410uvpe/Instruments/Textures/l410-svet.rgb</path>
+    <x1>0.0</x1>
+    <y1>0.0</y1>
+    <x2>0.18945</x2>
+    <y2>0.09570</y2>
+   </texture>
+  <w>48</w>
+  <h>24</h>
+          <transformations>
+            <transformation>
+              <type>x-shift</type>
+              <offset>-49</offset>
+            </transformation>
+          </transformations>
+  </layer>
+  <layer>
+   <name>Pozadi s rameckem 11</name>
+   <texture>
+    <path>Aircraft/l410uvpe/Instruments/Textures/l410-svet.rgb</path>
+    <x1>0.0</x1>
+    <y1>0.0</y1>
+    <x2>0.18945</x2>
+    <y2>0.09570</y2>
+   </texture>
+  <w>48</w>
+  <h>24</h>
+          <transformations>
+            <transformation>
+              <type>y-shift</type>
+              <offset>-25</offset>
+            </transformation>
+            <transformation>
+              <type>x-shift</type>
+              <offset>-49</offset>
+            </transformation>
+          </transformations>
+  </layer>
+  <layer>
+   <name>Pozadi s rameckem 12</name>
+   <texture>
+    <path>Aircraft/l410uvpe/Instruments/Textures/l410-svet.rgb</path>
+    <x1>0.0</x1>
+    <y1>0.0</y1>
+    <x2>0.18945</x2>
+    <y2>0.09570</y2>
+   </texture>
+  <w>48</w>
+  <h>24</h>
+          <transformations>
+            <transformation>
+              <type>y-shift</type>
+              <offset>-50</offset>
+            </transformation>
+            <transformation>
+              <type>x-shift</type>
+              <offset>-49</offset>
+            </transformation>
+          </transformations>
+  </layer>
+
+<!-- sloupek 2 -->
+  <layer>
+   <name>Pozadi s rameckem 3</name>
+   <texture>
+    <path>Aircraft/l410uvpe/Instruments/Textures/l410-svet.rgb</path>
+    <x1>0.0</x1>
+    <y1>0.0</y1>
+    <x2>0.18945</x2>
+    <y2>0.09570</y2>
+   </texture>
+  <w>48</w>
+  <h>24</h>
+          <transformations>
+            <transformation>
+              <type>y-shift</type>
+              <offset>+25</offset>
+            </transformation>
+          </transformations>
+  </layer>
+  <layer>
+   <name>Pozadi s rameckem 0</name>
+   <texture>
+    <path>Aircraft/l410uvpe/Instruments/Textures/l410-svet.rgb</path>
+    <x1>0.0</x1>
+    <y1>0.0</y1>
+    <x2>0.18945</x2>
+    <y2>0.09570</y2>
+   </texture>
+  <w>48</w>
+  <h>24</h>
+  </layer>
+  <layer>
+   <name>Pozadi s rameckem 1</name>
+   <texture>
+    <path>Aircraft/l410uvpe/Instruments/Textures/l410-svet.rgb</path>
+    <x1>0.0</x1>
+    <y1>0.0</y1>
+    <x2>0.18945</x2>
+    <y2>0.09570</y2>
+   </texture>
+  <w>48</w>
+  <h>24</h>
+          <transformations>
+            <transformation>
+              <type>y-shift</type>
+              <offset>-25</offset>
+            </transformation>
+          </transformations>
+  </layer>
+  <layer>
+   <name>Pozadi s rameckem 2</name>
+   <texture>
+    <path>Aircraft/l410uvpe/Instruments/Textures/l410-svet.rgb</path>
+    <x1>0.0</x1>
+    <y1>0.0</y1>
+    <x2>0.18945</x2>
+    <y2>0.09570</y2>
+   </texture>
+  <w>48</w>
+  <h>24</h>
+          <transformations>
+            <transformation>
+              <type>y-shift</type>
+              <offset>-50</offset>
+            </transformation>
+          </transformations>
+  </layer>
+
+<!-- sloupec 3 -->
+  <layer>
+   <name>Pozadi s rameckem 33</name>
+   <texture>
+    <path>Aircraft/l410uvpe/Instruments/Textures/l410-svet.rgb</path>
+    <x1>0.0</x1>
+    <y1>0.0</y1>
+    <x2>0.18945</x2>
+    <y2>0.09570</y2>
+   </texture>
+  <w>48</w>
+  <h>24</h>
+          <transformations>
+            <transformation>
+              <type>y-shift</type>
+              <offset>+25</offset>
+            </transformation>
+            <transformation>
+              <type>x-shift</type>
+              <offset>49</offset>
+            </transformation>
+          </transformations>
+  </layer>
+  <layer>
+   <name>Pozadi s rameckem 30</name>
+   <texture>
+    <path>Aircraft/l410uvpe/Instruments/Textures/l410-svet.rgb</path>
+    <x1>0.0</x1>
+    <y1>0.0</y1>
+    <x2>0.18945</x2>
+    <y2>0.09570</y2>
+   </texture>
+  <w>48</w>
+  <h>24</h>
+          <transformations>
+            <transformation>
+              <type>x-shift</type>
+              <offset>49</offset>
+            </transformation>
+          </transformations>
+  </layer>
+  <layer>
+   <name>Pozadi s rameckem 31</name>
+   <texture>
+    <path>Aircraft/l410uvpe/Instruments/Textures/l410-svet.rgb</path>
+    <x1>0.0</x1>
+    <y1>0.0</y1>
+    <x2>0.18945</x2>
+    <y2>0.09570</y2>
+   </texture>
+  <w>48</w>
+  <h>24</h>
+          <transformations>
+            <transformation>
+              <type>y-shift</type>
+              <offset>-25</offset>
+            </transformation>
+            <transformation>
+              <type>x-shift</type>
+              <offset>49</offset>
+            </transformation>
+          </transformations>
+  </layer>
+  <layer>
+   <name>Pozadi s rameckem 32</name>
+   <texture>
+    <path>Aircraft/l410uvpe/Instruments/Textures/l410-svet.rgb</path>
+    <x1>0.0</x1>
+    <y1>0.0</y1>
+    <x2>0.18945</x2>
+    <y2>0.09570</y2>
+   </texture>
+  <w>48</w>
+  <h>24</h>
+          <transformations>
+            <transformation>
+              <type>y-shift</type>
+              <offset>-50</offset>
+            </transformation>
+            <transformation>
+              <type>x-shift</type>
+              <offset>49</offset>
+            </transformation>
+          </transformations>
+  </layer>
+
+
+<!--  bulbs -->
+
+<!-- 1st line -->
+<!-- fire -->
+    
+ <layer>
+   <name>fire_wd</name>
+   <type>switch</type>
+    <layer>
+     <condition>
+	  <and>
+		 <greater-than>
+           <property alias="../../../../../../../params/wde-el-input"/>
+		   <value>10</value>
+		 </greater-than>
+         <or>
+           <property alias="../../../../../../../params/wde-chck-sw"/>
+           <property alias="../../../../../../../params/wde-fire"/>
+         </or>
+	  </and>
+     </condition>
+     <name>on</name>
+     <texture>
+     <path>Aircraft/l410uvpe/Instruments/Textures/l410-svet1.rgb</path>
+     <x1>0.0</x1>
+     <x2>0.1718</x2>
+     <y1>0.0762</y1>
+     <y2>0.1504</y2>
+     </texture>
+     <w>46</w>
+     <h>22</h>
+	 <emissive>true</emissive>
+    </layer>
+    <layer>
+     <name>off</name>
+     <texture>
+     <path>Aircraft/l410uvpe/Instruments/Textures/l410-svet1.rgb</path>
+     <x1>0.0</x1>
+     <x2>0.1718</x2>
+     <y1>0.0</y1>
+     <y2>0.0762</y2>
+     </texture>
+     <w>46</w>
+     <h>22</h>
+   </layer>
+   <transformations>
+    <transformation>
+    <type>x-shift</type>
+    <offset>-98</offset>
+    </transformation>
+    <transformation>
+    <type>y-shift</type>
+    <offset>+25</offset>
+    </transformation>
+   </transformations>
+  </layer>
+
+<!-- oil pressure -->
+ <layer>
+   <name>iolpress_wd</name>
+   <type>switch</type>
+    <layer>
+     <condition>
+	  <and>
+		 <greater-than>
+           <property alias="../../../../../../../params/wde-el-input"/>
+		   <value>10</value>
+		 </greater-than>
+         <or>
+           <property alias="../../../../../../../params/wde-chck-sw"/>
+           <property alias="../../../../../../../params/wde-oilpress"/>
+         </or>
+	  </and>
+     </condition>
+     <name>on</name>
+     <texture>
+     <path>Aircraft/l410uvpe/Instruments/Textures/l410-svet1.rgb</path>
+     <x1>0.5214</x1>
+     <x2>0.6953</x2>
+     <y1>0.0762</y1>
+     <y2>0.1504</y2>
+     </texture>
+     <w>46</w>
+     <h>22</h>
+	 <emissive>true</emissive>
+    </layer>
+    <layer>
+     <name>off</name>
+     <texture>
+     <path>Aircraft/l410uvpe/Instruments/Textures/l410-svet1.rgb</path>
+     <x1>0.5214</x1>
+     <x2>0.6953</x2>
+     <y1>0.0</y1>
+     <y2>0.0762</y2>
+     </texture>
+     <w>46</w>
+     <h>22</h>
+   </layer>
+   <transformations>
+    <transformation>
+    <type>x-shift</type>
+    <offset>-49</offset>
+    </transformation>
+    <transformation>
+    <type>y-shift</type>
+    <offset>25</offset>
+    </transformation>
+   </transformations>
+  </layer>
+
+<!-- fuel pressure -->
+ <layer>
+   <name>fuelpress_wd</name>
+   <type>switch</type>
+    <layer>
+     <condition>
+	  <and>
+		 <greater-than>
+           <property alias="../../../../../../../params/wde-el-input"/>
+		   <value>10</value>
+		 </greater-than>
+         <or>
+           <property alias="../../../../../../../params/wde-chck-sw"/>
+           <property alias="../../../../../../../params/wde-fuelpress"/>
+         </or>
+	  </and>
+     </condition>
+     <name>on</name>
+     <texture>
+     <path>Aircraft/l410uvpe/Instruments/Textures/l410-svet1.rgb</path>
+     <x1>0.5214</x1>
+     <x2>0.6953</x2>
+     <y1>0.2265</y1>
+     <y2>0.3027</y2>
+     </texture>
+     <w>46</w>
+     <h>22</h>
+	 <emissive>true</emissive>
+    </layer>
+    <layer>
+     <name>off</name>
+     <texture>
+     <path>Aircraft/l410uvpe/Instruments/Textures/l410-svet1.rgb</path>
+     <x1>0.5214</x1>
+     <x2>0.6953</x2>
+     <y1>0.1504</y1>
+     <y2>0.2265</y2>
+     </texture>
+     <w>46</w>
+     <h>22</h>
+   </layer>
+   <transformations>
+    <transformation>
+    <type>x-shift</type>
+    <offset>0</offset>
+    </transformation>
+    <transformation>
+    <type>y-shift</type>
+    <offset>25</offset>
+    </transformation>
+   </transformations>
+  </layer>
+
+<!-- minimum fuel --> 
+ <layer>
+   <name>minfuel_wd</name>
+   <type>switch</type>
+    <layer>
+     <condition>
+	  <and>
+		 <greater-than>
+           <property alias="../../../../../../../params/wde-el-input"/>
+		   <value>10</value>
+		 </greater-than>
+         <or>
+           <property alias="../../../../../../../params/wde-chck-sw"/>
+           <property alias="../../../../../../../params/wde-minfuel"/>
+         </or>
+	  </and>
+     </condition>
+     <name>on</name>
+     <texture>
+     <path>Aircraft/l410uvpe/Instruments/Textures/l410-svet1.rgb</path>
+     <x1>0.6953</x1>
+     <x2>0.8691</x2>
+     <y1>0.0762</y1>
+     <y2>0.1504</y2>
+     </texture>
+     <w>46</w>
+     <h>22</h>
+	 <emissive>true</emissive>
+    </layer>
+    <layer>
+     <name>off</name>
+     <texture>
+     <path>Aircraft/l410uvpe/Instruments/Textures/l410-svet1.rgb</path>
+     <x1>0.6953</x1>
+     <x2>0.8691</x2>
+     <y1>0.0</y1>
+     <y2>0.0762</y2>
+     </texture>
+     <w>46</w>
+     <h>22</h>
+   </layer>
+   <transformations>
+    <transformation>
+    <type>x-shift</type>
+    <offset>+49</offset>
+    </transformation>
+    <transformation>
+    <type>y-shift</type>
+    <offset>25</offset>
+    </transformation>
+   </transformations>
+  </layer>
+
+<!-- ielu intervent --> 
+ <layer>
+   <name>ieluint_wd</name>
+   <type>switch</type>
+    <layer>
+     <condition>
+	  <and>
+		 <greater-than>
+           <property alias="../../../../../../../params/wde-el-input"/>
+		   <value>10</value>
+		 </greater-than>
+         <or>
+           <property alias="../../../../../../../params/wde-chck-sw"/>
+           <property alias="../../../../../../../params/wde-ieluint"/>
+         </or>
+	  </and>
+     </condition>
+     <name>on</name>
+     <texture>
+     <path>Aircraft/l410uvpe/Instruments/Textures/l410-svet1.rgb</path>
+     <x1>0.1718</x1>
+     <x2>0.3457</x2>
+     <y1>0.3789</y1>
+     <y2>0.4550</y2>
+     </texture>
+     <w>46</w>
+     <h>22</h>
+	 <emissive>true</emissive>
+    </layer>
+    <layer>
+     <name>off</name>
+     <texture>
+     <path>Aircraft/l410uvpe/Instruments/Textures/l410-svet1.rgb</path>
+     <x1>0.1718</x1>
+     <x2>0.3457</x2>
+     <y1>0.3027</y1>
+     <y2>0.3789</y2>
+     </texture>
+     <w>46</w>
+     <h>22</h>
+   </layer>
+   <transformations>
+    <transformation>
+    <type>x-shift</type>
+    <offset>-98</offset>
+    </transformation>
+    <transformation>
+    <type>y-shift</type>
+    <offset>0</offset>
+    </transformation>
+   </transformations>
+  </layer>
+
+<!-- chips --> 
+ <layer>
+   <name>chips_wd</name>
+   <type>switch</type>
+    <layer>
+     <condition>
+	  <and>
+		 <greater-than>
+           <property alias="../../../../../../../params/wde-el-input"/>
+		   <value>10</value>
+		 </greater-than>
+         <or>
+           <property alias="../../../../../../../params/wde-chck-sw"/>
+           <property alias="../../../../../../../params/wde-chips"/>
+         </or>
+	  </and>
+     </condition>
+     <name>on</name>
+     <texture>
+     <path>Aircraft/l410uvpe/Instruments/Textures/l410-svet1.rgb</path>
+     <x1>0.0</x1>
+     <x2>0.1718</x2>
+     <y1>0.3789</y1>
+     <y2>0.4550</y2>
+     </texture>
+     <w>46</w>
+     <h>22</h>
+	 <emissive>true</emissive>
+    </layer>
+    <layer>
+     <name>off</name>
+     <texture>
+     <path>Aircraft/l410uvpe/Instruments/Textures/l410-svet1.rgb</path>
+     <x1>0.0</x1>
+     <x2>0.1718</x2>
+     <y1>0.3027</y1>
+     <y2>0.3789</y2>
+     </texture>
+     <w>46</w>
+     <h>22</h>
+   </layer>
+   <transformations>
+    <transformation>
+    <type>x-shift</type>
+    <offset>-49</offset>
+    </transformation>
+    <transformation>
+    <type>y-shift</type>
+    <offset>0</offset>
+    </transformation>
+   </transformations>
+  </layer>
+
+<!-- isolation valve --> 
+ <layer>
+   <name>isolval_wd</name>
+   <type>switch</type>
+    <layer>
+     <condition>
+	  <and>
+		 <greater-than>
+           <property alias="../../../../../../../params/wde-el-input"/>
+		   <value>10</value>
+		 </greater-than>
+         <or>
+           <property alias="../../../../../../../params/wde-chck-sw"/>
+           <property alias="../../../../../../../params/wde-isolval"/>
+         </or>
+	  </and>
+     </condition>
+     <name>on</name>
+     <texture>
+     <path>Aircraft/l410uvpe/Instruments/Textures/l410-svet1.rgb</path>
+     <x1>0.3457</x1>
+     <x2>0.5214</x2>
+     <y1>0.2265</y1>
+     <y2>0.3027</y2>
+     </texture>
+     <w>46</w>
+     <h>22</h>
+	 <emissive>true</emissive>
+    </layer>
+    <layer>
+     <name>off</name>
+     <texture>
+     <path>Aircraft/l410uvpe/Instruments/Textures/l410-svet1.rgb</path>
+     <x1>0.3457</x1>
+     <x2>0.5214</x2>
+     <y1>0.1504</y1>
+     <y2>0.2265</y2>
+     </texture>
+     <w>46</w>
+     <h>22</h>
+   </layer>
+   <transformations>
+    <transformation>
+    <type>x-shift</type>
+    <offset>0</offset>
+    </transformation>
+    <transformation>
+    <type>y-shift</type>
+    <offset>0</offset>
+    </transformation>
+   </transformations>
+  </layer>
+
+<!-- fuel bypass -->
+ <layer>
+   <name>fuelbypass_wd</name>
+   <type>switch</type>
+    <layer>
+     <condition>
+	  <and>
+		 <greater-than>
+           <property alias="../../../../../../../params/wde-el-input"/>
+		   <value>10</value>
+		 </greater-than>
+         <or>
+           <property alias="../../../../../../../params/wde-chck-sw"/>
+           <property alias="../../../../../../../params/wde-fuelbypass"/>
+         </or>
+	  </and>
+     </condition>
+     <name>on</name>
+     <texture>
+     <path>Aircraft/l410uvpe/Instruments/Textures/l410-svet1.rgb</path>
+     <x1>0.0</x1>
+     <x2>0.1718</x2>
+     <y1>0.5312</y1>
+     <y2>0.6074</y2>
+     </texture>
+     <w>46</w>
+     <h>22</h>
+	 <emissive>true</emissive>
+    </layer>
+    <layer>
+     <name>off</name>
+     <texture>
+     <path>Aircraft/l410uvpe/Instruments/Textures/l410-svet1.rgb</path>
+     <x1>0.0</x1>
+     <x2>0.1718</x2>
+     <y1>0.4550</y1>
+     <y2>0.5312</y2>
+     </texture>
+     <w>46</w>
+     <h>22</h>
+   </layer>
+   <transformations>
+    <transformation>
+    <type>x-shift</type>
+    <offset>49</offset>
+    </transformation>
+    <transformation>
+    <type>y-shift</type>
+    <offset>0</offset>
+    </transformation>
+   </transformations>
+  </layer>
+
+<!-- beta range -->
+ <layer>
+   <name>beta_wd</name>
+   <type>switch</type>
+    <layer>
+     <condition>
+	  <and>
+		 <greater-than>
+           <property alias="../../../../../../../params/wde-el-input"/>
+		   <value>10</value>
+		 </greater-than>
+         <or>
+           <property alias="../../../../../../../params/wde-chck-sw"/>
+           <property alias="../../../../../../../params/wde-beta"/>
+         </or>
+	  </and>
+     </condition>
+     <name>on</name>
+     <texture>
+     <path>Aircraft/l410uvpe/Instruments/Textures/l410-svet1.rgb</path>
+     <x1>0.1718</x1>
+     <x2>0.3457</x2>
+     <y1>0.0762</y1>
+     <y2>0.1504</y2>
+     </texture>
+     <w>46</w>
+     <h>22</h>
+	 <emissive>true</emissive>
+    </layer>
+    <layer>
+     <name>off</name>
+     <texture>
+     <path>Aircraft/l410uvpe/Instruments/Textures/l410-svet1.rgb</path>
+     <x1>0.1718</x1>
+     <x2>0.3457</x2>
+     <y1>0.0</y1>
+     <y2>0.0762</y2>
+     </texture>
+     <w>46</w>
+     <h>22</h>
+   </layer>
+   <transformations>
+    <transformation>
+    <type>x-shift</type>
+    <offset>-98</offset>
+    </transformation>
+    <transformation>
+    <type>y-shift</type>
+    <offset>-25</offset>
+    </transformation>
+   </transformations>
+  </layer>
+
+<!-- ielu --> 
+ <layer>
+   <name>ielu_wd</name>
+   <type>switch</type>
+    <layer>
+     <condition>
+	  <and>
+		 <greater-than>
+           <property alias="../../../../../../../params/wde-el-input"/>
+		   <value>10</value>
+		 </greater-than>
+         <or>
+           <property alias="../../../../../../../params/wde-chck-sw"/>
+           <property alias="../../../../../../../params/wde-ielu"/>
+         </or>
+	  </and>
+     </condition>
+     <name>on</name>
+     <texture>
+     <path>Aircraft/l410uvpe/Instruments/Textures/l410-svet1.rgb</path>
+     <x1>0.6953</x1>
+     <x2>0.8691</x2>
+     <y1>0.2265</y1>
+     <y2>0.3027</y2>
+     </texture>
+     <w>46</w>
+     <h>22</h>
+	 <emissive>true</emissive>
+    </layer>
+    <layer>
+     <name>off</name>
+     <texture>
+     <path>Aircraft/l410uvpe/Instruments/Textures/l410-svet1.rgb</path>
+     <x1>0.6953</x1>
+     <x2>0.8691</x2>
+     <y1>0.1504</y1>
+     <y2>0.2265</y2>
+     </texture>
+     <w>46</w>
+     <h>22</h>
+   </layer>
+   <transformations>
+    <transformation>
+    <type>x-shift</type>
+    <offset>-49</offset>
+    </transformation>
+    <transformation>
+    <type>y-shift</type>
+    <offset>-25</offset>
+    </transformation>
+   </transformations>
+  </layer>
+ 
+<!-- autofeathering --> 
+ <layer>
+   <name>autofeat_wd</name>
+   <type>switch</type>
+    <layer>
+     <condition>
+	  <and>
+		 <greater-than>
+           <property alias="../../../../../../../params/wde-el-input"/>
+		   <value>10</value>
+		 </greater-than>
+         <or>
+           <property alias="../../../../../../../params/wde-chck-sw"/>
+           <property alias="../../../../../../../params/wde-autofeat"/>
+         </or>
+	  </and>
+     </condition>
+     <name>on</name>
+     <texture>
+     <path>Aircraft/l410uvpe/Instruments/Textures/l410-svet1.rgb</path>
+     <x1>0.3457</x1>
+     <x2>0.5214</x2>
+     <y1>0.3789</y1>
+     <y2>0.4550</y2>
+     </texture>
+     <w>46</w>
+     <h>22</h>
+	 <emissive>true</emissive>
+    </layer>
+    <layer>
+     <name>off</name>
+     <texture>
+     <path>Aircraft/l410uvpe/Instruments/Textures/l410-svet1.rgb</path>
+     <x1>0.3457</x1>
+     <x2>0.5214</x2>
+     <y1>0.3027</y1>
+     <y2>0.3789</y2>
+     </texture>
+     <w>46</w>
+     <h>22</h>
+   </layer>
+   <transformations>
+    <transformation>
+    <type>x-shift</type>
+    <offset>0</offset>
+    </transformation>
+    <transformation>
+    <type>y-shift</type>
+    <offset>-25</offset>
+    </transformation>
+   </transformations>
+  </layer>
+
+<!-- feathering pump -->
+ <layer>
+   <name>featpump_wd</name>
+   <type>switch</type>
+    <layer>
+     <condition>
+	  <and>
+		 <greater-than>
+           <property alias="../../../../../../../params/wde-el-input"/>
+		   <value>10</value>
+		 </greater-than>
+         <or>
+           <property alias="../../../../../../../params/wde-chck-sw"/>
+           <property alias="../../../../../../../params/wde-featpump"/>
+         </or>
+	  </and>
+     </condition>
+     <name>on</name>
+     <texture>
+     <path>Aircraft/l410uvpe/Instruments/Textures/l410-svet1.rgb</path>
+     <x1>0.5214</x1>
+     <x2>0.6953</x2>
+     <y1>0.3789</y1>
+     <y2>0.4550</y2>
+     </texture>
+     <w>46</w>
+     <h>22</h>
+	 <emissive>true</emissive>
+    </layer>
+    <layer>
+     <name>off</name>
+     <texture>
+     <path>Aircraft/l410uvpe/Instruments/Textures/l410-svet1.rgb</path>
+     <x1>0.5214</x1>
+     <x2>0.6953</x2>
+     <y1>0.3027</y1>
+     <y2>0.3789</y2>
+     </texture>
+     <w>46</w>
+     <h>22</h>
+   </layer>
+   <transformations>
+    <transformation>
+    <type>x-shift</type>
+    <offset>+49</offset>
+    </transformation>
+    <transformation>
+    <type>y-shift</type>
+    <offset>-25</offset>
+    </transformation>
+   </transformations>
+  </layer>
+
+<!-- hydraulics -->
+ <layer>
+   <name>hydraulics_wd</name>
+   <type>switch</type>
+    <layer>
+     <condition>
+	  <and>
+		 <greater-than>
+           <property alias="../../../../../../../params/wde-el-input"/>
+		   <value>10</value>
+		 </greater-than>
+         <or>
+           <property alias="../../../../../../../params/wde-chck-sw"/>
+           <property alias="../../../../../../../params/wde-hydraulics"/>
+         </or>
+	  </and>
+     </condition>
+     <name>on</name>
+     <texture>
+     <path>Aircraft/l410uvpe/Instruments/Textures/l410-svet1.rgb</path>
+     <x1>0.3457</x1>
+     <x2>0.5214</x2>
+     <y1>0.5312</y1>
+     <y2>0.6074</y2>
+     </texture>
+     <w>46</w>
+     <h>22</h>
+	 <emissive>true</emissive>
+    </layer>
+    <layer>
+     <name>off</name>
+     <texture>
+     <path>Aircraft/l410uvpe/Instruments/Textures/l410-svet1.rgb</path>
+     <x1>0.3457</x1>
+     <x2>0.5214</x2>
+     <y1>0.4550</y1>
+     <y2>0.5312</y2>
+     </texture>
+     <w>46</w>
+     <h>22</h>
+   </layer>
+   <transformations>
+    <transformation>
+    <type>x-shift</type>
+    <offset>-98</offset>
+    </transformation>
+    <transformation>
+    <type>y-shift</type>
+    <offset>-50</offset>
+    </transformation>
+   </transformations>
+  </layer>
+
+<!-- free item -->
+ <layer>
+   <name>hydraulics_wd</name>
+   <type>switch</type>
+    <layer>
+     <condition>
+	  <and>
+		 <greater-than>
+           <property alias="../../../../../../../params/wde-el-input"/>
+		   <value>10</value>
+		 </greater-than>
+         <property alias="../../../../../../params/wde-chck-sw"/>
+	  </and>
+     </condition>
+     <name>on</name>
+     <texture>
+     <path>Aircraft/l410uvpe/Instruments/Textures/l410-svet1.rgb</path>
+     <x1>0.6953</x1>
+     <x2>0.8691</x2>
+     <y1>0.8360</y1>
+     <y2>0.9122</y2>
+     </texture>
+     <w>46</w>
+     <h>22</h>
+	 <emissive>true</emissive>
+    </layer>
+    <layer>
+     <name>off</name>
+     <texture>
+     <path>Aircraft/l410uvpe/Instruments/Textures/l410-svet1.rgb</path>
+     <x1>0.6953</x1>
+     <x2>0.8691</x2>
+     <y1>0.7598</y1>
+     <y2>0.8360</y2>
+     </texture>
+     <w>46</w>
+     <h>22</h>
+   </layer>
+   <transformations>
+    <transformation>
+    <type>x-shift</type>
+    <offset>-49</offset>
+    </transformation>
+    <transformation>
+    <type>y-shift</type>
+    <offset>-50</offset>
+    </transformation>
+   </transformations>
+  </layer>
+
+<!-- propeller deicing -->
+ <layer>
+   <name>hydraulics_wd</name>
+   <type>switch</type>
+    <layer>
+     <condition>
+	  <and>
+		 <greater-than>
+           <property alias="../../../../../../../params/wde-el-input"/>
+		   <value>10</value>
+		 </greater-than>
+         <or>
+           <property alias="../../../../../../../params/wde-chck-sw"/>
+           <property alias="../../../../../../../params/wde-propdeicing"/>
+         </or>
+	  </and>
+     </condition>
+     <name>on</name>
+     <texture>
+     <path>Aircraft/l410uvpe/Instruments/Textures/l410-svet1.rgb</path>
+     <x1>0.5214</x1>
+     <x2>0.6953</x2>
+     <y1>0.5312</y1>
+     <y2>0.6074</y2>
+     </texture>
+     <w>46</w>
+     <h>22</h>
+	 <emissive>true</emissive>
+    </layer>
+    <layer>
+     <name>off</name>
+     <texture>
+     <path>Aircraft/l410uvpe/Instruments/Textures/l410-svet1.rgb</path>
+     <x1>0.5214</x1>
+     <x2>0.6953</x2>
+     <y1>0.4550</y1>
+     <y2>0.5312</y2>
+     </texture>
+     <w>46</w>
+     <h>22</h>
+   </layer>
+   <transformations>
+    <transformation>
+    <type>x-shift</type>
+    <offset>0</offset>
+    </transformation>
+    <transformation>
+    <type>y-shift</type>
+    <offset>-50</offset>
+    </transformation>
+   </transformations>
+  </layer>
+
+<!-- engine starting -->
+ <layer>
+   <name>start_wd</name>
+   <type>switch</type>
+    <layer>
+     <condition>
+	  <and>
+		 <greater-than>
+           <property alias="../../../../../../../params/wde-el-input"/>
+		   <value>10</value>
+		 </greater-than>
+         <or>
+           <property alias="../../../../../../../params/wde-chck-sw"/>
+           <property alias="../../../../../../../params/wde-start"/>
+         </or>
+	  </and>
+     </condition>
+     <name>on</name>
+     <texture>
+     <path>Aircraft/l410uvpe/Instruments/Textures/l410-svet1.rgb</path>
+     <x1>0.3457</x1>
+     <x2>0.5214</x2>
+     <y1>0.0762</y1>
+     <y2>0.1504</y2>
+     </texture>
+     <w>46</w>
+     <h>22</h>
+	 <emissive>true</emissive>
+    </layer>
+    <layer>
+     <name>off</name>
+     <texture>
+     <path>Aircraft/l410uvpe/Instruments/Textures/l410-svet1.rgb</path>
+     <x1>0.3457</x1>
+     <x2>0.5214</x2>
+     <y1>0.0</y1>
+     <y2>0.0762</y2>
+     </texture>
+     <w>46</w>
+     <h>22</h>
+   </layer>
+   <transformations>
+    <transformation>
+    <type>x-shift</type>
+    <offset>49</offset>
+    </transformation>
+    <transformation>
+    <type>y-shift</type>
+    <offset>-50</offset>
+    </transformation>
+   </transformations>
+  </layer>
+
+
+
+<!-- KONEC PREDELANEHO !!! -->
+<!-- ??? -->
+    
+
+<!-- tyto polozky jsou na jinych displayich
+
+ <layer>
+   <name>wateri_wd</name>
+   <type>switch</type>
+    <layer>
+     <condition>
+      <or>
+      <property alias="../../../../../params/wde-chck"/>
+      <property alias="../../../../../params/wde-wateri"/>
+      </or>
+     </condition>
+     <name>on</name>
+     <texture>
+     <path>Aircraft/l410uvpe/Instruments/Textures/l410-svet1.rgb</path>
+     <x1>0.0</x1>
+     <x2>0.1718</x2>
+     <y1>0.2265</y1>
+     <y2>0.3027</y2>
+     </texture>
+     <w>46</w>
+     <h>22</h>
+    </layer>
+    <layer>
+     <name>off</name>
+     <texture>
+     <path>Aircraft/l410uvpe/Instruments/Textures/l410-svet1.rgb</path>
+     <x1>0.0</x1>
+     <x2>0.1718</x2>
+     <y1>0.1504</y1>
+     <y2>0.2265</y2>
+     </texture>
+     <w>46</w>
+     <h>22</h>
+   </layer>
+   <transformations>
+    <transformation>
+    <type>x-shift</type>
+    <offset>+49</offset>
+    </transformation>
+    <transformation>
+    <type>y-shift</type>
+    <offset>-50</offset>
+    </transformation>
+   </transformations>
+  </layer>
+
+ <layer>
+   <name>oil_wd</name>
+   <type>switch</type>
+    <layer>
+     <condition>
+      <or>
+      <property alias="../../../../../params/wde-chck"/>
+      <property alias="../../../../../params/wde-oil"/>
+      </or>
+     </condition>
+     <name>on</name>
+     <texture>
+     <path>Aircraft/l410uvpe/Instruments/Textures/l410-svet1.rgb</path>
+     <x1>0.1718</x1>
+     <x2>0.3457</x2>
+     <y1>0.2265</y1>
+     <y2>0.3027</y2>
+     </texture>
+     <w>46</w>
+     <h>22</h>
+    </layer>
+    <layer>
+     <name>off</name>
+     <texture>
+     <path>Aircraft/l410uvpe/Instruments/Textures/l410-svet1.rgb</path>
+     <x1>0.1718</x1>
+     <x2>0.3457</x2>
+     <y1>0.1504</y1>
+     <y2>0.2265</y2>
+     </texture>
+     <w>46</w>
+     <h>22</h>
+   </layer>
+   <transformations>
+    <transformation>
+    <type>x-shift</type>
+    <offset>-98</offset>
+    </transformation>
+    <transformation>
+    <type>y-shift</type>
+    <offset>-25</offset>
+    </transformation>
+   </transformations>
+  </layer>
+
+
+
+
+
+ <layer>
+   <name>fuelcross_wd</name>
+   <type>switch</type>
+    <layer>
+     <condition>
+      <or>
+      <property alias="../../../../../params/wde-chck"/>
+      <property alias="../../../../../params/wde-fuelcross"/>
+      </or>
+     </condition>
+     <name>on</name>
+     <texture>
+     <path>Aircraft/l410uvpe/Instruments/Textures/l410-svet1.rgb</path>
+     <x1>0.6953</x1>
+     <x2>0.8691</x2>
+     <y1>0.3789</y1>
+     <y2>0.4550</y2>
+     </texture>
+     <w>46</w>
+     <h>22</h>
+    </layer>
+    <layer>
+     <name>off</name>
+     <texture>
+     <path>Aircraft/l410uvpe/Instruments/Textures/l410-svet1.rgb</path>
+     <x1>0.6953</x1>
+     <x2>0.8691</x2>
+     <y1>0.3027</y1>
+     <y2>0.3789</y2>
+     </texture>
+     <w>46</w>
+     <h>22</h>
+   </layer>
+   <transformations>
+    <transformation>
+    <type>x-shift</type>
+    <offset>0</offset>
+    </transformation>
+    <transformation>
+    <type>y-shift</type>
+    <offset>0</offset>
+    </transformation>
+   </transformations>
+  </layer>
+-->
+
+
+ </layers>
+
+</PropertyList>

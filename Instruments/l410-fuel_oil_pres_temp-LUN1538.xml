@@ -1,0 +1,227 @@
+<?xml version="1.0"?>
+
+<!--
+
+TLAK PALIVA A OLEJE + TEPLOTA OLEJE (nase!)
+
+-->
+
+<PropertyList>
+
+ <name>oil fuel pressure</name>
+
+  <w-base>128</w-base>
+  <h-base>128</h-base>
+
+ <params>
+  <press-f>/instrumentation/pressure/indicated-fuel1-kp_cm2</press-f>
+  <press-o>/instrumentation/pressure/indicated-oil1-kp_cm2</press-o>
+  <temp-o>/instrumentation/temperature/indicated-oil1-degc</temp-o>
+ </params>
+  
+ 
+   <layers>
+    <layer>
+     <name>gauge face</name>
+     <texture>   
+     <path>Aircraft/l410uvpe/Instruments/Textures/l410-mot_f_o.rgb</path>
+     <x1>0.0</x1>
+     <y1>0.0</y1>
+     <x2>1.0</x2>
+     <y2>1.0</y2>
+     </texture>
+     <w>100</w>
+     <h>100</h>
+    </layer>
+
+  <layer>
+    <name>Rucicka</name>
+   <texture>
+    <path>Aircraft/l410uvpe/Instruments/Textures/l410-radalt.rgb</path>
+    <x1>0.94922</x1>
+    <y1>0.66666</y1>
+    <x2>1.0</x2>
+    <y2>1.0</y2>
+   </texture>
+   <w>9</w>
+   <h>22</h>
+   <transformations>
+    <transformation>
+    <type>y-shift</type>
+    <offset>12</offset>
+    </transformation>
+     <transformation>
+      <type>rotation</type>
+      <property alias="../../../../../params/press-f"/>
+      <scale>6.875</scale>
+      <offset>305</offset>
+     </transformation>
+    <transformation>
+    <type>y-shift</type>
+    <offset>15</offset>
+    </transformation>
+   </transformations>
+  </layer> 
+
+  <layer>
+    <name>Rucicka</name>
+   <texture>
+    <path>Aircraft/l410uvpe/Instruments/Textures/l410-radalt.rgb</path>
+    <x1>0.94922</x1>
+    <y1>0.66666</y1>
+    <x2>1.0</x2>
+    <y2>1.0</y2>
+   </texture>
+   <w>9</w>
+   <h>20</h>
+   <transformations>
+    <transformation>
+    <type>x-shift</type>
+    <offset>-34</offset>
+    </transformation>
+    <transformation>
+    <type>y-shift</type>
+    <offset>-16</offset>
+    </transformation>
+     <transformation>
+      <type>rotation</type>
+      <property alias="../../../../../params/press-o"/>
+      <scale>-29</scale>
+      <offset>148.0</offset>
+     </transformation>
+    <transformation>
+    <type>y-shift</type>
+    <offset>15</offset>
+    </transformation>
+   </transformations>
+  </layer> 
+
+  <layer>
+    <name>Rucicka</name>
+   <texture>
+    <path>Aircraft/l410uvpe/Instruments/Textures/l410-radalt.rgb</path>
+    <x1>0.94922</x1>
+    <y1>0.66666</y1>
+    <x2>1.0</x2>
+    <y2>1.0</y2>
+   </texture>
+   <w>9</w>
+   <h>20</h>
+   <transformations>
+    <transformation>
+    <type>x-shift</type>
+    <offset>34</offset>
+    </transformation>
+    <transformation>
+    <type>y-shift</type>
+    <offset>-16</offset>
+    </transformation>
+     <transformation>
+      <type>rotation</type>
+      <property alias="../../../../../params/temp-o"/>
+      <scale>0.76</scale>
+      <offset>236.0</offset>
+      <min>-40</min>
+      <max>120</max>
+     </transformation>
+    <transformation>
+    <type>y-shift</type>
+    <offset>15</offset>
+    </transformation>
+   </transformations>
+  </layer> 
+
+    <layer>
+     <name>prostredek</name>
+     <texture>   
+     <path>Aircraft/l410uvpe/Instruments/Textures/l410-hydr1.rgb</path>
+     <x1>0.75</x1>
+     <y1>0.75</y1>
+     <x2>0.875</x2>
+     <y2>1.0</y2>
+     </texture>
+     <w>20</w>
+     <h>20</h>
+   <transformations>
+    <transformation>
+    <type>y-shift</type>
+    <offset>15</offset>
+    </transformation>
+   </transformations>
+    </layer>
+
+    <layer>
+     <name>prostredek</name>
+     <texture>   
+     <path>Aircraft/l410uvpe/Instruments/Textures/l410-hydr1.rgb</path>
+     <x1>0.55</x1>
+     <y1>0.5</y1>
+     <x2>0.75</x2>
+     <y2>0.75</y2>
+     </texture>
+     <w>32</w>
+     <h>20</h>
+   <transformations>
+    <transformation>
+    <type>y-shift</type>
+    <offset>-16</offset>
+    </transformation>
+    <transformation>
+    <type>x-shift</type>
+    <offset>-36</offset>
+    </transformation>
+   </transformations>
+    </layer>
+
+    <layer>
+     <name>prostredek</name>
+     <texture>   
+     <path>Aircraft/l410uvpe/Instruments/Textures/l410-hydr1.rgb</path>
+     <x1>0.5</x1>
+     <y1>0.75</y1>
+     <x2>0.7</x2>
+     <y2>1.0</y2>
+     </texture>
+     <w>32</w>
+     <h>20</h>
+   <transformations>
+    <transformation>
+    <type>y-shift</type>
+    <offset>-16</offset>
+    </transformation>
+    <transformation>
+    <type>x-shift</type>
+    <offset>36</offset>
+    </transformation>
+   </transformations>
+    </layer>
+
+  <layer>
+   <name>glare shield</name>
+   <texture>
+    <path>Aircraft/l410uvpe/Instruments/Textures/bezel1.rgb</path>
+    <x1>0.5</x1>
+    <y1>0.0</y1>
+    <x2>1.0</x2>
+    <y2>0.5</y2>
+   </texture>
+  <w>128</w>
+  <h>128</h>
+   <transformations>
+    <transformation>
+     <type>x-shift</type>
+     <offset>2</offset>
+    </transformation>
+    <transformation>
+     <type>y-shift</type>
+     <offset>-2</offset>
+    </transformation>
+    </transformations>
+  </layer>
+
+
+  </layers>
+
+
+
+</PropertyList>

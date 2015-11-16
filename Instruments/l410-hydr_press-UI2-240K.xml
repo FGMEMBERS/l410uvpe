@@ -1,0 +1,122 @@
+<?xml version="1.0"?>
+
+<!--
+VA-meter
+-->
+
+<PropertyList>
+
+ <name>hydr-press</name>
+
+ <w-base>104</w-base>
+ <h-base>104</h-base>
+
+ <layers>
+
+<layer>
+   <name>background</name>
+   <texture>
+    <path>Aircraft/l410uvpe/Instruments/Textures/l410-hydr-press.rgb</path>
+    <x1>0.0</x1>
+    <y1>0.0589</y1>
+    <x2>0.9414</x2>
+    <y2>1.0</y2>
+   </texture>
+  <w>95</w>
+  <h>95</h>   
+  </layer>
+  
+  <layer>
+   <name>glare shield</name>
+   <texture>
+    <path>Aircraft/l410uvpe/Instruments/Textures/bezel1.rgb</path>
+    <x1>0.5</x1>
+    <y1>0.0</y1>
+    <x2>1.0</x2>
+    <y2>0.5</y2>
+   </texture>
+  <w>110</w>
+  <h>110</h>
+   <transformations>
+    <transformation>
+     <type>x-shift</type>
+     <offset>2</offset>
+    </transformation>
+    <transformation>
+     <type>y-shift</type>
+     <offset>-2</offset>
+    </transformation>
+    </transformations>
+  </layer>  
+  
+  <layer>
+   <name>needle-upp</name>
+   <texture>
+    <path>Aircraft/l410uvpe/Instruments/Textures/l410-hydr-press.rgb</path>
+    <x1>0.0117</x1>
+    <y1>0.0004</y1>
+    <x2>0.2734</x2>
+    <y2>0.0703</y2>
+   </texture>
+   <w>18</w>
+   <h>8</h>
+   <transformations>   
+     <transformation>	
+       <type>x-shift</type>
+       <offset>-28</offset>
+     </transformation>	
+     <transformation>	
+       <type>y-shift</type>
+       <offset>28</offset>
+     </transformation>	
+     <transformation>
+       <type>rotation</type>
+       <property>/instrumentation/pressure/indicated-maincircuit-MPa</property>
+       <max>251</max>
+       <scale>-5.8333</scale>  <!-- -140 na 1.0 -->
+       <offset>115</offset>
+     </transformation>
+     <transformation>	
+       <type>x-shift</type>
+       <offset>22</offset>
+     </transformation>	
+   </transformations>   
+  </layer>    
+ 
+  <layer>
+   <name>needle-dn</name>
+   <texture>
+    <path>Aircraft/l410uvpe/Instruments/Textures/l410-hydr-press.rgb</path>
+    <x1>0.0117</x1>
+    <y1>0.0004</y1>
+    <x2>0.2734</x2>
+    <y2>0.0703</y2>
+   </texture>
+   <w>18</w>
+   <h>8</h>
+   <transformations>   
+     <transformation>	
+       <type>x-shift</type>
+       <offset>28</offset>
+     </transformation>	
+     <transformation>	
+       <type>y-shift</type>
+       <offset>-28</offset>
+     </transformation>	
+     <transformation>
+       <type>rotation</type>
+       <property>/instrumentation/pressure/indicated-brakescircuit-MPa</property>
+       <max>251</max>
+       <scale>11.246</scale>   <!-- 140 na 1.0 -->
+       <offset>156</offset>
+     </transformation>
+     <transformation>	
+       <type>x-shift</type>
+       <offset>22</offset>
+     </transformation>	
+   </transformations>   
+  </layer>     
+ 
+  
+ </layers>
+</PropertyList>

@@ -1,0 +1,250 @@
+<?xml version="1.0"?>
+
+<!--
+
+(nase!)
+
+-->
+
+<PropertyList>
+
+ <name>Checkpanel</name>
+
+  <w-base>280</w-base>
+  <h-base>120</h-base>
+
+  <layers>
+<!-- 
+ <layer>
+   <name>DESKA</name>
+     <texture>
+     <path>Aircraft/l410uvpe/Instruments/Textures/l410-neex.rgb</path>
+     <x1>0.0</x1>
+     <x2>1.0</x2>
+     <y1>0.0</y1>
+     <y2>0.7</y2>
+     </texture>
+     <w>280</w>
+     <h>120</h>
+  </layer>
+-->
+
+<!--feather lh-->
+ <layer>
+   <name>feather prop lh</name>
+   <type>switch</type>
+   <layer>
+     <condition>
+       <property>/controls/switches/prop-feat1-sw</property>
+     </condition>
+     <name>on</name>
+     <texture>
+     <path>Aircraft/l410uvpe/Instruments/Textures/l410-prislus.rgb</path>
+     <x1>0.0</x1>
+     <x2>0.14118</x2>
+     <y1>0.48438</y1>
+     <y2>0.61119</y2>
+     </texture>
+     <w>15</w>
+     <h>15</h>
+   </layer>
+   <layer>
+     <name>off</name>
+     <texture>
+     <path>Aircraft/l410uvpe/Instruments/Textures/l410-prislus.rgb</path>
+     <x1>0.0</x1>
+     <x2>0.14118</x2>
+     <y1>0.34902</y1>
+     <y2>0.47451</y2>
+     </texture>
+     <w>15</w>
+     <h>15</h>
+   </layer>
+   <transformations>
+      <transformation>
+        <type>x-shift</type> 
+        <offset>-120</offset> 
+      </transformation>
+      <transformation>
+        <type>y-shift</type> 
+        <offset>-20</offset> 
+      </transformation>
+   </transformations>
+ </layer>
+ 
+  <layer>
+   <name>feather prop lh</name>
+   <type>switch</type>
+    <layer>
+     <condition>
+      <property>/controls/switches/prop-feat2-sw</property>
+     </condition>
+     <name>on</name>
+     <texture>
+     <path>Aircraft/l410uvpe/Instruments/Textures/l410-prislus.rgb</path>
+     <x1>0.0</x1>
+     <x2>0.14118</x2>
+     <y1>0.48438</y1>
+     <y2>0.61119</y2>
+     </texture>
+     <w>15</w>
+     <h>15</h>
+    </layer>
+    <layer>
+     <name>off</name>
+     <texture>
+     <path>Aircraft/l410uvpe/Instruments/Textures/l410-prislus.rgb</path>
+     <x1>0.0</x1>
+     <x2>0.14118</x2>
+     <y1>0.34902</y1>
+     <y2>0.47451</y2>
+     </texture>
+     <w>15</w>
+     <h>15</h>
+    </layer>
+    <transformations>
+      <transformation>
+        <type>x-shift</type> 
+        <offset>120</offset> 
+      </transformation>
+      <transformation>
+        <type>y-shift</type> 
+        <offset>-20</offset> 
+      </transformation>
+    </transformations>
+  </layer>
+ <layer>
+   <name>label prop. feathering lh</name>
+     <texture>
+     <path>Aircraft/l410uvpe/Instruments/Textures/labels.rgb</path>
+     <x1>0.</x1>
+     <x2>0.5</x2>
+     <y1>0.375</y1>
+     <y2>0.5</y2>
+     </texture>
+     <w>40</w>
+     <h>22</h>
+    <transformations>
+      <transformation>
+        <type>x-shift</type> 
+        <offset>-120</offset> 
+      </transformation>
+      <transformation>
+        <type>y-shift</type> 
+        <offset>-45</offset> 
+      </transformation>
+    </transformations>
+  </layer>
+<layer>
+   <name>label prop. feathering rh</name>
+     <texture>
+     <path>Aircraft/l410uvpe/Instruments/Textures/labels.rgb</path>
+     <x1>0.</x1>
+     <x2>0.5</x2>
+     <y1>0.375</y1>
+     <y2>0.5</y2>
+     </texture>
+     <w>40</w>
+     <h>22</h>
+    <transformations>
+      <transformation>
+        <type>x-shift</type> 
+        <offset>120</offset> 
+      </transformation>
+      <transformation>
+        <type>y-shift</type> 
+        <offset>-45</offset> 
+      </transformation>
+    </transformations>
+  </layer>
+
+
+  </layers>
+
+<actions>
+  <action>
+   <name>feat lh prop</name>
+   <button>0</button>
+   <x>-132</x>
+   <y>-32</y>
+   <w>24</w>
+   <h>24</h>
+   <binding>
+      <command>property-assign</command>
+      <property>/controls/switches/prop-feat1-sw</property>
+      <value type="bool">true</value>
+  </binding>
+  <mod-up>
+   <binding>
+      <command>property-assign</command>
+      <property>/controls/switches/prop-feat1-sw</property>
+      <value type="bool">false</value>
+  </binding>
+  </mod-up>
+  </action>
+
+  <action>
+   <name>feat rh prop</name>
+   <button>0</button>
+   <x>108</x>
+   <y>-32</y>
+   <w>24</w>
+   <h>24</h>
+   <binding>
+      <command>property-assign</command>
+      <property>/controls/switches/prop-feat2-sw</property>
+      <value type="bool">true</value>
+  </binding>
+  <mod-up>
+   <binding>
+      <command>property-assign</command>
+      <property>/controls/switches/prop-feat2-sw</property>
+      <value type="bool">false</value>
+  </binding>
+  </mod-up>
+  </action>
+
+ <action>
+   <name>key</name>
+   <button>0</button>
+   <x>-50</x>
+   <y>-50</y>
+   <w>100</w>
+   <h>110</h>
+   <binding>
+      <command>property-toggle</command>
+      <property>/controls/switches/fuel_locked</property>
+   </binding>
+  </action>
+  
+  <action>
+   <name>feat lh prop cover</name>
+   <button>0</button>
+   <x>-144</x>
+   <y>-57</y>
+   <w>48</w>
+   <h>24</h>
+   <binding>
+      <command>property-assign</command>
+      <property>/controls/switches/prop-feat2-sw</property>
+      <value type="bool">true</value>
+  </binding>
+  </action>  
+
+
+<action>
+   <name>feat rh prop cover</name>
+   <button>0</button>
+   <x>96</x>
+   <y>-57</y>
+   <w>48</w>
+   <h>24</h>
+   <binding>
+      <command>property-assign</command>
+      <property>/controls/switches/prop-feat2-sw</property>
+      <value type="bool">true</value>
+  </binding>
+  </action>  
+
+</actions>
+</PropertyList>

@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+
+<!--
+L410 panel.
+Javky <javky@email.cz>
+_______________________________________________________________________
+-->
+
+<!DOCTYPE PropertyList SYSTEM "panel.dtd">
+
+<PropertyList>
+
+
+<name>L410-clockpanel</name>
+ <background>Aircraft/l410uvpe/transparent-bg.rgb</background>
+ <w>200</w>
+ <h>200</h>
+
+ <instruments>
+
+   <instrument include="./Instruments/l410-clock.xml">
+    <name>Clock</name>
+    <x>120</x>
+    <y>75</y>
+    <w>190</w>
+    <h>190</h>
+</instrument>
+
+
+ </instruments>
+
+
+</PropertyList>

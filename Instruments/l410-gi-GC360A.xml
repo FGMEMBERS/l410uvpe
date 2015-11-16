@@ -1,0 +1,194 @@
+<?xml version="1.0"?>
+
+<!--
+
+GC 360A
+
+-->
+
+<PropertyList>
+
+ <name>Graphics unit</name>
+
+  <w-base>256</w-base>
+  <h-base>54</h-base>
+
+  <layers>
+  
+    <!-- LABELS -->
+    <layer>
+      <name>body</name>
+      <texture>
+        <path>Aircraft/l410uvpe/Instruments/Textures/l410-GC360A.rgb</path>
+        <x1>0.0</x1>
+        <x2>0.7617</x2>
+        <y1>0.3672</y1>
+        <y2>1.0</y2>
+      </texture>
+      <w>256</w>
+      <h>54</h>
+      <transformations>
+        <transformation>
+          <type>x-shift</type>
+          <offset>0</offset>
+        </transformation>
+        <transformation>
+          <type>y-shift</type>
+          <offset>0</offset>
+        </transformation>
+      </transformations>
+    </layer>
+
+    <layer>
+      <name>mode_button</name>
+      <texture>
+        <path>Aircraft/l410uvpe/Instruments/Textures/l410-wr.rgb</path>
+        <x1>0.0</x1>
+        <x2>0.03125</x2>
+        <y1>0.0</y1>
+        <y2>0.03125</y2>
+      </texture>
+      <w>5</w>
+      <h>5</h>
+      <transformations>
+        <transformation>
+          <type>x-shift</type>
+          <offset>1</offset>
+        </transformation>
+       <transformation>
+          <type>y-shift</type>
+          <offset>0</offset>
+        </transformation>        
+        <transformation>
+          <type>rotation</type>
+          <property>/instrumentation/gu/mode-sw</property>
+          <min>0</min>
+          <max>7</max>
+          <scale>43</scale>  
+          <offset>140</offset>          
+        </transformation>
+        <transformation>
+          <type>x-shift</type>
+          <offset>11</offset>
+        </transformation>
+ 
+      </transformations>
+    </layer>    
+
+
+  </layers>
+  <actions>  
+     <action>
+   <name>mode-button-inc</name>
+   <button>0</button>
+   <x>-15</x>
+   <y>-15</y>
+   <w>15</w>
+   <h>30</h>
+   <binding>
+    <command>property-adjust</command>
+    <property>/instrumentation/gu/mode-sw</property>
+    <step>-1</step>
+    <min>0</min>
+    <max>6</max>
+    <resolution>1</resolution>
+    <wrap>0</wrap>
+   </binding>
+   <binding>
+     <command>nasal</command>
+     <script>l410wr.wr_set_new_mode()</script>
+    </binding>
+  </action>
+
+   <action>
+   <name>mode-button-dec</name>
+   <button>0</button>
+   <x>0</x>
+   <y>-15</y>
+   <w>15</w>
+   <h>30</h>
+   <binding>
+    <command>property-adjust</command>
+    <property>/instrumentation/gu/mode-sw</property>
+    <step>1</step>
+    <min>0</min>
+    <max>6</max>
+    <resolution>1</resolution>
+    <wrap>0</wrap>
+   </binding>
+   <binding>
+     <command>nasal</command>
+     <script>l410wr.wr_set_new_mode()</script>
+    </binding>
+  </action>
+
+  <action>
+   <name>check-button</name>
+   <button>0</button>
+   <x>-105</x>
+   <y>-15</y>
+   <w>30</w>
+   <h>30</h>
+   <binding>
+     <command>nasal</command>
+     <script>l410-wr.wr_set_new_mode()</script>
+    </binding>
+  </action>
+
+  <action>
+   <name>cursor-up-button</name>
+   <button>0</button>
+   <x>-73</x>
+   <y>0</y>
+   <w>15</w>
+   <h>15</h>
+   <binding>
+     <command>nasal</command>
+     <script>l410wr.wr_set_new_mode()</script>
+    </binding>
+  </action>
+  
+  <action>
+   <name>cursor-down-button</name>
+   <button>0</button>
+   <x>-73</x>
+   <y>-15</y>
+   <w>15</w>
+   <h>15</h>
+   <binding>
+     <command>nasal</command>
+     <script>l410wr.wr_set_new_mode()</script>
+    </binding>
+  </action>  
+
+  <action>
+   <name>ixd-button</name>
+   <button>0</button>
+   <x>-50</x>
+   <y>0</y>
+   <w>15</w>
+   <h>15</h>
+   <binding>
+     <command>nasal</command>
+     <script>l410wr.wr_set_new_mode()</script>
+    </binding>
+  </action>
+  
+  <action>
+   <name>page-button</name>
+   <button>0</button>
+   <x>-50</x>
+   <y>-15</y>
+   <w>15</w>
+   <h>15</h>
+   <binding>
+     <command>nasal</command>
+     <script>l410wr.wr_set_new_mode()</script>
+    </binding>
+  </action>  
+
+
+
+</actions>
+
+</PropertyList>

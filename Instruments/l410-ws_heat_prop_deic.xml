@@ -1,0 +1,168 @@
+<?xml version="1.0"?>
+
+<!--
+dimming
+-->
+
+<PropertyList>
+
+ <name>wind shield heating and propeller deicing</name>
+
+ <w-base>190</w-base>
+ <h-base>140</h-base>
+
+ <layers>
+
+  <layer>
+   <name>background</name>
+   <texture>
+    <path>Aircraft/l410uvpe/Instruments/Textures/l410_ws_prop_deic.rgb</path>
+    <x1>0.0</x1>
+    <y1>0.25</y1>
+    <x2>1.0</x2>
+    <y2>1.0</y2>
+   </texture>
+  <w>190</w>
+  <h>140</h>
+  </layer>
+  
+ <layer>
+   <name>switch-prop_deicing</name>
+     <texture>
+     <path>Aircraft/l410uvpe/Instruments/Textures/l410-prislus.rgb</path>
+     <x1>0.5725</x1>
+     <x2>0.6627</x2>
+     <y1>0.0</y1>
+     <y2>0.1686</y2>
+     </texture>
+     <w>35</w>
+     <h>60</h>
+    <transformations>
+      <transformation>
+        <type>x-shift</type> 
+        <offset>46</offset> 
+      </transformation>
+      <transformation>
+        <type>y-shift</type> 
+        <offset>-14</offset> 
+      </transformation>
+      
+
+      <transformation>
+        <type>rotation</type> 
+        <property>/controls/switches/sw-prop_deice</property>
+        <scale>35</scale>
+      </transformation>
+	       <transformation>
+        <type>y-shift</type> 
+        <offset>3</offset> 
+      </transformation>      
+      
+    </transformations>
+  </layer>
+
+ <layer>
+   <name>switch-ws_heating</name>
+     <texture>
+     <path>Aircraft/l410uvpe/Instruments/Textures/l410-prislus.rgb</path>
+     <x1>0.5725</x1>
+     <x2>0.6627</x2>
+     <y1>0.0</y1>
+     <y2>0.1686</y2>
+     </texture>
+     <w>35</w>
+     <h>60</h>
+    <transformations>
+      <transformation>
+        <type>x-shift</type> 
+        <offset>-50</offset> 
+      </transformation>
+      <transformation>
+        <type>y-shift</type> 
+        <offset>-14</offset> 
+      </transformation>
+      
+     <transformation>
+        <type>rotation</type> 
+        <property>/instrumentation/deicing/sw-ws_heat</property>
+        <scale>35</scale>
+      </transformation>
+	       <transformation>
+        <type>y-shift</type> 
+        <offset>3</offset> 
+      </transformation>            
+    </transformations>
+  </layer>
+ </layers>
+
+
+<actions>
+   <action>
+   <name>sw-winds_heat1</name>
+   <button>0</button>
+   <x>-90</x>
+   <y>-45</y>
+   <w>40</w>
+   <h>60</h>
+   <binding>
+      <command>property-adjust</command>
+      <property>/instrumentation/deicing/sw-ws_heat</property>
+      <step>-1</step>
+      <min>0</min>
+      <max>2</max>
+      <wrap>0</wrap>
+   </binding>
+  </action>
+  <action>
+   <name>sw-winds_heat2</name>
+   <button>0</button>
+   <x>-50</x>
+   <y>-45</y>
+   <w>40</w>
+   <h>60</h>
+   <binding>
+      <command>property-adjust</command>
+      <property>/instrumentation/deicing/sw-ws_heat</property>
+      <step>1</step>
+      <min>0</min>
+      <max>2</max>
+      <wrap>0</wrap>
+   </binding>
+  </action>
+  
+  
+   <action>
+   <name>sw-prop_deicing1</name>
+   <button>0</button>
+   <x>46</x>
+   <y>-45</y>
+   <w>40</w>
+   <h>60</h>
+   <binding>
+      <command>property-adjust</command>
+      <property>/controls/switches/sw-prop_deice</property>
+      <step>1</step>
+      <min>-2</min>
+      <max>2</max>
+      <wrap>0</wrap>
+   </binding>
+  </action>
+  <action>
+   <name>sw-prop_deicing2</name>
+   <button>0</button>
+   <x>7</x>
+   <y>-45</y>
+   <w>40</w>
+   <h>60</h>
+   <binding>
+      <command>property-adjust</command>
+      <property>/controls/switches/sw-prop_deice</property>
+      <step>-1</step>
+      <min>-2</min>
+      <max>2</max>
+      <wrap>0</wrap>
+   </binding>
+  </action>  
+ 
+ </actions> 
+</PropertyList>

@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+
+<!--
+VA-meter
+-->
+
+<PropertyList>
+
+ <name>VA-meter</name>
+
+ <w-base>104</w-base>
+ <h-base>104</h-base>
+
+ <layers>
+
+<layer>
+   <name>background</name>
+   <texture>
+    <path>Aircraft/l410uvpe/Instruments/Textures/l410-VM-AM.rgb</path>
+    <x1>0.0</x1>
+    <y1>0.5</y1>
+    <x2>0.25</x2>
+    <y2>1.0</y2>
+   </texture>
+  </layer>
+  
+  <layer>
+   <name>glare shield</name>
+   <texture>
+    <path>Aircraft/l410uvpe/Instruments/Textures/bezel1.rgb</path>
+    <x1>0.5</x1>
+    <y1>0.0</y1>
+    <x2>1.0</x2>
+    <y2>0.5</y2>
+   </texture>
+  <w>104</w>
+  <h>104</h>
+   <transformations>
+    <transformation>
+     <type>x-shift</type>
+     <offset>2</offset>
+    </transformation>
+    <transformation>
+     <type>y-shift</type>
+     <offset>-2</offset>
+    </transformation>
+    </transformations>
+  </layer>  
+  
+  <layer>
+   <name>needle-v</name>
+   <texture>
+    <path>Aircraft/l410uvpe/Instruments/Textures/l410-VM-AM.rgb</path>
+    <x1>0.3574</x1>
+    <y1>0.0234</y1>
+    <x2>0.6367</x2>
+    <y2>0.0703</y2>
+   </texture>
+   <w>35</w>
+   <h>10</h>
+   <transformations>   
+     <transformation>
+       <type>rotation</type>
+       <property>/instrumentation/voltmeters/volt-150vac</property>
+       <max>251</max>
+       <scale>1.6733</scale>  <!-- rozsah 251 -->
+       <offset>323</offset>
+     </transformation>
+     <transformation>	
+       <type>x-shift</type>
+       <offset>-18</offset>
+     </transformation>	
+   </transformations>   
+  </layer>    
+  
+  
+ </layers>
+</PropertyList>

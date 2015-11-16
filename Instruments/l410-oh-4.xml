@@ -1,0 +1,749 @@
+<?xml version="1.0"?>
+
+<!--
+
+HORNI PANEL RADA 4 (zdola) (nase!) RADIOS
+
+-->
+
+<PropertyList>
+
+  <name>circuit breakers 4</name>
+
+  <w-base>1024</w-base>
+  <h-base>72</h-base>
+
+<layers>
+
+    <!-- LABELS -->
+    <layer>
+      <name>podklad</name>
+      <texture>
+        <path>Aircraft/l410uvpe/Instruments/Textures/l410-labels-hp-1.rgb</path>
+        <x1>0.0</x1>
+        <x2>0.01</x2>
+        <y1>0.0</y1>
+        <y2>0.01</y2>
+      </texture>
+      <w>510</w>
+      <h>54</h>
+      <transformations>
+        <transformation>
+          <type>x-shift</type>
+          <offset>-45</offset>
+        </transformation>
+        <transformation>
+          <type>y-shift</type>
+          <offset>10</offset>
+        </transformation>
+      </transformations>
+    </layer>
+    <layer>
+      <name>radio-nav</name>
+      <texture>
+        <path>Aircraft/l410uvpe/Instruments/Textures/l410-labels-hp-1.rgb</path>
+        <x1>0.0</x1>
+        <x2>0.625</x2>
+        <y1>0.0</y1>
+        <y2>0.0625</y2>
+      </texture>
+      <w>110</w>
+      <h>10</h>
+      <transformations>
+        <transformation>
+          <type>x-shift</type>
+          <offset>-35</offset>
+        </transformation>
+        <transformation>
+          <type>y-shift</type>
+          <offset>31</offset>
+        </transformation>
+      </transformations>
+    </layer>
+    <layer>
+      <name>intercom</name>
+      <texture>
+        <path>Aircraft/l410uvpe/Instruments/Textures/l410-labels-hp-1.rgb</path>
+        <x1>0.5</x1>
+        <x2>1.0</x2>
+        <y1>0.625</y1>
+        <y2>0.75</y2>
+      </texture>
+      <w>66</w>
+      <h>16</h>
+      <transformations>
+        <transformation>
+          <type>x-shift</type>
+          <offset>-95</offset>
+        </transformation>
+        <transformation>
+          <type>y-shift</type>
+          <offset>20</offset>
+        </transformation>
+      </transformations>
+    </layer>
+
+    <layer>
+      <name>VHF</name>
+      <texture>
+        <path>Aircraft/l410uvpe/Instruments/Textures/l410-labels-hp-1.rgb</path>
+        <x1>0.0</x1>
+        <x2>0.5</x2>
+        <y1>0.5</y1>
+        <y2>0.625</y2>
+      </texture>
+      <w>66</w>
+      <h>16</h>
+      <transformations>
+        <transformation>
+          <type>x-shift</type>
+          <offset>-35</offset>
+        </transformation>
+        <transformation>
+          <type>y-shift</type>
+          <offset>20</offset>
+        </transformation>
+      </transformations>
+    </layer>
+
+    <layer>
+      <name>adf</name>
+      <texture>
+        <path>Aircraft/l410uvpe/Instruments/Textures/l410-labels-hp-1.rgb</path>
+        <x1>0.5</x1>
+        <x2>1.0</x2>
+        <y1>0.5</y1>
+        <y2>0.625</y2>
+      </texture>
+      <w>66</w>
+      <h>16</h>
+      <transformations>
+        <transformation>
+          <type>x-shift</type>
+          <offset>25</offset>
+        </transformation>
+        <transformation>
+          <type>y-shift</type>
+          <offset>20</offset>
+        </transformation>
+      </transformations>
+    </layer>
+
+    <layer>
+      <name>NAV</name>
+      <texture>
+        <path>Aircraft/l410uvpe/Instruments/Textures/l410-labels-hp-1.rgb</path>
+        <x1>0.0</x1>
+        <x2>0.5</x2>
+        <y1>0.375</y1>
+        <y2>0.5</y2>
+      </texture>
+      <w>66</w>
+      <h>16</h>
+      <transformations>
+        <transformation>
+          <type>x-shift</type>
+          <offset>85</offset>
+        </transformation>
+        <transformation>
+          <type>y-shift</type>
+          <offset>20</offset>
+        </transformation>
+      </transformations>
+    </layer>
+
+    <layer>
+      <name>gyrocompass</name>
+      <texture>
+        <path>Aircraft/l410uvpe/Instruments/Textures/l410-labels-hp-1.rgb</path>
+        <x1>0.5</x1>
+        <x2>1.0</x2>
+        <y1>0.375</y1>
+        <y2>0.5</y2>
+      </texture>
+      <w>66</w>
+      <h>16</h>
+      <transformations>
+        <transformation>
+          <type>x-shift</type>
+          <offset>145</offset>
+        </transformation>
+        <transformation>
+          <type>y-shift</type>
+          <offset>20</offset>
+        </transformation>
+      </transformations>
+    </layer>
+
+
+    <!--intercom I -->
+    <layer>
+      <name>IC I</name>
+      <type>switch</type>
+      <layer>
+        <condition>
+          <property>/controls/switches/warn-disp-e2-sw</property>
+        </condition>
+        <name>on</name>
+        <texture>
+          <path>Aircraft/l410uvpe/Instruments/Textures/l410-packy.rgb</path>
+          <x1>0.5</x1>
+          <x2>0.7</x2>
+          <y1>0.5</y1>
+          <y2>1.0</y2>
+        </texture>
+        <w>32</w>
+        <h>64</h>
+      </layer>
+      <layer>
+        <name>off</name>
+        <texture>
+          <path>Aircraft/l410uvpe/Instruments/Textures/l410-packy.rgb</path>
+          <x1>0.5</x1>
+          <x2>0.7</x2>
+          <y1>0.0</y1>
+          <y2>0.5</y2>
+        </texture>
+        <w>32</w>
+        <h>64</h>
+      </layer>
+      <transformations>
+        <transformation>
+          <type>x-shift</type>
+          <offset>-110</offset>
+        </transformation>
+        <transformation>
+          <type>y-shift</type>
+          <offset>0</offset>
+        </transformation>
+      </transformations>
+    </layer>
+    <!-- konec intercom I -->
+
+    <!--Zapinani intercom II -->
+    <layer>
+      <name>IC II</name>
+      <type>switch</type>
+      <layer>
+        <condition>
+          <property>/controls/switches/warn-disp-e2-sw</property>
+        </condition>
+        <name>on</name>
+        <texture>
+          <path>Aircraft/l410uvpe/Instruments/Textures/l410-packy.rgb</path>
+          <x1>0.5</x1>
+          <x2>0.7</x2>
+          <y1>0.5</y1>
+          <y2>1.0</y2>
+        </texture>
+        <w>32</w>
+        <h>64</h>
+      </layer>
+      <layer>
+        <name>off</name>
+        <texture>
+          <path>Aircraft/l410uvpe/Instruments/Textures/l410-packy.rgb</path>
+          <x1>0.5</x1>
+          <x2>0.7</x2>
+          <y1>0.0</y1>
+          <y2>0.5</y2>
+        </texture>
+        <w>32</w>
+        <h>64</h>
+      </layer>
+      <transformations>
+        <transformation>
+          <type>x-shift</type>
+          <offset>-80</offset>
+        </transformation>
+        <transformation>
+          <type>y-shift</type>
+          <offset>0</offset>
+        </transformation>
+      </transformations>
+    </layer>
+    <!-- konec intercom II -->
+
+    <!--Zapinani VHF I -->
+    <layer>
+      <name>VHF I</name>
+      <type>switch</type>
+      <layer>
+        <condition>
+          <property>/controls/switches/vhf1-sw</property>
+        </condition>
+        <name>on</name>
+        <texture>
+          <path>Aircraft/l410uvpe/Instruments/Textures/l410-packy.rgb</path>
+          <x1>0.5</x1>
+          <x2>0.7</x2>
+          <y1>0.5</y1>
+          <y2>1.0</y2>
+        </texture>
+        <w>32</w>
+        <h>64</h>
+      </layer>
+      <layer>
+        <name>off</name>
+        <texture>
+          <path>Aircraft/l410uvpe/Instruments/Textures/l410-packy.rgb</path>
+          <x1>0.5</x1>
+          <x2>0.7</x2>
+          <y1>0.0</y1>
+          <y2>0.5</y2>
+        </texture>
+        <w>32</w>
+        <h>64</h>
+      </layer>
+      <transformations>
+        <transformation>
+          <type>x-shift</type>
+          <offset>-50</offset>
+        </transformation>
+        <transformation>
+          <type>y-shift</type>
+          <offset>0</offset>
+        </transformation>
+      </transformations>
+    </layer>
+    <!-- konec Zapinani  VHF I -->
+
+    <!--Zapinani VHF II -->
+    <layer>
+      <name>VHF II</name>
+      <type>switch</type>
+      <layer>
+        <condition>
+          <property>/controls/switches/vhf2-sw</property>
+        </condition>
+        <name>on</name>
+        <texture>
+          <path>Aircraft/l410uvpe/Instruments/Textures/l410-packy.rgb</path>
+          <x1>0.5</x1>
+          <x2>0.7</x2>
+          <y1>0.5</y1>
+          <y2>1.0</y2>
+        </texture>
+        <w>32</w>
+        <h>64</h>
+      </layer>
+      <layer>
+        <name>off</name>
+        <texture>
+          <path>Aircraft/l410uvpe/Instruments/Textures/l410-packy.rgb</path>
+          <x1>0.5</x1>
+          <x2>0.7</x2>
+          <y1>0.0</y1>
+          <y2>0.5</y2>
+        </texture>
+        <w>32</w>
+        <h>64</h>
+      </layer>
+      <transformations>
+        <transformation>
+          <type>x-shift</type>
+          <offset>-20</offset>
+        </transformation>
+        <transformation>
+          <type>y-shift</type>
+          <offset>0</offset>
+        </transformation>
+      </transformations>
+    </layer>
+    <!-- konec VHF II -->
+
+    <!--Zapinani ADF I -->
+    <layer>
+      <name>ADF I</name>
+      <type>switch</type>
+      <layer>
+        <condition>
+          <property>/controls/switches/adf1-sw</property>
+        </condition>
+        <name>on</name>
+        <texture>
+          <path>Aircraft/l410uvpe/Instruments/Textures/l410-packy.rgb</path>
+          <x1>0.5</x1>
+          <x2>0.7</x2>
+          <y1>0.5</y1>
+          <y2>1.0</y2>
+        </texture>
+        <w>32</w>
+        <h>64</h>
+      </layer>
+      <layer>
+        <name>off</name>
+        <texture>
+          <path>Aircraft/l410uvpe/Instruments/Textures/l410-packy.rgb</path>
+          <x1>0.5</x1>
+          <x2>0.7</x2>
+          <y1>0.0</y1>
+          <y2>0.5</y2>
+        </texture>
+        <w>32</w>
+        <h>64</h>
+      </layer>
+      <transformations>
+        <transformation>
+          <type>x-shift</type>
+          <offset>10</offset>
+        </transformation>
+        <transformation>
+          <type>y-shift</type>
+          <offset>0</offset>
+        </transformation>
+      </transformations>
+    </layer>
+    <!-- konec ADF I -->
+
+
+
+
+    <!--Zapinani ADF II -->
+    <layer>
+      <name>ADF II</name>
+      <type>switch</type>
+      <layer>
+        <condition>
+          <property>/controls/switches/adf2-sw</property>
+        </condition>
+        <name>on</name>
+        <texture>
+          <path>Aircraft/l410uvpe/Instruments/Textures/l410-packy.rgb</path>
+          <x1>0.5</x1>
+          <x2>0.7</x2>
+          <y1>0.5</y1>
+          <y2>1.0</y2>
+        </texture>
+        <w>32</w>
+        <h>64</h>
+      </layer>
+      <layer>
+        <name>off</name>
+        <texture>
+          <path>Aircraft/l410uvpe/Instruments/Textures/l410-packy.rgb</path>
+          <x1>0.5</x1>
+          <x2>0.7</x2>
+          <y1>0.0</y1>
+          <y2>0.5</y2>
+        </texture>
+        <w>32</w>
+        <h>64</h>
+      </layer>
+      <transformations>
+        <transformation>
+          <type>x-shift</type>
+          <offset>40</offset>
+        </transformation>
+        <transformation>
+          <type>y-shift</type>
+          <offset>0</offset>
+        </transformation>
+      </transformations>
+    </layer>
+    <!-- konec ADF II -->
+
+    <!--Zapinani nav I -->
+    <layer>
+      <name>NAV I</name>
+      <type>switch</type>
+      <layer>
+        <condition>
+          <property>/controls/switches/navcom1-sw</property>
+        </condition>
+        <name>on</name>
+        <texture>
+          <path>Aircraft/l410uvpe/Instruments/Textures/l410-packy.rgb</path>
+          <x1>0.5</x1>
+          <x2>0.7</x2>
+          <y1>0.5</y1>
+          <y2>1.0</y2>
+        </texture>
+        <w>32</w>
+        <h>64</h>
+      </layer>
+      <layer>
+        <name>off</name>
+        <texture>
+          <path>Aircraft/l410uvpe/Instruments/Textures/l410-packy.rgb</path>
+          <x1>0.5</x1>
+          <x2>0.7</x2>
+          <y1>0.0</y1>
+          <y2>0.5</y2>
+        </texture>
+        <w>32</w>
+        <h>64</h>
+      </layer>
+      <transformations>
+        <transformation>
+          <type>x-shift</type>
+          <offset>70</offset>
+        </transformation>
+        <transformation>
+          <type>y-shift</type>
+          <offset>0</offset>
+        </transformation>
+      </transformations>
+    </layer>
+    <!-- konec nav I -->
+
+    <!--Zapinani nav II -->
+    <layer>
+      <name>NAV II</name>
+      <type>switch</type>
+      <layer>
+        <condition>
+          <property>/controls/switches/navcom2-sw</property>
+        </condition>
+        <name>on</name>
+        <texture>
+          <path>Aircraft/l410uvpe/Instruments/Textures/l410-packy.rgb</path>
+          <x1>0.5</x1>
+          <x2>0.7</x2>
+          <y1>0.5</y1>
+          <y2>1.0</y2>
+        </texture>
+        <w>32</w>
+        <h>64</h>
+      </layer>
+      <layer>
+        <name>off</name>
+        <texture>
+          <path>Aircraft/l410uvpe/Instruments/Textures/l410-packy.rgb</path>
+          <x1>0.5</x1>
+          <x2>0.7</x2>
+          <y1>0.0</y1>
+          <y2>0.5</y2>
+        </texture>
+        <w>32</w>
+        <h>64</h>
+      </layer>
+      <transformations>
+        <transformation>
+          <type>x-shift</type>
+          <offset>100</offset>
+        </transformation>
+        <transformation>
+          <type>y-shift</type>
+          <offset>0</offset>
+        </transformation>
+      </transformations>
+    </layer>
+    <!-- konec nav II -->
+
+    <!--Zapinani gyro compass I -->
+    <layer>
+      <name>GK I</name>
+      <type>switch</type>
+      <layer>
+        <condition>
+          <property>/controls/switches/compas-gyro1-sw</property>
+        </condition>
+        <name>on</name>
+        <texture>
+          <path>Aircraft/l410uvpe/Instruments/Textures/l410-packy.rgb</path>
+          <x1>0.5</x1>
+          <x2>0.7</x2>
+          <y1>0.5</y1>
+          <y2>1.0</y2>
+        </texture>
+        <w>32</w>
+        <h>64</h>
+      </layer>
+      <layer>
+        <name>off</name>
+        <texture>
+          <path>Aircraft/l410uvpe/Instruments/Textures/l410-packy.rgb</path>
+          <x1>0.5</x1>
+          <x2>0.7</x2>
+          <y1>0.0</y1>
+          <y2>0.5</y2>
+        </texture>
+        <w>32</w>
+        <h>64</h>
+      </layer>
+      <transformations>
+        <transformation>
+          <type>x-shift</type>
+          <offset>130</offset>
+        </transformation>
+        <transformation>
+          <type>y-shift</type>
+          <offset>0</offset>
+        </transformation>
+      </transformations>
+    </layer>
+    <!-- konec gyro compass I -->
+
+    <!--Zapinani gyro compass II -->
+    <layer>
+      <name>GK II</name>
+      <type>switch</type>
+      <layer>
+        <condition>
+          <property>/controls/switches/compas-gyro2-sw</property>
+        </condition>
+        <name>on</name>
+        <texture>
+          <path>Aircraft/l410uvpe/Instruments/Textures/l410-packy.rgb</path>
+          <x1>0.5</x1>
+          <x2>0.7</x2>
+          <y1>0.5</y1>
+          <y2>1.0</y2>
+        </texture>
+        <w>32</w>
+        <h>64</h>
+      </layer>
+      <layer>
+        <name>off</name>
+        <texture>
+          <path>Aircraft/l410uvpe/Instruments/Textures/l410-packy.rgb</path>
+          <x1>0.5</x1>
+          <x2>0.7</x2>
+          <y1>0.0</y1>
+          <y2>0.5</y2>
+        </texture>
+        <w>32</w>
+        <h>64</h>
+      </layer>
+      <transformations>
+        <transformation>
+          <type>x-shift</type>
+          <offset>160</offset>
+        </transformation>
+        <transformation>
+          <type>y-shift</type>
+          <offset>0</offset>
+        </transformation>
+      </transformations>
+    </layer>
+    <!-- konec gyro compas II -->
+
+
+  </layers>
+
+
+ <actions>
+  <action>
+   <name>sw-vhf1</name>
+   <button>0</button>
+   <x>-64</x>
+   <y>-30</y>
+   <w>32</w>
+   <h>64</h>
+   <binding>
+      <command>property-toggle</command>
+      <property>/controls/switches/vhf1-sw</property>
+   </binding>
+  </action>
+
+  <action>
+   <name>sw-vhf2</name>
+   <button>0</button>
+   <x>-34</x>
+   <y>-32</y>
+   <w>30</w>
+   <h>64</h>
+   <binding>
+      <command>property-toggle</command>
+      <property>/controls/switches/vhf2-sw</property>
+   </binding>
+  </action>
+
+
+
+  <action>
+   <name>sw-adf1</name>
+   <button>0</button>
+   <x>-4</x>
+   <y>-32</y>
+   <w>30</w>
+   <h>64</h>
+   <binding>
+      <command>property-toggle</command>
+      <property>/controls/switches/adf1-sw</property>
+   </binding>
+  </action>
+
+  <action>
+   <name>sw-adf2</name>
+   <button>0</button>
+   <x>26</x>
+   <y>-32</y>
+   <w>30</w>
+   <h>64</h>
+   <binding>
+      <command>property-toggle</command>
+      <property>/controls/switches/adf2-sw</property>
+   </binding>
+  </action>
+
+  <action>
+   <name>sw-navcom1</name>
+   <button>0</button>
+   <x>56</x>
+   <y>-32</y>
+   <w>30</w>
+   <h>64</h>
+   <binding>
+      <command>property-toggle</command>
+      <property>/controls/switches/navcom1-sw</property>
+   </binding>
+  </action>
+
+  <action>
+   <name>sw-navcom2</name>
+   <button>0</button>
+   <x>86</x>
+   <y>-32</y>
+   <w>30</w>
+   <h>64</h>
+   <binding>
+      <command>property-toggle</command>
+      <property>/controls/switches/navcom2-sw</property>
+   </binding>
+  </action>
+
+  <action>
+   <name>CWD COMPAS GYRO1</name>
+   <button>0</button>
+   <x>116</x>
+   <y>-32</y>
+   <w>30</w>
+   <h>64</h>
+   <binding>
+      <command>property-toggle</command>
+      <property>/controls/switches/compas-gyro1-sw</property>
+   </binding>
+  </action>
+
+  <action>
+   <name>CWD COMPAS GYRO2</name>
+   <button>0</button>
+   <x>146</x>
+   <y>-32</y>
+   <w>30</w>
+   <h>64</h>
+   <binding>
+      <command>property-toggle</command>
+      <property>/controls/switches/compas-gyro2-sw</property>
+   </binding>
+  </action>
+ 
+<!--
+  <action>
+   <name>CWD AI</name>
+   <button>0</button>
+   <x>-16</x>
+   <y>-32</y>
+   <w>32</w>
+   <h>64</h>
+   <binding>
+      <command>property-toggle</command>
+      <property>/controls/switches/warn-disp-ai-sw</property>
+   </binding>
+  </action>
+-->
+ </actions>
+
+</PropertyList>

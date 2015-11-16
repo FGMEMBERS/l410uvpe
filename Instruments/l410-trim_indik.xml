@@ -1,0 +1,735 @@
+<?xml version="1.0"?>
+
+<!--
+trim indik
+-->
+
+<PropertyList>
+
+  <name>Trim-indik</name>
+
+  <w-base>100</w-base>
+  <h-base>300</h-base>
+
+  <layers>
+<!-- 
+ <layer>
+   <name>DESKA</name>
+     <texture>
+     <path>Aircraft/l410uvpe/Instruments/Textures/l410-neex.rgb</path>
+     <x1>0.0</x1>
+     <x2>1.0</x2>
+     <y1>0.0</y1>
+     <y2>1.0</y2>
+     </texture>
+     <w>100</w>
+     <h>300</h>
+  </layer>  
+-->  
+  
+  
+  
+    <!--rudder trim indicator-->
+    <layer>
+      <name>background</name>
+      <texture>
+        <path>Aircraft/l410uvpe/Instruments/Textures/l410-trim-indik.rgb</path>
+        <x1>0.0</x1>
+        <y1>0.5</y1>
+        <x2>0.5</x2>
+        <y2>1.0</y2>
+      </texture>
+      <w>40</w>
+      <h>40</h>
+     <transformations>
+        <transformation>
+          <type>x-shift</type>
+          <offset>-30</offset>
+        </transformation>
+        <transformation>
+          <type>y-shift</type>
+          <offset>0</offset>
+        </transformation>
+      </transformations>      
+    </layer>
+  
+    <layer>
+      <name>glare shield</name>
+      <texture>
+        <path>Aircraft/l410uvpe/Instruments/Textures/bezel1.rgb</path>
+        <x1>0.5</x1>
+        <y1>0.0</y1>
+        <x2>1.0</x2>
+        <y2>0.5</y2>
+      </texture>
+      <w>45</w>
+      <h>45</h>
+      <transformations>
+        <transformation>
+          <type>x-shift</type>
+          <offset>-29</offset>
+        </transformation>
+        <transformation>
+          <type>y-shift</type>
+          <offset>0</offset>
+        </transformation>
+      </transformations>
+    </layer>  
+
+    <layer>
+      <name>needle</name>
+      <texture>
+        <path>Aircraft/l410uvpe/Instruments/Textures/l410-trim-indik.rgb</path>
+        <x1>0.0195</x1>
+        <y1>0.1250</y1>
+        <x2>0.1055</x2>
+        <y2>0.4766</y2>
+      </texture>
+      <w>7</w>
+      <h>18</h>
+      <transformations>   
+        <transformation>
+          <type>x-shift</type>
+          <offset>-30</offset>
+        </transformation>	
+        <transformation>
+          <type>rotation</type>
+          <property>/controls/flight/rudder-trim</property>
+          <max>1.0</max>
+          <scale>90</scale>
+        </transformation>
+        <transformation>
+          <type>y-shift</type>
+          <offset>7</offset>
+        </transformation>	
+      </transformations>   
+    </layer>
+  
+    <!--aileron trim indicator-->
+ 
+ <layer>
+      <name>background</name>
+      <texture>        
+        <transformation>
+          <type>x-shift</type>
+          <offset>-30</offset>
+        </transformation>	
+        <path>Aircraft/l410uvpe/Instruments/Textures/l410-trim-indik.rgb</path>
+        <x1>0.0</x1>
+        <y1>0.5</y1>
+        <x2>0.5</x2>
+        <y2>1.0</y2>
+      </texture>
+      <w>40</w>
+      <h>40</h>
+      <transformations>
+        <transformation>
+          <type>x-shift</type>
+          <offset>30</offset>
+        </transformation>
+        <transformation>
+          <type>y-shift</type>
+          <offset>100</offset>
+        </transformation>
+      </transformations>
+    </layer>
+    
+    <layer>    
+      <name>label</name>
+      <texture>        
+        <transformation>
+          <type>x-shift</type>
+          <offset>-30</offset>
+        </transformation>	
+        <path>Aircraft/l410uvpe/Instruments/Textures/l410-trim-indik.rgb</path>
+        <x1>0.55</x1>
+        <y1>0.0</y1>
+        <x2>0.95</x2>
+        <y2>0.125</y2>
+      </texture>
+      <w>28</w>
+      <h>10</h>
+      <transformations>
+        <transformation>
+          <type>x-shift</type>
+          <offset>30</offset>
+        </transformation>
+        <transformation>
+          <type>y-shift</type>
+          <offset>93</offset>
+        </transformation>
+      </transformations>
+    </layer>    
+  
+    <layer>
+      <name>glare shield</name>
+      <texture>
+        <path>Aircraft/l410uvpe/Instruments/Textures/bezel1.rgb</path>
+        <x1>0.5</x1>
+        <y1>0.0</y1>
+        <x2>1.0</x2>
+        <y2>0.5</y2>
+      </texture>
+      <w>45</w>
+      <h>45</h>
+      <transformations>
+        <transformation>
+          <type>x-shift</type>
+          <offset>31</offset>
+        </transformation>
+        <transformation>
+          <type>y-shift</type>
+          <offset>100</offset>
+        </transformation>
+      </transformations>
+    </layer>  
+
+    <layer>
+      <name>needle</name>
+      <texture>
+        <path>Aircraft/l410uvpe/Instruments/Textures/l410-trim-indik.rgb</path>
+        <x1>0.0195</x1>
+        <y1>0.1250</y1>
+        <x2>0.1055</x2>
+        <y2>0.4766</y2>
+      </texture>
+      <w>7</w>
+      <h>18</h>
+      <transformations>  
+        <transformation>
+          <type>x-shift</type>
+          <offset>30</offset>
+        </transformation>
+        <transformation>
+          <type>y-shift</type>
+          <offset>100</offset>
+        </transformation>      
+        <transformation>
+          <type>rotation</type>
+          <property>/controls/flight/aileron-trim</property>
+          <max>1.0</max>
+          <scale>90</scale>
+        </transformation>
+        <transformation>
+          <type>y-shift</type>
+          <offset>7</offset>
+        </transformation>	
+      </transformations>   
+    </layer>
+-->  
+
+   <layer>    
+      <name>label</name>
+      <texture>        
+        <transformation>
+          <type>x-shift</type>
+          <offset>-30</offset>
+        </transformation>	
+        <path>Aircraft/l410uvpe/Instruments/Textures/l410-trim-indik.rgb</path>
+        <x1>0.55</x1>
+        <y1>0.0</y1>
+        <x2>0.95</x2>
+        <y2>0.125</y2>
+      </texture>
+      <w>35</w>
+      <h>13</h>
+      <transformations>
+        <transformation>
+          <type>x-shift</type>
+          <offset>-30</offset>
+        </transformation>
+        <transformation>
+          <type>y-shift</type>
+          <offset>50</offset>
+        </transformation>
+      </transformations>
+    </layer>    
+
+<!--
+    <layer>
+      <name>aileron trim tab switch</name>
+      <type>switch</type>
+      <layer>
+           <condition>
+		      <equals>
+                 <property>/controls/switches/aileron-trim-sw</property>
+				 <value type="int">1</value>
+		      </equals>
+           </condition>
+
+        <name>center</name>
+        <texture>
+	      <path>Aircraft/l410uvpe/Instruments/Textures/l410-KA51B.rgb</path>
+          <x1>0.3242</x1>
+	      <y1>0.2969</y1>
+	      <x2>0.5781</x2>
+          <y2>0.4766</y2>
+        </texture>
+        <w>25</w>
+        <h>18</h>
+      </layer>
+      <layer>
+         <name>off</name>
+         <type>switch</type>
+ 			<layer>
+               <condition>
+		          <equals>
+                     <property>/controls/switches/aileron-trim-sw</property>
+				     <value type="int">2</value>
+		          </equals>
+               </condition>
+               <name>ccw</name>
+               <texture>
+	              <path>Aircraft/l410uvpe/Instruments/Textures/l410-KA51B.rgb</path>
+	              <x1>0.0586</x1>
+	              <y1>0.2969</y1>
+   	              <x2>0.3125</x2>
+	              <y2>0.4766</y2>
+               </texture>
+               <w>25</w>
+               <h>18</h>
+			</layer>
+			<layer>
+               <name>cw</name>
+              <texture>
+	             <path>Aircraft/l410uvpe/Instruments/Textures/l410-KA51B.rgb</path>
+	             <x1>0.5859</x1>
+	             <y1>0.2969</y1>
+	             <x2>0.8398</x2>
+	             <y2>0.4766</y2>
+               </texture>
+               <w>25</w>
+               <h>18</h>
+			</layer>
+         </layer>
+    
+	  <transformations>
+	    <transformation>
+          <type>x-shift</type>
+          <offset>-30</offset>
+        </transformation>
+        <transformation>
+          <type>y-shift</type>
+          <offset>80</offset>
+        </transformation>
+      </transformations>		   
+    </layer>  
+  
+
+
+    <layer>
+      <name>rudder trim tab switch</name>
+      <type>switch</type>
+      <layer>
+           <condition>
+		      <equals>
+                 <property>/controls/switches/rudder-trim-sw</property>
+				 <value type="int">1</value>
+		      </equals>
+           </condition>
+
+        <name>center</name>
+        <texture>
+	      <path>Aircraft/l410uvpe/Instruments/Textures/l410-KA51B.rgb</path>
+          <x1>0.3242</x1>
+	      <y1>0.2969</y1>
+	      <x2>0.5781</x2>
+          <y2>0.4766</y2>
+        </texture>
+        <w>25</w>
+        <h>18</h>
+      </layer>
+         <layer>
+            <name>off</name>
+            <type>switch</type>
+ 			<layer>
+               <condition>
+		          <equals>
+                     <property>/controls/switches/rudder-trim-sw</property>
+				     <value type="int">2</value>
+		          </equals>
+               </condition>
+               <name>ccw</name>
+               <texture>
+	              <path>Aircraft/l410uvpe/Instruments/Textures/l410-KA51B.rgb</path>
+	              <x1>0.0586</x1>
+	              <y1>0.2969</y1>
+   	              <x2>0.3125</x2>
+	              <y2>0.4766</y2>
+               </texture>
+               <w>25</w>
+               <h>18</h>
+			</layer>
+			<layer>
+               <name>cw</name>
+              <texture>
+	             <path>Aircraft/l410uvpe/Instruments/Textures/l410-KA51B.rgb</path>
+	             <x1>0.5859</x1>
+	             <y1>0.2969</y1>
+	             <x2>0.8398</x2>
+	             <y2>0.4766</y2>
+               </texture>
+               <w>25</w>
+               <h>18</h>
+			</layer>
+         </layer>
+      <transformations>
+	    <transformation>
+          <type>x-shift</type>
+          <offset>-29</offset>
+        </transformation>
+        <transformation>
+          <type>y-shift</type>
+          <offset>-75</offset>
+        </transformation>
+      </transformations>		   
+    </layer>  
+-->
+<!--
+    <layer>
+      <name>aileron trim tab switch</name>
+      <layer>
+        <name>center</name>
+        <texture>
+	      <path>Aircraft/l410uvpe/Instruments/Textures/l410-KA51B.rgb</path>
+          <x1>0.3242</x1>
+	      <y1>0.2969</y1>
+	      <x2>0.5781</x2>
+          <y2>0.4766</y2>
+        </texture>
+        <w>25</w>
+        <h>18</h>
+      </layer>
+    </layer>  
+-->  
+    <layer>
+      <name>aileron trim tab sw1</name>
+      <texture>
+ 	      <path>Aircraft/l410uvpe/Instruments/Textures/l410-KA51B.rgb</path>
+          <x1>0.3242</x1>
+	      <y1>0.2969</y1>
+	      <x2>0.5781</x2>
+          <y2>0.4766</y2>
+      </texture>
+      <w>25</w>
+      <h>18</h>
+     <transformations>
+        <transformation>
+          <type>x-shift</type>
+          <offset>-30</offset>
+        </transformation>
+        <transformation>
+          <type>y-shift</type>
+          <offset>85</offset>
+        </transformation>
+      </transformations>      
+    </layer>
+
+    <layer>
+      <name>aileron trim tab sw2</name>
+      <texture>
+ 	      <path>Aircraft/l410uvpe/Instruments/Textures/l410-KA51B.rgb</path>
+          <x1>0.3242</x1>
+	      <y1>0.2969</y1>
+	      <x2>0.5781</x2>
+          <y2>0.4766</y2>
+      </texture>
+      <w>25</w>
+      <h>18</h>
+     <transformations>
+        <transformation>
+          <type>x-shift</type>
+          <offset>-30</offset>
+        </transformation>
+        <transformation>
+          <type>y-shift</type>
+          <offset>67</offset>
+        </transformation>
+      </transformations>      
+    </layer>
+    
+   <layer>
+      <name>ruder trim tab sw1</name>
+      <texture>
+ 	      <path>Aircraft/l410uvpe/Instruments/Textures/l410-KA51B.rgb</path>
+          <x1>0.3242</x1>
+	      <y1>0.2969</y1>
+	      <x2>0.5781</x2>
+          <y2>0.4766</y2>
+      </texture>
+      <w>25</w>
+      <h>18</h>
+     <transformations>
+        <transformation>
+          <type>x-shift</type>
+          <offset>-30</offset>
+        </transformation>
+        <transformation>
+          <type>y-shift</type>
+          <offset>-65</offset>
+        </transformation>
+      </transformations>      
+    </layer>    
+    
+  <layer>
+      <name>ruder trim tab sw2</name>
+      <texture>
+ 	      <path>Aircraft/l410uvpe/Instruments/Textures/l410-KA51B.rgb</path>
+          <x1>0.3242</x1>
+	      <y1>0.2969</y1>
+	      <x2>0.5781</x2>
+          <y2>0.4766</y2>
+      </texture>
+      <w>25</w>
+      <h>18</h>
+     <transformations>
+        <transformation>
+          <type>x-shift</type>
+          <offset>-30</offset>
+        </transformation>
+        <transformation>
+          <type>y-shift</type>
+          <offset>-85</offset>
+        </transformation>
+      </transformations>      
+    </layer>   
+    
+  <layer>
+      <name>ruder trim tab sw3</name>
+      <texture>
+ 	      <path>Aircraft/l410uvpe/Instruments/Textures/l410-KA51B.rgb</path>
+          <x1>0.3242</x1>
+	      <y1>0.2969</y1>
+	      <x2>0.5781</x2>
+          <y2>0.4766</y2>
+      </texture>
+      <w>25</w>
+      <h>18</h>
+     <transformations>
+        <transformation>
+          <type>x-shift</type>
+          <offset>-30</offset>
+        </transformation>
+        <transformation>
+          <type>y-shift</type>
+          <offset>-105</offset>
+        </transformation>
+      </transformations>      
+    </layer>        
+    
+<!--
+    <layer>
+      <name>rudder trim tab switch</name>
+      <type>switch</type>
+      <layer>
+           <condition>
+		      <equals>
+                 <property>/controls/switches/rudder-trim-sw</property>
+				 <value type="int">1</value>
+		      </equals>
+           </condition>
+
+        <name>center</name>
+        <texture>
+	      <path>Aircraft/l410uvpe/Instruments/Textures/l410-KA51B.rgb</path>
+          <x1>0.3242</x1>
+	      <y1>0.2969</y1>
+	      <x2>0.5781</x2>
+          <y2>0.4766</y2>
+        </texture>
+        <w>25</w>
+        <h>18</h>
+      </layer>
+         <layer>
+            <name>off</name>
+            <type>switch</type>
+ 			<layer>
+               <condition>
+		          <equals>
+                     <property>/controls/switches/rudder-trim-sw</property>
+				     <value type="int">2</value>
+		          </equals>
+               </condition>
+               <name>ccw</name>
+               <texture>
+	              <path>Aircraft/l410uvpe/Instruments/Textures/l410-KA51B.rgb</path>
+	              <x1>0.0586</x1>
+	              <y1>0.2969</y1>
+   	              <x2>0.3125</x2>
+	              <y2>0.4766</y2>
+               </texture>
+               <w>25</w>
+               <h>18</h>
+			</layer>
+			<layer>
+               <name>cw</name>
+              <texture>
+	             <path>Aircraft/l410uvpe/Instruments/Textures/l410-KA51B.rgb</path>
+	             <x1>0.5859</x1>
+	             <y1>0.2969</y1>
+	             <x2>0.8398</x2>
+	             <y2>0.4766</y2>
+               </texture>
+               <w>25</w>
+               <h>18</h>
+			</layer>
+         </layer>
+      <transformations>
+	    <transformation>
+          <type>x-shift</type>
+          <offset>-29</offset>
+        </transformation>
+        <transformation>
+          <type>y-shift</type>
+          <offset>-75</offset>
+        </transformation>
+      </transformations>		   
+    </layer>  
+-->
+
+  </layers>
+  
+<actions>
+  <!---aileron trom switch-->
+ <action>
+   <name>aileron-trim-sw-l</name>
+   <button>0</button>
+   <x>-50</x>
+   <y>50</y>
+   <w>20</w>
+   <h>40</h>
+   <binding>
+      <command>property-assign</command>
+      <property>/controls/switches/aileron-trim-sw</property>
+      <value type="int">0</value>
+  </binding>
+  <binding>
+<!--   <condition>
+		 <greater-than>
+           <property alias="../../../../../../params/electrical-power"/>
+		   <value>10</value>
+		 </greater-than>
+   </condition>-->
+       <command>property-adjust</command>
+       <property>/controls/flight/aileron-trim</property>
+       <step>-0.05</step>
+       <min>-1</min>
+       <max>1</max>
+       <wrap>0</wrap>	   
+    </binding>
+  <mod-up>
+   <binding>
+      <command>property-assign</command>
+      <property>/controls/switches/aileron-trim-sw</property>
+      <value type="int">1</value>
+  </binding>
+  </mod-up>
+  </action>
+
+ <action>
+   <name>aileron-trim-sw-p</name>
+   <button>0</button>
+   <x>-30</x>
+   <y>50</y>
+   <w>20</w>
+   <h>40</h>
+   <binding>
+      <command>property-assign</command>
+      <property>/controls/switches/aileron-trim-sw</property>
+      <value type="int">2</value>
+  </binding>
+  <binding>
+<!--   <condition>
+		 <greater-than>
+           <property alias="../../../../../../params/electrical-power"/>
+		   <value>10</value>
+		 </greater-than>
+   </condition> -->
+         <command>property-adjust</command>
+       <property>/controls/flight/aileron-trim</property>
+       <step>0.05</step>
+       <min>-1</min>
+       <max>1</max>
+       <wrap>0</wrap>	   
+    </binding>
+  <mod-up>
+   <binding>
+      <command>property-assign</command>
+      <property>/controls/switches/aileron-trim-sw</property>
+      <value type="int">1</value>
+  </binding>
+  </mod-up>
+  </action>
+  
+  <!---rudder trim switch-->
+ <action>
+   <name>rudder-trim-sw-l</name>
+   <button>0</button>
+   <x>-50</x>
+   <y>-125</y>
+   <w>20</w>
+   <h>80</h>
+   <binding>
+      <command>property-assign</command>
+      <property>/controls/switches/rudder-trim-sw</property>
+      <value type="int">0</value>
+  </binding>
+  <binding>
+<!--   <condition>
+		 <greater-than>
+           <property alias="../../../../../../params/electrical-power"/>
+		   <value>10</value>
+		 </greater-than>
+   </condition>-->
+       <property>/controls/flight/rudder-trim</property>
+       <command>property-adjust</command>
+       <step>-0.05</step>
+       <min>-1</min>
+       <max>1</max>
+       <wrap>0</wrap>	   
+    </binding>
+  <mod-up>
+   <binding>
+      <command>property-assign</command>
+      <property>/controls/switches/rudder-trim-sw</property>
+      <value type="int">1</value>
+  </binding>
+  </mod-up>
+  </action>
+
+ <action>
+   <name>rudder-trim-sw-p</name>
+   <button>0</button>
+   <x>-30</x>
+   <y>-125</y>
+   <w>20</w>
+   <h>80</h>
+   <binding>
+      <command>property-assign</command>
+      <property>/controls/switches/rudder-trim-sw</property>
+      <value type="int">2</value>
+  </binding>
+  <binding>
+<!--   <condition>
+		 <greater-than>
+           <property alias="../../../../../../params/electrical-power"/>
+		   <value>10</value>
+		 </greater-than>
+   </condition> -->
+         <command>property-adjust</command>
+       <property>/controls/flight/rudder-trim</property>
+       <step>0.05</step>
+       <min>-1</min>
+       <max>1</max>
+       <wrap>0</wrap>	   
+    </binding>
+  <mod-up>
+   <binding>
+      <command>property-assign</command>
+      <property>/controls/switches/rudder-trim-sw</property>
+      <value type="int">1</value>
+  </binding>
+  </mod-up>
+  </action>  
+</actions>
+</PropertyList>

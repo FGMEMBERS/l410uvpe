@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+
+<!--
+
+KNS 81 (NAV 2)(nase!)
+
+-->
+
+<PropertyList>
+
+ <name>audio switch box</name>
+
+  <w-base>512</w-base>
+  <h-base>256</h-base>
+
+  <layers>
+  
+    <!-- LABELS -->
+    <layer>
+      <name>podklad</name>
+      <texture>
+        <path>Aircraft/l410uvpe/Instruments/Textures/l410-voice-rec.rgb</path>
+        <x1>0.0</x1>
+        <x2>1.0</x2>
+        <y1>0.305</y1>
+        <y2>1.0</y2>
+      </texture>
+      <w>512</w>
+      <h>256</h>
+      <transformations>
+        <transformation>
+          <type>x-shift</type>
+          <offset>0</offset>
+        </transformation>
+        <transformation>
+          <type>y-shift</type>
+          <offset>0</offset>
+        </transformation>
+      </transformations>
+    </layer>
+
+
+
+
+  </layers>
+
+ <actions>
+
+  <action>
+   <name>sw-isolvalve1</name>
+   <button>0</button>
+   <x>-70</x>
+   <y>0</y>
+   <w>32</w>
+   <h>32</h>
+   <binding>
+      <command>property-adjust</command>
+      <property>/controls/switches/isolvalve1-sw</property>
+      <step>-2</step>
+      <min>0</min>
+      <max>2</max>
+      <wrap>0</wrap>
+   </binding>
+  </action>
+  <action>
+   <name>sw-isolvalve1</name>
+   <button>0</button>
+   <x>-70</x>
+   <y>-32</y>
+   <w>32</w>
+   <h>32</h>
+   <binding>
+      <command>property-adjust</command>
+      <property>/controls/switches/isolvalve1-sw</property>
+      <step>1</step>
+      <min>0</min>
+      <max>2</max>
+      <wrap>0</wrap>
+   </binding>
+  </action>
+ </actions>
+
+</PropertyList>

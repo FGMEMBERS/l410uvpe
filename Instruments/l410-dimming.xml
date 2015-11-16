@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+
+<!--
+dimming
+-->
+
+<PropertyList>
+
+ <name>dimming</name>
+
+ <w-base>270</w-base>
+ <h-base>90</h-base>
+
+ <layers>
+
+<layer>
+   <name>background</name>
+   <texture>
+    <path>Aircraft/l410uvpe/Instruments/Textures/l410-dimming.rgb</path>
+    <x1>0.0</x1>
+    <y1>0.32</y1>
+    <x2>1.0</x2>
+    <y2>1.0</y2>
+   </texture>
+  <w>270</w>
+  <h>90</h>
+  </layer>
+  
+
+ </layers>
+</PropertyList>

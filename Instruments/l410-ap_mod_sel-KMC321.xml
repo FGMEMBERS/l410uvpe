@@ -1,0 +1,786 @@
+<?xml version="1.0"?>
+
+<!--
+
+KMC321
+
+-->
+
+<PropertyList>
+
+ <name>autopilot</name>
+
+  <w-base>512</w-base>
+  <h-base>150</h-base>
+
+  <layers>
+  
+
+    <layer>
+      <name>podklad</name>
+      <texture>
+        <path>Aircraft/l410uvpe/Instruments/Textures/l410-ap-mode.rgb</path>
+        <x1>0.0</x1>
+        <x2>1.0</x2>
+        <y1>0.414</y1>
+        <y2>1.0</y2>
+      </texture>
+      <w>512</w>
+      <h>150</h>
+      <transformations>
+        <transformation>
+          <type>x-shift</type>
+          <offset>0</offset>
+        </transformation>
+        <transformation>
+          <type>y-shift</type>
+          <offset>0</offset>
+        </transformation>
+      </transformations>
+    </layer>
+<!-- LABELS -->
+
+
+ <layer>
+   <name>ALT-label</name>
+   <type>switch</type>
+   <layer>
+   <condition>
+        <and>
+		 <greater-than>
+           <property alias="../../../../../../../params/electrical-power"/>
+		   <value>10</value>
+		 </greater-than>
+         <or>
+           <property alias="../../../../../../../params/ann-alt-on"/>
+           <property alias="../../../../../../../params/bulbs-test-on"/>
+         </or>
+        </and>
+   </condition>
+      <name>HDG-label</name>
+      <texture>
+        <path>Aircraft/l410uvpe/Instruments/Textures/l410-ap-mode.rgb</path>
+        <x1>0.0</x1>
+        <x2>0.125</x2>
+        <y1>0.0625</y1>
+        <y2>0.125</y2>
+      </texture>
+      <w>80</w>
+      <h>20</h>
+      <transformations>
+        <transformation>
+          <type>x-shift</type>
+          <offset>-120</offset>
+        </transformation>
+        <transformation>
+          <type>y-shift</type>
+          <offset>-4</offset>
+        </transformation>
+      </transformations>
+      <emissive>true</emissive>
+    </layer>
+   </layer> 
+
+ <layer>
+   <name>IAS-label</name>
+   <type>switch</type>
+   <layer>
+   <condition>
+        <and>
+		 <greater-than>
+           <property alias="../../../../../../../params/electrical-power"/>
+		   <value>10</value>
+		 </greater-than>
+         <or>
+<!--           <property alias="../../../../../../../params/ann-alt-on"/> -->
+           <property alias="../../../../../../../params/bulbs-test-on"/>
+         </or>
+        </and>
+   </condition>
+      <name>IAS-label</name>
+      <texture>
+        <path>Aircraft/l410uvpe/Instruments/Textures/l410-ap-mode.rgb</path>
+        <x1>0.125</x1>
+        <x2>0.250</x2>
+        <y1>0.0625</y1>
+        <y2>0.125</y2>
+      </texture>
+      <w>80</w>
+      <h>20</h>
+      <transformations>
+        <transformation>
+          <type>x-shift</type>
+          <offset>-55</offset>
+        </transformation>
+        <transformation>
+          <type>y-shift</type>
+          <offset>-5</offset>
+        </transformation>
+      </transformations>
+      <emissive>true</emissive>
+    </layer>
+   </layer> 
+
+
+ <layer>
+   <name>FD-label</name>
+   <type>switch</type>
+   <layer>
+   <condition>
+        <and>
+		 <greater-than>
+           <property alias="../../../../../../../params/electrical-power"/>
+		   <value>10</value>
+		 </greater-than>
+         <or>
+           <property alias="../../../../../../../params/ann-fd-on"/>
+           <property alias="../../../../../../../params/bulbs-test-on"/>
+         </or>
+        </and>
+   </condition>
+      <texture>
+        <path>Aircraft/l410uvpe/Instruments/Textures/l410-ap-mode.rgb</path>
+        <x1>0.25</x1>
+        <x2>0.375</x2>
+        <y1>0.0625</y1>
+        <y2>0.125</y2>
+      </texture>
+      <w>80</w>
+      <h>20</h>
+      <transformations>
+        <transformation>
+          <type>x-shift</type>
+          <offset>0</offset>
+        </transformation>
+        <transformation>
+          <type>y-shift</type>
+          <offset>-4</offset>
+        </transformation>
+      </transformations>
+      <emissive>true</emissive>
+    </layer>
+   </layer> 
+
+ <layer>
+   <name>SR-label</name>
+   <type>switch</type>
+   <layer>
+   <condition>
+        <and>
+		 <greater-than>
+           <property alias="../../../../../../../params/electrical-power"/>
+		   <value>10</value>
+		 </greater-than>
+         <or>
+<!--           <property alias="../../../../../../../params/ann-fd-on"/> -->
+           <property alias="../../../../../../../params/bulbs-test-on"/>
+         </or>
+        </and>
+   </condition>
+      <texture>
+        <path>Aircraft/l410uvpe/Instruments/Textures/l410-ap-mode.rgb</path>
+        <x1>0.375</x1>
+        <x2>0.500</x2>
+        <y1>0.0625</y1>
+        <y2>0.125</y2>
+      </texture>
+      <w>80</w>
+      <h>20</h>
+      <transformations>
+        <transformation>
+          <type>x-shift</type>
+          <offset>56</offset>
+        </transformation>
+        <transformation>
+          <type>y-shift</type>
+          <offset>-4</offset>
+        </transformation>
+      </transformations>
+      <emissive>true</emissive>
+    </layer>
+   </layer> 
+
+  <layer>
+   <name>HDG-label</name>
+   <type>switch</type>
+   <layer>
+   <condition>
+        <and>
+		 <greater-than>
+           <property alias="../../../../../../../params/electrical-power"/>
+		   <value>10</value>
+		 </greater-than>
+         <or>
+           <property alias="../../../../../../../params/ann-hdg-on"/>
+           <property alias="../../../../../../../params/bulbs-test-on"/>
+         </or>
+        </and>
+   </condition>
+      <name>HDG-label</name>
+      <texture>
+        <path>Aircraft/l410uvpe/Instruments/Textures/l410-ap-mode.rgb</path>
+        <x1>0.0</x1>
+        <x2>0.125</x2>
+        <y1>0.0</y1>
+        <y2>0.0625</y2>
+      </texture>
+      <w>80</w>
+      <h>20</h>
+      <transformations>
+        <transformation>
+          <type>x-shift</type>
+          <offset>-120</offset>
+        </transformation>
+        <transformation>
+          <type>y-shift</type>
+          <offset>51</offset>
+        </transformation>
+      </transformations>
+      <emissive>true</emissive>
+    </layer>
+   </layer> 
+
+ <layer>
+   <name>NAV-label</name>
+   <type>switch</type>
+   <layer>
+   <condition>
+        <and>
+		 <greater-than>
+           <property alias="../../../../../../../params/electrical-power"/>
+		   <value>10</value>
+		 </greater-than>
+         <or>
+           <property alias="../../../../../../../params/ann-nav-on"/>
+           <property alias="../../../../../../../params/bulbs-test-on"/>
+         </or>  
+        </and>
+   </condition>
+      <name>HDG-label</name>
+      <texture>
+        <path>Aircraft/l410uvpe/Instruments/Textures/l410-ap-mode.rgb</path>
+        <x1>0.125</x1>
+        <x2>0.1875</x2>
+        <y1>0.0</y1>
+        <y2>0.0625</y2>
+      </texture>
+      <w>40</w>
+      <h>20</h>
+      <transformations>
+        <transformation>
+          <type>x-shift</type>
+          <offset>-80</offset>
+        </transformation>
+        <transformation>
+          <type>y-shift</type>
+          <offset>51</offset>
+        </transformation>
+      </transformations>
+      <emissive>true</emissive>
+    </layer>
+   </layer> 
+
+ <layer>
+   <name>NAV-ARM-label</name>
+   <type>switch</type>
+   <layer>
+   <condition>
+        <and>
+		 <greater-than>
+           <property alias="../../../../../../../params/electrical-power"/>
+		   <value>10</value>
+		 </greater-than>
+         <or>
+           <property alias="../../../../../../../params/ann-nav-arm-on"/>
+           <property alias="../../../../../../../params/bulbs-test-on"/>
+         </or>
+        </and>
+   </condition>
+      <texture>
+        <path>Aircraft/l410uvpe/Instruments/Textures/l410-ap-mode.rgb</path>
+        <x1>0.1875</x1>
+        <x2>0.25</x2>
+        <y1>0.0</y1>
+        <y2>0.0625</y2>
+      </texture>
+      <w>40</w>
+      <h>20</h>
+      <transformations>
+        <transformation>
+          <type>x-shift</type>
+          <offset>-47</offset>
+        </transformation>
+        <transformation>
+          <type>y-shift</type>
+          <offset>51</offset>
+        </transformation>
+      </transformations>
+      <emissive>true</emissive>
+    </layer>
+   </layer> 
+
+ <layer>
+   <name>APR-label</name>
+   <type>switch</type>
+   <layer>
+   <condition>
+        <and>
+		 <greater-than>
+           <property alias="../../../../../../../params/electrical-power"/>
+		   <value>10</value>
+		 </greater-than>
+         <or>
+           <property alias="../../../../../../../params/ann-apr-on"/>
+           <property alias="../../../../../../../params/bulbs-test-on"/>
+         </or>
+        </and>
+   </condition>
+      <texture>
+        <path>Aircraft/l410uvpe/Instruments/Textures/l410-ap-mode.rgb</path>
+        <x1>0.25</x1>
+        <x2>0.3125</x2>
+        <y1>0.0</y1>
+        <y2>0.0625</y2>
+      </texture>
+      <w>40</w>
+      <h>20</h>
+      <transformations>
+        <transformation>
+          <type>x-shift</type>
+          <offset>-10</offset>
+        </transformation>
+        <transformation>
+          <type>y-shift</type>
+          <offset>51</offset>
+        </transformation>
+      </transformations>
+      <emissive>true</emissive>
+    </layer>
+   </layer> 
+
+ <layer>
+   <name>APR-ARM-label</name>
+   <type>switch</type>
+   <layer>
+   <condition>
+        <and>
+		 <greater-than>
+           <property alias="../../../../../../../params/electrical-power"/>
+		   <value>10</value>
+		 </greater-than>
+         <or>
+           <property alias="../../../../../../../params/ann-apr-arm-on"/>
+           <property alias="../../../../../../../params/bulbs-test-on"/>
+         </or>
+        </and>
+   </condition>
+      <texture>
+        <path>Aircraft/l410uvpe/Instruments/Textures/l410-ap-mode.rgb</path>
+        <x1>0.3125</x1>
+        <x2>0.375</x2>
+        <y1>0.0</y1>
+        <y2>0.0625</y2>
+      </texture>
+      <w>40</w>
+      <h>20</h>
+      <transformations>
+        <transformation>
+          <type>x-shift</type>
+          <offset>25</offset>
+        </transformation>
+        <transformation>
+          <type>y-shift</type>
+          <offset>51</offset>
+        </transformation>
+      </transformations>
+      <emissive>true</emissive>
+    </layer>
+   </layer> 
+
+  <layer>
+   <name>BC-label</name>
+   <type>switch</type>
+   <layer>
+   <condition>
+        <and>
+		 <greater-than>
+           <property alias="../../../../../../../params/electrical-power"/>
+		   <value>10</value>
+		 </greater-than>
+         <or>
+           <property alias="../../../../../../../params/ann-bc-on"/>
+           <property alias="../../../../../../../params/bulbs-test-on"/>
+         </or>
+        </and>
+   </condition>
+      <texture>
+        <path>Aircraft/l410uvpe/Instruments/Textures/l410-ap-mode.rgb</path>
+        <x1>0.375</x1>
+        <x2>0.5</x2>
+        <y1>0.0</y1>
+        <y2>0.0625</y2>
+      </texture>
+      <w>80</w>
+      <h>20</h>
+      <transformations>
+        <transformation>
+          <type>x-shift</type>
+          <offset>58</offset>
+        </transformation>
+        <transformation>
+          <type>y-shift</type>
+          <offset>51</offset>
+        </transformation>
+      </transformations>
+      <emissive>true</emissive>
+    </layer>
+   </layer> 
+
+  <layer>
+   <name>HB-label</name>
+   <type>switch</type>
+   <layer>
+   <condition>
+        <and>
+		 <greater-than>
+           <property alias="../../../../../../../params/electrical-power"/>
+		   <value>10</value>
+		 </greater-than>
+         <or>
+           <property alias="../../../../../../../params/ann-hb-on"/>
+           <property alias="../../../../../../../params/bulbs-test-on"/>
+         </or>
+        </and>
+   </condition>
+      <texture>
+        <path>Aircraft/l410uvpe/Instruments/Textures/l410-ap-mode.rgb</path>
+        <x1>0.50</x1>
+        <x2>0.625</x2>
+        <y1>0.0625</y1>
+        <y2>0.125</y2>
+      </texture>
+      <w>80</w>
+      <h>20</h>
+      <transformations>
+        <transformation>
+          <type>x-shift</type>
+          <offset>112</offset>
+        </transformation>
+        <transformation>
+          <type>y-shift</type>
+          <offset>-4</offset>
+        </transformation>
+      </transformations>
+      <emissive>true</emissive>
+    </layer>
+   </layer> 
+
+ <layer>
+   <name>YD-label</name>
+   <type>switch</type>
+   <layer>
+   <condition>
+        <and>
+		 <greater-than>
+           <property alias="../../../../../../../params/electrical-power"/>
+		   <value>10</value>
+		 </greater-than>
+         <or>
+           <property alias="../../../../../../../params/ann-yd-on"/>
+           <property alias="../../../../../../../params/bulbs-test-on"/>
+         </or>
+        </and>
+   </condition>
+      <texture>
+        <path>Aircraft/l410uvpe/Instruments/Textures/l410-ap-mode.rgb</path>
+        <x1>0.50</x1>
+        <x2>0.625</x2>
+        <y1>0.0</y1>
+        <y2>0.0625</y2>
+      </texture>
+      <w>80</w>
+      <h>20</h>
+      <transformations>
+        <transformation>
+          <type>x-shift</type>
+          <offset>112</offset>
+        </transformation>
+        <transformation>
+          <type>y-shift</type>
+          <offset>51</offset>
+        </transformation>
+      </transformations>
+      <emissive>true</emissive>
+    </layer>
+   </layer> 
+
+
+
+ <layer>
+   <name>AP-label</name>
+   <type>switch</type>
+   <layer>
+   <condition>
+        <and>
+		 <greater-than>
+           <property alias="../../../../../../../params/electrical-power"/>
+		   <value>10</value>
+		 </greater-than>
+         <or>
+           <property alias="../../../../../../../params/ann-ap-on"/>
+           <property alias="../../../../../../../params/bulbs-test-on"/>
+         </or>
+        </and>
+   </condition>
+      <texture>
+        <path>Aircraft/l410uvpe/Instruments/Textures/l410-ap-mode.rgb</path>
+        <x1>0.625</x1>
+        <x2>0.75</x2>
+        <y1>0.0</y1>
+        <y2>0.0625</y2>
+      </texture>
+      <w>80</w>
+      <h>20</h>
+      <transformations>
+        <transformation>
+          <type>x-shift</type>
+          <offset>170</offset>
+        </transformation>
+        <transformation>
+          <type>y-shift</type>
+          <offset>51</offset>
+        </transformation>
+      </transformations>
+      <emissive>true</emissive>
+    </layer>
+   </layer>   
+   
+ <layer>
+   <name>TRIM-label</name>
+   <type>switch</type>
+   <layer>
+   <condition>
+        <and>
+		 <greater-than>
+           <property alias="../../../../../../../params/electrical-power"/>
+		   <value>10</value>
+		 </greater-than>
+         <or>
+           <property alias="../../../../../../../params/ann-trim-on"/>
+           <property alias="../../../../../../../params/bulbs-test-on"/>
+         </or>
+        </and>
+   </condition>
+      <texture>
+        <path>Aircraft/l410uvpe/Instruments/Textures/l410-ap-mode.rgb</path>
+        <x1>0.75</x1>
+        <x2>0.875</x2>
+        <y1>0.0</y1>
+        <y2>0.0625</y2>
+      </texture>
+      <w>80</w>
+      <h>20</h>
+      <transformations>
+        <transformation>
+          <type>x-shift</type>
+          <offset>170</offset>
+        </transformation>
+        <transformation>
+          <type>y-shift</type>
+          <offset>-4</offset>
+        </transformation>
+      </transformations>
+      <emissive>true</emissive>
+    </layer>
+   </layer>      
+
+  </layers>
+
+ <actions>
+
+  <action>
+   <name>hdg-btn</name>
+   <button>0</button>
+   <x>-140</x>
+   <y>5</y>
+   <w>55</w>
+   <h>50</h>
+    <binding>
+        <command>nasal</command>
+        <script>l410autopilot.hdg_btn()</script>
+    </binding>
+  </action>
+
+  <action>
+   <name>nav-btn</name>
+   <button>0</button>
+   <x>-85</x>
+   <y>5</y>
+   <w>55</w>
+   <h>50</h>
+    <binding>
+        <command>nasal</command>
+        <script>l410autopilot.nav_btn()</script>
+    </binding>
+  </action>
+
+  <action>
+   <name>apr-btn</name>
+   <button>0</button>
+   <x>-30</x>
+   <y>5</y>
+   <w>55</w>
+   <h>50</h>
+    <binding>
+        <command>nasal</command>
+        <script>l410autopilot.apr_btn()</script>
+    </binding>
+  </action>
+<!--  
+  <action>
+   <name>apr-btn</name>
+   <button>0</button>
+   <x>-30</x>
+   <y>5</y>
+   <w>55</w>
+   <h>50</h>
+    <binding>
+        <command>nasal</command>
+        <script>l410autopilot.apr_btn()</script>
+    </binding>
+  </action>  
+-->  
+   <action>
+   <name>bc-btn</name>
+   <button>0</button>
+   <x>31</x>
+   <y>5</y>
+   <w>55</w>
+   <h>50</h>
+    <binding>
+        <command>nasal</command>
+        <script>l410autopilot.bc_btn()</script>
+    </binding>
+  </action>  
+
+  <action>
+   <name>ap-btn</name>
+   <button>0</button>
+   <x>148</x>
+   <y>5</y>
+   <w>55</w>
+   <h>50</h>
+    <binding>
+        <command>nasal</command>
+        <script>l410autopilot.ap_btn()</script>
+    </binding>
+  </action>
+
+  <action>
+   <name>alt-btn</name>
+   <button>0</button>
+   <x>-140</x>
+   <y>-50</y>
+   <w>55</w>
+   <h>50</h>
+    <binding>
+        <command>nasal</command>
+        <script>l410autopilot.alt_btn()</script>
+    </binding>
+  </action>
+
+  <action>
+   <name>fd-btn</name>
+   <button>0</button>
+   <x>-30</x>
+   <y>-50</y>
+   <w>55</w>
+   <h>50</h>
+    <binding>
+        <command>nasal</command>
+        <script>l410autopilot.fd_btn()</script>
+    </binding>
+  </action>
+
+  <action>
+   <name>hb-btn</name>
+   <button>0</button>
+   <x>93</x>
+   <y>-50</y>
+   <w>55</w>
+   <h>50</h>
+    <binding>
+        <command>nasal</command>
+        <script>l410autopilot.hb_btn()</script>
+    </binding>
+  </action>
+
+  <action>
+   <name>yd-btn</name>
+   <button>0</button>
+   <x>93</x>
+   <y>5</y>
+   <w>55</w>
+   <h>50</h>
+    <binding>
+        <command>nasal</command>
+        <script>l410autopilot.yd_btn()</script>
+    </binding>
+  </action>
+  
+  <action>
+   <name>test-btn</name>
+   <button>0</button>
+   <x>148</x>
+   <y>-50</y>
+   <w>55</w>
+   <h>50</h>
+    <binding>
+        <command>nasal</command>
+        <script>l410autopilot.test_btn()</script>
+    </binding>
+  </action>  
+
+  <action>
+   <name>trim-up-btn</name>
+   <button>0</button>
+   <x>-250</x>
+   <y>-70</y>
+   <w>105</w>
+   <h>70</h>
+   <binding>
+    <command>nasal</command>
+    <script>l410autopilot.trim_up_btn()</script>
+   </binding>
+   <mod-up>
+    <binding>
+     <command>nasal</command>
+     <script>l410autopilot.trim_up_btn_modup()</script>
+    </binding>
+   </mod-up>
+  </action>
+  
+  <action>
+   <name>trim-dn-btn</name>
+   <button>0</button>
+   <x>-250</x>
+   <y>-0</y>
+   <w>105</w>
+   <h>70</h>
+   <binding>
+    <command>nasal</command>
+    <script>l410autopilot.trim_dn_btn()</script>
+   </binding>
+   <mod-up>
+    <binding>
+     <command>nasal</command>
+     <script>l410autopilot.trim_dn_btn_modup()</script>
+    </binding>
+   </mod-up>
+  </action>  
+
+
+
+</actions>
+
+</PropertyList>

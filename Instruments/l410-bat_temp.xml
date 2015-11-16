@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+
+<!--
+VA-meter
+-->
+
+<PropertyList>
+
+ <name>VA-meter</name>
+
+ <w-base>104</w-base>
+ <h-base>104</h-base>
+
+ <layers>
+
+<layer>
+   <name>background</name>
+   <texture>
+    <path>Aircraft/l410uvpe/Instruments/Textures/l410-VM-AM.rgb</path>
+    <x1>0.25</x1>
+    <y1>0.25</y1>
+    <x2>0.625</x2>
+    <y2>1.0</y2>
+   </texture>
+  <w>90</w>
+  <h>90</h>
+  </layer>
+  
+  <layer>
+   <name>glare shield</name>
+   <texture>
+    <path>Aircraft/l410uvpe/Instruments/Textures/bezel1.rgb</path>
+    <x1>0.5</x1>
+    <y1>0.0</y1>
+    <x2>1.0</x2>
+    <y2>0.5</y2>
+   </texture>
+  <w>104</w>
+  <h>104</h>
+   <transformations>
+    <transformation>
+     <type>x-shift</type>
+     <offset>2</offset>
+    </transformation>
+    <transformation>
+     <type>y-shift</type>
+     <offset>-2</offset>
+    </transformation>
+    </transformations>
+  </layer>  
+ </layers>
+</PropertyList>

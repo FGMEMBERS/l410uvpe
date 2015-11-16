@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+
+<!--
+
+(nase!)
+
+-->
+
+<PropertyList>
+
+ <name>Door</name>
+
+  <w-base>1800</w-base>
+  <h-base>2500</h-base>
+
+  <layers>
+
+ <layer>
+   <name>DESKA</name>
+     <texture>
+     <path>Aircraft/l410uvpe/Instruments/Textures/l410-KAP315.rgb</path>
+     <x1>0.0</x1>
+     <x2>1.0</x2>
+     <y1>0.0</y1>
+     <y2>0.7</y2>
+     </texture>
+     <w>1800</w>
+     <h>2500</h>
+  </layer>
+
+</layers>
+
+<actions>
+  <action>
+   <name>open/close door</name>
+   <button>0</button>
+   <x>0</x>
+   <y>0</y>
+   <w>1800</w>
+   <h>2500</h>
+   <binding>
+  </binding>
+  </action>
+</actions>
+</PropertyList>

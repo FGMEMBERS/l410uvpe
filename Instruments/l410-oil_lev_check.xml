@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+
+<!--
+
+(nase!)
+
+-->
+
+<PropertyList>
+
+ <name>oil level check bulb</name>
+
+  <w-base>70</w-base>
+  <h-base>60</h-base>
+
+  <layers>
+  
+ <layer>
+   <name>oil_level_bulb_yellow</name>
+   <type>switch</type>
+   <layer>
+     <condition>
+	  <and>
+		 <greater-than>
+           <property alias="../../../../../../../params/wde-el-input"/>
+		   <value>10</value>
+		 </greater-than>
+         <or>
+           <property alias="../../../../../../../params/chck-sign-sw"/>
+           <property alias="../../../../../../../params/oil-level"/>
+         </or>
+	  </and>
+     </condition>
+
+     <name>on</name>
+     <texture>
+       <path>Aircraft/l410uvpe/Instruments/Textures/l410-mkr.rgb</path>
+       <x1>0.328</x1>
+       <x2>0.6394</x2>
+       <y1>0.0</y1>
+       <y2>0.28125</y2>
+     </texture>
+     <w>34</w>
+     <h>34</h>
+	 <emissive>true</emissive>
+   </layer>
+   <layer>
+     <name>off</name>
+     <texture>
+       <path>Aircraft/l410uvpe/Instruments/Textures/l410-mkr.rgb</path>
+       <x1>0.328</x1>
+       <x2>0.6394</x2>
+       <y1>0.28125</y1>
+       <y2>0.5625</y2>
+     </texture>
+     <w>34</w>
+     <h>34</h>
+   </layer>
+    <transformations>
+      <transformation>
+        <type>y-shift</type> 
+        <offset>-8</offset> 
+      </transformation>
+    </transformations>
+  </layer>
+
+  <layer>
+   <name>label oil check</name>
+     <texture>
+     <path>Aircraft/l410uvpe/Instruments/Textures/labels.rgb</path>
+     <x1>0.0</x1>
+     <x2>0.5</x2>
+     <y1>0.5</y1>
+     <y2>0.5625</y2>
+     </texture>
+     <w>75</w>
+     <h>15</h>
+    <transformations>
+      <transformation>
+        <type>y-shift</type> 
+        <offset>20</offset> 
+      </transformation>
+    </transformations>
+  </layer>
+  
+  </layers>
+  
+</PropertyList>

@@ -1,0 +1,727 @@
+<?xml version="1.0"?>
+
+<!--
+
+KFS 576 (XPDR)(nase!)
+
+-->
+
+<PropertyList>
+
+ <name>kfs 576</name>
+
+  <w-base>100</w-base>
+  <h-base>100</h-base>
+
+  <layers>
+  
+    <!-- LABELS -->
+    <layer>
+      <name>podklad</name>
+      <texture>
+        <path>Aircraft/l410uvpe/Instruments/Textures/kfs.rgb</path>
+        <x1>0.0</x1>
+        <x2>0.4922</x2>
+        <y1>0.0</y1>
+        <y2>1.0</y2>
+      </texture>
+      <w>100</w>
+      <h>100</h>
+      <transformations>
+        <transformation>
+          <type>x-shift</type>
+          <offset>0</offset>
+        </transformation>
+        <transformation>
+          <type>y-shift</type>
+          <offset>0</offset>
+        </transformation>
+      </transformations>
+    </layer>
+    
+    <layer>
+      <name>lab_knob</name>
+      <texture>
+        <path>Aircraft/l410uvpe/Instruments/Textures/kfs.rgb</path>
+        <x1>0.5000</x1>
+        <x2>0.7500</x2>
+        <y1>0.1250</y1>
+        <y2>0.3125</y2>
+      </texture>
+      <w>50</w>
+      <h>20</h>
+      <transformations>
+        <transformation>
+          <type>x-shift</type>
+          <offset>23</offset>
+        </transformation>
+        <transformation>
+          <type>y-shift</type>
+          <offset>-18</offset>
+        </transformation>
+      </transformations>
+    </layer>
+
+<!-- napisy na displeji -->
+
+  <layer>
+   <type>switch</type>
+   <condition>
+		 <greater-than>
+           <property alias="../../../../../params/electrical-power"/>
+		   <value>10</value>
+		 </greater-than>
+   </condition>
+   <layer>
+   <name>display_digits</name>
+   <type>text</type>
+   <font>led</font>
+   <point-size>7</point-size>
+   <color>
+    <red>1.0</red>
+    <green>0.5</green>
+    <blue>0.0</blue>
+   </color>
+   <chunks>
+    <chunk>
+     <type>number-value</type>
+     <property alias="../../../../../../params/disp"/>
+     <format>%04.0f</format>     
+    </chunk>
+   </chunks>
+   <transformations>
+    <transformation>
+     <type>x-shift</type>
+     <offset>-20</offset>
+    </transformation>
+    <transformation>
+     <type>y-shift</type>
+     <offset>15</offset>
+    </transformation>
+   </transformations>
+  </layer>
+  </layer>
+
+  <layer>
+    <name>XPDR-label</name>
+      <texture>
+        <path>Aircraft/l410uvpe/Instruments/Textures/kfs.rgb</path>
+        <x1>0.890</x1>
+        <x2>1.0</x2>
+        <y1>0.9180</y1>
+        <y2>0.9844</y2>
+      </texture>
+      <w>20</w>
+      <h>12</h>
+    <transformations>
+      <transformation>
+        <type>x-shift</type>
+        <offset>-5</offset>
+      </transformation>
+      <transformation>
+        <type>y-shift</type>
+        <offset>-13</offset>
+      </transformation>
+    </transformations>
+  </layer>
+  
+  <layer>
+    <name>IDT-label</name>
+      <texture>
+        <path>Aircraft/l410uvpe/Instruments/Textures/kfs.rgb</path>
+        <x1>0.9375</x1>
+        <x2>0.96875</x2>
+        <y1>0.6875</y1>
+        <y2>0.9330</y2>
+      </texture>
+      <w>7</w>
+      <h>22</h>
+    <transformations>
+      <transformation>
+        <type>x-shift</type>
+        <offset>37</offset>
+      </transformation>
+      <transformation>
+        <type>y-shift</type>
+        <offset>3</offset>
+      </transformation>
+    </transformations>
+   </layer>  
+
+
+
+  <layer>
+    <name>on-off-label</name>
+      <texture>
+        <path>Aircraft/l410uvpe/Instruments/Textures/kfs.rgb</path>
+        <x1>0.5527</x1>
+        <x2>0.6700</x2>
+        <y1>0.4570</y1>
+        <y2>0.5391</y2>
+      </texture>
+      <w>20</w>
+      <h>8</h>
+    <transformations>
+      <transformation>
+        <type>x-shift</type>
+        <offset>-28</offset>
+      </transformation>
+      <transformation>
+        <type>y-shift</type>
+        <offset>-34</offset>
+      </transformation>
+    </transformations>
+  </layer>
+  <layer>
+    <name>on-off-knob-pict</name>
+      <texture>
+        <path>Aircraft/l410uvpe/Instruments/Textures/kfs.rgb</path>
+        <x1>0.8047</x1>
+        <x2>0.8769</x2>
+        <y1>0.7461</y1>
+        <y2>0.8906</y2>
+      </texture>
+      <w>14</w>
+      <h>14</h>
+    <transformations>
+      <transformation>
+        <type>x-shift</type>
+        <offset>-22</offset>
+      </transformation>
+      <transformation>
+        <type>y-shift</type>
+        <offset>-33</offset>
+      </transformation>
+    </transformations>
+  </layer>  
+  <layer>
+    <name>on-off-knob</name>
+      <texture>
+        <path>Aircraft/l410uvpe/Instruments/Textures/kfs.rgb</path>
+        <x1>0.50000</x1>
+        <x2>0.53125</x2>
+        <y1>0.0000</y1>
+        <y2>0.0625</y2>
+      </texture>
+      <w>5</w>
+      <h>5</h>
+    <transformations>
+      <transformation>
+        <type>x-shift</type>
+        <offset>-22</offset>
+      </transformation>
+      <transformation>
+        <type>y-shift</type>
+        <offset>-33</offset>
+      </transformation>
+      <transformation>
+        <type>rotation</type>
+        <offset>0</offset>
+        <property alias="../../../../../params/on-off"/>        
+        <scale>170</scale>
+      </transformation>
+           <transformation>
+        <type>x-shift</type>
+        <offset>-4</offset>
+      </transformation>
+    </transformations>
+  </layer> 
+  
+  <layer>
+    <name>mode-knob</name>
+      <texture>
+        <path>Aircraft/l410uvpe/Instruments/Textures/kfs.rgb</path>
+        <x1>0.50000</x1>
+        <x2>0.53125</x2>
+        <y1>0.0000</y1>
+        <y2>0.0625</y2>
+      </texture>
+      <w>5</w>
+      <h>5</h>
+    <transformations>
+      <transformation>
+        <type>x-shift</type>
+        <offset>22</offset>
+      </transformation>
+      <transformation>
+        <type>y-shift</type>
+        <offset>-25</offset>
+      </transformation>
+      <transformation>
+        <type>rotation</type>
+        <offset>0</offset>
+        <property alias="../../../../../params/mode"/>        
+        <scale>60</scale>
+      </transformation>
+           <transformation>
+        <type>x-shift</type>
+        <offset>-10</offset>
+      </transformation>
+    </transformations>
+  </layer>   
+<!--flags-->
+  <layer>
+    <type>switch</type>
+   <condition>
+      <and>
+		 <greater-than>
+           <property alias="../../../../../../params/electrical-power"/>
+		   <value>10</value>
+		 </greater-than>
+         <property alias="../../../../../params/sby-flag"/>
+      </and>
+   </condition>
+   <layer>
+     <name>sby-flag</name>
+      <texture>
+        <path>Aircraft/l410uvpe/Instruments/Textures/kfs.rgb</path>
+        <x1>0.9375</x1>
+        <x2>0.9999</x2>
+        <y1>0.3750</y1>
+        <y2>0.4375</y2>
+      </texture>
+      <emissive>true</emissive>
+      <w>12</w>
+      <h>6</h>
+    <transformations>
+      <transformation>
+        <type>x-shift</type>
+        <offset>-20</offset>
+      </transformation>
+      <transformation>
+        <type>y-shift</type>
+        <offset>0</offset>
+      </transformation>
+    </transformations>
+  </layer>
+  </layer>
+
+  <layer>
+    <type>switch</type>
+   <condition>
+      <and>
+		 <greater-than>
+           <property alias="../../../../../../params/electrical-power"/>
+		   <value>10</value>
+		 </greater-than>
+         <property alias="../../../../../params/on-flag"/>
+      </and>
+   </condition>
+   <layer>
+    <name>on-flag</name>
+      <texture>
+        <path>Aircraft/l410uvpe/Instruments/Textures/kfs.rgb</path>
+        <x1>0.9375</x1>
+        <x2>0.9999</x2>
+        <y1>0.3125</y1>
+        <y2>0.3750</y2>
+      </texture>
+      <emissive>true</emissive>
+      <w>12</w>
+      <h>6</h>
+    <transformations>
+      <transformation>
+        <type>x-shift</type>
+        <offset>-10</offset>
+      </transformation>
+      <transformation>
+        <type>y-shift</type>
+        <offset>0</offset>
+      </transformation>
+    </transformations>
+  </layer>
+  </layer>
+  
+    <layer>
+    <type>switch</type>
+   <condition>
+      <and>
+		 <greater-than>
+           <property alias="../../../../../../params/electrical-power"/>
+		   <value>10</value>
+		 </greater-than>
+         <property alias="../../../../../params/alt-flag"/>
+      </and>
+   </condition>
+   <layer>
+    <name>alt-flag</name>
+      <texture>
+        <path>Aircraft/l410uvpe/Instruments/Textures/kfs.rgb</path>
+        <x1>0.9375</x1>
+        <x2>0.9999</x2>
+        <y1>0.2500</y1>
+        <y2>0.3125</y2>
+      </texture>
+      <emissive>true</emissive>
+      <w>12</w>
+      <h>6</h>
+    <transformations>
+      <transformation>
+        <type>x-shift</type>
+        <offset>-0</offset>
+      </transformation>
+      <transformation>
+        <type>y-shift</type>
+        <offset>0</offset>
+      </transformation>
+    </transformations>
+  </layer>
+  </layer>
+  
+  <layer>
+    <type>switch</type>
+   <condition>
+      <and>
+		 <greater-than>
+           <property alias="../../../../../../params/electrical-power"/>
+		   <value>10</value>
+		 </greater-than>
+         <property alias="../../../../../params/idt-flag"/>
+      </and>
+   </condition>
+   <layer>
+    <name>idt-flag</name>
+      <texture>
+        <path>Aircraft/l410uvpe/Instruments/Textures/kfs.rgb</path>
+        <x1>0.9375</x1>
+        <x2>0.9999</x2>
+        <y1>0.1875</y1>
+        <y2>0.2500</y2>
+      </texture>
+      <emissive>true</emissive>
+      <w>12</w>
+      <h>6</h>
+    <transformations>
+      <transformation>
+        <type>x-shift</type>
+        <offset>10</offset>
+      </transformation>
+      <transformation>
+        <type>y-shift</type>
+        <offset>0</offset>
+      </transformation>
+    </transformations>
+  </layer>
+  </layer>
+  
+  <layer>
+    <type>switch</type>
+   <condition>
+      <and>
+		 <greater-than>
+           <property alias="../../../../../../params/electrical-power"/>
+		   <value>10</value>
+		 </greater-than>
+         <property alias="../../../../../params/r-flag"/>
+      </and>
+   </condition>
+   <layer>
+    <name>r-flag</name>
+      <texture>
+        <path>Aircraft/l410uvpe/Instruments/Textures/kfs.rgb</path>
+        <x1>0.9375</x1>
+        <x2>0.9999</x2>
+        <y1>0.1250</y1>
+        <y2>0.1875</y2>
+      </texture>
+      <emissive>true</emissive>
+      <w>12</w>
+      <h>6</h>
+    <transformations>
+      <transformation>
+        <type>x-shift</type>
+        <offset>-30</offset>
+      </transformation>
+      <transformation>
+        <type>y-shift</type>
+        <offset>27</offset>
+      </transformation>
+    </transformations>
+  </layer>
+  </layer>
+  
+  <layer>
+    <type>switch</type>
+   <condition>
+      <and>
+		 <greater-than>
+           <property alias="../../../../../../params/electrical-power"/>
+		   <value>10</value>
+		 </greater-than>
+         <property alias="../../../../../params/fl-flag"/>
+      </and>
+   </condition>
+   <layer>
+    <name>fl-flag</name>
+      <texture>
+        <path>Aircraft/l410uvpe/Instruments/Textures/kfs.rgb</path>
+        <x1>0.9375</x1>
+        <x2>0.9999</x2>
+        <y1>0.0625</y1>
+        <y2>0.1250</y2>
+      </texture>
+      <emissive>true</emissive>
+      <w>12</w>
+      <h>6</h>
+    <transformations>
+      <transformation>
+        <type>x-shift</type>
+        <offset>-30</offset>
+      </transformation>
+      <transformation>
+        <type>y-shift</type>
+        <offset>17</offset>
+      </transformation>
+    </transformations>
+  </layer>
+  </layer>
+  
+
+
+<!--flags end-->
+<!--cursor-->
+  <layer>
+    <type>switch</type>
+   <condition>
+      <and>
+		 <greater-than>
+           <property alias="../../../../../../params/electrical-power"/>
+		   <value>10</value>
+		 </greater-than>
+         <equals>
+           <property alias="../../../../../../params/mode"/>
+           <value>0</value>
+         </equals>
+      </and>
+   </condition>
+   <layer>
+    <name>cursor</name>
+      <texture>
+        <path>Aircraft/l410uvpe/Instruments/Textures/kfs.rgb</path>
+        <x1>0.90625</x1>
+        <x2>0.9375</x2>
+        <y1>0.0</y1>
+        <y2>0.0625</y2>
+      </texture>
+      <emissive>true</emissive>
+      <w>8</w>
+      <h>5</h>
+    <transformations>
+      <transformation>
+        <type>x-shift</type>
+        <offset>13</offset>
+      </transformation>
+      <transformation>
+         <type>x-shift</type>
+         <property alias="../../../../../../params/sel-digit"/>
+         <scale>-10</scale>
+      </transformation>
+      <transformation>
+        <type>y-shift</type>
+        <offset>8</offset>
+      </transformation>
+    </transformations>
+  </layer>
+  </layer>
+
+<!--cursor end-->
+
+  </layers>
+
+ <actions>
+
+<action>
+    <name>on-off</name>
+    <button>0</button>
+    <x>-32</x>
+    <y>-43</y>
+    <w>20</w>
+    <h>20</h>
+    <binding>
+      <command>property-toggle</command>      
+      <property alias="../../../../params/on-off"/>
+    </binding>
+  </action>  
+
+  <action>
+    <name>press-knob-sel-digit</name>
+    <button>0</button>
+    <x>8</x>
+    <y>-20</y>
+    <w>30</w>
+    <h>10</h>
+    <binding>
+      <condition>
+        <equals>
+            <property alias="../../../../../../params/knob-pr-time"/>
+            <value>0</value>
+        </equals>
+      </condition>
+      <command>property-adjust</command>
+      <property alias="../../../../params/sel-digit"/>
+      <step>-1</step>
+      <min>0</min>
+      <max>4</max>
+      <wrap>1</wrap>
+    </binding>
+    <binding>
+      <command>property-assign</command>
+      <property alias="../../../../params/nasal-sel"/>
+      <property alias="../../../../params/number"/>
+    </binding>
+    <binding>
+      <condition>
+        <equals>
+            <property alias="../../../../../../params/knob-pr-time"/>
+            <value>0</value>
+        </equals>
+      </condition>
+      <command>nasal</command>
+      <script>l410xpdr.xpdr_start_vfr_load()</script>
+    </binding>
+    <mod-up>
+        <binding>
+          <command>nasal</command>
+          <script>l410xpdr.xpdr_stop_vfr_load()</script>
+        </binding>
+        <binding>
+            <command>property-assign</command>
+            <property alias="../../../../../params/knob-pr-time"/>
+            <value>0</value>
+        </binding>
+    </mod-up>
+  </action>  
+
+  <action>
+    <name>press-knob-memory-set</name>
+    <button>1</button>
+    <x>8</x>
+    <y>-20</y>
+    <w>30</w>
+    <h>10</h>
+    <binding>
+      <condition>
+      <and>
+		 <greater-than>
+           <property alias="../../../../../../../params/electrical-power"/>
+		   <value>10</value>
+		 </greater-than>
+         <property alias="../../../../../../params/sby-flag"/>
+      </and>
+      </condition>
+      <command>property-assign</command>
+      <property alias="../../../../params/code-vfr"/>
+      <property alias="../../../../params/code"/>
+    </binding>
+  </action>  
+
+  <action>
+    <name>code_set_down</name>
+    <button>0</button>
+    <x>8</x>
+    <y>-50</y>
+    <w>15</w>
+    <h>30</h>
+    <binding>
+      <command>property-assign</command>
+      <property alias="../../../../params/nasal-sel"/>
+      <property alias="../../../../params/number"/>
+    </binding>
+    <binding>
+      <command>nasal</command>
+      <script>l410xpdr.xpdr_set_code_down()</script>
+    </binding>
+  </action>  
+
+
+  <action>
+    <name>code_set_up</name>
+    <button>0</button>
+    <x>23</x>
+    <y>-50</y>
+    <w>15</w>
+    <h>30</h>
+    <binding>
+      <command>property-assign</command>
+      <property alias="../../../../params/nasal-sel"/>
+      <property alias="../../../../params/number"/>
+    </binding>
+    <binding>
+      <command>nasal</command>
+      <script>l410xpdr.xpdr_set_code_up()</script>
+    </binding>
+  </action>    
+
+  <action>
+    <name>mode_set_down</name>
+    <button>1</button>
+    <x>8</x>
+    <y>-50</y>
+    <w>15</w>
+    <h>30</h>
+    <binding>
+      <command>property-adjust</command>
+      <property alias="../../../../params/mode"/>
+      <step>-1</step>
+      <max>3</max>
+      <min>0</min>
+    </binding>
+    <binding>
+      <command>property-assign</command>
+      <property alias="../../../../params/nasal-sel"/>
+      <property alias="../../../../params/number"/>
+    </binding>
+    <binding>
+      <command>nasal</command>
+      <script>l410xpdr.xpdr_mode_changed()</script>
+    </binding>
+  </action>  
+
+
+  <action>
+    <name>mode_set_up</name>
+    <button>1</button>
+    <x>23</x>
+    <y>-50</y>
+    <w>15</w>
+    <h>30</h>
+    <binding>
+      <command>property-adjust</command>
+      <property alias="../../../../params/mode"/>
+      <step>1</step>
+      <max>3</max>
+      <min>0</min>
+    </binding>
+    <binding>
+      <command>property-assign</command>
+      <property alias="../../../../params/nasal-sel"/>
+      <property alias="../../../../params/number"/>
+    </binding>
+    <binding>
+      <command>nasal</command>
+      <script>l410xpdr.xpdr_mode_changed()</script>
+    </binding>
+  </action>    
+
+    
+  <action>
+    <name>ident</name>
+    <button>0</button>
+    <x>25</x>
+    <y>-8</y>
+    <w>20</w>
+    <h>30</h>
+    <binding>
+      <command>property-adjust</command>
+      <property alias="../../../../params/code-disp"/>
+      <step>1</step>
+      <min>0</min>
+      <max>4000</max>
+    </binding>
+  </action>
+
+
+ 
+ </actions>
+
+</PropertyList>

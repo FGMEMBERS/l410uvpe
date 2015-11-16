@@ -1,0 +1,296 @@
+<?xml version="1.0"?>
+
+<!--
+
+(nase!)
+
+-->
+
+<PropertyList>
+
+ <name>Checkpanel</name>
+
+  <w-base>230</w-base>
+  <h-base>95</h-base>
+
+  <layers>
+
+<layer>
+   <name>DESKA</name>
+     <texture>
+     <path>Aircraft/l410uvpe/Instruments/Textures/l410-voltmetry.rgb</path>
+     <x1>0.0</x1>
+     <x2>1.0</x2>
+     <y1>0.0</y1>
+     <y2>0.412</y2>
+     </texture>
+     <w>230</w>
+     <h>95</h>
+  </layer>
+
+<!--sw-inv 115-->
+ <layer>
+   <name>inv-115-sw</name>
+     <texture>
+     <path>Aircraft/l410uvpe/Instruments/Textures/l410-prislus.rgb</path>
+     <x1>0.5725</x1>
+     <x2>0.6627</x2>
+     <y1>0.0</y1>
+     <y2>0.1686</y2>
+     </texture>
+     <w>16</w>
+     <h>28</h>
+    <transformations>
+      <transformation>
+        <type>x-shift</type> 
+        <offset>-28</offset> 
+      </transformation>
+      <transformation>
+        <type>y-shift</type> 
+        <offset>23</offset> 
+      </transformation>
+      <transformation>
+        <type>rotation</type> 
+        <property>/controls/switches/inv-115-select-sw</property>
+        <scale>90</scale>
+      </transformation>
+    </transformations>
+  </layer>
+
+ <layer>
+   <name>VA-meter</name>
+     <texture>
+     <path>Aircraft/l410uvpe/Instruments/Textures/l410-prislus.rgb</path>
+     <x1>0.0352</x1>
+     <x2>0.0781</x2>
+     <y1>0.9297</y1>
+     <y2>0.9688</y2>
+     </texture>
+     <w>8</w>
+     <h>6</h>
+    <transformations>
+      <transformation>
+        <type>x-shift</type> 
+        <offset>-54</offset> 
+      </transformation>
+      <transformation>
+        <type>y-shift</type> 
+        <offset>-22</offset> 
+      </transformation>
+      <transformation>
+        <type>rotation</type> 
+        <property>/controls/switches/va-meter-sw</property>
+        <scale>45</scale>
+      </transformation>
+	       <transformation>
+        <type>y-shift</type> 
+        <offset>9</offset> 
+      </transformation>
+    </transformations>
+  </layer>
+  
+  <layer>
+   <name>VA-meter</name>
+     <texture>
+     <path>Aircraft/l410uvpe/Instruments/Textures/l410-prislus.rgb</path>
+     <x1>0.0352</x1>
+     <x2>0.0781</x2>
+     <y1>0.9297</y1>
+     <y2>0.9688</y2>
+     </texture>
+     <w>8</w>
+     <h>6</h>
+    <transformations>
+      <transformation>
+        <type>x-shift</type> 
+        <offset>2</offset> 
+      </transformation>
+      <transformation>
+        <type>y-shift</type> 
+        <offset>-22</offset> 
+      </transformation>
+      <transformation>
+        <type>rotation</type> 
+        <property>/controls/switches/v-150-meter-sw</property>
+        <scale>60</scale>
+      </transformation>
+	       <transformation>
+        <type>y-shift</type> 
+        <offset>9</offset> 
+      </transformation>
+    </transformations>
+  </layer>
+  
+  <layer>
+   <name>VA-meter</name>
+     <texture>
+     <path>Aircraft/l410uvpe/Instruments/Textures/l410-prislus.rgb</path>
+     <x1>0.0352</x1>
+     <x2>0.0781</x2>
+     <y1>0.9297</y1>
+     <y2>0.9688</y2>
+     </texture>
+     <w>8</w>
+     <h>6</h>
+    <transformations>
+      <transformation>
+        <type>x-shift</type> 
+        <offset>60</offset> 
+      </transformation>
+      <transformation>
+        <type>y-shift</type> 
+        <offset>-22</offset> 
+      </transformation>
+      <transformation>
+        <type>rotation</type> 
+        <property>/controls/switches/v-45-meter-sw</property>
+        <scale>60</scale>
+      </transformation>
+	       <transformation>
+        <type>y-shift</type> 
+        <offset>9</offset> 
+      </transformation>
+    </transformations>
+  </layer>  
+
+  </layers>
+
+<actions>
+
+  <action>
+   <name>sw inv 115 I II AUT inc</name>
+   <button>0</button>
+   <x>-28</x>
+   <y>9</y>
+   <w>15</w>
+   <h>30</h>
+   <binding>
+      <command>property-adjust</command>
+      <property>/controls/switches/inv-115-select-sw</property>
+      <step>1</step>
+      <min>-1</min>
+      <max>1</max>
+      <wrap>0</wrap>
+   </binding>
+  </action>
+  <action>
+   <name>sw inv 115 I II AUT dec</name>
+   <button>0</button>
+   <x>-43</x>
+   <y>9</y>
+   <w>15</w>
+   <h>30</h>
+   <binding>
+      <command>property-adjust</command>
+      <property>/controls/switches/inv-115-select-sw</property>
+      <step>-1</step>
+      <min>-1</min>
+      <max>1</max>
+      <wrap>0</wrap>
+   </binding>
+  </action>
+
+
+
+  <action>
+   <name>sw va-meter-inc</name>
+   <button>0</button>
+   <x>-70</x>
+   <y>-35</y>
+   <w>15</w>
+   <h>30</h>
+   <binding>
+      <command>property-adjust</command>
+      <property>/controls/switches/va-meter-sw</property>
+      <step>-1</step>
+      <min>-3</min>
+      <max>1</max>
+      <wrap>0</wrap>
+   </binding>
+  </action>
+  <action>
+   <name>sw va-meter-dec</name>
+   <button>0</button>
+   <x>-55</x>
+   <y>-35</y>
+   <w>15</w>
+   <h>30</h>
+   <binding>
+      <command>property-adjust</command>
+      <property>/controls/switches/va-meter-sw</property>
+      <step>1</step>
+      <min>-3</min>
+      <max>1</max>
+      <wrap>0</wrap>
+   </binding>
+  </action>
+
+  <action>
+   <name>sw v-45-meter-inc</name>
+   <button>0</button>
+   <x>45</x>
+   <y>-35</y>
+   <w>15</w>
+   <h>30</h>
+   <binding>
+      <command>property-adjust</command>
+      <property>/controls/switches/v-45-meter-sw</property>
+      <step>-1</step>
+      <min>-1</min>
+      <max>1</max>
+      <wrap>0</wrap>
+   </binding>
+  </action>
+  <action>
+   <name>sw v-45-meter-dec</name>
+   <button>0</button>
+   <x>60</x>
+   <y>-35</y>
+   <w>15</w>
+   <h>30</h>
+   <binding>
+      <command>property-adjust</command>
+      <property>/controls/switches/v-45-meter-sw</property>
+      <step>1</step>
+      <min>-2</min>
+      <max>1</max>
+      <wrap>0</wrap>
+   </binding>
+  </action>
+ 
+  <action>
+   <name>sw v-150-meter-inc</name>
+   <button>0</button>
+   <x>-13</x>
+   <y>-35</y>
+   <w>15</w>
+   <h>30</h>
+   <binding>
+      <command>property-adjust</command>
+      <property>/controls/switches/v-150-meter-sw</property>
+      <step>-1</step>
+      <min>-2</min>
+      <max>1</max>
+      <wrap>0</wrap>
+   </binding>
+  </action>
+  <action>
+   <name>sw v-150-meter-dec</name>
+   <button>0</button>
+   <x>2</x>
+   <y>-35</y>
+   <w>15</w>
+   <h>30</h>
+   <binding>
+      <command>property-adjust</command>
+      <property>/controls/switches/v-150-meter-sw</property>
+      <step>1</step>
+      <min>-2</min>
+      <max>1</max>
+      <wrap>0</wrap>
+   </binding>
+  </action>
+
+
+</actions>
+</PropertyList>

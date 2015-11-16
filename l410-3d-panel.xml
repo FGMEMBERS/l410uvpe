@@ -1,0 +1,807 @@
+<?xml version="1.0"?>
+
+<!--
+L410 panel.
+Javky <javky@email.cz>
+_______________________________________________________________________
+-->
+ 
+<!DOCTYPE PropertyList SYSTEM "panel.dtd">
+
+<PropertyList>
+
+  <name>L410 main instrument panel</name>
+  <background>Aircraft/l410uvpe/transparent-bg.rgb</background>
+  <w>1374</w>
+  <h>402</h>
+
+  <instruments>
+ 
+  <!--left section - pilot ************************************************************* -->
+
+  <instrument include="./Instruments/l410-asi.xml">
+    <name>Airspeed Indicator</name>
+    <x>240</x>
+    <y>315</y>
+    <w>80</w>
+    <h>80</h>
+    <params>
+        <indicated-speed>/instrumentation/airspeed-indicator[0]/indicated-speed-kt</indicated-speed>
+    </params>
+  </instrument>
+
+  <instrument include="./Instruments/l410-ai-KCI310.xml">
+    <name>Attitude Indicator</name>
+    <x>335</x>
+    <y>308</y>
+    <w>106</w>
+    <h>106</h>
+    <params>
+        <indicated-roll-deg>/instrumentation/attitude-indicator[0]/indicated-roll-deg</indicated-roll-deg>
+        <indicated-pitch-deg>/instrumentation/attitude-indicator[0]/indicated-pitch-deg</indicated-pitch-deg>
+        <horizont-offset-deg>/instrumentation/attitude-indicator[0]/horizon-offset-deg</horizont-offset-deg>
+        <spin>/instrumentation/attitude-indicator[0]/spin</spin>
+        <nav-inrange>/instrumentation/nav[1]/indicated-in-range</nav-inrange>
+        <nav-mode>/instrumentation/nav[1]/nav-mode</nav-mode>
+        <dh-signal>/instrumentation/altimeter-rad/signal-on</dh-signal>
+        <fd-roll-deg>/instrumentation/autopilot/requested_roll_ind</fd-roll-deg>
+        <fd-pitch-deg>/instrumentation/autopilot/requested_pitch_ind</fd-pitch-deg> 
+        <mode-fd-on>/instrumentation/autopilot/mode-fd-on</mode-fd-on>
+        <computer-flag>/instrumentation/autopilot/tested</computer-flag>
+    </params>
+  </instrument>
+
+  <instrument include="./Instruments/l410-vert_vel_ind.xml">
+    <name>Vertical Velocity Indicator</name>
+    <x>435</x>
+    <y>315</y>
+    <w>80</w>
+    <h>80</h>
+  </instrument>
+
+  <instrument include="./Instruments/l410-sa-KAS297.xml">
+    <name>Selected altitude</name>
+    <x>435</x>
+    <y>160</y>
+    <w>80</w>
+    <h>32</h>
+    <params>
+        <electrical-power>/systems/electrical/outputs/autopilot</electrical-power>
+        <displ-alt>/instrumentation/autopilot/selected-alt</displ-alt>
+        <displ-vs>/instrumentation/autopilot/selected-vs</displ-vs>
+        <set-vs>/instrumentation/autopilot/set-vs</set-vs>
+        <displ-sw>/instrumentation/autopilot/as-vsdispl</displ-sw>
+        <vs-sw>/instrumentation/autopilot/as-vs-sw</vs-sw>
+        
+        <as-arm-flag>/instrumentation/autopilot/as-arm-flag</as-arm-flag>
+        <as-alert-flag>/instrumentation/autopilot/as-alert-flag</as-alert-flag>
+        <as-capture-flag>/instrumentation/autopilot/as-capture-flag</as-capture-flag>
+        <as-vs-flag>/instrumentation/autopilot/as-vs-flag</as-vs-flag>
+        
+        <bulbs-test-on>/instrumentation/autopilot/bulbs-test-on</bulbs-test-on>
+    </params>
+  </instrument>
+
+
+  <instrument include="./Instruments/l410-hsi-KPI553.xml">
+    <name>Horizontal Situation Indicator - pilot</name>
+    <params>
+	  <gyro-spin>/instrumentation/heading-indicator-selected/spin</gyro-spin>
+      <has-gs>/instrumentation/nav[0]/has-gs</has-gs>
+      <in-range>/instrumentation/nav[0]/in-range</in-range>
+      <nav-adf-sel>/instrumentation/hsi[0]/nav-adf-sw</nav-adf-sel>
+      <heading-bug-deg>/autopilot/settings/heading-bug-deg</heading-bug-deg>
+	  <adf-needle-deflection>/instrumentation/hsi[0]/indicated-adf-deflection</adf-needle-deflection>
+      
+	  <indicated-heading-deflection>/instrumentation/nav[0]/indicated-heading-deflection</indicated-heading-deflection>
+	  <indicated-gs-deflection>/instrumentation/nav[0]/indicated-gs-deflection</indicated-gs-deflection>
+      <to-flag>/instrumentation/nav[0]/to-flag</to-flag>
+      <from-flag>/instrumentation/nav[0]/from-flag</from-flag>	
+      <nav-radial-selected>/instrumentation/nav[0]/radials/selected-deg</nav-radial-selected>
+      <heading-magnetic-deg>/instrumentation/heading-indicator-selected/indicated-heading-deg</heading-magnetic-deg>
+      
+      <dme-freq-source>/sim/instrument-options/hsi[0]/dme-freq-source</dme-freq-source>
+      <dme-hold-sw>/instrumentation/dme[0]/switch-position</dme-hold-sw>
+      <indicated-time-min>/instrumentation/dme[0]/indicated-time-min</indicated-time-min>
+	  <rnav-rad-flag>/instrumentation/dme[0]/rnav-rad-flag</rnav-rad-flag>
+      <indicated-ground-speed-kt>/instrumentation/dme[0]/indicated-ground-speed-kt</indicated-ground-speed-kt>
+      <dme-in-range>/instrumentation/dme[0]/in-range</dme-in-range>
+      <dme-indicated-distance-nm>/instrumentation/dme[0]/indicated-distance-nm</dme-indicated-distance-nm>
+	  <electrical-power>/systems/electrical/outputs/dme[0]</electrical-power>
+      
+<!--      <nav-gs-needle-deflection>/instrumentation/nav[0]/gs-needle-deflection</nav-gs-needle-deflection>
+      <nav-heading-needle-deflection>/instrumentation/nav[0]/heading-needle-deflection</nav-heading-needle-deflection>
+      <nav-needle-deflection>/instrumentation/nav[0]/heading-needle-deg</nav-needle-deflection>
+      <crosstrack-error-m>/instrumentation/nav[0]/crosstrack-error-m</crosstrack-error-m>  
+      <nav-mode>/instrumentation/nav[0]/nav-mode</nav-mode> -->
+    </params>
+    <x>335</x>
+    <y>201</y>
+    <w>137</w>
+    <h>110</h>
+  </instrument>
+
+  <instrument include="./Instruments/l410-ea-KEA346.xml">
+    <name>Encoding altimeter</name>
+    <x>155</x>
+    <y>220</y>
+    <w>80</w>
+    <h>80</h>
+  </instrument>
+
+  <instrument include="./Instruments/l410-dme-KDI573.xml">
+    <name>DME</name>
+    <params>
+      <dme-in-range>/instrumentation/dme[1]/l410-indicated-in-range</dme-in-range>
+      <dme-indicated-distance-nm>/instrumentation/dme[1]/l410-indicated-distance-nm</dme-indicated-distance-nm>
+      <indicated-ground-speed-kt>/instrumentation/dme[1]/l410-indicated-speed-kt</indicated-ground-speed-kt>
+      <indicated-time-min>/instrumentation/dme[1]/l410-indicated-time-min</indicated-time-min>
+	  <rnav-rad-flag>/instrumentation/dme[1]/rnav-rad-flag</rnav-rad-flag>
+      <nav-in-range>/instrumentation/nav[1]/in-range</nav-in-range>
+      <electrical-power>/systems/electrical/outputs/dme[1]</electrical-power>
+    </params>
+    <x>335</x>
+    <y>122</y>
+    <w>110</w>
+    <h>51</h>
+  </instrument>
+
+  <instrument include="./Instruments/l410-rad_alt-KNI415.xml">
+    <name>Radar Altimeter</name>
+    <x>435</x>
+    <y>100</y>
+    <w>80</w>
+    <h>80</h>
+  </instrument>
+
+  <instrument include="./Instruments/l410-cdi-KI204.xml">
+    <name>CDI - pilot</name>
+    <params>
+      <nav-radial-selected>/instrumentation/nav[1]/radials/selected-deg</nav-radial-selected>
+      <nav-heading-needle-deflection>/instrumentation/nav[1]/heading-needle-deflection</nav-heading-needle-deflection>
+      <nav-gs-needle-deflection>/instrumentation/nav[1]/gs-needle-deflection</nav-gs-needle-deflection>
+      <has-gs>/instrumentation/nav[1]/has-gs</has-gs>
+      <in-range>/instrumentation/nav[1]/indicated-in-range</in-range>
+      <heading-magnetic-deg>/instrumentation/heading-indicator-selected/indicated-heading-deg</heading-magnetic-deg>
+      <to-flag>/instrumentation/nav[1]/indicated-to-flag</to-flag>
+      <from-flag>/instrumentation/nav[1]/indicated-from-flag</from-flag>	
+      <nav-mode>/instrumentation/nav[1]/nav-mode</nav-mode>
+      <crosstrack-error-m>/instrumentation/nav[1]/crosstrack-error-m</crosstrack-error-m>  
+	  <indicated-heading-deflection>/instrumentation/nav[1]/indicated-heading-deflection</indicated-heading-deflection>
+	  <indicated-gs-deflection>/instrumentation/nav[1]/indicated-gs-deflection</indicated-gs-deflection>
+    </params>
+    <x>240</x>
+    <y>130</y>
+    <w>80</w>
+    <h>80</h>
+  </instrument>
+
+  <instrument include="./Instruments/l410-turn_bank_ind-LUN1215.xml">
+    <name>Turn-bank-indicator</name>
+    <x>155</x>
+    <y>130</y>
+    <w>75</w>
+    <h>75</h>
+    <params>
+        <turn-rate>/instrumentation/turn-indicator[0]/indicated-turn-rate</turn-rate>
+        <spin>/instrumentation/turn-indicator[0]/spin</spin>
+    </params>
+  </instrument>
+
+  <instrument include="./Instruments/l410-rmi-KNI582.xml">
+    <name>Radio Magnetic Indicator - pilot</name>
+    <params>
+      <heading-magnetic-deg>/instrumentation/heading-indicator-selected/indicated-heading-deg</heading-magnetic-deg>
+	  <single-needle-deflection>/instrumentation/rmi[0]/indicated-deflection1</single-needle-deflection>
+	  <double-needle-deflection>/instrumentation/rmi[0]/indicated-deflection2</double-needle-deflection>
+      <nav-adf-sw1>/instrumentation/rmi[0]/nav-adf-sw1</nav-adf-sw1>
+      <nav-adf-sw2>/instrumentation/rmi[0]/nav-adf-sw2</nav-adf-sw2>
+	  <gyro-spin>/instrumentation/heading-indicator-selected/spin</gyro-spin>	 
+    </params>
+    <x>240</x>
+    <y>215</y>
+    <w>80</w>
+    <h>80</h>
+  </instrument>
+   
+  <instrument include="./Instruments/l410-alt_bar.xml">
+    <name>Altimeter</name>
+    <x>438</x>
+    <y>230</y>
+    <w>80</w>
+    <h>80</h>
+  </instrument>
+  
+  <instrument include="./Instruments/l410-wd_bank.xml">
+    <name>Varovani_naklon</name>
+    <x>510</x>
+    <y>325</y>
+    <w>64</w>
+    <h>24</h>
+  </instrument>  
+  
+  <instrument include="./Instruments/l410-inst_pan_sw.xml">
+    <name>Instrument panel switches (pilot)</name>
+    <x>80</x>
+    <y>30</y>
+    <w>60</w>
+    <h>75</h>
+    <params>
+        <attitude-sw>/controls/switches/attitude1-sw</attitude-sw>
+        <attitude-electrical-sw>/controls/switches/attitude-gyro1-sw</attitude-electrical-sw>
+        <turn-sw>/controls/switches/turn1-sw</turn-sw>
+        <turn-electrical-sw>/controls/switches/turn-gyro1-sw</turn-electrical-sw>
+    </params>
+  </instrument>
+  
+  <instrument include="./Instruments/l410-bat_temp.xml">
+    <name>Batery temperature</name>
+    <x>75</x>
+    <y>185</y>
+    <w>65</w>
+    <h>65</h>
+  </instrument>  
+  
+  <instrument include="./Instruments/l410-dimming.xml">
+    <name>dimming</name>
+    <x>250</x>
+    <y>38</y>
+    <w>180</w>
+    <h>60</h>
+  </instrument>    
+
+  <instrument include="./Instruments/l410-mkr-KA35A.xml">
+    <name>marker</name>
+    <x>180</x>
+    <y>300</y>
+    <w>33</w>
+    <h>57</h>
+  </instrument>    
+
+<!-- ********************************************************************************************** -->
+<!-- right section - copilot -->
+  
+
+  <instrument include="./Instruments/l410-asi.xml">
+    <name>Airspeed Indicator</name>
+    <x>939</x>
+    <y>315</y>
+    <w>80</w>
+    <h>80</h>
+<!--    <instrument include="./Instruments/l410-asi.xml">
+    <name>Airspeed Indicator</name>
+    <x>1309</x>
+    <y>387</y>
+    <w>98</w>
+    <h>98</h>
+  </instrument> -->
+    <params>
+        <indicated-speed>/instrumentation/airspeed-indicator[1]/indicated-speed-kt</indicated-speed>
+    </params>
+  
+  </instrument>
+
+  <instrument include="./Instruments/l410-ai-KCI310.xml">
+    <name>Attitude Indicator</name>
+    <x>1039</x>
+    <y>308</y>
+    <w>106</w>
+    <h>106</h>
+    <params>
+        <indicated-roll-deg>/instrumentation/attitude-indicator[1]/indicated-roll-deg</indicated-roll-deg>
+        <indicated-pitch-deg>/instrumentation/attitude-indicator[1]/indicated-pitch-deg</indicated-pitch-deg>
+        <horizont-offset-deg>/instrumentation/attitude-indicator[1]/horizon-offset-deg</horizont-offset-deg>
+        <spin>/instrumentation/attitude-indicator[1]/spin</spin>
+        <nav-inrange>/instrumentation/nav[1]/indicated-in-range</nav-inrange>
+        <nav-mode>/instrumentation/nav[1]/nav-mode</nav-mode>
+        <dh-signal>/instrumentation/altimeter-rad/signal-on</dh-signal>
+        <fd-roll-deg>/instrumentation/autopilot/requested_roll_ind</fd-roll-deg>
+        <fd-pitch-deg>/instrumentation/autopilot/requested_pitch_ind</fd-pitch-deg> 
+        <mode-fd-on>/instrumentation/autopilot/mode-fd-on</mode-fd-on>
+        <computer-flag>/instrumentation/autopilot/tested</computer-flag>
+        
+    </params>
+  </instrument>
+  
+  <instrument include="./Instruments/l410-vert_vel_ind.xml">
+    <name>Vertical Velocity Indicator</name>
+    <x>1139</x>
+    <y>315</y>
+    <w>80</w>
+    <h>80</h>
+  </instrument>  
+
+  <instrument include="./Instruments/l410-hsi-KPI553.xml">
+    <name>Horizontal Situation Indicator - copilot</name>
+    <params>
+	  <gyro-spin>/instrumentation/heading-indicator-selected/spin</gyro-spin>
+      <has-gs>/instrumentation/nav[1]/has-gs</has-gs>
+      <in-range>/instrumentation/nav[1]/indicated-in-range</in-range>
+      <nav-adf-sel>/instrumentation/hsi[1]/nav-adf-sw</nav-adf-sel>
+      <heading-bug-deg>/autopilot/settings/heading-bug-deg</heading-bug-deg>
+	  <adf-needle-deflection>/instrumentation/hsi[1]/indicated-adf-deflection</adf-needle-deflection>
+      
+	  <indicated-gs-deflection>/instrumentation/nav[1]/indicated-gs-deflection</indicated-gs-deflection>
+	  <indicated-heading-deflection>/instrumentation/nav[1]/indicated-heading-deflection</indicated-heading-deflection>
+      <from-flag>/instrumentation/nav[1]/indicated-from-flag</from-flag>	
+      <to-flag>/instrumentation/nav[1]/indicated-to-flag</to-flag>
+      <nav-radial-selected>/instrumentation/nav[1]/radials/selected-deg</nav-radial-selected>
+      <heading-magnetic-deg>/instrumentation/heading-indicator-selected/indicated-heading-deg</heading-magnetic-deg>
+
+      <dme-freq-source>/sim/instrument-options/hsi[1]/dme-freq-source</dme-freq-source>
+      <dme-hold-sw>/instrumentation/dme[1]/switch-position</dme-hold-sw>
+      <indicated-time-min>/instrumentation/dme[1]/l410-indicated-time-min</indicated-time-min>
+	  <rnav-rad-flag>/instrumentation/dme[1]/rnav-rad-flag</rnav-rad-flag>
+      <indicated-ground-speed-kt>/instrumentation/dme[1]/l410-indicated-speed-kt</indicated-ground-speed-kt>
+      <dme-indicated-distance-nm>/instrumentation/dme[1]/l410-indicated-distance-nm</dme-indicated-distance-nm>
+      <dme-in-range>/instrumentation/dme[1]/l410-indicated-in-range</dme-in-range>
+      <electrical-power>/systems/electrical/outputs/dme[1]</electrical-power>
+    </params>
+    <x>1039</x>
+    <y>201</y>
+    <w>137</w>
+    <h>110</h>
+  </instrument>
+   
+  <instrument include="./Instruments/l410-ea-KEA346.xml">
+    <name>Encoding altimeter</name>
+    <x>1229</x>
+    <y>220</y>
+    <w>80</w>
+    <h>80</h>
+  </instrument>
+
+  <instrument include="./Instruments/l410-dme-KDI573.xml">
+    <name>DME - copilot</name>
+    <params>
+      <dme-in-range>/instrumentation/dme[0]/in-range</dme-in-range>
+      <dme-indicated-distance-nm>/instrumentation/dme[0]/indicated-distance-nm</dme-indicated-distance-nm>
+      <indicated-ground-speed-kt>/instrumentation/dme[0]/indicated-ground-speed-kt</indicated-ground-speed-kt>
+      <indicated-time-min>/instrumentation/dme[0]/indicated-time-min</indicated-time-min>
+	  <rnav-rad-flag>/instrumentation/dme[0]/rnav-rad-flag</rnav-rad-flag>
+      <nav-in-range>/instrumentation/nav[0]/in-range</nav-in-range>
+      <electrical-power>/systems/electrical/outputs/dme[0]</electrical-power>
+    </params>
+    <x>1039</x>
+    <y>122</y>
+    <w>110</w>
+    <h>51</h>
+  </instrument>
+  
+  <instrument include="./Instruments/l410-rad_alt-KNI415.xml">
+    <name>Radar Altimeter</name>
+    <x>1139</x>
+    <y>130</y>
+    <w>80</w>
+    <h>80</h>
+  </instrument>
+  
+  <instrument include="./Instruments/l410-cdi-KI204.xml">
+    <name>CDI - copilot</name>
+    <params>
+      <nav-radial-selected>/instrumentation/nav[0]/radials/selected-deg</nav-radial-selected>
+      <nav-heading-needle-deflection>/instrumentation/nav[0]/heading-needle-deflection</nav-heading-needle-deflection>
+      <nav-gs-needle-deflection>/instrumentation/nav[0]/gs-needle-deflection</nav-gs-needle-deflection>
+      <has-gs>/instrumentation/nav[0]/has-gs</has-gs>
+      <in-range>/instrumentation/nav[0]/in-range</in-range>
+      <heading-magnetic-deg>/instrumentation/heading-indicator-selected/indicated-heading-deg</heading-magnetic-deg>
+      <to-flag>/instrumentation/nav[0]/to-flag</to-flag>
+      <from-flag>/instrumentation/nav[0]/from-flag</from-flag>	
+      <nav-mode>/instrumentation/nav[0]/nav-mode</nav-mode>
+      <crosstrack-error-m>/instrumentation/nav[0]/crosstrack-error-m</crosstrack-error-m>  
+	  <indicated-heading-deflection>/instrumentation/nav[0]/indicated-heading-deflection</indicated-heading-deflection>
+	  <indicated-gs-deflection>/instrumentation/nav[0]/indicated-gs-deflection</indicated-gs-deflection>
+    </params>
+    <x>939</x>
+    <y>130</y>
+    <w>80</w>
+    <h>80</h>
+  </instrument>
+    
+  <instrument include="./Instruments/l410-turn_bank_ind-LUN1215.xml">
+    <name>Turn-bank-indicator</name>
+    <x>1229</x>
+    <y>130</y>
+    <w>75</w>
+    <h>75</h>
+    <params>
+        <turn-rate>/instrumentation/turn-indicator[1]/indicated-turn-rate</turn-rate>
+        <spin>/instrumentation/turn-indicator[1]/spin</spin>
+    </params>
+  </instrument>
+
+  <instrument include="./Instruments/l410-rmi-KNI582.xml">
+    <name>Radio Magnetic Indicator - copilot</name>
+    <params>
+      <heading-magnetic-deg>/instrumentation/heading-indicator-selected/indicated-heading-deg</heading-magnetic-deg>
+	  <single-needle-deflection>/instrumentation/rmi[1]/indicated-deflection1</single-needle-deflection>
+	  <double-needle-deflection>/instrumentation/rmi[1]/indicated-deflection2</double-needle-deflection>
+      <nav-adf-sw1>/instrumentation/rmi[1]/nav-adf-sw1</nav-adf-sw1>
+      <nav-adf-sw2>/instrumentation/rmi[1]/nav-adf-sw2</nav-adf-sw2>
+	  <gyro-spin>/instrumentation/heading-indicator-selected/spin</gyro-spin>	 
+    </params>
+    <x>939</x>
+    <y>215</y>
+    <w>80</w>
+    <h>80</h>
+  </instrument>
+
+  <instrument include="./Instruments/l410-alt_bar.xml">
+    <name>Altimeter</name>
+    <x>1144</x>
+    <y>230</y>
+    <w>80</w>
+    <h>80</h>
+  </instrument>
+
+  <instrument include="./Instruments/l410-wd_bank.xml">
+    <name>Varovani_naklon</name>
+    <x>1424</x>
+    <y>325</y>
+    <w>64</w>
+    <h>24</h>
+  </instrument>
+  
+  <instrument include="./Instruments/l410-man_fire_ext.xml">
+    <name>man-fire</name>
+    <x>1315</x>
+    <y>130</y>
+    <w>50</w>
+    <h>50</h>
+  </instrument>  
+  
+  <instrument include="./Instruments/l410-inst_pan_sw.xml">
+    <name>Instrument panel switches (copilot)</name>
+    <x>940</x>
+    <y>30</y>
+    <w>60</w>
+    <h>75</h>
+    <params>
+        <attitude-sw>/controls/switches/attitude2-sw</attitude-sw>
+        <attitude-electrical-sw>/controls/switches/attitude-gyro2-sw</attitude-electrical-sw>
+        <turn-sw>/controls/switches/turn2-sw</turn-sw>
+        <turn-electrical-sw>/controls/switches/turn-gyro2-sw</turn-electrical-sw>
+    </params>
+  </instrument>
+
+  <instrument include="./Instruments/l410-v_a_meter.xml">
+    <name>VA-meter</name>
+    <x>1300</x>
+    <y>48</y>
+    <w>80</w>
+    <h>80</h>
+	<params>
+	   <voltage>/instrumentation/voltmeters/volt-30vdc2</voltage>
+	   <ampers>/instrumentation/voltmeters/amps-30vdc2</ampers>
+	</params>
+  </instrument>
+
+  <instrument include="./Instruments/l410-v_a_meter.xml">
+    <name>VA-meter</name>
+    <x>1217</x>
+    <y>48</y>
+    <w>80</w>
+    <h>80</h>
+	<params>
+	   <voltage>/instrumentation/voltmeters/volt-30vdc1</voltage>
+	   <ampers>/instrumentation/voltmeters/amps-30vdc1</ampers>
+	</params>
+  </instrument>
+  
+  <instrument include="./Instruments/l410-v_meter_45V.xml">
+    <name>V-meter</name>
+    <x>1152</x>
+    <y>35</y>
+    <w>50</w>
+    <h>50</h>
+  </instrument>
+  
+  <instrument include="./Instruments/l410-v_meter_150V.xml">
+    <name>V-meter</name>
+    <x>1097</x>
+    <y>35</y>
+    <w>50</w>
+    <h>50</h>
+  </instrument>
+
+  <instrument include="./Instruments/l410-mkr-KA35A.xml">
+    <name>marker</name>
+    <x>1200</x>
+    <y>300</y>
+    <w>33</w>
+    <h>57</h>
+  </instrument>    
+  
+  <instrument include="./Instruments/l410-ws_heat_prop_deic.xml">
+    <name>ws_heat_prop_deic</name>
+    <x>1020</x>
+    <y>48</y>
+    <w>92</w>
+    <h>70</h>
+  </instrument>  
+
+  <!-- midle section ********************************************************************************** --> 
+  <!-- nav + flight + ... -->
+  <instrument include="./Instruments/l410-ai.xml">
+    <name>Attitude Indicator</name>
+    <x>550</x>
+    <y>320</y>
+    <w>80</w>
+    <h>80</h>
+    <params>
+        <indicated-roll-deg>/instrumentation/attitude-indicator[2]/indicated-roll-deg</indicated-roll-deg>
+        <indicated-pitch-deg>/instrumentation/attitude-indicator[2]/indicated-pitch-deg</indicated-pitch-deg>
+        <horizont-offset-deg>/instrumentation/attitude-indicator[2]/horizon-offset-deg</horizont-offset-deg>
+        <spin>/instrumentation/attitude-indicator[2]/spin</spin>
+    </params>
+  </instrument>
+  
+<!--  
+  <instrument include="./Instruments/l410-ap_ann-KAP315.xml">
+    <name>ap anunciator</name>
+    <x>910</x>
+    <y>410</y>
+    <w>128</w>
+    <h>40</h>
+   <params> 
+        <electrical-power>/systems/electrical/outputs/autopilot</electrical-power>   
+        <ann-ap-on>/instrumentation/autopilot/ann-ap-on</ann-ap-on>
+        <ann-fd-on>/instrumentation/autopilot/ann-fd-on</ann-fd-on>          
+        <ann-alt-on>/instrumentation/autopilot/ann-alt-on</ann-alt-on>
+        <ann-hdg-on>/instrumentation/autopilot/ann-hdg-on</ann-hdg-on>
+        <ann-nav-on>/instrumentation/autopilot/ann-nav-on</ann-nav-on>
+        <ann-yd-on>/instrumentation/autopilot/ann-yd-on</ann-yd-on>
+        <ann-hb-on>/instrumentation/autopilot/ann-hb-on</ann-hb-on>
+        <ann-nav-arm-on>/instrumentation/autopilot/ann-nav-arm-on</ann-nav-arm-on>
+        <ann-apr-on>/instrumentation/autopilot/ann-apr-on</ann-apr-on>
+        <ann-apr-arm-on>/instrumentation/autopilot/ann-apr-arm-on</ann-apr-arm-on>  
+        <ann-gs-on>/instrumentation/autopilot/ann-apr-gs-on</ann-gs-on>          
+        <ann-ga-on>/instrumentation/autopilot/ann-apr-ga-on</ann-ga-on>                  
+        <ann-bc-on>/instrumentation/autopilot/ann-bc-on</ann-bc-on>                  
+        <ann-trim-on>/instrumentation/autopilot/ann-trim-on</ann-trim-on>     
+        
+        <bulbs-test-on>/instrumentation/autopilot/bulbs-test-on</bulbs-test-on>
+    </params>        
+  </instrument>  
+  -->
+<!--
+  <instrument include="./Instruments/radar.xml">
+    <name>weather_radar</name>
+    <x>815</x>
+    <y>280</y>
+    <w>192</w>
+    <h>120</h>
+  </instrument>
+-->
+  <instrument include="./Instruments/l410-wr-RDR2000.xml">
+    <name>weather_radar</name>
+    <x>585</x>
+    <y>215</y>
+    <w>178</w>
+    <h>114</h>
+    <params>
+    <red1>/instrumentation/wr/text-col-red</red1>
+    </params>
+  </instrument>
+  
+  <instrument include="./Instruments/l410-gi-GC360A.xml">
+    <name>graphics unit</name>
+    <x>585</x>
+    <y>142</y>
+    <w>178</w>
+    <h>37</h>
+  </instrument>
+ 
+ <instrument include="./Instruments/l410-nav-KNS81.xml">
+    <name>KNS-81-NAV2</name>
+    <x>585</x>
+    <y>99</y>
+    <w>175</w>
+    <h>55</h>
+  </instrument>  
+<!--
+  <instrument include="./Instruments/l410-gear_ind-LUN1694.xml">
+    <name>gear_indicator</name>
+    <x>950</x>
+    <y>260</y>
+    <w>60</w>
+    <h>60</h>
+  </instrument>
+
+  <instrument include="./Instruments/l410-flap_ind-LUN2690.xml">
+    <name>flaps_indicator</name>
+    <x>950</x>
+    <y>200</y>
+    <w>40</w>
+    <h>23</h>
+  </instrument>
+-->
+<!-- engines  -->
+
+  <instrument include="./Instruments/l410-n_gen-LUN1347.xml">
+    <name>n-gen</name>
+    <params>
+      <eng-ngen>/instrumentation/engine/indicated-gen1-perc</eng-ngen>
+    </params> 
+    <x>773</x>
+    <y>210</y>
+    <w>55</w>
+    <h>55</h>
+  </instrument>
+
+  <instrument include="./Instruments/l410-n_gen-LUN1347.xml">
+    <name>n-gen</name>
+    <params>
+      <eng-ngen>/instrumentation/engine/indicated-gen2-perc</eng-ngen>
+    </params> 
+    <x>840</x>
+    <y>210</y>
+    <w>55</w>
+    <h>55</h>
+  </instrument>
+
+  <instrument include="./Instruments/l410-n_prop-LUN1333.xml">
+    <name>n-prop</name>
+    <params>
+      <eng-nprop>/instrumentation/engine/indicated-prop1-rpm</eng-nprop>
+    </params> 
+    <x>773</x>
+    <y>150</y>
+    <w>55</w>
+    <h>55</h>
+  </instrument>
+
+  <instrument include="./Instruments/l410-n_prop-LUN1333.xml">
+    <name>n-prop</name>
+    <params>
+      <eng-nprop>/instrumentation/engine/indicated-prop2-rpm</eng-nprop>
+    </params> 
+    <x>840</x>
+    <y>150</y>
+    <w>55</w>
+    <h>55</h>
+  </instrument>
+
+  <instrument include="./Instruments/l410-prop_sh_tork-LUN1539.xml">
+    <name>prop-sh</name>
+    <params>
+      <eng-pshaft>/instrumentation/engine/indicated-pshaft1-perc</eng-pshaft>
+    </params> 
+    <x>773</x>
+    <y>330</y>
+    <w>55</w>
+    <h>55</h>
+  </instrument>
+
+  <instrument include="./Instruments/l410-prop_sh_tork-LUN1539.xml">
+    <name>prop-sh</name>
+    <params>
+      <eng-pshaft>/instrumentation/engine/indicated-pshaft2-perc</eng-pshaft>
+    </params> 
+    <x>840</x>
+    <y>330</y>
+    <w>55</w>
+    <h>55</h>
+  </instrument>
+
+  <instrument include="./Instruments/l410-itt-LUN1370.xml">
+    <name>itt</name>
+    <params>
+      <eng-itt>/instrumentation/engine/indicated-itt1-degc</eng-itt>
+    </params> 
+    <x>773</x>
+    <y>270</y>
+    <w>55</w>
+    <h>55</h>
+  </instrument>
+
+  <instrument include="./Instruments/l410-itt-LUN1370.xml">
+    <name>itt</name>
+    <params>
+      <eng-itt>/instrumentation/engine/indicated-itt2-degc</eng-itt>
+    </params> 
+    <x>840</x>
+    <y>270</y>
+    <w>55</w>
+    <h>55</h>
+  </instrument>
+
+  <instrument include="./Instruments/l410-fuel_qty-LUN1634.xml">
+    <name>fuelq</name>
+    <params>
+      <eng-fuel>/instrumentation/engine/indicated-fuel1-kg</eng-fuel>
+    </params> 
+    <x>707</x>
+    <y>330</y>
+    <w>55</w>
+    <h>55</h>
+  </instrument>
+
+  <instrument include="./Instruments/l410-fuel_qty-LUN1634.xml">
+    <name>fuelq</name>
+    <params>
+      <eng-fuel>/instrumentation/engine/indicated-fuel2-kg</eng-fuel>
+    </params> 
+    <x>707</x>
+    <y>270</y>
+    <w>55</w>
+    <h>55</h>
+  </instrument>
+
+  <instrument include="./Instruments/l410-fuel_flow.xml">
+    <name>fuel flow</name>
+    <params>
+      <eng-fuelfl>/instrumentation/engine/indicated-fuelfl1-kgph</eng-fuelfl>
+    </params> 
+    <x>707</x>
+    <y>210</y>
+    <w>55</w>
+    <h>55</h>
+  </instrument>
+
+  <instrument include="./Instruments/l410-fuel_flow.xml">
+    <name>fuel flow</name>
+    <params>
+      <eng-fuelfl>/instrumentation/engine/indicated-fuelfl2-kgph</eng-fuelfl>
+    </params> 
+    <x>707</x>
+    <y>150</y>
+    <w>55</w>
+    <h>55</h>
+  </instrument>
+
+  <instrument include="./Instruments/l410-fuel_oil_pres_temp-LUN1538.xml">
+    <name>fuel oil pressure</name>
+    <params>
+      <press-f>/instrumentation/pressure/indicated-fuel1-kp_cm2</press-f>
+      <press-o>/instrumentation/pressure/indicated-oil1-kp_cm2</press-o>
+      <temp-o>/instrumentation/temperature/indicated-oil1-degc</temp-o>
+    </params>
+    <x>740</x>
+    <y>75</y>
+    <w>80</w>
+    <h>80</h>
+  </instrument>
+
+  <instrument include="./Instruments/l410-fuel_oil_pres_temp-LUN1538.xml">
+    <name>fuel oil pressure</name>
+    <params>
+      <press-f>/instrumentation/pressure/indicated-fuel2-kp_cm2</press-f>
+      <press-o>/instrumentation/pressure/indicated-oil2-kp_cm2</press-o>
+      <temp-o>/instrumentation/temperature/indicated-oil2-degc</temp-o>
+    </params> 
+    <x>820</x>
+    <y>75</y>
+    <w>80</w>
+    <h>80</h>
+  </instrument>
+
+<!-- TLAKOMERY -->
+
+  <instrument include="./Instruments/l410-brake_park_press.xml">
+    <name>parking brake pressure</name>
+    <x>600</x>
+    <y>36</y>
+    <w>55</w>
+    <h>55</h>
+  </instrument>
+
+  <instrument include="./Instruments/l410-brake_press.xml">
+    <name>brakes pressure</name>
+    <x>535</x>
+    <y>42</y>
+    <w>55</w>
+    <h>55</h>
+  </instrument>
+
+  <instrument include="./Instruments/l410-hydr_press-UI2-240K.xml">
+    <name>hydr pressure</name>
+    <x>665</x>
+    <y>36</y>
+    <w>55</w>
+    <h>55</h>
+  </instrument>
+
+  </instruments>
+
+</PropertyList>

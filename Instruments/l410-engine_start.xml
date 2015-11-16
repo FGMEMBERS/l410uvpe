@@ -1,0 +1,580 @@
+<?xml version="1.0"?>
+
+<!--
+
+(nase!)
+
+-->
+
+<PropertyList>
+
+ <name>Checkpanel</name>
+
+  <w-base>50</w-base>
+  <h-base>250</h-base>
+
+  <layers>
+<!--
+ <layer>
+   <name>DESKA</name>
+     <texture>
+     <path>Aircraft/l410uvpe/Instruments/Textures/l410-neex.rgb</path>
+     <x1>0.0</x1>
+     <x2>1.0</x2>
+     <y1>0.0</y1>
+     <y2>0.7</y2>
+     </texture>
+     <w>50</w>
+     <h>250</h>
+  </layer>
+
+-->
+<!--start lh-->
+ <layer>
+   <name>start engine lh</name>
+   <type>switch</type>
+   <layer>
+     <condition>
+       <property>/controls/switches/start-engine1-sw</property>
+     </condition>
+     <name>on</name>
+     <texture>
+     <path>Aircraft/l410uvpe/Instruments/Textures/l410-prislus.rgb</path>
+     <x1>0.0</x1>
+     <x2>0.14118</x2>
+     <y1>0.48438</y1>
+     <y2>0.61119</y2>
+     </texture>
+     <w>15</w>
+     <h>15</h>
+   </layer>
+   <layer>
+     <name>off</name>
+     <texture>
+     <path>Aircraft/l410uvpe/Instruments/Textures/l410-prislus.rgb</path>
+     <x1>0.0</x1>
+     <x2>0.14118</x2>
+     <y1>0.34902</y1>
+     <y2>0.47451</y2>
+     </texture>
+     <w>15</w>
+     <h>15</h>
+   </layer>
+   <transformations>
+      <transformation>
+        <type>x-shift</type> 
+        <offset>-12</offset> 
+      </transformation>
+      <transformation>
+        <type>y-shift</type> 
+        <offset>-80</offset> 
+      </transformation>
+   </transformations>
+ </layer>
+ 
+  <layer>
+   <name>start engine RH</name>
+   <type>switch</type>
+    <layer>
+     <condition>
+      <property>/controls/switches/start-engine2-sw</property>
+     </condition>
+     <name>on</name>
+     <texture>
+     <path>Aircraft/l410uvpe/Instruments/Textures/l410-prislus.rgb</path>
+     <x1>0.0</x1>
+     <x2>0.14118</x2>
+     <y1>0.48438</y1>
+     <y2>0.61119</y2>
+     </texture>
+     <w>15</w>
+     <h>15</h>
+    </layer>
+    <layer>
+     <name>off</name>
+     <texture>
+     <path>Aircraft/l410uvpe/Instruments/Textures/l410-prislus.rgb</path>
+     <x1>0.0</x1>
+     <x2>0.14118</x2>
+     <y1>0.34902</y1>
+     <y2>0.47451</y2>
+     </texture>
+     <w>15</w>
+     <h>15</h>
+    </layer>
+    <transformations>
+      <transformation>
+        <type>x-shift</type> 
+        <offset>12</offset> 
+      </transformation>
+      <transformation>
+        <type>y-shift</type> 
+        <offset>-80</offset> 
+      </transformation>
+    </transformations>
+  </layer>
+
+<layer>
+   <name>label start</name>
+     <texture>
+     <path>Aircraft/l410uvpe/Instruments/Textures/labels.rgb</path>
+     <x1>0.5</x1>
+     <x2>1.0</x2>
+     <y1>0.625</y1>
+     <y2>0.75</y2>
+     </texture>
+     <w>50</w>
+     <h>15</h>
+    <transformations>
+      <transformation>
+        <type>x-shift</type> 
+        <offset>0</offset> 
+      </transformation>
+      <transformation>
+        <type>y-shift</type> 
+        <offset>-104</offset> 
+      </transformation>
+    </transformations>
+  </layer>
+
+
+ <layer>
+   <name>dry engine lh</name>
+   <type>switch</type>
+    <layer>
+     <condition>
+       <property>/controls/switches/chck-engine1-sw</property>
+     </condition>
+     <name>on</name>
+     <texture>
+     <path>Aircraft/l410uvpe/Instruments/Textures/l410-prislus.rgb</path>
+     <x1>0.0</x1>
+     <x2>0.14118</x2>
+     <y1>0.48438</y1>
+     <y2>0.61119</y2>
+     </texture>
+     <w>15</w>
+     <h>15</h>
+   </layer>
+   <layer>
+     <name>off</name>
+     <texture>
+     <path>Aircraft/l410uvpe/Instruments/Textures/l410-prislus.rgb</path>
+     <x1>0.0</x1>
+     <x2>0.14118</x2>
+     <y1>0.34902</y1>
+     <y2>0.47451</y2>
+     </texture>
+     <w>15</w>
+     <h>15</h>
+    </layer>
+    <transformations>
+      <transformation>
+        <type>x-shift</type> 
+        <offset>-12</offset> 
+      </transformation>
+      <transformation>
+        <type>y-shift</type> 
+        <offset>0</offset> 
+      </transformation>
+    </transformations>
+  </layer>
+ 
+<layer>
+   <name>dry engine RH</name>
+   <type>switch</type>
+    <layer>
+     <condition>
+      <property>/controls/switches/chck-airframe-sw</property>
+     </condition>
+     <name>on</name>
+     <texture>
+     <path>Aircraft/l410uvpe/Instruments/Textures/l410-prislus.rgb</path>
+     <x1>0.0</x1>
+     <x2>0.14118</x2>
+     <y1>0.48438</y1>
+     <y2>0.61119</y2>
+     </texture>
+     <w>15</w>
+     <h>15</h>
+    </layer>
+    <layer>
+     <name>off</name>
+     <texture>
+     <path>Aircraft/l410uvpe/Instruments/Textures/l410-prislus.rgb</path>
+     <x1>0.0</x1>
+     <x2>0.14118</x2>
+     <y1>0.34902</y1>
+     <y2>0.47451</y2>
+     </texture>
+     <w>15</w>
+     <h>15</h>
+    </layer>
+    <transformations>
+      <transformation>
+        <type>x-shift</type> 
+        <offset>12</offset> 
+      </transformation>
+      <transformation>
+        <type>y-shift</type> 
+        <offset>0</offset> 
+      </transformation>
+    </transformations>
+  </layer>
+ <layer>
+   <name>label dry engine</name>
+     <texture>
+     <path>Aircraft/l410uvpe/Instruments/Textures/labels.rgb</path>
+     <x1>0.5</x1>
+     <x2>1.0</x2>
+     <y1>0.5</y1>
+     <y2>0.625</y2>
+     </texture>
+     <w>50</w>
+     <h>15</h>
+    <transformations>
+      <transformation>
+        <type>x-shift</type> 
+        <offset>0</offset> 
+      </transformation>
+      <transformation>
+        <type>y-shift</type> 
+        <offset>-25</offset> 
+      </transformation>
+    </transformations>
+  </layer>
+
+ <layer>
+   <name>water injection on</name>
+   <type>switch</type>
+    <layer>
+     <condition>
+       <property>/controls/switches/chck-engine1-sw</property>
+     </condition>
+     <name>on</name>
+     <texture>
+     <path>Aircraft/l410uvpe/Instruments/Textures/l410-prislus.rgb</path>
+     <x1>0.0</x1>
+     <x2>0.14118</x2>
+     <y1>0.48438</y1>
+     <y2>0.61119</y2>
+     </texture>
+     <w>15</w>
+     <h>15</h>
+   </layer>
+   <layer>
+     <name>off</name>
+     <texture>
+     <path>Aircraft/l410uvpe/Instruments/Textures/l410-prislus.rgb</path>
+     <x1>0.0</x1>
+     <x2>0.14118</x2>
+     <y1>0.34902</y1>
+     <y2>0.47451</y2>
+     </texture>
+     <w>15</w>
+     <h>15</h>
+    </layer>
+    <transformations>
+      <transformation>
+        <type>x-shift</type> 
+        <offset>-12</offset> 
+      </transformation>
+      <transformation>
+        <type>y-shift</type> 
+        <offset>80</offset> 
+      </transformation>
+    </transformations>
+  </layer>
+ 
+<layer>
+   <name>water injection off</name>
+   <type>switch</type>
+    <layer>
+     <condition>
+      <property>/controls/switches/chck-airframe-sw</property>
+     </condition>
+     <name>on</name>
+     <texture>
+     <path>Aircraft/l410uvpe/Instruments/Textures/l410-prislus.rgb</path>
+     <x1>0.0</x1>
+     <x2>0.14118</x2>
+     <y1>0.48438</y1>
+     <y2>0.61119</y2>
+     </texture>
+     <w>15</w>
+     <h>15</h>
+    </layer>
+    <layer>
+     <name>off</name>
+     <texture>
+     <path>Aircraft/l410uvpe/Instruments/Textures/l410-prislus.rgb</path>
+     <x1>0.0</x1>
+     <x2>0.14118</x2>
+     <y1>0.34902</y1>
+     <y2>0.47451</y2>
+     </texture>
+     <w>15</w>
+     <h>15</h>
+    </layer>
+    <transformations>
+      <transformation>
+        <type>x-shift</type> 
+        <offset>12</offset> 
+      </transformation>
+      <transformation>
+        <type>y-shift</type> 
+        <offset>80</offset> 
+      </transformation>
+    </transformations>
+  </layer>
+ <layer>
+   <name>label water inj</name>
+     <texture>
+     <path>Aircraft/l410uvpe/Instruments/Textures/labels.rgb</path>
+     <x1>0.5</x1>
+     <x2>1.0</x2>
+     <y1>0.375</y1>
+     <y2>0.5</y2>
+     </texture>
+     <w>50</w>
+     <h>15</h>
+    <transformations>
+      <transformation>
+        <type>x-shift</type> 
+        <offset>0</offset> 
+      </transformation>
+      <transformation>
+        <type>y-shift</type> 
+        <offset>55</offset> 
+      </transformation>
+    </transformations>
+  </layer>
+
+<!--prouzky-->
+ <layer>
+   <name>label lh start strip</name>
+     <texture>
+     <path>Aircraft/l410uvpe/Instruments/Textures/labels.rgb</path>
+     <x1>0.880</x1>
+     <x2>0.9375</x2>
+     <y1>0.0</y1>
+     <y2>0.1875</y2>
+     </texture>
+     <w>10</w>
+     <h>25</h>
+    <transformations>
+      <transformation>
+        <type>x-shift</type> 
+        <offset>-20</offset> 
+      </transformation>
+      <transformation>
+        <type>y-shift</type> 
+        <offset>-85</offset> 
+      </transformation>
+    </transformations>
+ </layer>
+ <layer>
+   <name>label rh start strip</name>
+     <texture>
+     <path>Aircraft/l410uvpe/Instruments/Textures/labels.rgb</path>
+     <x1>0.9375</x1>
+     <x2>1.0</x2>
+     <y1>0.0</y1>
+     <y2>0.1875</y2>
+     </texture>
+     <w>10</w>
+     <h>25</h>
+    <transformations>
+      <transformation>
+        <type>x-shift</type> 
+        <offset>23</offset> 
+      </transformation>
+      <transformation>
+        <type>y-shift</type> 
+        <offset>-85</offset> 
+      </transformation>
+    </transformations>
+  </layer>
+ <layer>
+   <name>label lh dry mot strip</name>
+     <texture>
+     <path>Aircraft/l410uvpe/Instruments/Textures/labels.rgb</path>
+     <x1>0.880</x1>
+     <x2>0.9375</x2>
+     <y1>0.0</y1>
+     <y2>0.1875</y2>
+     </texture>
+     <w>10</w>
+     <h>25</h>
+    <transformations>
+      <transformation>
+        <type>x-shift</type> 
+        <offset>-20</offset> 
+      </transformation>
+      <transformation>
+        <type>y-shift</type> 
+        <offset>-5</offset> 
+      </transformation>
+    </transformations>
+ </layer>
+ <layer>
+   <name>label rh start strip</name>
+     <texture>
+     <path>Aircraft/l410uvpe/Instruments/Textures/labels.rgb</path>
+     <x1>0.9375</x1>
+     <x2>1.0</x2>
+     <y1>0.0</y1>
+     <y2>0.1875</y2>
+     </texture>
+     <w>10</w>
+     <h>25</h>
+    <transformations>
+      <transformation>
+        <type>x-shift</type> 
+        <offset>23</offset> 
+      </transformation>
+      <transformation>
+        <type>y-shift</type> 
+        <offset>-5</offset> 
+      </transformation>
+    </transformations>
+  </layer>
+ <layer>
+   <name>label lh w i strip</name>
+     <texture>
+     <path>Aircraft/l410uvpe/Instruments/Textures/labels.rgb</path>
+     <x1>0.880</x1>
+     <x2>0.9375</x2>
+     <y1>0.0</y1>
+     <y2>0.1875</y2>
+     </texture>
+     <w>10</w>
+     <h>25</h>
+    <transformations>
+      <transformation>
+        <type>x-shift</type> 
+        <offset>-20</offset> 
+      </transformation>
+      <transformation>
+        <type>y-shift</type> 
+        <offset>75</offset> 
+      </transformation>
+    </transformations>
+ </layer>
+ <layer>
+   <name>label rh w i strip</name>
+     <texture>
+     <path>Aircraft/l410uvpe/Instruments/Textures/labels.rgb</path>
+     <x1>0.9375</x1>
+     <x2>1.0</x2>
+     <y1>0.0</y1>
+     <y2>0.1875</y2>
+     </texture>
+     <w>10</w>
+     <h>25</h>
+    <transformations>
+      <transformation>
+        <type>x-shift</type> 
+        <offset>23</offset> 
+      </transformation>
+      <transformation>
+        <type>y-shift</type> 
+        <offset>75</offset> 
+      </transformation>
+    </transformations>
+  </layer>
+
+
+
+  </layers>
+
+<actions>
+  <action>
+   <name>start lh engine</name>
+   <button>0</button>
+   <x>-24</x>
+   <y>-92</y>
+   <w>24</w>
+   <h>24</h>
+   <binding>
+      <command>property-assign</command>
+      <property>/controls/switches/start-engine1-sw</property>
+      <value type="bool">true</value>
+  </binding>
+  <binding>
+   <command>property-assign</command>
+   <property>/controls/engines/engine[0]/starter</property>
+   <value type="bool">true</value>
+  </binding>
+  <mod-up>
+   <binding>
+      <command>property-assign</command>
+      <property>/controls/switches/start-engine1-sw</property>
+      <value type="bool">false</value>
+  </binding>
+  <binding>
+   <command>property-assign</command>
+   <property>/controls/engines/engine[0]/starter</property>
+   <value type="bool">false</value>
+  </binding>
+  </mod-up>
+  </action>
+
+  <action>
+   <name>start rh engine</name>
+   <button>0</button>
+   <x>0</x>
+   <y>-92</y>
+   <w>24</w>
+   <h>24</h>
+   <binding>
+      <command>property-assign</command>
+      <property>/controls/switches/start-engine2-sw</property>
+      <value type="bool">true</value>
+  </binding>
+  <binding>
+   <command>property-assign</command>
+   <property>/controls/engines/engine[1]/starter</property>
+   <value type="bool">true</value>
+  </binding>
+  <mod-up>
+   <binding>
+      <command>property-assign</command>
+      <property>/controls/switches/start-engine2-sw</property>
+      <value type="bool">false</value>
+  </binding>
+  <binding>
+   <command>property-assign</command>
+   <property>/controls/engines/engine[1]/starter</property>
+   <value type="bool">false</value>
+  </binding>
+   <binding>
+      <command>property-assign</command>
+      <property>/instrumentation/engine/engine_start_cover</property>
+      <value type="bool">false</value>
+  </binding>  
+  </mod-up>
+  </action>
+
+  <action>
+   <name>start engine cover</name>
+   <button>0</button>
+   <x>-24</x>
+   <y>-116</y>
+   <w>50</w>
+   <h>24</h>
+   <binding>
+      <command>property-toggle</command>
+      <property>/instrumentation/engine/engine_start_cover</property>
+      <value type="bool">true</value>
+  </binding>
+
+  </action>
+
+
+
+
+
+
+</actions>
+</PropertyList>

@@ -1,0 +1,437 @@
+<?xml version="1.0"?>
+
+<!--
+VA-meter
+-->
+
+<PropertyList>
+
+ <name>clock</name>
+
+ <w-base>200</w-base>
+ <h-base>200</h-base>
+
+ <layers>
+ 
+
+ 
+ 
+
+<layer>
+   <name>background</name>
+   <texture>
+    <path>Aircraft/l410uvpe/Instruments/Textures/l410-clock.rgb</path>
+    <x1>0.0</x1>
+    <y1>0.1367</y1>
+    <x2>0.8633</x2>
+    <y2>1.0</y2>
+   </texture>
+  <w>110</w>
+  <h>110</h>
+   <transformations>
+    <transformation>
+     <type>x-shift</type>
+     <offset>-36</offset>
+    </transformation>
+    </transformations>
+</layer>
+  
+
+
+  <layer>
+   <name>glare shield</name>
+   <texture>
+    <path>Aircraft/l410uvpe/Instruments/Textures/bezel1.rgb</path>
+    <x1>0.5</x1>
+    <y1>0.0</y1>
+    <x2>1.0</x2>
+    <y2>0.5</y2>
+   </texture>
+  <w>130</w>
+  <h>130</h>
+   <transformations>
+    <transformation>
+     <type>x-shift</type>
+     <offset>-34</offset>
+    </transformation>
+    <transformation>
+     <type>y-shift</type>
+     <offset>-2</offset>
+    </transformation>
+    </transformations>
+  </layer>  
+  
+ <layer>
+   <name>needle-a</name>
+   <texture>
+    <path>Aircraft/l410uvpe/Instruments/Textures/l410-clock.rgb</path>
+    <x1>0.0000</x1>
+    <y1>0.0000</y1>
+    <x2>0.4414</x2>
+    <y2>0.0352</y2>
+   </texture>
+   <w>18</w>
+   <h>3</h>
+   <transformations>   
+     <transformation>	
+       <type>x-shift</type>
+       <offset>-36</offset>
+     </transformation>	
+     <transformation>	
+       <type>y-shift</type>
+       <offset>25</offset>
+     </transformation>	
+<transformation>
+       <type>rotation</type>
+       <property>sim/time/utc/day-seconds</property>
+       <scale>6</scale> 
+       <offset>-90</offset>
+     </transformation>
+     <transformation>	
+       <type>x-shift</type>
+       <offset>9</offset>
+     </transformation>	
+     <transformation>	
+       <type>y-shift</type>
+       <offset>0</offset>
+     </transformation>	
+   </transformations>   
+  </layer>      
+  
+  <layer>
+    <name>needle-a1</name>
+    <texture>
+      <path>Aircraft/l410uvpe/Instruments/Textures/l410-clock.rgb</path>
+      <x1>0.0000</x1>
+      <y1>0.0000</y1>
+      <x2>0.4414</x2>
+      <y2>0.0352</y2>
+    </texture>
+    <w>12</w>
+    <h>3</h>
+    <transformations>   
+      <transformation> 
+        <type>x-shift</type>
+        <offset>-36</offset>
+      </transformation>  
+      <transformation> 
+        <type>y-shift</type>
+        <offset>25</offset>
+      </transformation>  
+      <transformation>
+        <type>rotation</type>
+        <property>sim/time/utc/day-seconds</property>
+        <scale>0.6</scale> 
+        <offset>-90</offset>
+      </transformation>
+      <transformation> 
+        <type>x-shift</type>
+        <offset>9</offset>
+      </transformation>  
+      <transformation> 
+        <type>y-shift</type>
+        <offset>0</offset>
+      </transformation>  
+    </transformations>   
+  </layer>      
+    
+  
+ <layer>
+   <name>needle-b</name>
+   <texture>
+    <path>Aircraft/l410uvpe/Instruments/Textures/l410-clock.rgb</path>
+    <x1>0.0000</x1>
+    <y1>0.0000</y1>
+    <x2>0.4414</x2>
+    <y2>0.0352</y2>
+   </texture>
+   <w>18</w>
+   <h>3</h>
+   <transformations>   
+     <transformation>	
+       <type>x-shift</type>
+       <offset>-36</offset>
+     </transformation>	
+     <transformation>	
+       <type>y-shift</type>
+       <offset>-25</offset>
+     </transformation>	
+<transformation>
+       <type>rotation</type>
+       <property>sim/time/utc/day-seconds</property>
+       <scale>12</scale> 
+       <offset>-90</offset>
+     </transformation>
+     <transformation>	
+       <type>x-shift</type>
+       <offset>9</offset>
+     </transformation>	
+     <transformation>	
+       <type>y-shift</type>
+       <offset>0</offset>
+     </transformation>	
+   </transformations>   
+  </layer>        
+ 
+  <layer>
+    <name>needle-c</name>
+    <texture>
+      <path>Aircraft/l410uvpe/Instruments/Textures/l410-clock.rgb</path>
+      <x1>0.0000</x1>
+      <y1>0.0000</y1>
+      <x2>0.4414</x2>
+      <y2>0.0352</y2>
+    </texture>
+    <w>12</w>
+    <h>3</h>
+    <transformations>   
+      <transformation> 
+        <type>x-shift</type>
+        <offset>-36</offset>
+      </transformation>  
+      <transformation> 
+        <type>y-shift</type>
+        <offset>-25</offset>
+      </transformation>  
+      <transformation>
+        <type>rotation</type>
+        <property>sim/time/utc/day-seconds</property>
+        <scale>1.2</scale> 
+        <offset>-90</offset>
+      </transformation>
+      <transformation> 
+        <type>x-shift</type>
+        <offset>9</offset>
+      </transformation>  
+      <transformation> 
+        <type>y-shift</type>
+        <offset>0</offset>
+      </transformation>  
+    </transformations>   
+  </layer>          
+  
+   <layer>
+   <name>needle-h</name>
+   <texture>
+    <path>Aircraft/l410uvpe/Instruments/Textures/l410-clock.rgb</path>
+    <x1>0.0000</x1>
+    <y1>0.0000</y1>
+    <x2>0.4414</x2>
+    <y2>0.0352</y2>
+   </texture>
+   <w>35</w>
+   <h>9</h>
+   <transformations>   
+     <transformation>	
+       <type>x-shift</type>
+       <offset>-36</offset>
+     </transformation>	
+   <transformation>
+       <type>rotation</type>
+       <property>sim/time/utc/day-seconds</property>
+       <scale>0.008333333333</scale>  
+       <offset>-90</offset>
+     </transformation>
+     <transformation>	
+       <type>x-shift</type>
+       <offset>18</offset>
+     </transformation>	
+     <transformation>	
+       <type>y-shift</type>
+       <offset>0</offset>
+     </transformation>	
+   </transformations>   
+  </layer>    
+ 
+
+
+<layer>
+   <name>needle-m</name>
+   <texture>
+    <path>Aircraft/l410uvpe/Instruments/Textures/l410-clock.rgb</path>
+    <x1>0.0000</x1>
+    <y1>0.0000</y1>
+    <x2>0.4414</x2>
+    <y2>0.0352</y2>
+   </texture>
+   <w>50</w>
+   <h>7</h>
+   <transformations>   
+     <transformation>	
+       <type>x-shift</type>
+       <offset>-36</offset>
+     </transformation>	
+   <transformation>
+       <type>rotation</type>
+       <property>sim/time/utc/day-seconds</property>
+       <scale>0.1</scale> 
+       <offset>-90</offset>
+     </transformation>
+     <transformation>	
+       <type>x-shift</type>
+       <offset>22</offset>
+     </transformation>	
+     <transformation>	
+       <type>y-shift</type>
+       <offset>0</offset>
+     </transformation>	
+   </transformations>   
+  </layer>    
+
+  <layer>
+   <name>needle-s</name>
+   <texture>
+    <path>Aircraft/l410uvpe/Instruments/Textures/l410-clock.rgb</path>
+    <x1>0.0000</x1>
+    <y1>0.0000</y1>
+    <x2>0.4414</x2>
+    <y2>0.0352</y2>
+   </texture>
+   <w>55</w>
+   <h>4</h>
+   <transformations>   
+     <transformation>	
+       <type>x-shift</type>
+       <offset>-36</offset>
+     </transformation>	
+   <transformation>
+       <type>rotation</type>
+       <property>sim/time/utc/day-seconds</property>
+       <scale>6</scale> 
+       <offset>-90</offset>
+     </transformation>
+     <transformation>	
+       <type>x-shift</type>
+       <offset>22</offset>
+     </transformation>	
+     <transformation>	
+       <type>y-shift</type>
+       <offset>0</offset>
+     </transformation>	
+   </transformations>   
+  </layer>    
+
+
+
+
+<!-- Zapinani cocpit -->
+    <layer>
+      <name>Clock-sw</name>
+      <type>switch</type>
+      <layer>
+        <condition>
+          <property>/controls/switches/cabin-lights-sw</property>
+        </condition>
+        <name>on</name>
+        <texture>
+          <path>Aircraft/l410uvpe/Instruments/Textures/l410-packy.rgb</path>
+          <x1>0.5</x1>
+          <x2>0.7</x2>
+          <y1>0.5</y1>
+          <y2>1.0</y2>
+        </texture>
+        <w>37</w>
+        <h>90</h>
+      </layer>
+      <layer>
+        <name>off</name>
+        <texture>
+          <path>Aircraft/l410uvpe/Instruments/Textures/l410-packy.rgb</path>
+          <x1>0.5</x1>
+          <x2>0.7</x2>
+          <y1>0.0</y1>
+          <y2>0.5</y2>
+        </texture>
+        <w>37</w>
+        <h>90</h>
+      </layer>
+      <transformations>
+        <transformation>
+          <type>x-shift</type>
+          <offset>48</offset>
+        </transformation>
+        <transformation>
+          <type>y-shift</type>
+          <offset>10</offset>
+        </transformation>
+      </transformations>
+    </layer>
+    <!-- konec Zapinani cocpit -->
+    <layer>
+      <name>left button</name>
+      <texture>
+        <path>Aircraft/l410uvpe/Instruments/Textures/l410-clock.rgb</path>
+        <x1>0.9</x1>
+        <y1>0.0</y1>
+        <x2>1.0</x2>
+        <y2>0.1</y2>
+      </texture>
+      <w>30</w>
+      <h>30</h>
+      <transformations>
+        <transformation>
+          <type>x-shift</type>
+          <offset>-88</offset>
+        </transformation>
+        <transformation>
+          <type>y-shift</type>
+          <offset>-37</offset>
+        </transformation>
+        
+      </transformations>
+    </layer>
+    <layer>
+      <name>right button</name>
+      <texture>
+        <path>Aircraft/l410uvpe/Instruments/Textures/l410-clock.rgb</path>
+        <x1>0.8</x1>
+        <y1>0.0</y1>
+        <x2>0.9</x2>
+        <y2>0.1</y2>
+      </texture>
+      <w>30</w>
+      <h>30</h>
+      <transformations>
+        <transformation>
+          <type>x-shift</type>
+          <offset>16</offset>
+        </transformation>
+        <transformation>
+          <type>y-shift</type>
+          <offset>-36</offset>
+        </transformation>
+        
+      </transformations>
+</layer>
+
+  
+ </layers>
+<actions> 
+  <action>
+    <name>stop1</name>
+    <button>0</button>
+    <x>-105</x>
+    <y>-50</y>
+    <w>30</w>
+    <h>30</h>
+    <binding>
+      <command>property-toggle</command>
+      <property>/controls/switches/wr-sw</property>
+    </binding>
+ </action>  
+  
+ <action>
+   <name>stop2</name>
+   <button>0</button>
+   <x>5</x>
+   <y>-50</y>
+   <w>30</w>
+   <h>30</h>
+   <binding>
+     <command>property-toggle</command>
+     <property>/controls/switches/wr-sw</property>
+   </binding>
+ </action>
+ 
+ </actions>
+</PropertyList>

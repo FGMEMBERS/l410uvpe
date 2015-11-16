@@ -1,0 +1,167 @@
+<?xml version="1.0"?>
+
+<!--
+L410 panel.
+Javky <javky@email.cz>
+_______________________________________________________________________
+-->
+ 
+<!DOCTYPE PropertyList SYSTEM "panel.dtd">
+
+<PropertyList>
+
+  <name>L410 warning instrument panel</name>
+  <background>Aircraft/l410uvpe/transparent-bg.rgb</background>
+  <w>1088</w>
+  <h>103</h>
+
+  <instruments>
+ 
+  <instrument include="./Instruments/l410-ap_nav_12_switch.xml">
+	  <name>ap_nav_12_sw</name>
+	  <x>140</x>
+	  <y>20</y>
+	  <w>50</w>
+	  <h>50</h>
+  </instrument>
+  
+  <instrument include="./Instruments/l410-wd_electro.xml">
+	  <name>Warning display elektro</name>
+	  <x>700</x>
+	  <y>50</y>
+	  <w>140</w>
+	  <h>90</h>
+  </instrument>
+  
+  <instrument include="./Instruments/l410-wd_engine.xml">
+	  <name>Warning display right engine</name>
+	  <params>
+		  <wde-fire>/instrumentation/warn-disp/wde2-fire</wde-fire>
+		  <wde-oilpress>/instrumentation/warn-disp/wde2-oilpress</wde-oilpress>
+		  <wde-fuelpress>/instrumentation/warn-disp/wde2-fuelpress</wde-fuelpress>
+		  <wde-minfuel>/instrumentation/warn-disp/wde2-minfuel</wde-minfuel>
+		  
+		  <wde-ieluint>/instrumentation/warn-disp/wde2-ieluint</wde-ieluint>
+		  <wde-chips>/instrumentation/warn-disp/wde2-chips</wde-chips>
+		  <wde-isolval>/instrumentation/warn-disp/wde2-isolval</wde-isolval>
+		  <wde-fuelbypass>/instrumentation/warn-disp/wde2-fuelbypass</wde-fuelbypass>
+		  
+		  <wde-beta>/instrumentation/warn-disp/wde2-beta</wde-beta>
+		  <wde-ielu>/instrumentation/warn-disp/wde2-ielu</wde-ielu>
+		  <wde-autofeat>/instrumentation/warn-disp/wde2-autofeat</wde-autofeat>
+		  <wde-featpump>/instrumentation/warn-disp/wde2-featpump</wde-featpump>
+		  
+		  <wde-hydraulics>/instrumentation/warn-disp/wde2-hydraulics</wde-hydraulics>
+		  <wde-propdeicing>/instrumentation/warn-disp/wde2-propdeicing</wde-propdeicing>
+		  <wde-start>/instrumentation/warn-disp/wde2-start</wde-start>
+		  
+		  <wde-chck-sw>/controls/switches/chck-engine2-sw</wde-chck-sw>
+		  <wde-el-input>/systems/electrical/outputs/cwd-engrh</wde-el-input>
+	  </params>
+	  <x>810</x>
+	  <y>50</y>
+	  <w>140</w>
+	  <h>90</h>
+  </instrument>
+  
+  <instrument include="./Instruments/l410-wd_airframe.xml">
+	  <name>Warning display airframe</name>
+	  <x>414</x>
+	  <y>50</y>
+	  <!--   <w>150</w>
+	  <h>100</h>
+	  -->
+	  <w>140</w>
+	  <h>90</h>
+  </instrument>
+  
+  <instrument include="./Instruments/l410-wd_engine.xml">
+	  <name>Warning display left engine</name>
+	  <params>
+		  <wde-fire>/instrumentation/warn-disp/wde1-fire</wde-fire>
+		  <wde-oilpress>/instrumentation/warn-disp/wde1-oilpress</wde-oilpress>
+		  <wde-fuelpress>/instrumentation/warn-disp/wde1-fuelpress</wde-fuelpress>
+		  <wde-minfuel>/instrumentation/warn-disp/wde1-minfuel</wde-minfuel>
+		  
+		  <wde-ieluint>/instrumentation/warn-disp/wde1-ieluint</wde-ieluint>
+		  <wde-chips>/instrumentation/warn-disp/wde1-chips</wde-chips>
+		  <wde-isolval>/instrumentation/warn-disp/wde1-isolval</wde-isolval>
+		  <wde-fuelbypass>/instrumentation/warn-disp/wde1-fuelbypass</wde-fuelbypass>
+		  
+		  <wde-beta>/instrumentation/warn-disp/wde1-beta</wde-beta>
+		  <wde-ielu>/instrumentation/warn-disp/wde1-ielu</wde-ielu>
+		  <wde-autofeat>/instrumentation/warn-disp/wde1-autofeat</wde-autofeat>
+		  <wde-featpump>/instrumentation/warn-disp/wde1-featpump</wde-featpump>
+		  
+		  <wde-hydraulics>/instrumentation/warn-disp/wde1-hydraulics</wde-hydraulics>
+		  <wde-propdeicing>/instrumentation/warn-disp/wde1-propdeicing</wde-propdeicing>
+		  <wde-start>/instrumentation/warn-disp/wde1-start</wde-start>
+		  
+		  <wde-chck-sw>/controls/switches/chck-engine1-sw</wde-chck-sw>
+		  <wde-el-input>/systems/electrical/outputs/cwd-englh</wde-el-input>
+	  </params>
+	  <x>304</x>
+	  <y>50</y>
+	  <w>140</w>
+	  <h>90</h>
+  </instrument>
+  <instrument include="./Instruments/l410-ap_ann-KAP315.xml">
+	  <name>ap anunciator</name>
+	  <x>524</x>
+	  <y>20</y>
+	  <w>100</w>
+	  <h>30</h>
+	  <params> 
+		  <electrical-power>/systems/electrical/outputs/autopilot</electrical-power>   
+		  <ann-ap-on>/instrumentation/autopilot/ann-ap-on</ann-ap-on>
+		  <ann-fd-on>/instrumentation/autopilot/ann-fd-on</ann-fd-on>          
+		  <ann-alt-on>/instrumentation/autopilot/ann-alt-on</ann-alt-on>
+		  <ann-hdg-on>/instrumentation/autopilot/ann-hdg-on</ann-hdg-on>
+		  <ann-nav-on>/instrumentation/autopilot/ann-nav-on</ann-nav-on>
+		  <ann-yd-on>/instrumentation/autopilot/ann-yd-on</ann-yd-on>
+		  <ann-hb-on>/instrumentation/autopilot/ann-hb-on</ann-hb-on>
+		  <ann-nav-arm-on>/instrumentation/autopilot/ann-nav-arm-on</ann-nav-arm-on>
+		  <ann-apr-on>/instrumentation/autopilot/ann-apr-on</ann-apr-on>
+		  <ann-apr-arm-on>/instrumentation/autopilot/ann-apr-arm-on</ann-apr-arm-on>  
+		  <ann-gs-on>/instrumentation/autopilot/ann-apr-gs-on</ann-gs-on>          
+		  <ann-ga-on>/instrumentation/autopilot/ann-apr-ga-on</ann-ga-on>                  
+		  <ann-bc-on>/instrumentation/autopilot/ann-bc-on</ann-bc-on>                  
+		  <ann-trim-on>/instrumentation/autopilot/ann-trim-on</ann-trim-on>     
+		  
+		  <bulbs-test-on>/instrumentation/autopilot/bulbs-test-on</bulbs-test-on>
+	  </params>        
+  </instrument>    
+  <instrument include="./Instruments/l410-gear_ind-LUN1694.xml">
+	  <name>gear_indicator</name>
+	  <x>524</x>
+	  <y>70</y>
+	  <w>50</w>
+	  <h>50</h>
+  </instrument>
+  
+  <instrument include="./Instruments/l410-flap_ind-LUN2690.xml">
+	  <name>flaps_indicator</name>
+	  <x>605</x>
+	  <y>50</y>
+	  <w>35</w>
+	  <h>50</h>
+  </instrument>
+  <instrument include="./Instruments/l410-labels_l.xml">
+	  <name>labels</name>
+	  <x>120</x>
+	  <y>35</y>
+	  <w>200</w>
+	  <h>50</h>
+  </instrument>  
+  
+  <instrument include="./Instruments/l410-labels_r.xml">
+	  <name>labels</name>
+	  <x>957</x>
+	  <y>35</y>
+	  <w>200</w>
+	  <h>50</h>
+  </instrument>  
+
+  </instruments>
+
+</PropertyList>

@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+
+<!--
+
+(nase!)
+
+-->
+
+<PropertyList>
+
+ <name>Table</name>
+
+  <w-base>400</w-base>
+  <h-base>400</h-base>
+
+  <layers>
+
+<!-- <layer>
+   <name>DESKA</name>
+     <texture>
+     <path>Aircraft/l410uvpe/Instruments/Textures/l410-deicing1.rgb</path>
+     <x1>0.0</x1>
+     <x2>1.0</x2>
+     <y1>0.0</y1>
+     <y2>1.0</y2>
+     </texture>
+     <w>400</w>
+     <h>400</h>
+  </layer>-->
+
+
+
+
+  </layers>
+
+<actions>
+  <action>
+   <name>table open</name>
+   <button>0</button>
+   <x>-200</x>
+   <y>-200</y>
+   <w>400</w>
+   <h>400</h>
+   <binding>
+      <command>property-toggle</command>
+      <property>/controls/table-cmd-norm</property>
+  </binding>
+  </action>
+
+</actions>
+</PropertyList>

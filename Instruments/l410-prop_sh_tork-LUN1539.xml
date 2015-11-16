@@ -1,0 +1,140 @@
+<?xml version="1.0"?>
+
+<!--
+
+MOMENT NA HRIDELI (nase!)
+
+-->
+
+<PropertyList>
+
+ <name>prop shaft</name>
+
+  <w-base>128</w-base>
+  <h-base>128</h-base>
+
+ <params>
+  <eng-pshaft>/instrumentation/engine/indicated-pshaft1-perc</eng-pshaft>
+ </params>
+  
+ 
+   <layers>
+    <layer>
+     <name>gauge face</name>
+     <texture>   
+     <path>Aircraft/l410uvpe/Instruments/Textures/l410-eng2.rgb</path>
+     <x1>0.0</x1>
+     <y1>0.0</y1>
+     <x2>0.5</x2>
+     <y2>1.0</y2>
+     </texture>
+     <w>100</w>
+     <h>100</h>
+    </layer>
+
+  <layer>
+    <name>Rucicka</name>
+   <texture>
+    <path>Aircraft/l410uvpe/Instruments/Textures/l410-radalt.rgb</path>
+    <x1>0.94922</x1>
+    <y1>0.66666</y1>
+    <x2>1.0</x2>
+    <y2>1.0</y2>
+   </texture>
+   <w>12</w>
+   <h>44</h>
+   <transformations>
+     <transformation>
+      <type>rotation</type>
+      <property alias="../../../../../params/eng-pshaft"/>
+<!--      <min>45.0</min>
+      <max>390.0</max> -->
+      <scale>2.0</scale>
+      <offset>150.0</offset>
+     </transformation>
+    <transformation>
+    <type>y-shift</type>
+    <offset>15</offset>
+    </transformation>
+   </transformations>
+  </layer> 
+
+    <layer>
+     <name>prostredek</name>
+     <texture>   
+     <path>Aircraft/l410uvpe/Instruments/Textures/l410-radalt.rgb</path>
+     <x1>0.9141</x1>
+     <y1>0.0</y1>
+     <x2>1.0</x2>
+     <y2>0.0859</y2>
+     </texture>
+     <w>20</w>
+     <h>20</h>
+    </layer>
+
+ <layer>
+   <name>Praporek</name>
+   <type>switch</type>
+    <layer>
+     <condition>
+      <not>
+      <property>/systems/l410/bus36v-on</property>
+      </not>
+     </condition>
+     <name>off</name>
+     <texture>
+     <path>Aircraft/l410uvpe/Instruments/Textures/l410-sklon.rgb</path>
+     <x1>0.625</x1>
+     <x2>0.8125</x2>
+     <y1>0.5</y1>
+     <y2>0.8672</y2>
+     </texture>
+     <w>30</w>
+     <h>30</h>
+   </layer>
+   <transformations>
+    <transformation>
+    <type>x-shift</type>
+    <offset>35</offset>
+    </transformation>
+    <transformation>
+    <type>y-shift</type>
+    <offset>-15</offset>
+    </transformation>
+    <transformation>
+    <type>rotation</type>
+    <offset>90</offset>
+    </transformation>
+   </transformations>
+  </layer>
+
+
+  <layer>
+   <name>glare shield</name>
+   <texture>
+    <path>Aircraft/l410uvpe/Instruments/Textures/bezel1.rgb</path>
+    <x1>0.5</x1>
+    <y1>0.0</y1>
+    <x2>1.0</x2>
+    <y2>0.5</y2>
+   </texture>
+  <w>128</w>
+  <h>128</h>
+   <transformations>
+    <transformation>
+     <type>x-shift</type>
+     <offset>2</offset>
+    </transformation>
+    <transformation>
+     <type>y-shift</type>
+     <offset>-2</offset>
+    </transformation>
+    </transformations>
+  </layer>
+
+
+  </layers>
+
+
+
+</PropertyList>

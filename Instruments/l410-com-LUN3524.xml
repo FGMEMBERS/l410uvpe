@@ -1,0 +1,485 @@
+<?xml version="1.0"?>
+
+<!--
+
+LUN3524 (COMsel)(nase!)
+
+-->
+
+<PropertyList>
+
+ <name>kfs pokus</name>
+
+  <w-base>100</w-base>
+  <h-base>100</h-base>
+
+  <layers>
+  
+    <!-- LABELS -->
+    <layer>
+      <name>podklad</name>
+      <texture>
+        <path>Aircraft/l410uvpe/Instruments/Textures/l410-com.rgb</path>
+        <x1>0.0</x1>
+        <x2>0.5</x2>
+        <y1>0.0</y1>
+        <y2>1.0</y2>
+      </texture>
+      <w>100</w>
+      <h>100</h>
+      <transformations>
+        <transformation>
+          <type>x-shift</type>
+          <offset>0</offset>
+        </transformation>
+        <transformation>
+          <type>y-shift</type>
+          <offset>0</offset>
+        </transformation>
+      </transformations>
+    </layer>
+
+<!-- napisy na displeji -->
+
+  <layer>
+   <type>switch</type>
+   <condition>
+		 <greater-than>
+           <property alias="../../../../../params/electrical-power"/>
+		   <value>10</value>
+		 </greater-than>
+   </condition>
+  <layer>
+   <name>nav frequencies</name>
+   <type>text</type>
+   <font>led</font>
+   <point-size>5</point-size>
+   <color>
+    <red>1.0</red>
+    <green>0.2</green>
+    <blue>0.0</blue>
+   </color>
+   <chunks>
+    <chunk>
+     <type>number-value</type>
+     <property alias="../../../../../../params/freq"/>
+     <format>%07.3f</format>
+    </chunk>
+   </chunks>
+   <transformations>
+    <transformation>
+     <type>x-shift</type>
+     <offset>-23</offset>
+    </transformation>
+    <transformation>
+     <type>y-shift</type>
+     <offset>6</offset>
+    </transformation>
+   </transformations>
+  </layer>
+  </layer>  
+
+    <layer>
+      <name>sel-switch</name>
+      <type>switch</type>
+      <layer>
+        <condition>
+           <property alias="../../../../../params/sel"/>
+        </condition>      
+      <texture>
+        <path>Aircraft/l410uvpe/Instruments/Textures/l410-com.rgb</path>
+            <x1>0.625</x1>
+            <x2>0.750</x2>
+            <y1>0.125</y1>
+            <y2>0.250</y2>
+      </texture>
+      <w>14</w>
+      <h>8</h>
+      </layer>
+      <layer>
+        <texture>
+            <path>Aircraft/l410uvpe/Instruments/Textures/l410-com.rgb</path>
+            <x1>0.5</x1>
+            <x2>0.625</x2>
+            <y1>0.125</y1>
+            <y2>0.250</y2>
+        </texture>
+        <w>14</w>
+        <h>8</h>
+      </layer>      
+      <transformations>
+        <transformation>
+          <type>x-shift</type>
+          <offset>22</offset>
+        </transformation>
+        <transformation>
+          <type>y-shift</type>
+          <offset>31</offset>
+        </transformation>
+      </transformations>
+    </layer>
+    
+   <layer>
+      <name>sq-switch</name>
+      <type>switch</type>
+      <layer>
+        <condition>
+           <property alias="../../../../../params/sq"/>
+        </condition>
+        <texture>
+            <path>Aircraft/l410uvpe/Instruments/Textures/l410-com.rgb</path>
+            <x1>0.5</x1>
+            <x2>0.625</x2>
+            <y1>0.125</y1>
+            <y2>0.250</y2>
+        </texture>
+        <w>14</w>
+        <h>8</h>
+      </layer>
+      <layer>
+        <texture>
+            <path>Aircraft/l410uvpe/Instruments/Textures/l410-com.rgb</path>
+            <x1>0.625</x1>
+            <x2>0.750</x2>
+            <y1>0.125</y1>
+            <y2>0.250</y2>
+        </texture>
+        <w>14</w>
+        <h>8</h>
+      </layer>
+      <transformations>
+          <transformation>
+          <type>x-shift</type>
+          <offset>-22</offset>
+        </transformation>
+        <transformation>
+          <type>y-shift</type>
+          <offset>31</offset>
+        </transformation>
+      </transformations>
+    </layer> 
+
+  <layer>
+    <name>mode-knob</name>
+      <texture>
+        <path>Aircraft/l410uvpe/Instruments/Textures/l410-com.rgb</path>
+        <x1>0.50000</x1>
+        <x2>0.5625</x2>
+        <y1>0.0000</y1>
+        <y2>0.125</y2>
+      </texture>
+      <w>10</w>
+      <h>10</h>
+    <transformations>
+      <transformation>
+        <type>x-shift</type>
+        <offset>-20</offset>
+      </transformation>
+      <transformation>
+        <type>y-shift</type>
+        <offset>-19</offset>
+      </transformation>
+      <transformation>
+        <type>rotation</type>
+        <offset>0</offset>
+        <property alias="../../../../../params/mode"/>        
+        <scale>36</scale>
+      </transformation>
+    </transformations>
+  </layer>   
+
+  </layers>
+
+ <actions>
+
+
+  <action>
+   <name>sq-switch</name>
+   <button>0</button>
+   <x>-40</x>
+   <y>25</y>
+   <w>40</w>
+   <h>20</h>
+   <binding>
+      <command>property-toggle</command>
+      <property alias="../../../../params/sq"/>
+   </binding>
+  </action>
+
+<action>
+   <name>sel-switch</name>
+   <button>0</button>
+   <x>0</x>
+   <y>25</y>
+   <w>40</w>
+   <h>20</h>
+   <binding>
+      <command>property-toggle</command>
+      <property alias="../../../../params/sel"/>
+    </binding>
+  </action>
+
+  <action>
+    <name>mode_set_up</name>
+    <button>0</button>
+    <x>-20</x>
+    <y>-35</y>
+    <w>15</w>
+    <h>30</h>
+    <binding>
+      <command>property-adjust</command>
+      <property alias="../../../../params/mode"/>
+      <step>1</step>
+      <max>5</max>
+      <min>0</min>
+    </binding>
+  </action>    
+
+  <action>
+    <name>mode_set_dwn</name>
+    <button>0</button>
+    <x>-35</x>
+    <y>-35</y>
+    <w>15</w>
+    <h>30</h>
+    <binding>
+      <command>property-adjust</command>
+      <property alias="../../../../params/mode"/>
+      <step>-1</step>
+      <max>5</max>
+      <min>0</min>
+    </binding>
+  </action>    
+
+    <!-- frequency -->
+  <action>
+    <name>freq_set_up_fine</name>
+    <button>0</button>
+    <x>25</x>
+    <y>-35</y>
+    <w>20</w>
+    <h>30</h>
+    <binding>
+      <condition>
+        <equals>
+            <property alias="../../../../../../params/mode"/>
+            <value>0</value>
+        </equals>
+      </condition>
+      <command>property-adjust</command>
+      <property alias="../../../../params/freq"/>
+      <step>1</step>
+      <max>137</max>
+      <min>118</min>
+      <wrap>1</wrap>
+    </binding>
+    <binding>
+      <condition>
+        <and>
+        <equals>
+            <property alias="../../../../../../../params/mode"/>
+            <value>1</value>
+        </equals>
+        <property alias="../../../../../../params/sel"/>
+        </and>
+      </condition>
+      <command>property-adjust</command>
+      <property alias="../../../../params/freq"/>
+      <step>0.025</step>
+      <max>137</max>
+      <min>118</min>
+      <wrap>1</wrap>
+    </binding>
+    <binding>
+      <condition>
+        <and>
+        <equals>
+            <property alias="../../../../../../../params/mode"/>
+            <value>1</value>
+        </equals>
+        <not>
+            <property alias="../../../../../../../params/sel"/>
+        </not>
+        </and>
+      </condition>
+      <command>property-adjust</command>
+      <property alias="../../../../params/freq"/>
+      <step>0.008333</step>
+      <max>137</max>
+      <min>118</min>
+      <wrap>1</wrap>
+    </binding>
+    <binding>
+      <condition>
+        <equals>
+            <property alias="../../../../../../params/mode"/>
+            <value>2</value>
+        </equals>
+      </condition>
+      <command>property-adjust</command>
+      <property alias="../../../../params/volume"/>
+      <step>0.1</step>
+      <max>1</max>
+      <min>0</min>
+      <wrap>0</wrap>
+    </binding>
+    <binding>
+      <command>nasal</command>
+      <script>l410com.com_round_freq()</script>
+    </binding>
+  </action>    
+
+  <action>
+    <name>freq_set_up</name>
+    <button>1</button>
+    <x>25</x>
+    <y>-35</y>
+    <w>20</w>
+    <h>30</h>
+    <binding>
+      <condition>
+        <equals>
+            <property alias="../../../../../../params/mode"/>
+            <value>0</value>
+        </equals>
+      </condition>
+      <command>property-adjust</command>
+      <property alias="../../../../params/freq"/>
+      <step>10</step>
+      <max>137</max>
+      <min>118</min>
+      <wrap>1</wrap>
+    </binding>
+    <binding>
+      <condition>
+        <equals>
+            <property alias="../../../../../../params/mode"/>
+            <value>1</value>
+        </equals>
+      </condition>
+      <command>property-adjust</command>
+      <property alias="../../../../params/freq"/>
+      <step>0.05</step>
+      <max>137</max>
+      <min>118</min>
+      <wrap>1</wrap>
+    </binding>
+  </action>    
+
+  <action>
+    <name>freq_set_down_fine</name>
+    <button>0</button>
+    <x>5</x>
+    <y>-35</y>
+    <w>20</w>
+    <h>30</h>
+    <binding>
+      <condition>
+        <equals>
+            <property alias="../../../../../../params/mode"/>
+            <value>0</value>
+        </equals>
+      </condition>
+      <command>property-adjust</command>
+      <property alias="../../../../params/freq"/>
+      <step>-1</step>
+      <max>137</max>
+      <min>118</min>
+      <wrap>1</wrap>
+    </binding>
+    <binding>
+      <condition>
+        <and>
+        <equals>
+            <property alias="../../../../../../../params/mode"/>
+            <value>1</value>
+        </equals>
+        <property alias="../../../../../../params/sel"/>
+        </and>
+      </condition>
+      <command>property-adjust</command>
+      <property alias="../../../../params/freq"/>
+      <step>-0.025</step>
+      <max>137</max>
+      <min>118</min>
+      <wrap>1</wrap>
+    </binding>
+    <binding>
+      <condition>
+        <and>
+        <equals>
+            <property alias="../../../../../../../params/mode"/>
+            <value>1</value>
+        </equals>
+        <not>
+            <property alias="../../../../../../../params/sel"/>
+        </not>
+        </and>
+      </condition>
+      <command>property-adjust</command>
+      <property alias="../../../../params/freq"/>
+      <step>-0.008333</step>
+      <max>137</max>
+      <min>118</min>
+      <wrap>1</wrap>
+    </binding>
+    <binding>
+      <condition>
+        <equals>
+            <property alias="../../../../../../params/mode"/>
+            <value>2</value>
+        </equals>
+      </condition>
+      <command>property-adjust</command>
+      <property alias="../../../../params/volume"/>
+      <step>-0.1</step>
+      <max>1</max>
+      <min>0</min>
+      <wrap>0</wrap>
+    </binding>
+    <binding>
+      <command>nasal</command>
+      <script>l410com.com_round_freq()</script>
+    </binding>
+   </action>    
+
+  <action>
+    <name>freq_set_down</name>
+    <button>1</button>
+    <x>5</x>
+    <y>-35</y>
+    <w>20</w>
+    <h>30</h>
+    <binding>
+      <condition>
+        <equals>
+            <property alias="../../../../../../params/mode"/>
+            <value>0</value>
+        </equals>
+      </condition>
+      <command>property-adjust</command>
+      <property alias="../../../../params/freq"/>
+      <step>-10</step>
+      <max>137</max>
+      <min>118</min>
+      <wrap>1</wrap>
+    </binding>
+    <binding>
+      <condition>
+        <equals>
+            <property alias="../../../../../../params/mode"/>
+            <value>1</value>
+        </equals>
+      </condition>
+      <command>property-adjust</command>
+      <property alias="../../../../params/freq"/>
+      <step>-0.05</step>
+      <max>137</max>
+      <min>118</min>
+      <wrap>1</wrap>
+    </binding>
+  </action>    
+
+</actions>
+
+</PropertyList>

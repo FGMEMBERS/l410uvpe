@@ -1,0 +1,393 @@
+<?xml version="1.0"?>
+
+<!--
+
+RADAR ALTIMETER (nase!)
+
+-->
+
+<PropertyList>
+
+ <name>Radar altimeter</name>
+
+  <w-base>128</w-base>
+  <h-base>128</h-base>
+   
+   <layers>
+    <layer>
+     <name>gauge face</name>
+     <texture>   
+     <path>Aircraft/l410uvpe/Instruments/Textures/l410-radalt.rgb</path>
+     <x1>0.0</x1>
+     <y1>0.0</y1>
+     <x2>0.5</x2>
+     <y2>0.5</y2>
+     </texture>
+     <w>100</w>
+     <h>100</h>
+    </layer>
+
+
+
+
+ <layer>
+   <name>Praporek</name>
+   <type>switch</type>
+    <layer>
+     <condition>
+      <less-than>
+        <property>/systems/electrical/outputs/radioaltimeter</property>
+        <value>1</value>
+      </less-than>
+     </condition>
+     <name>off</name>
+     <texture>
+     <path>Aircraft/l410uvpe/Instruments/Textures/l410-radalt.rgb</path>
+     <x1>0.18369</x1>
+     <x2>0.33203</x2>
+     <y1>0.75</y1>
+     <y2>0.83984</y2>
+     </texture>
+     <w>40</w>
+     <h>25</h>
+   </layer>
+   <transformations>
+    <transformation>
+    <type>x-shift</type>
+    <offset>30</offset>
+    </transformation>
+    <transformation>
+    <type>y-shift</type>
+    <offset>35</offset>
+    </transformation>
+   </transformations>
+  </layer>
+
+  <layer>
+    <name>Rucicka</name>
+   <texture>
+    <path>Aircraft/l410uvpe/Instruments/Textures/l410-radalt.rgb</path>
+    <x1>0.5</x1>
+    <y1>0.0</y1>
+    <x2>0.58203</x2>
+    <y2>0.36719</y2>
+   </texture>
+   <w>12</w>
+   <h>44</h>
+   <transformations>
+     <transformation>
+      <type>rotation</type>
+      <!-- <property>/position/altitude-agl-ft</property> -->
+      <property>/instrumentation/altimeter-rad/indicated-rad-alt</property>
+      <min>0.0</min>
+      <max>4000.0</max>
+      <scale>1.0</scale>
+       <interpolation>
+       <entry><ind>   0</ind><dep>  0.0000</dep></entry>
+       <entry><ind> 100</ind><dep> 54.4991</dep></entry>
+       <entry><ind> 200</ind><dep> 86.3790</dep></entry>
+       <entry><ind> 300</ind><dep>108.9981</dep></entry>
+       <entry><ind> 400</ind><dep>126.5429</dep></entry>
+       <entry><ind> 500</ind><dep>140.8780</dep></entry>
+       <entry><ind> 700</ind><dep>163.4972</dep></entry>
+       <entry><ind>1000</ind><dep>188.5357</dep></entry>
+       <entry><ind>1500</ind><dep>217.9962</dep></entry>
+       <entry><ind>2000</ind><dep>239.3771</dep></entry>
+       <entry><ind>2500</ind><dep>256.1695</dep></entry>
+       <entry><ind>3000</ind><dep>270.0000</dep></entry>
+       <entry><ind>6000</ind><dep>315.0000</dep></entry>
+       </interpolation>
+     </transformation>
+    <transformation>
+    <type>y-shift</type>
+    <offset>15</offset>
+    </transformation>
+   </transformations>
+  </layer> 
+
+  <layer>
+    <name>Ukazatel nastaveni</name>
+   <texture>
+    <path>Aircraft/l410uvpe/Instruments/Textures/l410-radalt.rgb</path>
+    <x1>0.375</x1>
+    <y1>0.5</y1>
+    <x2>0.47656</x2>
+    <y2>0.59375</y2>
+   </texture>
+   <w>15</w>
+   <h>15</h>
+   <transformations>
+     <transformation>
+      <type>rotation</type>
+      <property>/instrumentation/altimeter-rad/lowest-ft</property>
+      <min>0.0</min>
+      <max>3000.0</max>
+      <scale>1.0</scale>
+       <interpolation>
+       <entry><ind>   0</ind><dep>  0.0000</dep></entry>
+       <entry><ind> 100</ind><dep> 54.4991</dep></entry>
+       <entry><ind> 200</ind><dep> 86.3790</dep></entry>
+       <entry><ind> 300</ind><dep>108.9981</dep></entry>
+       <entry><ind> 400</ind><dep>126.5429</dep></entry>
+       <entry><ind> 500</ind><dep>140.8780</dep></entry>
+       <entry><ind> 700</ind><dep>163.4972</dep></entry>
+       <entry><ind>1000</ind><dep>188.5357</dep></entry>
+       <entry><ind>1500</ind><dep>217.9962</dep></entry>
+       <entry><ind>2000</ind><dep>239.3771</dep></entry>
+       <entry><ind>2500</ind><dep>256.1695</dep></entry>
+       <entry><ind>3000</ind><dep>270.0000</dep></entry>
+       </interpolation>
+     </transformation>
+    <transformation>
+    <type>y-shift</type>
+    <offset>45</offset>
+    </transformation>
+   </transformations>
+  </layer> 
+
+  <layer>
+   <name>glare shield</name>
+   <texture>
+    <path>Aircraft/l410uvpe/Instruments/Textures/bezel1.rgb</path>
+    <x1>0.5</x1>
+    <y1>0.0</y1>
+    <x2>1.0</x2>
+    <y2>0.5</y2>
+   </texture>
+  <w>128</w>
+  <h>128</h>
+   <transformations>
+    <transformation>
+     <type>x-shift</type>
+     <offset>2</offset>
+    </transformation>
+    <transformation>
+     <type>y-shift</type>
+     <offset>-2</offset>
+    </transformation>
+    </transformations>
+  </layer>
+
+ <layer>
+   <name>Warning light</name>
+   <type>switch</type>
+    <layer>
+     <condition>
+<!--     <and>
+     <less-than>
+      <property>/instrumentation/altimeter-rad/indicated-rad-alt</property>
+      <property>/instrumentation/altimeter-rad/lowest-ft</property>
+     </less-than>
+      <property>/instrumentation/altimeter-rad/switched-on</property>
+     </and> -->
+         <property>/instrumentation/altimeter-rad/signal-on</property>
+     </condition>
+     <name>on</name>
+     <texture>
+     <path>Aircraft/l410uvpe/Instruments/Textures/l410-radalt.rgb</path>
+     <x1>0.6094</x1>
+     <x2>0.75</x2>
+     <y1>0.0</y1>
+     <y2>0.1445</y2>
+     </texture>
+     <w>25</w>
+     <h>25</h>
+	 <emissive>true</emissive>
+    </layer>
+    <layer>
+     <name>off</name>
+     <texture>
+     <path>Aircraft/l410uvpe/Instruments/Textures/l410-radalt.rgb</path>
+     <x1>0.6289</x1>
+     <x2>0.7227</x2>
+     <y1>0.2383</y1>
+     <y2>0.3398</y2>
+     </texture>
+     <w>25</w>
+     <h>25</h>
+   </layer>
+   <transformations>
+    <transformation>
+    <type>x-shift</type>
+    <offset>-52</offset>
+    </transformation>
+    <transformation>
+    <type>y-shift</type>
+    <offset>52</offset>
+    </transformation>
+   </transformations>
+  </layer>
+
+  <layer>
+    <name>Nastavovaci kolecko</name>
+   <texture>
+    <path>Aircraft/l410uvpe/Instruments/Textures/l410-radalt.rgb</path>
+    <x1>0.0</x1>
+    <y1>0.75</y1>
+    <x2>0.11719</x2>
+    <y2>0.86719</y2>
+   </texture>
+   <w>25</w>
+   <h>25</h>
+   <transformations>
+    <transformation>
+    <type>y-shift</type>
+    <offset>-50</offset>
+    </transformation>
+
+    <transformation>
+    <type>x-shift</type>
+    <offset>50</offset>
+    </transformation>
+
+     <transformation>
+      <type>rotation</type>
+      <factor>10</factor>
+      <property>/instrumentation/altimeter-rad/lowest-ft</property>
+     </transformation>
+
+   </transformations>
+  </layer> 
+
+ <layer>
+   <name>Test pristroje</name>
+   <type>switch</type>
+    <layer>
+     <condition>
+      <property>/instrumentation/altimeter-rad/test-sw</property>
+     </condition>
+     <name>on</name>
+     <texture>
+     <path>Aircraft/l410uvpe/Instruments/Textures/l410-radalt.rgb</path>
+     <x1>0.5</x1>
+     <x2>0.58984</x2>
+     <y1>0.5</y1>
+     <y2>0.59375</y2>
+     </texture>
+     <w>25</w>
+     <h>28</h>
+    </layer>
+    <layer>
+     <name>off</name>
+     <texture>
+     <path>Aircraft/l410uvpe/Instruments/Textures/l410-radalt.rgb</path>
+     <x1>0.6211</x1>
+     <x2>0.71094</x2>
+     <y1>0.5</y1>
+     <y2>0.59375</y2>
+     </texture>
+     <w>25</w>
+     <h>28</h>
+   </layer>
+   <transformations>
+    <transformation>
+    <type>x-shift</type>
+    <offset>-52</offset>
+    </transformation>
+    <transformation>
+    <type>y-shift</type>
+    <offset>-52</offset>
+    </transformation>
+   </transformations>
+  </layer>
+
+
+  </layers>
+
+
+ <actions>
+
+  <action>
+   <name>fine lowestalt adjust up</name>
+   <button>0</button>
+   <x>50</x>
+   <y>-70</y>
+   <w>40</w>
+   <h>40</h>
+   <binding>
+    <command>property-adjust</command>
+    <property>/instrumentation/altimeter-rad/lowest-ft</property>
+    <step>5</step>
+    <min>50</min>
+    <max>3000</max>
+    <wrap>false</wrap>
+   </binding>
+  </action>
+  <action>
+   <name>fine lowestalt adjust down</name>
+   <button>0</button>
+   <x>10</x>
+   <y>-70</y>
+   <w>40</w>
+   <h>40</h>
+   <binding>
+    <command>property-adjust</command>
+    <property>/instrumentation/altimeter-rad/lowest-ft</property>
+    <step>-5</step>
+    <min>50</min>
+    <max>3000</max>
+    <wrap>false</wrap>
+   </binding>
+  </action>
+
+  <action>
+   <name>lowestalt adjust up</name>
+   <button>1</button>
+   <x>50</x>
+   <y>-70</y>
+   <w>40</w>
+   <h>40</h>
+   <binding>
+    <command>property-adjust</command>
+    <property>/instrumentation/altimeter-rad/lowest-ft</property>
+    <step>20</step>
+    <min>50</min>
+    <max>3000</max>
+    <wrap>false</wrap>
+   </binding>
+  </action>
+  <action>
+   <name>lowestalt adjust down</name>
+   <button>1</button>
+   <x>10</x>
+   <y>-70</y>
+   <w>40</w>
+   <h>40</h>
+   <binding>
+    <command>property-adjust</command>
+    <property>/instrumentation/altimeter-rad/lowest-ft</property>
+    <step>-20</step>
+    <min>50</min>
+    <max>3000</max>
+    <wrap>false</wrap>
+   </binding>
+  </action>
+
+  <action>
+   <name>switch on-off</name>
+   <button>0</button>
+   <x>-70</x>
+   <y>-70</y>
+   <w>40</w>
+   <h>40</h>
+   <binding>
+      <command>property-assign</command>
+      <property>/instrumentation/altimeter-rad/test-sw</property>
+      <value>true</value>
+  </binding>
+  <mod-up>
+  <binding>
+      <command>property-assign</command>
+      <property>/instrumentation/altimeter-rad/test-sw</property>
+      <value>false</value>
+  </binding>
+  </mod-up>
+<!--   <binding>
+      <command>property-toggle</command>
+      <property>/instrumentation/attitude-indicator/spin</property>
+  </binding> -->
+  </action>
+
+ </actions>
+
+</PropertyList>

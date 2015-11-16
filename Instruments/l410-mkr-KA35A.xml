@@ -1,0 +1,148 @@
+<?xml version="1.0"?>
+
+<!--
+
+(nase!)
+
+-->
+
+<PropertyList>
+
+ <name>Marker bulbs</name>
+
+  <w-base>64</w-base>
+  <h-base>128</h-base>
+
+  <params>
+    <outer_mkr>/instrumentation/marker-beacon/outer</outer_mkr>
+    <middle_mkr>/instrumentation/marker-beacon/middle</middle_mkr>
+    <inner_mkr>/instrumentation/marker-beacon/inner</inner_mkr>
+  </params>
+
+<layers>
+   
+ <layer>
+   <name>outer_mkr</name>
+   <type>switch</type>
+   <layer>
+     <condition>
+        <equals>
+           <property alias='../../../../../../params/outer_mkr'/>
+           <value>1</value>
+        </equals>
+     </condition>
+     <name>on</name>
+     <texture>
+       <path>Aircraft/l410uvpe/Instruments/Textures/l410-mkr.rgb</path>
+       <x1>0.0</x1>
+       <x2>0.3125</x2>
+       <y1>0.0</y1>
+       <y2>0.28125</y2>
+     </texture>
+     <w>34</w>
+     <h>34</h>
+	 <emissive>true</emissive>
+   </layer>
+   <layer>
+     <name>off</name>
+     <texture>
+       <path>Aircraft/l410uvpe/Instruments/Textures/l410-mkr.rgb</path>
+       <x1>0.0</x1>
+       <x2>0.3125</x2>
+       <y1>0.28125</y1>
+       <y2>0.5625</y2>
+     </texture>
+     <w>34</w>
+     <h>34</h>
+   </layer>
+   <transformations>
+    <transformation>
+        <type>y-shift</type>
+        <offset>-36</offset>
+    </transformation>
+    
+   </transformations>
+  </layer>
+
+ <layer>
+   <name>middle_mkr</name>
+   <type>switch</type>
+   <layer>
+     <condition>
+        <equals>
+           <property alias='../../../../../../params/middle_mkr'/>
+           <value>1</value>
+        </equals>
+     </condition>
+     <name>on</name>
+     <texture>
+       <path>Aircraft/l410uvpe/Instruments/Textures/l410-mkr.rgb</path>
+       <x1>0.328</x1>
+       <x2>0.6394</x2>
+       <y1>0.0</y1>
+       <y2>0.28125</y2>
+     </texture>
+     <w>34</w>
+     <h>34</h>
+	 <emissive>true</emissive>
+   </layer>
+   <layer>
+     <name>off</name>
+     <texture>
+       <path>Aircraft/l410uvpe/Instruments/Textures/l410-mkr.rgb</path>
+       <x1>0.328</x1>
+       <x2>0.6394</x2>
+       <y1>0.28125</y1>
+       <y2>0.5625</y2>
+     </texture>
+     <w>34</w>
+     <h>34</h>
+   </layer>
+  </layer>
+
+ <layer>
+   <name>inner_mkr</name>
+   <type>switch</type>
+   <layer>
+     <condition>
+        <equals>
+           <property alias='../../../../../../params/inner_mkr'/>
+           <value>1</value>
+        </equals>
+     </condition>
+     <name>on</name>
+     <texture>
+       <path>Aircraft/l410uvpe/Instruments/Textures/l410-mkr.rgb</path>
+       <x1>0.6406</x1>
+       <x2>0.9531</x2>
+       <y1>0.0</y1>
+       <y2>0.28125</y2>
+     </texture>
+     <w>34</w>
+     <h>34</h>
+	 <emissive>true</emissive>
+   </layer>
+   <layer>
+     <name>off</name>
+     <texture>
+       <path>Aircraft/l410uvpe/Instruments/Textures/l410-mkr.rgb</path>
+       <x1>0.6406</x1>
+       <x2>0.9531</x2>
+       <y1>0.28125</y1>
+       <y2>0.5625</y2>
+     </texture>
+     <w>34</w>
+     <h>34</h>
+   </layer>
+   <transformations>
+    <transformation>
+        <type>y-shift</type>
+        <offset>36</offset>
+    </transformation>
+    
+   </transformations>
+  </layer>
+
+</layers>
+
+</PropertyList>

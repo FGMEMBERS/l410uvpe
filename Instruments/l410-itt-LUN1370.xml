@@ -1,0 +1,102 @@
+<?xml version="1.0"?>
+
+<!--
+
+TEPLOTA MEZI TURB. (nase!)
+
+-->
+
+<PropertyList>
+
+ <name>itt</name>
+
+  <w-base>128</w-base>
+  <h-base>128</h-base>
+
+ <params>
+  <eng-itt>/instrumentation/engine/indicated-itt1-degc</eng-itt>
+ </params>
+  
+ 
+   <layers>
+    <layer>
+     <name>gauge face</name>
+     <texture>   
+     <path>Aircraft/l410uvpe/Instruments/Textures/l410-eng2.rgb</path>
+     <x1>0.5</x1>
+     <y1>0.0</y1>
+     <x2>1.0</x2>
+     <y2>1.0</y2>
+     </texture>
+     <w>100</w>
+     <h>100</h>
+    </layer>
+
+  <layer>
+    <name>Rucicka</name>
+   <texture>
+    <path>Aircraft/l410uvpe/Instruments/Textures/l410-radalt.rgb</path>
+    <x1>0.94922</x1>
+    <y1>0.66666</y1>
+    <x2>1.0</x2>
+    <y2>1.0</y2>
+   </texture>
+   <w>12</w>
+   <h>44</h>
+   <transformations>
+     <transformation>
+      <type>rotation</type>
+      <property alias="../../../../../params/eng-itt"/>
+      <scale>0.2</scale>
+      <offset>210.0</offset>
+     </transformation>
+    <transformation>
+    <type>y-shift</type>
+    <offset>15</offset>
+    </transformation>
+   </transformations>
+  </layer> 
+
+    <layer>
+     <name>prostredek</name>
+     <texture>   
+     <path>Aircraft/l410uvpe/Instruments/Textures/l410-radalt.rgb</path>
+     <x1>0.9141</x1>
+     <y1>0.0</y1>
+     <x2>1.0</x2>
+     <y2>0.0859</y2>
+     </texture>
+     <w>20</w>
+     <h>20</h>
+    </layer>
+
+
+  <layer>
+   <name>glare shield</name>
+   <texture>
+    <path>Aircraft/l410uvpe/Instruments/Textures/bezel1.rgb</path>
+    <x1>0.5</x1>
+    <y1>0.0</y1>
+    <x2>1.0</x2>
+    <y2>0.5</y2>
+   </texture>
+  <w>128</w>
+  <h>128</h>
+   <transformations>
+    <transformation>
+     <type>x-shift</type>
+     <offset>2</offset>
+    </transformation>
+    <transformation>
+     <type>y-shift</type>
+     <offset>-2</offset>
+    </transformation>
+    </transformations>
+  </layer>
+
+
+  </layers>
+
+
+
+</PropertyList>

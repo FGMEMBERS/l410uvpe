@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+
+<!--
+L410 panel.
+Javky <javky@email.cz>
+_______________________________________________________________________
+-->
+
+<!DOCTYPE PropertyList SYSTEM "panel.dtd">
+
+<PropertyList>
+
+
+
+<name>L410-clockpanel</name>
+ <background>Aircraft/l410uvpe/transparent-bg.rgb</background>
+ <w>90</w>
+ <h>70</h>
+
+ <instruments>
+
+   <instrument include="./Instruments/l410-termom_out.xml">
+    <name>Thermometer_out</name>
+    <x>44</x>
+    <y>35</y>
+    <w>88</w>
+    <h>65</h>
+</instrument>
+
+
+ </instruments>
+
+
+</PropertyList>

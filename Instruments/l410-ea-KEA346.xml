@@ -1,0 +1,205 @@
+<?xml version="1.0"?>
+
+<!--
+Encoding altimeter
+-->
+
+<PropertyList>
+
+ <name>Encoding-altimeter</name>
+
+ <w-base>104</w-base>
+ <h-base>104</h-base>
+
+ <layers>
+
+<layer>
+   <name>background</name>
+   <texture>
+    <path>Aircraft/l410uvpe/Instruments/Textures/l410-KEA346.rgb</path>
+    <x1>0.0</x1>
+    <y1>0.0</y1>
+    <x2>0.1</x2>
+    <y2>0.1</y2>
+   </texture>
+   <w>50</w>
+   <h>50</h>
+      <transformations>
+        <transformation>
+          <type>y-shift</type>
+          <offset>20</offset>
+        </transformation>
+      </transformations>   
+  </layer>
+
+    <layer>
+   <name>alt1</name>
+   <type>text</type>
+<!--   <font>led</font>  -->
+   <point-size>10</point-size> 
+   <color>
+    <red>1.0</red>
+    <green>1.0</green>
+    <blue>1.0</blue>
+   </color>
+   <chunks>
+    <chunk>
+     <type>number-value</type>
+<!--     <property alias="../../../../../params/nav-freq-displ"/> -->
+         <property>/instrumentation/encoding-alt/text-alt1</property>
+	 <format>%03.0f</format>
+    </chunk>
+   </chunks>
+   <transformations>
+    <transformation>
+     <type>x-shift</type>
+     <offset>0</offset>
+    </transformation>
+    <transformation>
+     <type>y-shift</type>
+     <offset>14</offset>
+	 <property>/instrumentation/encoding-alt/text-alt-offset1</property>
+    </transformation>
+   </transformations>
+  </layer>
+
+    <layer>
+   <name>alt2</name>
+   <type>text</type>
+<!--   <font>led</font> -->
+   <point-size>10</point-size>
+   <color>
+    <red>1.0</red>
+    <green>1.0</green>
+    <blue>1.0</blue>
+   </color>
+   <chunks>
+    <chunk>
+     <type>number-value</type>
+<!--     <property alias="../../../../../params/nav-freq-displ"/> -->
+         <property>/instrumentation/encoding-alt/text-alt2</property>
+	 <format>%03.0f</format>
+    </chunk>
+   </chunks>
+   <transformations>
+    <transformation>
+     <type>x-shift</type>
+     <offset>0</offset>
+    </transformation>
+    <transformation>
+     <type>y-shift</type>
+     <offset>14</offset>
+	 <property>/instrumentation/encoding-alt/text-alt-offset2</property>
+    </transformation>
+   </transformations>
+  </layer>
+
+    <layer>
+   <name>alt3</name>
+   <type>text</type>
+<!--   <font>led</font> -->
+   <point-size>10</point-size>
+   <color>
+    <red>1.0</red>
+    <green>1.0</green>
+    <blue>1.0</blue>
+   </color>
+   <chunks>
+    <chunk>
+     <type>number-value</type>
+<!--     <property alias="../../../../../params/nav-freq-displ"/> -->
+         <property>/instrumentation/encoding-alt/text-alt3</property>
+	 <format>%03.0f</format>
+    </chunk>
+   </chunks>
+   <transformations>
+    <transformation>
+     <type>x-shift</type>
+     <offset>0</offset>
+    </transformation>
+    <transformation>
+     <type>y-shift</type>
+     <offset>14</offset>
+	 <property>/instrumentation/encoding-alt/text-alt-offset3</property>
+    </transformation>
+   </transformations>
+  </layer>
+
+
+    <layer>
+   <name>alt-upper</name>
+   <type>text</type>
+<!--   <font>led</font> -->
+   <point-size>11</point-size>
+   <color>
+    <red>1.0</red>
+    <green>1.0</green>
+    <blue>1.0</blue>
+   </color>
+   <chunks>
+    <chunk>
+     <type>number-value</type>
+<!--     <property alias="../../../../../params/nav-freq-displ"/> -->
+         <property>/instrumentation/encoding-alt/text-alt-upper</property>
+	 <format>%02.0f</format>
+    </chunk>
+   </chunks>
+   <transformations>
+    <transformation>
+     <type>x-shift</type>
+     <offset>-18</offset>
+    </transformation>
+    <transformation>
+     <type>y-shift</type>
+     <offset>12</offset>
+    </transformation>
+   </transformations>
+  </layer>
+
+
+
+
+<layer>
+   <name>body</name>
+   <texture>
+    <path>Aircraft/l410uvpe/Instruments/Textures/l410-KEA346.rgb</path>
+    <x1>0.5000</x1>
+    <y1>0.0000</y1>
+    <x2>1.0</x2>
+    <y2>1.0</y2>
+   </texture>
+  </layer>
+  
+  <layer>
+   <name>needle</name>
+   <texture>
+    <path>Aircraft/l410uvpe/Instruments/Textures/l410-KEA346.rgb</path>
+    <x1>0.1602</x1>
+    <y1>0.0117</y1>
+    <x2>0.4434</x2>
+    <y2>0.0547</y2>
+   </texture>
+   <w>40</w>
+   <h>6</h>
+   <transformations>   
+     <transformation>
+       <type>rotation</type>
+       <property>/instrumentation/altimeter/indicated-altitude-ft</property>
+       <max>100000.0</max>
+       <scale>0.36</scale>
+    </transformation>
+   <transformation>
+     <type>y-shift</type>
+     <offset>18.0</offset>
+    </transformation>	
+   <transformation>
+     <type>rotation</type>
+     <offset>90</offset>
+    </transformation>	
+
+</transformations>   
+  </layer>
+  
+
+ </layers>
+</PropertyList>

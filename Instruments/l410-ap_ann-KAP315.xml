@@ -1,0 +1,676 @@
+<?xml version="1.0"?>
+
+<!--
+
+KAP315 ap-annunciator(nase!)
+
+-->
+
+<PropertyList>
+
+ <name>AP annunciator</name>
+
+  <w-base>256</w-base>
+  <h-base>85</h-base>
+
+  <layers>
+  
+
+    <layer>
+      <name>podklad</name>
+      <texture>
+        <path>Aircraft/l410uvpe/Instruments/Textures/l410-KAP315.rgb</path>
+        <x1>0.0</x1>
+        <x2>1.0</x2>
+        <y1>0.65625</y1>
+        <y2>1.0</y2>
+      </texture>
+      <w>256</w>
+      <h>86</h>
+      <transformations>
+        <transformation>
+          <type>x-shift</type>
+          <offset>0</offset>
+        </transformation>
+        <transformation>
+          <type>y-shift</type>
+          <offset>0</offset>
+        </transformation>
+      </transformations>
+    </layer>
+
+
+ <layer>
+   <name>FD-label</name>
+   <type>switch</type>
+   <layer>
+   <condition>
+        <and>
+		 <greater-than>
+           <property alias="../../../../../../../params/electrical-power"/>
+		   <value>10</value>
+		 </greater-than>
+         <or>
+           <property alias="../../../../../../../params/ann-fd-on"/>
+           <property alias="../../../../../../../params/bulbs-test-on"/>
+         </or>
+        </and>
+   </condition>
+      <texture>
+        <path>Aircraft/l410uvpe/Instruments/Textures/l410-KAP315.rgb</path>
+        <x1>0.0</x1>
+        <x2>0.1875</x2>
+        <y1>0.1875</y1>
+        <y2>0.25</y2>
+      </texture>
+      <w>50</w>
+      <h>20</h>
+      <transformations>
+        <transformation>
+          <type>x-shift</type>
+          <offset>-84</offset>
+        </transformation>
+        <transformation>
+          <type>y-shift</type>
+          <offset>25</offset>
+        </transformation>
+      </transformations>
+      <emissive>true</emissive>
+    </layer>
+   </layer>     
+
+
+
+<layer>
+   <name>HDG-label</name>
+   <type>switch</type>
+   <layer>
+   <condition>
+        <and>
+		 <greater-than>
+           <property alias="../../../../../../../params/electrical-power"/>
+		   <value>10</value>
+		 </greater-than>
+         <or>
+           <property alias="../../../../../../../params/ann-hdg-on"/>
+           <property alias="../../../../../../../params/bulbs-test-on"/>
+         </or>
+        </and>
+   </condition>
+      <texture>
+        <path>Aircraft/l410uvpe/Instruments/Textures/l410-KAP315.rgb</path>
+        <x1>0.1875</x1>
+        <x2>0.375</x2>
+        <y1>0.1875</y1>
+        <y2>0.25</y2>
+      </texture>
+      <w>50</w>
+      <h>20</h>
+      <transformations>
+        <transformation>
+          <type>x-shift</type>
+          <offset>-28</offset>
+        </transformation>
+        <transformation>
+          <type>y-shift</type>
+          <offset>25</offset>
+        </transformation>
+      </transformations>
+      <emissive>true</emissive>
+    </layer>
+   </layer>     
+
+
+ <layer>
+   <name>ALT-label</name>
+   <type>switch</type>
+   <layer>
+   <condition>
+        <and>
+		 <greater-than>
+           <property alias="../../../../../../../params/electrical-power"/>
+		   <value>10</value>
+		 </greater-than>
+         <or>
+           <property alias="../../../../../../../params/ann-alt-on"/>
+           <property alias="../../../../../../../params/bulbs-test-on"/>
+         </or>
+        </and>
+   </condition>
+      <texture>
+        <path>Aircraft/l410uvpe/Instruments/Textures/l410-KAP315.rgb</path>
+        <x1>0.375</x1>
+        <x2>0.5625</x2>
+        <y1>0.1875</y1>
+        <y2>0.25</y2>
+      </texture>
+      <w>50</w>
+      <h>20</h>
+      <transformations>
+        <transformation>
+          <type>x-shift</type>
+          <offset>28</offset>
+        </transformation>
+        <transformation>
+          <type>y-shift</type>
+          <offset>25</offset>
+        </transformation>
+      </transformations>
+      <emissive>true</emissive>
+    </layer>
+   </layer>    
+
+  <layer>
+   <name>BC-label</name>
+   <type>switch</type>
+   <layer>
+   <condition>
+        <and>
+		 <greater-than>
+           <property alias="../../../../../../../params/electrical-power"/>
+		   <value>10</value>
+		 </greater-than>
+         <or>
+           <property alias="../../../../../../../params/ann-bc-on"/>
+           <property alias="../../../../../../../params/bulbs-test-on"/>
+         </or>
+        </and>
+   </condition>
+      <texture>
+        <path>Aircraft/l410uvpe/Instruments/Textures/l410-KAP315.rgb</path>
+        <x1>0.0</x1>
+        <x2>0.1875</x2>
+        <y1>0.0</y1>
+        <y2>0.0625</y2>
+      </texture>
+      <w>50</w>
+      <h>20</h>
+      <transformations>
+        <transformation>
+          <type>x-shift</type>
+          <offset>-84</offset>
+        </transformation>
+        <transformation>
+          <type>y-shift</type>
+          <offset>-22</offset>
+        </transformation>
+      </transformations>
+      <emissive>true</emissive>
+    </layer>
+   </layer>   
+    
+ <layer>
+   <name>AP-label</name>
+   <type>switch</type>
+   <layer>
+   <condition>
+        <and>
+		 <greater-than>
+           <property alias="../../../../../../../params/electrical-power"/>
+		   <value>10</value>
+		 </greater-than>
+         <or>
+           <property alias="../../../../../../../params/ann-ap-on"/>
+           <property alias="../../../../../../../params/bulbs-test-on"/>
+         </or>
+        </and>
+   </condition>
+      <texture>
+        <path>Aircraft/l410uvpe/Instruments/Textures/l410-KAP315.rgb</path>
+        <x1>0.5625</x1>
+        <x2>0.75</x2>
+        <y1>0.1875</y1>
+        <y2>0.25</y2>
+      </texture>
+      <w>50</w>
+      <h>20</h>
+      <transformations>
+        <transformation>
+          <type>x-shift</type>
+          <offset>85</offset>
+        </transformation>
+        <transformation>
+          <type>y-shift</type>
+          <offset>25</offset>
+        </transformation>
+      </transformations>
+      <emissive>true</emissive>
+    </layer>
+   </layer>     
+
+ <layer>
+   <name>NAV-label</name>
+   <type>switch</type>
+   <layer>
+   <condition>
+        <and>
+		 <greater-than>
+           <property alias="../../../../../../../params/electrical-power"/>
+		   <value>10</value>
+		 </greater-than>
+         <or>
+           <property alias="../../../../../../../params/ann-nav-on"/>
+           <property alias="../../../../../../../params/bulbs-test-on"/>
+         </or>
+        </and>
+   </condition>
+      <texture>
+        <path>Aircraft/l410uvpe/Instruments/Textures/l410-KAP315.rgb</path>
+        <x1>0.</x1>
+        <x2>0.1875</x2>
+        <y1>0.125</y1>
+        <y2>0.1875</y2>
+      </texture>
+      <w>50</w>
+      <h>20</h>
+      <transformations>
+        <transformation>
+          <type>x-shift</type>
+          <offset>-84</offset>
+        </transformation>
+        <transformation>
+          <type>y-shift</type>
+          <offset>9</offset>
+        </transformation>
+      </transformations>
+      <emissive>true</emissive>
+    </layer>
+   </layer>     
+
+ <layer>
+   <name>NAV-ARM-label</name>
+   <type>switch</type>
+   <layer>
+   <condition>
+        <and>
+		 <greater-than>
+           <property alias="../../../../../../../params/electrical-power"/>
+		   <value>10</value>
+		 </greater-than>
+         <or>
+           <property alias="../../../../../../../params/ann-nav-arm-on"/>
+           <property alias="../../../../../../../params/bulbs-test-on"/>
+         </or>
+        </and>
+   </condition>
+      <texture>
+        <path>Aircraft/l410uvpe/Instruments/Textures/l410-KAP315.rgb</path>
+        <x1>0.1875</x1>
+        <x2>0.375</x2>
+        <y1>0.125</y1>
+        <y2>0.1875</y2>
+      </texture>
+      <w>50</w>
+      <h>20</h>
+      <transformations>
+        <transformation>
+          <type>x-shift</type>
+          <offset>-28</offset>
+        </transformation>
+        <transformation>
+          <type>y-shift</type>
+          <offset>9</offset>
+        </transformation>
+      </transformations>
+      <emissive>true</emissive>
+    </layer>
+   </layer>     
+
+ <layer>
+   <name>IAS-label</name>
+   <type>switch</type>
+   <layer>
+   <condition>
+        <and>
+		 <greater-than>
+           <property alias="../../../../../../../params/electrical-power"/>
+		   <value>10</value>
+		 </greater-than>
+         <or>
+<!--           <property alias="../../../../../../../params/ann-nav-arm-on"/> -->
+           <property alias="../../../../../../../params/bulbs-test-on"/>
+         </or>
+        </and>
+   </condition>
+      <texture>
+        <path>Aircraft/l410uvpe/Instruments/Textures/l410-KAP315.rgb</path>
+        <x1>0.375</x1>
+        <x2>0.5625</x2>
+        <y1>0.125</y1>
+        <y2>0.1875</y2>
+      </texture>
+      <w>50</w>
+      <h>20</h>
+      <transformations>
+        <transformation>
+          <type>x-shift</type>
+          <offset>28</offset>
+        </transformation>
+        <transformation>
+          <type>y-shift</type>
+          <offset>9</offset>
+        </transformation>
+      </transformations>
+      <emissive>true</emissive>
+    </layer>
+   </layer>     
+
+
+
+ <layer>
+   <name>APR-label</name>
+   <type>switch</type>
+   <layer>
+   <condition>
+        <and>
+		 <greater-than>
+           <property alias="../../../../../../../params/electrical-power"/>
+		   <value>10</value>
+		 </greater-than>
+         <or>
+           <property alias="../../../../../../../params/ann-apr-on"/>
+           <property alias="../../../../../../../params/bulbs-test-on"/>
+         </or>
+        </and>
+   </condition>
+      <texture>
+        <path>Aircraft/l410uvpe/Instruments/Textures/l410-KAP315.rgb</path>
+        <x1>0.</x1>
+        <x2>0.1875</x2>
+        <y1>0.0625</y1>
+        <y2>0.125</y2>
+      </texture>
+      <w>50</w>
+      <h>20</h>
+      <transformations>
+        <transformation>
+          <type>x-shift</type>
+          <offset>-84</offset>
+        </transformation>
+        <transformation>
+          <type>y-shift</type>
+          <offset>-6</offset>
+        </transformation>
+      </transformations>
+      <emissive>true</emissive>
+    </layer>
+   </layer>     
+
+ <layer>
+   <name>APR-ARM-label</name>
+   <type>switch</type>
+   <layer>
+   <condition>
+        <and>
+		 <greater-than>
+           <property alias="../../../../../../../params/electrical-power"/>
+		   <value>10</value>
+		 </greater-than>
+         <or>
+           <property alias="../../../../../../../params/ann-apr-arm-on"/>
+           <property alias="../../../../../../../params/bulbs-test-on"/>
+         </or>
+        </and>
+   </condition>
+      <texture>
+        <path>Aircraft/l410uvpe/Instruments/Textures/l410-KAP315.rgb</path>
+        <x1>0.1875</x1>
+        <x2>0.375</x2>
+        <y1>0.0625</y1>
+        <y2>0.125</y2>
+      </texture>
+      <w>50</w>
+      <h>20</h>
+      <transformations>
+        <transformation>
+          <type>x-shift</type>
+          <offset>-28</offset>
+        </transformation>
+        <transformation>
+          <type>y-shift</type>
+          <offset>-6</offset>
+        </transformation>
+      </transformations>
+      <emissive>true</emissive>
+    </layer>
+   </layer>     
+
+ <layer>
+   <name>GS-label</name>
+   <type>switch</type>
+   <layer>
+   <condition>
+        <and>
+		 <greater-than>
+           <property alias="../../../../../../../params/electrical-power"/>
+		   <value>10</value>
+		 </greater-than>
+         <or>
+           <property alias="../../../../../../../params/bulbs-test-on"/>
+           <property alias="../../../../../../../params/ann-gs-on"/>
+         </or>
+        </and>
+   </condition>
+      <texture>
+        <path>Aircraft/l410uvpe/Instruments/Textures/l410-KAP315.rgb</path>
+        <x1>0.375</x1>
+        <x2>0.5625</x2>
+        <y1>0.0625</y1>
+        <y2>0.125</y2>
+      </texture>
+      <w>50</w>
+      <h>20</h>
+      <transformations>
+        <transformation>
+          <type>x-shift</type>
+          <offset>29</offset>
+        </transformation>
+        <transformation>
+          <type>y-shift</type>
+          <offset>-6</offset>
+        </transformation>
+      </transformations>
+      <emissive>true</emissive>
+    </layer>
+   </layer>   
+   
+ <layer>
+   <name>SR-label</name>
+   <type>switch</type>
+   <layer>
+   <condition>
+        <and>
+		 <greater-than>
+           <property alias="../../../../../../../params/electrical-power"/>
+		   <value>10</value>
+		 </greater-than>
+         <or>
+           <property alias="../../../../../../../params/bulbs-test-on"/>
+<!--           <property alias="../../../../../../../params/ann-gs-on"/> -->
+         </or>
+        </and>
+   </condition>
+      <texture>
+        <path>Aircraft/l410uvpe/Instruments/Textures/l410-KAP315.rgb</path>
+        <x1>0.5625</x1>
+        <x2>0.75</x2>
+        <y1>0.0625</y1>
+        <y2>0.125</y2>
+      </texture>
+      <w>50</w>
+      <h>20</h>
+      <transformations>
+        <transformation>
+          <type>x-shift</type>
+          <offset>84</offset>
+        </transformation>
+        <transformation>
+          <type>y-shift</type>
+          <offset>-6</offset>
+        </transformation>
+      </transformations>
+      <emissive>true</emissive>
+    </layer>
+   </layer>   
+
+  <layer>
+   <name>GA-label</name>
+   <type>switch</type>
+   <layer>
+   <condition>
+        <and>
+		 <greater-than>
+           <property alias="../../../../../../../params/electrical-power"/>
+		   <value>10</value>
+		 </greater-than>
+         <or>
+           <property alias="../../../../../../../params/ann-ga-on"/>
+           <property alias="../../../../../../../params/bulbs-test-on"/>
+         </or>
+        </and>
+   </condition>
+      <texture>
+        <path>Aircraft/l410uvpe/Instruments/Textures/l410-KAP315.rgb</path>
+        <x1>0.375</x1>
+        <x2>0.5625</x2>
+        <y1>0.0</y1>
+        <y2>0.0625</y2>
+      </texture>
+      <w>50</w>
+      <h>20</h>
+      <transformations>
+        <transformation>
+          <type>x-shift</type>
+          <offset>29</offset>
+        </transformation>
+        <transformation>
+          <type>y-shift</type>
+          <offset>-22</offset>
+        </transformation>
+      </transformations>
+      <emissive>true</emissive>
+    </layer>
+   </layer>   
+   
+ <layer>
+   <name>YD-label</name>
+   <type>switch</type>
+   <layer>
+   <condition>
+        <and>
+		 <greater-than>
+           <property alias="../../../../../../../params/electrical-power"/>
+		   <value>10</value>
+		 </greater-than>
+         <or>
+           <property alias="../../../../../../../params/ann-yd-on"/>
+           <property alias="../../../../../../../params/bulbs-test-on"/>
+         </or>
+        </and>
+   </condition>
+      <texture>
+        <path>Aircraft/l410uvpe/Instruments/Textures/l410-KAP315.rgb</path>
+        <x1>0.5625</x1>
+        <x2>0.75</x2>
+        <y1>0.125</y1>
+        <y2>0.1875</y2>
+      </texture>
+      <w>50</w>
+      <h>20</h>
+      <transformations>
+        <transformation>
+          <type>x-shift</type>
+          <offset>85</offset>
+        </transformation>
+        <transformation>
+          <type>y-shift</type>
+          <offset>9</offset>
+        </transformation>
+      </transformations>
+      <emissive>true</emissive>
+    </layer>
+   </layer>     
+ 
+  <layer>
+   <name>HB-label</name>
+   <type>switch</type>
+   <layer>
+   <condition>
+        <and>
+		 <greater-than>
+           <property alias="../../../../../../../params/electrical-power"/>
+		   <value>10</value>
+		 </greater-than>
+         <or>
+           <property alias="../../../../../../../params/ann-hb-on"/>
+           <property alias="../../../../../../../params/bulbs-test-on"/>
+         </or>
+        </and>
+   </condition>
+      <texture>
+        <path>Aircraft/l410uvpe/Instruments/Textures/l410-KAP315.rgb</path>
+        <x1>0.1875</x1>
+        <x2>0.375</x2>
+        <y1>0.0</y1>
+        <y2>0.0625</y2>
+      </texture>
+      <w>50</w>
+      <h>20</h>
+      <transformations>
+        <transformation>
+          <type>x-shift</type>
+          <offset>-27</offset>
+        </transformation>
+        <transformation>
+          <type>y-shift</type>
+          <offset>-23</offset>
+        </transformation>
+      </transformations>
+      <emissive>true</emissive>
+    </layer>
+   </layer>   
+
+  <layer>
+   <name>TRIM-label</name>
+   <type>switch</type>
+   <layer>
+   <condition>
+        <and>
+		 <greater-than>
+           <property alias="../../../../../../../params/electrical-power"/>
+		   <value>10</value>
+		 </greater-than>
+         <or>
+           <property alias="../../../../../../../params/ann-trim-on"/>
+           <property alias="../../../../../../../params/bulbs-test-on"/>
+         </or>
+        </and>
+   </condition>
+      <texture>
+        <path>Aircraft/l410uvpe/Instruments/Textures/l410-KAP315.rgb</path>
+        <x1>0.5625</x1>
+        <x2>0.75</x2>
+        <y1>0.0</y1>
+        <y2>0.0625</y2>
+      </texture>
+      <w>50</w>
+      <h>20</h>
+      <transformations>
+        <transformation>
+          <type>x-shift</type>
+          <offset>83</offset>
+        </transformation>
+        <transformation>
+          <type>y-shift</type>
+          <offset>-23</offset>
+        </transformation>
+      </transformations>
+      <emissive>true</emissive>
+    </layer>
+   </layer>   
+
+</layers>
+
+
+
+</PropertyList>

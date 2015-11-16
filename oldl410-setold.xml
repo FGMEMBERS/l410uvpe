@@ -1,0 +1,1256 @@
+<?xml version="1.0"?>
+
+<!--
+L410 default set file
+(key definitions, scripts, visual model, systems, instruments, sound)
+Javky <javky@email.cz>
+
+_______________________________________________________________________
+-->
+
+<PropertyList include="l410-views.xml">
+    <sim>
+        <description>TurboLet L410 UVP-E aircraft</description>
+
+        <author>Jiri and Jiri Javurek</author>
+        <status>experimental</status>
+
+        <startup>
+             <splash-texture>Aircraft/l410/l410-splash.rgb</splash-texture>
+        </startup>
+
+
+        <help>
+          <title>Turbolet L410</title>
+          <key>
+            <name></name>
+            <desc>===== Engines and Propellers =====</desc>
+          </key>
+          <key>
+            <name>\ |</name>
+            <desc>Reverse/normal thrust</desc>
+          </key>
+          <key>
+            <name>F f</name>
+            <desc>Cutoff/not cutoff on Selected Engine(s)</desc>
+          </key>
+          <key>
+            <name>Ctrl + F</name>
+            <desc>Emergency Cutoff on Selected Engine(s)</desc>
+          </key>
+          <key>
+            <name>q Q</name>
+            <desc>Inc./dec. left propeller rpms</desc>
+          </key>
+          <key>
+            <name>w W</name>
+            <desc>Inc./dec. right propeller rpms</desc>
+          </key>
+          <key>
+            <name>Y I</name>
+            <desc>Manual feather LH/RH propeller </desc>
+          </key>
+          <key>
+            <name>y i</name>
+            <desc>Swich on LH/RH feather pump</desc>
+          </key>
+          <key>
+            <name></name>
+            <desc>===== Controls =====</desc>
+          </key>
+
+          <key>
+            <name>k j</name>
+            <desc>Extend/retract spoilers</desc>
+          </key>
+          <key>
+            <name>/ *</name>
+            <desc>Decrease/increase aileron trim.</desc>
+          </key>
+          <key>
+            <name>;</name>
+            <desc>Emergency flaps extension</desc>
+          </key>
+          <key>
+            <name>:</name>
+            <desc>Emergency gear extension</desc>
+          </key>
+          <key>
+            <name>e/E</name>
+            <desc>Pedal/manual steering</desc>
+          </key>
+
+          <key>
+            <name></name>
+            <desc>===== Autopilot =====</desc>
+          </key>
+
+          <key>
+            <name>Ctrl A</name>
+            <desc>Set altitude hold mode (ALT)</desc>
+          </key>
+          <key>
+            <name>Ctrl Q</name>
+            <desc>Switch Flight director on</desc>
+          </key>
+          <key>
+            <name>Ctrl H</name>
+            <desc>Set headig hold on</desc>
+          </key>
+          <key>
+            <name>Ctrl W</name>
+            <desc>Switch Autopilot on</desc>
+          </key>
+          <key>
+            <name>Ctrl N</name>
+            <desc>Set Nav mode on</desc>
+          </key>
+          <key>
+            <name>Ctrl G</name>
+            <desc>Set Aproach mode on</desc>
+          </key>
+          <key>
+            <name></name>
+            <desc></desc>
+          </key>
+          <line>It is recomanded to use a joystick and aircraft pedals for steering.</line>
+          <text>
+Part I. - Basic flight ... without using autopilot and navigation.
+*******************************************************************
+
+TAKE OFF ==========================================================
+(All systems checked, needed systems switched on, engines running, aircraft on runway.)
+
+ 1.Switch on Automatic Feathering and Automatic Banking Control.
+ 2.If indicated extend flaps "]".
+ 3.Set both Propeller levers to maxinum speed.
+ 4.Release brakes "B".
+ 5.Increase slowly (min. 3 sec.) throttle to maximum (Joystick or ....
+ 7.Monitor the increasing of N1, RPM, ITT and Torque.
+ 6.When the speed reaches about 60 kts check propeller RPM (2080)
+ 8.Monitor the airspeed.
+ 9.When airspeed reaches about 110 kts pull slowly the (Joystick or 
+10.Set pitch .......
+11.Retract gear "g".
+12.Switch off Automatic Feathering and Automatic Banking Control.
+
+CLIMBING ==========================================================
+ 1.Set pitch for optimal climbing airspeed and pitch.
+ 2.Set propeller speed in range 1800 to 2080
+
+
+CRUISING ==========================================================
+ 1.After reaching the desired flightlevel, decrease pitch
+ 2.Decrease throttle so, that the airspeed is
+ 3.Trimm elevator for level flight. (Joystick button ......)
+
+            
+APPROACH ==========================================================
+            
+LANDING ===========================================================
+1.Decrese throttle.
+2.After the speed is lower then .. extend flaps "]"
+3.Extend landing gear "G". 
+4.Set pitch for ....
+5.Set Propeller levers to maxinum speed.
+6.After touchdown odklopit zarazku (=prepnout na rev)
+7.Set throttle to idle
+8.After Generator speed is lower than 70% set throttle lever to max. reverse
+9.Use brakes
+
+TAXING ============================================================
+9.After speed for taxing is reached, set throttle to ........
+1.Switch steering to manual "E"
+
+ENGINE SHUTDOWN ===================================================
+2.Set throttle ti idle
+4.Cool the engine for 3 minutes
+1.Switch of Feather pump svitch
+set propeller level to feather
+after 40 s stop fuel by fuel cock levers
+
+Part II. Instriment flight 
+*******************************************************************
+
+NAVIGATION PREPARING ==============================================
+
+
+Part III. Flight using autopilot
+*******************************************************************
+
+AUTOPILOP PREPARING ===============================================
+
+Part IV. Emergency procedures
+*******************************************************************
+
+
+          </text>
+
+        </help>
+ 
+        <panel>
+            <visibility archive="y">false</visibility>
+        </panel>
+
+  <light>
+    <light-source>
+	<!-- Name is good -->
+	<name>Light source</name>
+<!--
+    Main switch. 1 - light source on, 0 - off. You may use some like 
+    <switch-prop>/mymodel/switches/landing-light-switch</switch-prop>
+    for control of light from script or insrument.
+-->       
+       <switch>0</switch>
+
+<!--
+    Coordinates section. 
+-->
+       <longitude-deg-prop>/position/longitude-deg</longitude-deg-prop>
+       <latitude-deg-prop>/position/latitude-deg</latitude-deg-prop>
+       <elevation-ft-prop>/position/altitude-ft</elevation-ft-prop>
+       <roll-deg-prop>/orientation/roll-deg</roll-deg-prop>
+       <pitch-deg-prop>/orientation/pitch-deg</pitch-deg-prop>
+       <heading-deg-prop>/orientation/heading-deg</heading-deg-prop>
+<!--
+	You may set static source. Example for UNNT:
+
+       <longitude-deg>82.67826885</longitude-deg>
+       <latitude-deg>55.01513456</latitude-deg>
+       <elevation-ft>354.0</elevation-ft>
+       
+       <roll-deg>0.0</roll-deg>
+       <pitch-deg>0.0</pitch-deg>
+       <heading-deg>262.0</heading-deg>
+-->
+<!--       
+	Frustum parameters. 
+	if you want omnidirectional light, use <cutoff>180</cutoff>
+	Cutoff - value of angle of light frustum (0-180), exponent - spread light in spot. In degrees.
+-->       
+       <cutoff>20</cutoff>
+       <exponent>10.0</exponent>
+<!--
+	Attenuation parameters. OpenGL count attenuation of spot light:
+	attenuation = 1/(constant + linear*distance + quadratic*distance^2)
+--> 
+      
+       <constant>0.1</constant>
+       <linear>0.0</linear>
+       <quadratic>0.000003</quadratic>
+<!--
+	Offset of light source, relative center(lat-long-alt). 
+	For you convience, you may set position in meters additional.
+-->       
+       <center-x>-3.0</center-x>
+       <center-y>0.0</center-y>
+       <center-z>-0.9</center-z>
+<!--
+	Directional. Like offset, it's additional way to set light direction.
+-->
+       <axis-x>-1.0</axis-x>
+       <axis-y>0.0</axis-y>
+       <axis-z>-0.05</axis-z>
+<!--
+	You may set color of light.
+	It's commented, cause default values is good for landing light.
+-->
+    <ambient-r>0.2</ambient-r>
+    <ambient-g>0.2</ambient-g>
+    <ambient-b>0.2</ambient-b>
+
+    <specular-r>1.0</specular-r>
+    <specular-g>1.0</specular-g>
+    <specular-b>1.0</specular-b>
+
+    <diffuse-r>1.0</diffuse-r>
+    <diffuse-g>1.0</diffuse-g>
+    <diffuse-b>1.0</diffuse-b>
+                 
+        </light-source>
+    <light-source>
+	<!-- Name is good -->
+	<name>Light source</name>
+<!--
+    Main switch. 1 - light source on, 0 - off. You may use some like 
+    <switch-prop>/mymodel/switches/landing-light-switch</switch-prop>
+    for control of light from script or insrument.
+-->       
+       <switch>0</switch>
+
+<!--
+    Coordinates section. 
+-->
+       <longitude-deg-prop>/position/longitude-deg</longitude-deg-prop>
+       <latitude-deg-prop>/position/latitude-deg</latitude-deg-prop>
+       <elevation-ft-prop>/position/altitude-ft</elevation-ft-prop>
+       <roll-deg-prop>/orientation/roll-deg</roll-deg-prop>
+       <pitch-deg-prop>/orientation/pitch-deg</pitch-deg-prop>
+       <heading-deg-prop>/orientation/heading-deg</heading-deg-prop>
+<!--
+	You may set static source. Example for UNNT:
+
+       <longitude-deg>82.67826885</longitude-deg>
+       <latitude-deg>55.01513456</latitude-deg>
+       <elevation-ft>354.0</elevation-ft>
+       
+       <roll-deg>0.0</roll-deg>
+       <pitch-deg>0.0</pitch-deg>
+       <heading-deg>262.0</heading-deg>
+-->
+<!--       
+	Frustum parameters. 
+	if you want omnidirectional light, use <cutoff>180</cutoff>
+	Cutoff - value of angle of light frustum (0-180), exponent - spread light in spot. In degrees.
+-->       
+       <cutoff>90</cutoff>
+       <exponent>1.0</exponent>
+<!--
+	Attenuation parameters. OpenGL count attenuation of spot light:
+	attenuation = 1/(constant + linear*distance + quadratic*distance^2)
+--> 
+      
+       <constant>0.1</constant>
+       <linear>0.0</linear>
+       <quadratic>0.00003</quadratic>
+<!--
+	Offset of light source, relative center(lat-long-alt). 
+	For you convience, you may set position in meters additional.
+-->       
+       <center-x>-3.5</center-x>
+       <center-y>0.0</center-y>
+       <center-z>-0.9</center-z>
+<!--
+	Directional. Like offset, it's additional way to set light direction.
+-->
+       <axis-x>-0.2</axis-x>
+       <axis-y>0.0</axis-y>
+       <axis-z>-0.8</axis-z>
+<!--
+	You may set color of light.
+	It's commented, cause default values is good for landing light.
+-->
+    <ambient-r>0.6</ambient-r>
+    <ambient-g>0.6</ambient-g>
+    <ambient-b>0.6</ambient-b>
+
+    <specular-r>0.9</specular-r>
+    <specular-g>0.9</specular-g>
+    <specular-b>0.9</specular-b>
+
+    <diffuse-r>0.9</diffuse-r>
+    <diffuse-g>0.9</diffuse-g>
+    <diffuse-b>0.9</diffuse-b>
+    
+              
+        </light-source>
+    <light-source>
+	<!-- Name is good -->
+	<name>Light source</name>
+<!--
+    Main switch. 1 - light source on, 0 - off. You may use some like 
+    <switch-prop>/mymodel/switches/landing-light-switch</switch-prop>
+    for control of light from script or insrument.
+-->       
+       <switch>0</switch>
+
+<!--
+    Coordinates section. 
+-->
+       <longitude-deg-prop>/position/longitude-deg</longitude-deg-prop>
+       <latitude-deg-prop>/position/latitude-deg</latitude-deg-prop>
+       <elevation-ft-prop>/position/altitude-ft</elevation-ft-prop>
+       <roll-deg-prop>/orientation/roll-deg</roll-deg-prop>
+       <pitch-deg-prop>/orientation/pitch-deg</pitch-deg-prop>
+       <heading-deg-prop>/orientation/heading-deg</heading-deg-prop>
+<!--
+	You may set static source. Example for UNNT:
+
+       <longitude-deg>82.67826885</longitude-deg>
+       <latitude-deg>55.01513456</latitude-deg>
+       <elevation-ft>354.0</elevation-ft>
+       
+       <roll-deg>0.0</roll-deg>
+       <pitch-deg>0.0</pitch-deg>
+       <heading-deg>262.0</heading-deg>
+-->
+<!--       
+	Frustum parameters. 
+	if you want omnidirectional light, use <cutoff>180</cutoff>
+	Cutoff - value of angle of light frustum (0-180), exponent - spread light in spot. In degrees.
+-->       
+       <cutoff>20</cutoff>
+       <exponent>10.0</exponent>
+<!--
+	Attenuation parameters. OpenGL count attenuation of spot light:
+	attenuation = 1/(constant + linear*distance + quadratic*distance^2)
+--> 
+      
+       <constant>0.1</constant>
+       <linear>0.01</linear>
+       <quadratic>0.000003</quadratic>
+<!--
+	Offset of light source, relative center(lat-long-alt). 
+	For you convience, you may set position in meters additional.
+-->       
+       <center-x>-3.0</center-x>
+       <center-y>0.0</center-y>
+       <center-z>-0.9</center-z>
+<!--
+	Directional. Like offset, it's additional way to set light direction.
+-->
+       <axis-x>-1.0</axis-x>
+       <axis-y>0.0</axis-y>
+       <axis-z>-0.05</axis-z>
+<!--
+	You may set color of light.
+	It's commented, cause default values is good for landing light.
+-->
+    <ambient-r>0.1</ambient-r>
+    <ambient-g>0.1</ambient-g>
+    <ambient-b>0.1</ambient-b>
+
+    <specular-r>0.1</specular-r>
+    <specular-g>0.1</specular-g>
+    <specular-b>0.1</specular-b>
+
+    <diffuse-r>0.1</diffuse-r>
+    <diffuse-g>0.1</diffuse-g>
+    <diffuse-b>0.1</diffuse-b>
+                 
+        </light-source>
+  </light>
+
+  <submodels>
+   <serviceable>true</serviceable>
+   <path>Aircraft/l410uvpe/submodels.xml</path>
+  </submodels>
+
+    </sim>
+
+    <input>
+        <keyboard>
+<!--       
+            <key n="106">
+                <name>j</name>
+                <desc>Retract spoilers</desc>
+                <binding>
+                    <command>property-adjust</command>
+                    <property>/controls/flight/spoilers</property>
+                    <min>0</min>
+                    <step type="double">-1</step>
+                </binding>
+            </key>
+
+            <key n="107">
+                <name>k</name>
+                <desc>Extend spoilers</desc>
+                <binding>
+                    <command>property-adjust</command>
+                    <property>/controls/flight/spoilers</property>
+                    <max>1</max>
+                    <step type="double">1</step>
+                </binding>
+            </key>
+-->
+<!--
+            <key n="91">
+                <name>[</name>
+                <desc>Decrease flaps.</desc>
+                <binding>
+                    <command>property-adjust</command>
+                    <property>/controls/flight/flaps</property>
+                    <step type="double">-0.5</step>
+                </binding>
+            </key>
+            
+            <key n="93">
+                <name>]</name>
+                <desc>Increase flaps.</desc>
+                <binding>
+                    <command>property-adjust</command>
+                    <property>/controls/flight/flaps</property>
+                    <step type="double">0.5</step>
+                </binding>
+            </key>
+-->
+            <key n="70">
+                <name>F</name>
+                <desc>Cutoff on Selected Engine(s)</desc>
+                <binding> 
+                    <condition>
+                        <property>/sim/input/selected/engine[0]</property>
+                    </condition>
+                    <command>property-assign</command>
+                    <property>/controls/engines/engine[0]/cutoff-cmd</property>
+                    <value type="bool">true</value>
+                </binding>
+                <binding>
+                    <condition>
+                        <property>/sim/input/selected/engine[1]</property>
+                    </condition>
+                    <command>property-assign</command>
+                    <property>/controls/engines/engine[1]/cutoff-cmd</property>
+                    <value type="bool">true</value>
+                </binding>
+            </key>
+
+            <key n="102">
+                <name>f</name>
+                <desc>Not Cutoff on Selected Engine(s)</desc>
+                <binding>
+                    <condition>
+                        <property>/sim/input/selected/engine[0]</property>
+                    </condition>
+                    <command>property-assign</command>
+                    <property>/controls/engines/engine[0]/cutoff-cmd</property>
+                    <value type="bool">false</value>
+                </binding>
+                <binding>
+                    <condition>
+                        <property>/sim/input/selected/engine[0]</property>
+                    </condition>
+                    <command>property-assign</command>
+                    <property>/controls/engines/engine[0]/cutoff-emerg-cmd</property>
+                    <value type="bool">false</value>
+                </binding>
+                <binding>
+                    <condition>
+                        <property>/sim/input/selected/engine[1]</property>
+                    </condition>
+                    <command>property-assign</command>
+                    <property>/controls/engines/engine[1]/cutoff-cmd</property>
+                    <value type="int">0</value>
+                </binding>
+                <binding>
+                    <condition>
+                        <property>/sim/input/selected/engine[1]</property>
+                    </condition>
+                    <command>property-assign</command>
+                    <property>/controls/engines/engine[1]/cutoff-emerg-cmd</property>
+                    <value type="int">0</value>
+                </binding>
+            </key>
+  
+            <key n="6">
+                <name>ctrlF</name>
+                <desc>Emergency Cutoff on Selected Engine(s)</desc>
+                <binding>
+                    <condition>
+                        <property>/sim/input/selected/engine[0]</property>
+                    </condition>
+                    <command>property-assign</command>
+                    <property>/controls/engines/engine[0]/cutoff-emerg-cmd</property>
+                    <value type="int">1</value>
+                </binding>
+                <binding>
+                    <condition>
+                        <property>/sim/input/selected/engine[1]</property>
+                    </condition>
+                    <command>property-assign</command>
+                    <property>/controls/engines/engine[1]/cutoff-emerg-cmd</property>
+                    <value type="int">1</value>
+                </binding>
+            </key>
+
+            <key n="92">
+                <name>\</name>
+                <desc>Reverser on Selected Engine(s)</desc>
+                <binding>
+                    <condition>
+                        <property>/sim/input/selected/engine[0]</property>
+                    </condition>
+                    <command>property-assign</command>
+                    <property>/controls/engines/engine[0]/reverser</property>
+                    <value type="bool">true</value>
+                </binding>
+                <binding>
+                    <condition>
+                        <property>/sim/input/selected/engine[1]</property>
+                    </condition>
+                    <command>property-assign</command>
+                    <property>/controls/engines/engine[1]/reverser</property>
+                    <value type="bool">true</value>
+                </binding>
+                <binding>
+                    <command>property-assign</command>
+                    <property>/controls/engines/reverser-lock</property>
+                    <value type="bool">true</value>
+                </binding>
+            </key>
+  
+            <key n="125">
+                <name>|</name>
+                <desc>Not Reverser on Selected Engine(s)</desc>
+                <binding>
+                    <condition>
+                        <property>/sim/input/selected/engine[0]</property>
+                    </condition>
+                    <command>property-assign</command>
+                    <property>/controls/engines/engine[0]/reverser</property>
+                    <value type="bool">false</value>
+                </binding>
+                <binding>
+                    <condition>
+                        <property>/sim/input/selected/engine[1]</property>
+                    </condition>
+                    <command>property-assign</command>
+                    <property>/controls/engines/engine[1]/reverser</property>
+                    <value type="bool">false</value>
+                </binding>
+                <binding>
+                    <condition>
+                        <and>
+                            <not>
+                                <property>/controls/engines/engine[0]/reverser</property>
+                            </not>
+                            <not>
+                                <property>/controls/engines/engine[1]/reverser</property>
+                            </not>
+                        </and>
+                    </condition>
+                    <command>property-assign</command>
+                    <property>/controls/engines/reverser-lock</property>
+                    <value type="bool">false</value>
+                </binding>
+            </key>
+
+            <key n="44">
+                <name>,</name>
+                <desc>Left brake</desc>
+                <binding>
+                    <command>property-assign</command>
+                    <property>/controls/gear/wheel[0]/brake-cmd</property>
+                    <value type="double">1.0</value>
+                </binding>
+                <mod-up>
+                    <binding>
+                        <command>property-assign</command>
+                        <property>/controls/gear/wheel[0]/brake-cmd</property>
+                        <value type="double">0.0</value>
+                    </binding>
+                </mod-up>
+            </key>
+
+            <key n="46">
+                <name>.</name>
+                <desc>Right brake</desc>
+                <binding>
+                    <command>property-assign</command>
+                    <property>/controls/gear/wheel[1]/brake-cmd</property>
+                    <value type="double">1.0</value>
+                </binding>
+                <mod-up>
+                    <binding>
+                        <command>property-assign</command>
+                        <property>/controls/gear/wheel[1]/brake-cmd</property>
+                        <value type="double">0.0</value>
+                    </binding>
+                </mod-up>
+            </key>
+
+            <key n="98">
+                <name>b</name>
+                <desc>Apply all brakes.</desc>
+                <binding>
+                    <command>property-assign</command>
+                    <property>/controls/gear/wheel[0]/brake-cmd</property>
+                    <value type="double">1.0</value>
+                </binding>
+                <binding>
+                    <command>property-assign</command>
+                    <property>/controls/gear/wheel[1]/brake-cmd</property>
+                    <value type="double">1.0</value>
+                </binding>
+                <binding>
+                    <command>property-assign</command>
+                    <property>/controls/gear/wheel[2]/brake-cmd</property>
+                    <value type="double">1.0</value>
+                </binding>
+                <mod-up>
+                    <desc>Release all brakes.</desc>
+                    <binding>
+                        <command>property-assign</command>
+                        <property>/controls/gear/wheel[0]/brake-cmd</property>
+                        <value type="double">0.0</value>
+                    </binding>
+                    <binding>
+                        <command>property-assign</command>
+                        <property>/controls/gear/wheel[1]/brake-cmd</property>
+                        <value type="double">0.0</value>
+                    </binding>
+                    <binding>
+                        <command>property-assign</command>
+                        <property>/controls/gear/wheel[2]/brake-cmd</property>
+                        <value type="double">0.0</value>
+                    </binding>
+                </mod-up>
+            </key>
+
+            <key n="66">
+                <name>B</name>
+                <desc>Toggle parking brake on or off</desc>
+                <binding>
+                    <command>property-toggle</command>
+                    <property>/controls/gear/parking-brake-cmd</property>
+                </binding>
+            </key>
+
+            <key n="81">
+                <name>Q</name>
+                <desc>Decrease LH propeller speed</desc>
+                <binding>
+                    <command>property-adjust</command>
+                    <property>/controls/engines/engine[0]/propeller-pitch-cmd</property>
+                    <min>0.0</min>
+                    <max>1</max>
+                    <step type="double">-0.2</step>
+                </binding>
+            </key>
+
+            <key n="87">
+                <name>W</name>
+                <desc>Decrease RH propeller speed</desc>
+                <binding>
+                    <command>property-adjust</command>
+                    <property>/controls/engines/engine[1]/propeller-pitch-cmd</property>
+                    <min>0.0</min>
+                    <max>1</max>
+                    <step type="double">-0.2</step>
+                </binding>
+            </key>
+
+            <key n="113">
+                <name>q</name>
+                <desc>Increase LH propeller speed</desc>
+                <binding>
+                    <command>property-adjust</command>
+                    <property>/controls/engines/engine[0]/propeller-pitch-cmd</property>
+                    <min>-0.2</min>
+                    <max>1</max>
+                    <step type="double">0.2</step>
+                </binding>
+            </key>
+
+            <key n="119">
+                <name>w</name>
+                <desc>Increase RH propeller speed</desc>
+                <binding>
+                    <command>property-adjust</command>
+                    <property>/controls/engines/engine[1]/propeller-pitch-cmd</property>
+                    <min>-0.2</min>
+                    <max>1</max>
+                    <step type="double">0.2</step>
+                </binding>
+            </key>
+
+            <key n="101">
+                <name>e</name>
+                <desc>Select pedal steering</desc>
+                <binding>
+                    <command>property-assign</command>
+                    <property>/controls/switches/full-steering-sw</property>
+                    <value>0</value>
+                </binding>
+            </key>
+            <key n="69">
+                <name>E</name>
+                <desc>Select manual steering</desc>
+                <binding>
+                    <command>property-assign</command>
+                    <property>/controls/switches/full-steering-sw</property>
+                    <value>2</value>
+                </binding>
+            </key>
+
+            <key n="47">
+                <name>slash</name>
+                <desc>Decrease aileron trim.</desc>
+                <binding>
+                    <command>property-adjust</command>
+                    <property>/controls/flight/aileron-trim</property>
+                    <step type="double">-0.005</step>
+                </binding>
+            </key>
+            
+            <key n="42">
+               <name>asterix</name>
+               <desc>Increase aileron trim.</desc>
+               <binding>
+                    <command>property-adjust</command>
+                    <property>/controls/flight/aileron-trim</property>
+                    <step type="double">0.005</step>
+                </binding>
+            </key>
+
+            <key n="89">
+                <name>Y</name>
+                <desc>Manual feather LH propeller</desc>
+                <binding>
+                    <command>property-assign</command>
+                    <property>/controls/engines/engine[0]/propeller-pitch-cmd</property>
+                    <value type="double">-0.2</value>
+                </binding>
+            </key>
+            
+            <key n="73">
+                <name>I</name>
+                <desc>Manual feather RH propeller</desc>
+                <binding>
+                    <command>property-assign</command>
+                    <property>/controls/engines/engine[1]/propeller-pitch-cmd</property>
+                    <value type="double">-0.2</value>
+                </binding>
+            </key>
+
+            <key n="121">
+                <name>y</name>
+                <desc>Swich on LH feather pump</desc>
+                <binding>
+                    <command>property-assign</command>
+                    <property>/controls/switches/prop-feat1-sw</property>
+                    <value type="bool">true</value>
+                </binding>
+            </key>
+ 
+            <key n="105">
+                <name>i</name>
+                <desc>Switch on RH feather pump</desc>
+                <binding>
+                    <command>property-assign</command>
+                    <property>/controls/switches/prop-feat2-sw</property>
+                    <value type="bool">true</value>
+                </binding>
+            </key>
+
+            <key n="59">
+                <name>;</name>
+                <desc>Emergency flaps extension</desc>
+                <binding>
+                    <command>property-toggle</command>
+                    <property>/controls/switches/flaps-emergency-sw</property>
+                </binding>
+            </key>
+            
+            <key n="58">
+                <name>:</name>
+                <desc>Emergency gear extension</desc>
+                <binding>
+                    <command>property-toggle</command>
+                    <property>/controls/switches/gear-emergency-sw</property>
+                </binding>
+            </key>
+            
+            <!-- autopilot -->
+            
+            <key n="1">
+                <name>Ctrl-A</name>
+                <desc>ALT</desc>
+                <binding>
+                    <command>nasal</command>
+                    <script>l410autopilot.alt_btn()</script>
+                </binding>
+            </key>
+            <key n="17">
+                <name>Ctrl-Q</name>
+                <desc>FD</desc>
+                <binding>
+                    <command>nasal</command>
+                    <script>l410autopilot.fd_btn()</script>
+                </binding>
+            </key>
+            <key n="8">
+                <name>Ctrl-H</name>
+                <desc>HDG</desc>
+                <binding>
+                    <command>nasal</command>
+                    <script>l410autopilot.hdg_btn()</script>
+                </binding>
+            </key>
+            <key n="23">
+                <name>Ctrl-W</name>
+                <desc>AP</desc>
+                <binding>
+                    <command>nasal</command>
+                    <script>l410autopilot.ap_btn()</script>
+                </binding>
+            </key>
+            <key n="14">
+                <name>Ctrl-N</name>
+                <desc>NAV</desc>
+                <binding>
+                    <command>nasal</command>
+                    <script>l410autopilot.nav_btn()</script>
+                </binding>
+            </key>
+            <key n="7">
+                <name>Ctrl-G</name>
+                <desc>APR</desc>
+                <binding>
+                    <command>nasal</command>
+                    <script>l410autopilot.apr_btn()</script>
+                </binding>
+            </key>
+            <key n="25">
+                <name>Ctrl-Y</name>
+                <desc>YD</desc>
+                <binding>
+                    <command>nasal</command>
+                    <script>l410autopilot.yd_btn()</script>
+                </binding>
+            </key>
+            <key n="11">
+                <name>Ctrl-K</name>
+                <desc>HB</desc>
+                <binding>
+                    <command>nasal</command>
+                    <script>l410autopilot.hb_btn()</script>
+                </binding>
+            </key>
+
+            <key n="68">
+                <name>D</name>
+                <desc>door front</desc>
+                <binding>
+                   <command>property-toggle</command>
+                   <property>/controls/doorf-cmd-norm</property>
+                </binding>
+            </key>
+            <key n="100">
+                <name>d</name>
+                <desc>door rear</desc>
+                <binding>
+                    <condition>
+                        <and>
+                            <less-than>
+                                <property>/surface-positions/steps-pos-norm</property>
+                                <value>0.2</value>
+                            </less-than>
+                            <equals>
+                                <property>/controls/steps-cmd-norm</property>
+                                <value>0</value>
+                            </equals>
+                        </and>
+                    </condition>
+                   <command>property-toggle</command>
+                   <property>/controls/doorr-cmd-norm</property>
+                </binding>
+            </key>
+            <key n="4">
+                <name>ctrl d</name>
+                <desc>steps rear</desc>
+                <binding>
+                    <condition>
+                        <and>
+                            <greater-than>
+                                <property>/surface-positions/door-rear-pos-norm</property>
+                                <value>0.8</value>
+                            </greater-than>
+                            <equals>
+                                <property>/controls/doorr-cmd-norm</property>
+                                <value>1</value>
+                            </equals>
+                        </and>
+                    </condition>
+                   <command>property-toggle</command>
+                   <property>/controls/steps-cmd-norm</property>
+                </binding>
+            </key>
+
+            <key n="63">
+                <name>?</name>
+                <desc>Help dialog</desc>
+                <binding>
+                    <command>nasal</command>
+                    <script>l410help.showDialog()</script>
+                </binding>
+            </key>
+            
+            <key n="96">
+                <name>`</name>
+                <desc>Autopilot CWS</desc>
+                <binding>
+                    <command>nasal</command>
+                    <script>l410autopilot.cws_btn()</script>
+                </binding>
+                <mod-up>
+                    <binding>
+                        <command>nasal</command>
+                        <script>l410autopilot.cws_btn_modup()</script>
+                    </binding>
+                </mod-up>
+                
+            </key>
+       
+<!-- basic control -->
+ <key n="52">
+  <name>4</name>
+  <desc>Move aileron left (or adjust AP heading.)</desc>
+  <repeatable type="bool">true</repeatable>
+  <binding>
+   <command>nasal</command>
+   <script>
+     l410control.incAileron(-0.05, -1.0)
+   </script>
+  </binding>
+  <mod-shift>
+   <desc>Look left.</desc>
+   <binding>
+    <command>property-assign</command>
+    <property>/sim/current-view/goal-heading-offset-deg</property>
+    <property>/sim/view/config/left-direction-deg</property>
+   </binding>
+  </mod-shift>
+ </key>
+
+ <key n="53">
+  <name>5</name>
+  <desc>Center aileron, elevator, and rudder.</desc>
+  <binding>
+   <command>nasal</command>
+   <script>l410control.centerFlightControls()</script>
+  </binding>
+ </key>
+
+ <key n="54">
+  <name>6</name>
+  <desc>Move aileron right (or adjust AP heading.)</desc>
+  <repeatable type="bool">true</repeatable>
+  <binding>
+   <command>nasal</command>
+   <script>
+     l410control.incAileron(0.05, 1.0)
+   </script>
+  </binding>
+  <mod-shift>
+   <desc>Look right.</desc>
+   <binding>
+    <command>property-assign</command>
+    <property>/sim/current-view/goal-heading-offset-deg</property>
+    <property>/sim/view/config/right-direction-deg</property>
+   </binding>
+  </mod-shift>
+ </key>
+
+ <key n="56">
+  <name>8</name>
+  <desc>Decrease elevator or autopilot altitude.</desc>
+  <repeatable type="bool">true</repeatable>
+  <binding>
+   <command>nasal</command>
+   <script>
+     l410control.incElevator(0.05, -100)
+   </script>
+  </binding>
+  <mod-shift>
+   <desc>Look forward.</desc>
+   <binding>
+    <command>property-assign</command>
+    <property>/sim/current-view/goal-heading-offset-deg</property>
+    <property>/sim/view/config/front-direction-deg</property>
+   </binding>
+  </mod-shift>
+ </key>
+
+ <key n="50">
+  <name>2</name>
+  <desc>Increase elevator or autopilot altitude.</desc>
+  <repeatable type="bool">true</repeatable>
+  <binding>
+   <command>nasal</command>
+   <script>
+     l410control.incElevator(-0.05, 100)
+   </script>
+  </binding>
+  <mod-shift>
+   <desc>Look back.</desc>
+   <binding>
+    <command>property-assign</command>
+    <property>/sim/current-view/goal-heading-offset-deg</property>
+    <property>/sim/view/config/back-direction-deg</property>
+   </binding>
+  </mod-shift>
+ </key>
+
+ <key n="356">
+  <name>Left</name>
+  <desc>Move aileron left (or adjust AP heading.)</desc>
+  <repeatable type="bool">true</repeatable>
+  <binding>
+   <command>nasal</command>
+   <script>
+     l410control.incAileron(-0.05, -1.0)
+   </script>
+  </binding>
+  <mod-shift>
+   <desc>Look left.</desc>
+   <binding>
+    <command>property-assign</command>
+    <property>/sim/current-view/goal-heading-offset-deg</property>
+    <property>/sim/view/config/left-direction-deg</property>
+   </binding>
+  </mod-shift>
+ </key>
+
+ <key n="357">
+  <name>Up</name>
+  <desc>Increase elevator or autopilot altitude.</desc>
+  <repeatable type="bool">true</repeatable>
+  <binding>
+   <command>nasal</command>
+   <script>
+     l410control.incElevator(0.05, -100)
+   </script>
+  </binding>
+  <mod-shift>
+   <desc>Look forward.</desc>
+   <binding>
+    <command>property-assign</command>
+    <property>/sim/current-view/goal-heading-offset-deg</property>
+    <property>/sim/view/config/front-direction-deg</property>
+   </binding>
+  </mod-shift>
+ </key>
+
+ <key n="358">
+  <name>Right</name>
+  <desc>Move aileron right (or adjust AP heading.)</desc>
+  <repeatable type="bool">true</repeatable>
+  <binding>
+   <command>nasal</command>
+   <script>
+     l410control.incAileron(0.05, 1.0)
+   </script>
+   <step type="double">0.05</step>
+  </binding>
+  <mod-shift>
+   <desc>Look right.</desc>
+   <binding>
+    <command>property-assign</command>
+    <property>/sim/current-view/goal-heading-offset-deg</property>
+    <property>/sim/view/config/right-direction-deg</property>
+   </binding>
+  </mod-shift>
+ </key>
+
+ <key n="359">
+  <name>Down</name>
+  <desc>Decrease elevator or autopilot altitude.</desc>
+  <repeatable type="bool">true</repeatable>
+  <binding>
+   <command>nasal</command>
+   <script>
+     l410control.incElevator(-0.05, 100)
+   </script>
+  </binding>
+  <mod-shift>
+   <desc>Look backwards.</desc>
+   <binding>
+    <command>property-assign</command>
+    <property>/sim/current-view/goal-heading-offset-deg</property>
+    <property>/sim/view/config/back-direction-deg</property>
+   </binding>
+  </mod-shift>
+ </key>
+
+ 
+        </keyboard> 
+        <!--
+        <joysticks>
+            <js>
+                <button n="1">
+                    <desc>CWS-autopilot</desc>
+                    <binding>
+                        <command>nasal</command>
+                        <script>l410autopilot.cws_btn()</script>
+                    </binding>
+                    <mod-up>
+                        <binding>
+                            <command>nasal</command>
+                            <script>l410autopilot.cws_btn_modup()</script>
+                        </binding>
+                    </mod-up>
+                </button>
+                <button n="0">
+                    <desc>Autopilot disconnect</desc>
+                    <binding>
+                        <command>nasal</command>
+                        <script>l410autopilot.ap_disconnect_btn()</script>
+                    </binding>
+                </button>
+            </js>
+        </joysticks>
+        -->
+<!--
+        <joysticks>
+            <js n="0">
+                <axis n="2">
+                    <desc>Throttle</desc>
+                    <binding>
+                        <command>nasal</command>
+                        <script>ZadnaCinnost</script>
+                    </binding>
+                    <binding>
+                        <command>property-scale</command>
+                        <property>/controls/engines/engine[0]/throttle-cmd</property>
+                        <offset type="double">-1.0</offset>
+                        <factor type="double">-0.5</factor>
+                    </binding>
+                    <binding>
+                        <command>property-scale</command>
+                        <property>/controls/engines/engine[1]/throttle-cmd</property>
+                        <offset type="double">-1.0</offset>
+                        <factor type="double">-0.5</factor>
+                    </binding>
+                </axis>
+            </js>
+        </joysticks>
+-->
+    </input>
+ 
+
+    <nasal>
+	    <l410wr>
+		    <file>Aircraft/l410/l410-wr.nas</file>
+	    </l410wr>
+	    <l410xpdr>
+		    <file>Aircraft/l410/Instruments/l410-xpdr-KFS576.nas</file>
+	    </l410xpdr>
+	    <l410com>
+		    <file>Aircraft/l410/Instruments/l410-com-LUN3524.nas</file>
+	    </l410com>
+	    <l410autopilot>
+		    <file>Aircraft/l410/l410-autopilot.nas</file>
+	    </l410autopilot>
+	    <l410control>
+		    <file>Aircraft/l410/l410-control.nas</file>
+	    </l410control>
+	    <l410basic>
+		    <file>Aircraft/l410/l410-scripts.nas</file>
+	    </l410basic>
+	    <l410icing>
+		    <file>Aircraft/l410/l410-icing.nas</file>
+	    </l410icing>
+    </nasal>
+
+    <systems>
+        <pokus>
+            <mujnod n="0" type="bool">false</mujnod>
+            <mujnod n="1" type="bool">false</mujnod>
+            <mujnod n="2" type="bool">false</mujnod>
+            <mujnod2 type="bool">false</mujnod2>
+            <mujnod3 type="bool">false</mujnod3>
+            <mujnod4 type="bool">false</mujnod4>
+            <podnod>
+                <mujnod4 type="bool">false</mujnod4>
+            </podnod>
+        </pokus>
+    </systems>
+
+
+ <environment>
+  <params>
+   <contrail-altitude>4000</contrail-altitude>
+  </params>
+ </environment> 
+</PropertyList>

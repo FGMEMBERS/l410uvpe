@@ -1,0 +1,660 @@
+<?xml version="1.0"?>
+
+<!--
+Autopilot altitude selector
+-->
+
+<PropertyList>
+
+ <name>KAS 297</name>
+
+ <w-base>104</w-base>
+ <h-base>48</h-base>
+
+ <layers>
+
+ <layer>
+   <name>background</name>
+   <texture>
+    <path>Aircraft/l410uvpe/Instruments/Textures/l410-KAS297.rgb</path>
+    <x1>0.0</x1>
+    <y1>0.5391</y1>
+    <x2>1.0</x2>
+    <y2>1.0</y2>
+   </texture>
+  </layer>
+
+
+
+
+  <layer>
+   <type>switch</type>
+   <layer>
+      <name>display_digits</name>
+      <condition>
+        <and>
+		<greater-than>
+          <property alias="../../../../../../../params/electrical-power"/>
+		  <value>10</value>
+		</greater-than>
+        <not>
+          <property alias="../../../../../../../params/displ-sw"/>
+        </not>
+        <not>
+          <property alias="../../../../../../../params/bulbs-test-on"/>
+        </not>
+        </and>
+      </condition>
+
+      <type>text</type>
+      <font>led</font>
+      <point-size>6</point-size>
+      <color>
+        <red>1.0</red>
+        <green>0.5</green>
+        <blue>0.0</blue>
+      </color>
+      <chunks>
+        <chunk>
+          <type>number-value</type>
+          <property alias="../../../../../../params/displ-alt"/>
+          <format>%05.0f</format>     
+        </chunk>
+      </chunks>
+      <transformations>
+        <transformation>
+          <type>x-shift</type>
+          <offset>-20</offset>
+        </transformation>
+        <transformation>
+          <type>y-shift</type>
+          <offset>-7</offset>
+        </transformation>
+      </transformations>
+    </layer>
+  </layer>
+
+  <layer>
+   <type>switch</type>
+   <layer>
+      <name>display_digits</name>
+      <condition>
+        <and>
+		<greater-than>
+          <property alias="../../../../../../../params/electrical-power"/>
+		  <value>10</value>
+		</greater-than>
+        <property alias="../../../../../../params/displ-sw"/>
+        <not>
+          <property alias="../../../../../../../params/bulbs-test-on"/>
+        </not>
+        </and>
+      </condition>
+
+      <type>text</type>
+      <font>led</font>
+      <point-size>6</point-size>
+      <color>
+        <red>1.0</red>
+        <green>0.5</green>
+        <blue>0.0</blue>
+      </color>
+      <chunks>
+        <chunk>
+          <type>number-value</type>
+          <property alias="../../../../../../params/displ-vs"/>
+          <format>%+05.0f</format>     
+        </chunk>
+      </chunks>
+      <transformations>
+        <transformation>
+          <type>x-shift</type>
+          <offset>-20</offset>
+        </transformation>
+        <transformation>
+          <type>y-shift</type>
+          <offset>-7</offset>
+        </transformation>
+      </transformations>
+    </layer>
+  </layer>
+
+  <layer>
+   <type>switch</type>
+   <layer>
+      <name>display_digits</name>
+      <condition>
+        <and>
+		<greater-than>
+          <property alias="../../../../../../../params/electrical-power"/>
+		  <value>10</value>
+		</greater-than>
+        <property alias="../../../../../../params/bulbs-test-on"/>
+        </and>
+      </condition>
+
+      <type>text</type>
+      <font>led</font>
+      <point-size>6</point-size>
+      <color>
+        <red>1.0</red>
+        <green>0.5</green>
+        <blue>0.0</blue>
+      </color>
+      <chunks>
+        <chunk>
+          <type>text-value</type>
+          <property>/instrumentation/autopilot/displ-test-str</property>
+        </chunk>
+      </chunks>
+      <transformations>
+        <transformation>
+          <type>x-shift</type>
+          <offset>-20</offset>
+        </transformation>
+        <transformation>
+          <type>y-shift</type>
+          <offset>-7</offset>
+        </transformation>
+      </transformations>
+    </layer>
+  </layer>
+
+  <layer>
+   <name>lab-vs</name>
+   <type>switch</type>
+   <layer>
+   <condition>
+        <and>
+		 <greater-than>
+           <property alias="../../../../../../../params/electrical-power"/>
+		   <value>10</value>
+		 </greater-than>
+         <or>
+           <property alias="../../../../../../../params/as-vs-flag"/>
+           <property alias="../../../../../../../params/bulbs-test-on"/>
+         </or>
+        </and>
+   </condition>
+   <texture>
+    <path>Aircraft/l410uvpe/Instruments/Textures/l410-KAS297.rgb</path>
+    <x1>0.0</x1>
+    <y1>0.125</y1>
+    <x2>0.25</x2>
+    <y2>0.1875</y2>
+   </texture>
+      <w>24</w>
+      <h>8</h>
+    <transformations>
+      <transformation>
+        <type>x-shift</type>
+        <offset>-20</offset>
+      </transformation>
+      <transformation>
+        <type>y-shift</type>
+        <offset>10</offset>
+      </transformation>
+    </transformations>
+      <emissive>true</emissive>
+    </layer>
+</layer>  
+
+<layer>
+   <name>lab-alert</name>
+   <type>switch</type>
+   <layer>
+   <condition>
+        <and>
+		 <greater-than>
+           <property alias="../../../../../../../params/electrical-power"/>
+		   <value>10</value>
+		 </greater-than>
+         <or>
+           <property alias="../../../../../../../params/as-alert-flag"/>
+           <property alias="../../../../../../../params/bulbs-test-on"/>
+         </or>
+        </and>
+   </condition>
+   <texture>
+    <path>Aircraft/l410uvpe/Instruments/Textures/l410-KAS297.rgb</path>
+    <x1>0.25</x1>
+    <y1>0.0</y1>
+    <x2>0.5</x2>
+    <y2>0.0625</y2>
+   </texture>
+      <w>24</w>
+      <h>8</h>
+    <transformations>
+      <transformation>
+        <type>x-shift</type>
+        <offset>14</offset>
+      </transformation>
+      <transformation>
+        <type>y-shift</type>
+        <offset>10</offset>
+      </transformation>
+    </transformations>
+      <emissive>true</emissive>
+    </layer>
+</layer> 
+
+ <layer>
+   <name>lab-arm</name>
+   <type>switch</type>
+   <layer>
+   <condition>
+        <and>
+		 <greater-than>
+           <property alias="../../../../../../../params/electrical-power"/>
+		   <value>10</value>
+		 </greater-than>
+         <or>
+           <property alias="../../../../../../../params/as-arm-flag"/>
+           <property alias="../../../../../../../params/bulbs-test-on"/>
+         </or>
+        </and>
+   </condition>
+   <texture>
+    <path>Aircraft/l410uvpe/Instruments/Textures/l410-KAS297.rgb</path>
+    <x1>0.0</x1>
+    <y1>0.0</y1>
+    <x2>0.25</x2>
+    <y2>0.0625</y2>
+   </texture>
+      <w>24</w>
+      <h>8</h>
+    <transformations>
+      <transformation>
+        <type>x-shift</type>
+        <offset>-20</offset>
+      </transformation>
+      <transformation>
+        <type>y-shift</type>
+        <offset>-11</offset>
+      </transformation>
+    </transformations>
+      <emissive>true</emissive>
+    </layer>
+</layer>
+
+
+ <layer>
+   <name>lab-capt</name>
+   <type>switch</type>
+   <layer>
+   <condition>
+        <and>
+		 <greater-than>
+           <property alias="../../../../../../../params/electrical-power"/>
+		   <value>10</value>
+		 </greater-than>
+         <or>
+           <property alias="../../../../../../../params/as-capture-flag"/>
+           <property alias="../../../../../../../params/bulbs-test-on"/>
+         </or>
+        </and>
+   </condition>
+   <texture>
+    <path>Aircraft/l410uvpe/Instruments/Textures/l410-KAS297.rgb</path>
+    <x1>0.0</x1>
+    <y1>0.0625</y1>
+    <x2>0.25</x2>
+    <y2>0.125</y2>
+   </texture>
+      <w>24</w>
+      <h>8</h>
+    <transformations>
+      <transformation>
+        <type>x-shift</type>
+        <offset>-5</offset>
+      </transformation>
+      <transformation>
+        <type>y-shift</type>
+        <offset>-11</offset>
+      </transformation>
+    </transformations>
+      <emissive>true</emissive>
+    </layer>
+</layer>
+
+ <layer>
+   <name>lab-ftmin</name>
+   <type>switch</type>
+   <layer>
+   <condition>
+        <and>
+		 <greater-than>
+           <property alias="../../../../../../../params/electrical-power"/>
+		   <value>10</value>
+		 </greater-than>
+         <or>
+           <property alias="../../../../../../../params/displ-sw"/>
+           <property alias="../../../../../../../params/bulbs-test-on"/>
+         </or>
+        </and>
+   </condition>
+   <texture>
+    <path>Aircraft/l410uvpe/Instruments/Textures/l410-KAS297.rgb</path>
+    <x1>0.25</x1>
+    <y1>0.0625</y1>
+    <x2>0.5</x2>
+    <y2>0.125</y2>
+   </texture>
+      <w>24</w>
+      <h>8</h>
+    <transformations>
+      <transformation>
+        <type>x-shift</type>
+        <offset>14</offset>
+      </transformation>
+      <transformation>
+        <type>y-shift</type>
+        <offset>-11</offset>
+      </transformation>
+    </transformations>
+      <emissive>true</emissive>
+    </layer>
+</layer>
+
+ <layer>
+   <name>lab-ft</name>
+   <type>switch</type>
+   <layer>
+   <condition>
+        <and>
+		 <greater-than>
+           <property alias="../../../../../../../params/electrical-power"/>
+		   <value>10</value>
+		 </greater-than>
+         <not>
+           <property alias="../../../../../../../params/displ-sw"/>
+         </not>
+        </and>
+   </condition>
+   <texture>
+    <path>Aircraft/l410uvpe/Instruments/Textures/l410-KAS297.rgb</path>
+    <x1>0.0</x1>
+    <y1>0.1875</y1>
+    <x2>0.25</x2>
+    <y2>0.25</y2>
+   </texture>
+      <w>24</w>
+      <h>8</h>
+    <transformations>
+      <transformation>
+        <type>x-shift</type>
+        <offset>8.3</offset>
+      </transformation>
+      <transformation>
+        <type>y-shift</type>
+        <offset>-11</offset>
+      </transformation>
+    </transformations>
+      <emissive>true</emissive>
+    </layer>
+</layer>
+
+
+ <layer>
+   <name>lab-up</name>
+   <type>switch</type>
+   <layer>
+   <condition>
+        <and>
+		 <greater-than>
+           <property alias="../../../../../../../params/electrical-power"/>
+		   <value>10</value>
+		 </greater-than>
+         <or>
+         <greater-than>
+           <property alias="../../../../../../../../params/displ-vs"/>
+		   <value>0</value>
+         </greater-than>
+         <property alias="../../../../../../../params/bulbs-test-on"/>
+         </or>
+        </and>
+   </condition>
+   <texture>
+    <path>Aircraft/l410uvpe/Instruments/Textures/l410-KAS297.rgb</path>
+    <x1>0.25</x1>
+    <y1>0.125</y1>
+    <x2>0.375</x2>
+    <y2>0.1875</y2>
+   </texture>
+      <w>8</w>
+      <h>8</h>
+    <transformations>
+      <transformation>
+        <type>x-shift</type>
+        <offset>-28</offset>
+      </transformation>
+      <transformation>
+        <type>y-shift</type>
+        <offset>8</offset>
+      </transformation>
+    </transformations>
+      <emissive>true</emissive>
+    </layer>
+</layer>
+
+ <layer>
+   <name>lab-dn</name>
+   <type>switch</type>
+   <layer>
+   <condition>
+        <and>
+		 <greater-than>
+           <property alias="../../../../../../../params/electrical-power"/>
+		   <value>10</value>
+		 </greater-than>
+         <or>
+         <less-than>
+           <property alias="../../../../../../../../params/displ-vs"/>
+		   <value>0</value>
+         </less-than>
+         <property alias="../../../../../../../params/bulbs-test-on"/>
+         </or>
+        </and>
+   </condition>
+   <texture>
+    <path>Aircraft/l410uvpe/Instruments/Textures/l410-KAS297.rgb</path>
+    <x1>0.375</x1>
+    <y1>0.125</y1>
+    <x2>0.5</x2>
+    <y2>0.1875</y2>
+   </texture>
+      <w>8</w>
+      <h>8</h>
+    <transformations>
+      <transformation>
+        <type>x-shift</type>
+        <offset>-28</offset>
+      </transformation>
+      <transformation>
+        <type>y-shift</type>
+        <offset>-3</offset>
+      </transformation>
+    </transformations>
+      <emissive>true</emissive>
+    </layer>
+</layer>
+
+
+ <layer>
+   <name>btn</name>
+   <type>switch</type>
+   <layer>
+   <condition>
+        <property alias="../../../../../params/vs-sw"/>
+   </condition>
+   <texture>
+    <path>Aircraft/l410uvpe/Instruments/Textures/l410-KAS297.rgb</path>
+    <x1>0.5</x1>
+    <y1>0.0</y1>
+    <x2>0.75</x2>
+    <y2>0.25</y2>
+   </texture>
+      <w>30</w>
+      <h>30</h>
+    <transformations>
+      <transformation>
+        <type>x-shift</type>
+        <offset>39</offset>
+      </transformation>
+      <transformation>
+        <type>y-shift</type>
+        <offset>-4</offset>
+      </transformation>
+    </transformations>
+    </layer>
+</layer>
+
+
+
+
+ <layer>
+   <name>btn-label</name>
+   <texture>
+    <path>Aircraft/l410uvpe/Instruments/Textures/l410-KAS297.rgb</path>
+    <x1>0.0</x1>
+    <y1>0.25</y1>
+    <x2>0.125</x2>
+    <y2>0.375</y2>
+   </texture>
+      <w>9</w>
+      <h>9</h>
+    <transformations>
+      <transformation>
+        <type>x-shift</type>
+        <offset>39</offset>
+      </transformation>
+      <transformation>
+        <type>y-shift</type>
+        <offset>-7</offset>
+        <property alias="../../../../../params/vs-sw"/>        
+        <scale>-5</scale>        
+      </transformation>
+    </transformations>
+  </layer>
+
+
+
+
+ </layers>
+<actions>
+
+  <action>
+    <name>alt-dwn-fine</name>
+    <button>0</button>
+    <x>20</x>
+    <y>-20</y>
+    <w>20</w>
+    <h>20</h>
+    <binding>
+        <command>nasal</command>
+        <script>l410autopilot.dec_value_fine()</script>
+    </binding>
+   </action>  
+
+  <action>
+    <name>alt-dwn</name>
+    <button>1</button>
+    <x>20</x>
+    <y>-20</y>
+    <w>20</w>
+    <h>20</h>
+    <binding>
+        <command>nasal</command>
+        <script>l410autopilot.dec_value()</script>
+    </binding>
+  </action>  
+
+
+  <action>
+    <name>alt-up-fine</name>
+    <button>0</button>
+    <x>40</x>
+    <y>-20</y>
+    <w>20</w>
+    <h>20</h>
+    <binding>
+        <command>nasal</command>
+        <script>l410autopilot.inc_value_fine()</script>
+    </binding>
+  </action>    
+  <action>
+    <name>alt-up-fine</name>
+    <button>1</button>
+    <x>40</x>
+    <y>-20</y>
+    <w>20</w>
+    <h>20</h>
+    <binding>
+        <command>nasal</command>
+        <script>l410autopilot.inc_value()</script>
+    </binding>
+  </action>    
+
+
+  <action>
+    <name>btn-push-pull</name>
+    <button>1</button>
+    <x>20</x>
+    <y>0</y>
+    <w>40</w>
+    <h>16</h>
+    <binding>
+      <command>property-toggle</command>
+      <property alias="../../../../params/vs-sw"/>
+    </binding>
+    <binding>
+      <command>property-assign</command>
+      <property alias="../../../../params/displ-sw"/>
+      <property alias="../../../../params/vs-sw"/>
+    </binding>
+    <binding>
+      <command>property-assign</command>
+      <property alias="../../../../params/displ-vs"/>
+      <property alias="../../../../params/set-vs"/>
+    </binding>
+  </action>  
+
+
+
+
+
+<!---ENG ARM-->  
+  <action>
+    <name>arm-btn</name>
+    <button>0</button>
+    <x>-49</x>
+    <y>-30</y>
+    <w>30</w>
+    <h>30</h>
+    <binding>
+        <command>nasal</command>
+        <script>l410autopilot.as_alt_btn()</script>
+    </binding>
+  </action>   
+
+
+  <action>
+    <name>eng-btn</name>
+    <button>0</button>
+    <x>-49</x>
+    <y>0</y>
+    <w>30</w>
+    <h>30</h>
+    <binding>
+        <command>nasal</command>
+        <script>l410autopilot.as_vs_btn()</script>
+    </binding>
+  </action>   
+
+
+
+
+</actions> 
+
+
+</PropertyList>

@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+
+<!--
+L410 panel.
+Javky <javky@email.cz>
+_______________________________________________________________________
+-->
+
+<!DOCTYPE PropertyList SYSTEM "panel.dtd">
+
+<PropertyList>
+
+ <name>L410-horni-panel</name>
+ <background>Aircraft/l410uvpe/transparent-bg.rgb</background>
+ <w>461</w>
+ <h>531</h>
+<!-- <view-height>450</view-height>-->
+
+ <instruments>
+
+  <instrument include="./Instruments/l410-oh-1.xml">
+   <name>Engines switches</name>
+   <x>270</x>
+   <y>60</y>
+   <w>900</w>
+   <h>80</h>
+  </instrument>
+
+  <instrument include="./Instruments/l410-oh-2.xml">
+   <name>Engines switches</name>
+   <x>270</x>
+   <y>127</y>
+   <w>900</w>
+   <h>80</h>
+  </instrument>
+
+
+
+  <instrument include="./Instruments/l410-oh-3.xml">
+   <name>Engines switches</name>
+   <x>270</x>
+   <y>194</y>
+   <w>900</w>
+   <h>80</h>
+  </instrument>
+
+  <instrument include="./Instruments/l410-oh-4.xml">
+   <name>Engines switches</name>
+   <x>270</x>
+   <y>261</y>
+   <w>900</w>
+   <h>80</h>
+  </instrument>
+
+
+  <instrument include="./Instruments/l410-oh-5.xml">
+   <name>Power supply switches</name>
+   <x>270</x>
+   <y>328</y>
+   <w>900</w>
+   <h>80</h>
+  </instrument>
+
+
+  <instrument include="./Instruments/l410-oh-6.xml">
+   <name>circuit breakers 6</name>
+   <x>270</x>
+   <y>395</y>
+   <w>900</w>
+   <h>80</h>
+  </instrument>
+
+  <instrument include="./Instruments/l410-oh-7.xml">
+   <name>circuit breakers 6</name>
+   <x>270</x>
+   <y>483</y>
+   <w>900</w>
+   <h>80</h>
+  </instrument>
+
+
+
+ </instruments>
+
+
+</PropertyList>

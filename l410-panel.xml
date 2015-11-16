@@ -1,0 +1,169 @@
+<?xml version="1.0"?>
+
+<!--
+L410 panel.
+Javky <javky@email.cz>
+_______________________________________________________________________
+-->
+
+<!DOCTYPE PropertyList SYSTEM "panel.dtd">
+
+<PropertyList>
+
+ <name>Cessna C310 VFR Panel</name>
+ <background>Aircraft/l410uvpe/l410-panel.rgb</background> 
+ <w>1600</w>
+ <h>780</h>
+ <y-offset>0</y-offset>
+ <view-height>800</view-height>
+
+ <instruments>
+<!-- pilot1 -->
+
+  <instrument include="../Instruments/asi-450-kmph.xml">
+   <name>Airspeed Indicator</name>
+   <x>220</x>
+   <y>180</y>
+   <w>110</w>
+   <h>110</h>
+  </instrument>
+
+  <instrument include="../Instruments/attind_ball.xml">
+   <name>horizon and ball</name>
+   <x>330</x>
+   <y>180</y>
+   <w>110</w>
+   <h>110</h>
+  </instrument>
+
+  <instrument include="../Instruments/altimeter.xml">
+   <name>Altimeter</name>
+   <x>440</x>
+   <y>70</y>
+   <w>110</w>
+   <h>110</h>
+  </instrument>
+
+
+  <instrument include="../Instruments/hsi.xml">
+   <name>Horizontal Situation Indicator</name>
+   <x>330</x>
+   <y>70</y>
+   <w>110</w>
+   <h>110</h>
+  </instrument>
+
+
+  <instrument include="../Instruments/vertical.xml">
+   <name>Vertical Velocity Indicator</name>
+   <x>440</x>
+   <y>180</y>
+   <w>110</w>
+   <h>110</h>
+  </instrument>
+
+  <instrument include="../Instruments/clock.xml">
+   <name>Digital Clock</name>
+   <x>110</x>
+   <y>70</y>
+   <w>90</w>
+   <h>90</h>
+  </instrument>
+
+<!-- pilot2 -->
+
+  <instrument include="../Instruments/asi-450-kmph.xml">
+   <name>Airspeed Indicator</name>
+   <x>1120</x>
+   <y>180</y>
+   <w>110</w>
+   <h>110</h>
+  </instrument>
+
+  <instrument include="../Instruments/attind_ball.xml">
+   <name>horizon and ball</name>
+   <x>1230</x>
+   <y>180</y>
+   <w>110</w>
+   <h>110</h>
+  </instrument>
+
+  <instrument include="../Instruments/altimeter.xml">
+   <name>Altimeter</name>
+   <x>1340</x>
+   <y>70</y>
+   <w>110</w>
+   <h>110</h>
+  </instrument>
+
+  <instrument include="../Instruments/hsi.xml">
+   <name>Horizontal Situation Indicator</name>
+   <x>1230</x>
+   <y>70</y>
+   <w>110</w>
+   <h>110</h>
+  </instrument>
+
+  <instrument include="../Instruments/vertical.xml">
+   <name>Vertical Velocity Indicator</name>
+   <x>1340</x>
+   <y>180</y>
+   <w>110</w>
+   <h>110</h>
+  </instrument>
+
+<!-- pristroje uprostred -->
+  <instrument include="../Instruments/attitude-indicator.xml">
+   <name>Attitude Indicator</name>
+   <x>560</x>
+   <y>170</y>
+   <w>90</w>
+   <h>90</h>
+  </instrument>
+
+<!-- paky, vypinace, svetylka uprostred -->
+
+  <instrument include="../Instruments/throttle-quadrant.xml">
+  <name>Throttle quadrant</name>
+  <x>730</x>
+  <y>35</y>
+  </instrument>
+
+  <instrument include="../Instruments/flap.xml">
+   <name>Flaps Control</name>
+   <x>830</x>
+   <y>35</y>
+   <w>50</w>
+   <h>75</h>
+  </instrument>
+
+  <instrument include="../Instruments/gear-indicator.xml">
+   <name>Gear Indicator Light</name>
+   <x>890</x>
+   <y>20</y>
+   <w>40</w>
+   <h>17</h>
+  </instrument>
+  
+  <instrument include="../Instruments/brakes.xml">
+   <name>Brake Indicator Light</name>
+   <x>890</x>
+   <y>40</y>
+   <w>40</w>
+   <h>17</h>
+  </instrument>
+
+<!-- vypinace, svetylka nahore -->
+  <instrument include="../Instruments/twin-magneto-switch.xml">
+   <name>Magneto switch panel</name>
+   <x>550</x>
+   <y>750</y>
+   <w>100</w>
+   <h>50</h>
+  </instrument>
+
+ 
+ </instruments>
+</PropertyList>
+
+

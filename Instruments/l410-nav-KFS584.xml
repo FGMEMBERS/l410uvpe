@@ -1,0 +1,421 @@
+<?xml version="1.0"?>
+
+<!--
+
+KFS584 (NAV 1)(nase!)
+
+-->
+
+<PropertyList>
+
+ <name>kfs pokus</name>
+
+  <w-base>100</w-base>
+  <h-base>100</h-base>
+
+  <layers>
+  
+    <!-- LABELS -->
+    <layer>
+      <name>podklad</name>
+      <texture>
+        <path>Aircraft/l410uvpe/Instruments/Textures/kfs.rgb</path>
+        <x1>0.0</x1>
+        <x2>0.4922</x2>
+        <y1>0.0</y1>
+        <y2>1.0</y2>
+      </texture>
+      <w>100</w>
+      <h>100</h>
+      <transformations>
+        <transformation>
+          <type>x-shift</type>
+          <offset>0</offset>
+        </transformation>
+        <transformation>
+          <type>y-shift</type>
+          <offset>0</offset>
+        </transformation>
+      </transformations>
+    </layer>
+
+<!-- napisy na displeji -->
+
+  <layer>
+   <condition>
+		 <greater-than>
+           <property alias="../../../../../params/electrical-power"/>
+		   <value>10</value>
+		 </greater-than>
+   </condition>
+   <name>nav frequencies</name>
+   <type>text</type>
+   <font>led</font>
+   <point-size>7</point-size>
+   <color>
+    <red>1.0</red>
+    <green>0.5</green>
+    <blue>0.0</blue>
+   </color>
+   <chunks>
+    <chunk>
+     <type>number-value</type>
+<!--     <property>/radios/nav[0]/frequencies/selected-mhz</property> -->
+    <property alias="../../../../../params/nav-freq-selected-prop"/>
+     <format>%06.2f</format>
+    </chunk>
+   </chunks>
+   <transformations>
+    <transformation>
+     <type>x-shift</type>
+     <offset>-37</offset>
+    </transformation>
+    <transformation>
+     <type>y-shift</type>
+     <offset>21</offset>
+    </transformation>
+   </transformations>
+  </layer>
+  <layer>
+   <condition>
+		 <greater-than>
+           <property alias="../../../../../params/electrical-power"/>
+		   <value>10</value>
+		 </greater-than>
+   </condition>
+   <name>nav frequencies</name>
+   <type>text</type>
+   <font>led</font>
+   <point-size>7</point-size>
+   <color>
+    <red>1.0</red>
+    <green>0.5</green>
+    <blue>0.0</blue>
+   </color>
+   <chunks>
+    <chunk>
+     <type>number-value</type>
+<!--     <property>/radios/nav[0]/frequencies/standby-mhz</property> -->
+    <property alias="../../../../../params/nav-freq-standby-prop"/>
+     <format>%06.2f</format>
+    </chunk>
+   </chunks>
+   <transformations>
+    <transformation>
+     <type>x-shift</type>
+     <offset>-37</offset>
+    </transformation>
+    <transformation>
+     <type>y-shift</type>
+     <offset>2</offset>
+    </transformation>
+   </transformations>
+  </layer>
+
+
+
+  <layer>
+    <name>nav-label</name>
+      <texture>
+        <path>Aircraft/l410uvpe/Instruments/Textures/kfs.rgb</path>
+        <x1>0.7109</x1>
+        <x2>0.7891</x2>
+        <y1>0.9180</y1>
+        <y2>0.9844</y2>
+      </texture>
+      <w>20</w>
+      <h>12</h>
+    <transformations>
+      <transformation>
+        <type>x-shift</type>
+        <offset>-5</offset>
+      </transformation>
+      <transformation>
+        <type>y-shift</type>
+        <offset>-13</offset>
+      </transformation>
+    </transformations>
+  </layer>
+
+  <layer>
+    <name>volume-label</name>
+      <texture>
+        <path>Aircraft/l410uvpe/Instruments/Textures/kfs.rgb</path>
+        <x1>0.5527</x1>
+        <x2>0.6700</x2>
+        <y1>0.4570</y1>
+        <y2>0.6211</y2>
+      </texture>
+      <w>20</w>
+      <h>16</h>
+    <transformations>
+      <transformation>
+        <type>x-shift</type>
+        <offset>-28</offset>
+      </transformation>
+      <transformation>
+        <type>y-shift</type>
+        <offset>-29</offset>
+      </transformation>
+    </transformations>
+  </layer>
+
+  <layer>
+   <type>switch</type>
+   <condition>
+		 <greater-than>
+           <property alias="../../../../../params/electrical-power"/>
+		   <value>10</value>
+		 </greater-than>
+   </condition>
+  <layer>
+    <name>SBY-label</name>
+      <texture>
+        <path>Aircraft/l410uvpe/Instruments/Textures/kfs.rgb</path>
+        <x1>0.96875</x1>
+        <x2>1.00000</x2>
+        <y1>0.6875</y1>
+        <y2>0.9330</y2>
+      </texture>
+      <w>8</w>
+      <h>25</h>
+    <transformations>
+      <transformation>
+        <type>x-shift</type>
+        <offset>23</offset>
+      </transformation>
+      <transformation>
+        <type>y-shift</type>
+        <offset>9</offset>
+      </transformation>
+    </transformations>
+   </layer>  
+  </layer>  
+
+ 
+  <layer>
+    <name>volume-knob-pict</name>
+      <texture>
+        <path>Aircraft/l410uvpe/Instruments/Textures/kfs.rgb</path>
+        <x1>0.8047</x1>
+        <x2>0.8769</x2>
+        <y1>0.7461</y1>
+        <y2>0.8906</y2>
+      </texture>
+      <w>14</w>
+      <h>14</h>
+    <transformations>
+      <transformation>
+        <type>x-shift</type>
+        <offset>-22</offset>
+      </transformation>
+      <transformation>
+        <type>y-shift</type>
+        <offset>-33</offset>
+      </transformation>
+    </transformations>
+  </layer>  
+  <layer>
+    <name>volume-knob</name>
+      <texture>
+        <path>Aircraft/l410uvpe/Instruments/Textures/kfs.rgb</path>
+        <x1>0.50000</x1>
+        <x2>0.53125</x2>
+        <y1>0.0000</y1>
+        <y2>0.0625</y2>
+      </texture>
+      <w>5</w>
+      <h>5</h>
+    <transformations>
+      <transformation>
+        <type>x-shift</type>
+        <offset>-22</offset>
+      </transformation>
+      <transformation>
+        <type>y-shift</type>
+        <offset>-33</offset>
+      </transformation>
+      <transformation>
+        <type>rotation</type>
+        <offset>0</offset>
+        <property alias="../../../../../params/nav-morse-id-volume-prop"/>
+        <scale>170</scale>
+      </transformation>
+           <transformation>
+        <type>x-shift</type>
+        <offset>-4</offset>
+      </transformation>
+    </transformations>
+  </layer>   
+  </layers>
+
+ <actions>
+
+  <action>
+   <name>small nav frequency decrease</name>
+   <button>0</button>
+   <x>10</x>
+   <y>-37</y>
+   <w>12</w>
+   <h>25</h>
+   <binding>
+   <condition>
+		 <greater-than>
+           <property alias="../../../../../../params/electrical-power"/>
+		   <value>10</value>
+		 </greater-than>
+   </condition>
+    <command>property-adjust</command>
+    <property alias="../../../../params/nav-freq-standby-prop"/>
+    <step>-0.05</step>
+    <min>108.0</min>
+    <max>118.0</max>
+    <resolution>0.05</resolution>
+    <wrap>1</wrap>
+   </binding>
+  </action>
+
+  <action>
+   <name>large nav frequency decrease</name>
+   <button>1</button>
+   <x>10</x>
+   <y>-37</y>
+   <w>12</w>
+   <h>25</h>
+   <binding>
+   <condition>
+		 <greater-than>
+           <property alias="../../../../../../params/electrical-power"/>
+		   <value>10</value>
+		 </greater-than>
+   </condition>
+    <command>property-adjust</command>
+    <property alias="../../../../params/nav-freq-standby-prop"/>
+    <step>-0.5</step>
+    <min>108.0</min>
+    <max>118.0</max>
+    <resolution>0.05</resolution>
+    <wrap>1</wrap>
+   </binding>
+  </action>
+
+  <action>
+   <name>small nav frequency increase</name>
+   <button>0</button>
+   <x>22</x>
+   <y>-37</y>
+   <w>12</w>
+   <h>25</h>
+   <binding>
+   <condition>
+		 <greater-than>
+           <property alias="../../../../../../params/electrical-power"/>
+		   <value>10</value>
+		 </greater-than>
+   </condition>
+    <command>property-adjust</command>
+    <property alias="../../../../params/nav-freq-standby-prop"/>
+    <step>0.05</step>
+    <min>108.0</min>
+    <max>118.0</max>
+    <resolution>0.05</resolution>
+    <wrap>1</wrap>
+   </binding>
+  </action>
+
+  <action>
+   <name>large nav frequency increase</name>
+   <button>1</button>
+   <x>22</x>
+   <y>-37</y>
+   <w>12</w>
+   <h>25</h>
+   <binding>
+   <condition>
+		 <greater-than>
+           <property alias="../../../../../../params/electrical-power"/>
+		   <value>10</value>
+		 </greater-than>
+   </condition>
+    <command>property-adjust</command>
+    <property alias="../../../../params/nav-freq-standby-prop"/>
+    <step>0.5</step>
+    <min>108.0</min>
+    <max>118.0</max>
+    <resolution>0.05</resolution>
+    <wrap>1</wrap>
+   </binding>
+  </action>
+  
+   <action>
+   <name>swap nav frequencies</name>
+   <button>0</button>
+   <x>25</x>
+   <y>-8</y>
+   <w>20</w>
+   <h>30</h>
+   <binding>
+   <condition>
+		 <greater-than>
+           <property alias="../../../../../../params/electrical-power"/>
+		   <value>10</value>
+		 </greater-than>
+   </condition>
+    <command>property-swap</command>
+    <property alias="../../../../params/nav-freq-selected-prop"/>
+    <property alias="../../../../params/nav-freq-standby-prop"/>
+   </binding>
+  </action>
+
+  <action>
+    <name>volume-control-dwn</name>
+    <button>0</button>
+    <x>-35</x>
+    <y>-45</y>
+    <w>15</w>
+    <h>20</h>
+    <binding>
+      <command>property-adjust</command>
+      <property alias="../../../../params/nav-morse-id-volume-prop"/>
+      <step>-0.25</step>
+      <min>0.0</min>
+      <max>1.25</max>
+    </binding>
+    <binding>
+      <command>property-assign</command>
+      <condition>
+        <less-than>
+          <property alias="../../../../../../params/nav-morse-id-volume-prop"/>
+          <value>0.24</value>
+        </less-than>
+      </condition>
+      <property alias="../../../../params/nav-morse-ident-toggle-prop"/>
+      <value>0</value>
+    </binding>
+  </action>  
+    
+  <action>
+    <name>volume-control-up</name>
+    <button>0</button>
+    <x>-20</x>
+    <y>-45</y>
+    <w>15</w>
+    <h>20</h>
+    <binding>
+      <command>property-adjust</command>
+      <property alias="../../../../params/nav-morse-id-volume-prop"/>
+      <step>0.25</step>
+      <min>0.0</min>
+      <max>1.25</max>
+    </binding>
+    <binding>
+      <command>property-assign</command>
+      <property alias="../../../../params/nav-morse-ident-toggle-prop"/>
+      <value>1</value>
+    </binding>
+    
+  </action>
+
+</actions>
+
+</PropertyList>

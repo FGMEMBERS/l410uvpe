@@ -1,0 +1,298 @@
+<?xml version="1.0"?>
+
+<!--
+GC instrument
+
+nase KA51B
+-->
+
+<PropertyList>
+   <name>GC</name>
+   <w-base>50</w-base>
+   <h-base>100</h-base>
+
+
+   <layers>
+
+      <layer>
+         <name>background</name>
+         <texture>
+	          <path>Aircraft/l410uvpe/Instruments/Textures/l410-KA51B.rgb</path>
+	          <x1>0.0</x1>
+	          <y1>0.5</y1>
+	          <x2>1.0</x2>
+	          <y2>1.0</y2>
+         </texture>
+         <w>80</w>
+         <h>40</h>
+         <transformations>
+		   <transformation>
+              <type>rotation</type>
+               <offset>90</offset>
+            </transformation>
+         </transformations>		   
+      </layer>
+ 
+ 
+      <layer>
+         <name>auto-man</name>
+         <type>switch</type>
+         <layer>
+           <condition>
+              <property alias="../../../../../params/auto-man"/>
+           </condition>
+           <name>on</name>
+           <texture>
+	          <path>Aircraft/l410uvpe/Instruments/Textures/l410-KA51B.rgb</path>
+	          <x1>0.5859</x1>
+	          <y1>0.2969</y1>
+	          <x2>0.8398</x2>
+	          <y2>0.4766</y2>
+            </texture>
+            <w>25</w>
+            <h>18</h>
+         </layer>
+         <layer>
+            <name>off</name>
+            <texture>
+	           <path>Aircraft/l410uvpe/Instruments/Textures/l410-KA51B.rgb</path>
+	           <x1>0.0586</x1>
+	           <y1>0.2969</y1>
+	           <x2>0.3125</x2>
+	           <y2>0.4766</y2>
+            </texture>
+            <w>25</w>
+            <h>18</h>
+         </layer>
+         <transformations>
+		   <transformation>
+              <type>y-shift</type>
+               <offset>0</offset>
+            </transformation>
+         </transformations>		   
+      </layer>
+
+
+      <layer>
+         <name>man-correction</name>
+         <type>switch</type>
+         <layer>
+           <condition>
+		      <equals>
+                 <property alias="../../../../../../params/man-correction"/>
+				 <value type="int">1</value>
+		      </equals>
+           </condition>
+           <name>center</name>
+           <texture>
+	          <path>Aircraft/l410uvpe/Instruments/Textures/l410-KA51B.rgb</path>
+	          <x1>0.3242</x1>
+	          <y1>0.2969</y1>
+	          <x2>0.5781</x2>
+	          <y2>0.4766</y2>
+            </texture>
+            <w>25</w>
+            <h>18</h>
+         </layer>
+         <layer>
+            <name>off</name>
+            <type>switch</type>
+ 			<layer>
+               <condition>
+		          <equals>
+                     <property alias="../../../../../../../params/man-correction"/>
+				     <value type="int">2</value>
+		          </equals>
+               </condition>
+               <name>ccw</name>
+               <texture>
+	              <path>Aircraft/l410uvpe/Instruments/Textures/l410-KA51B.rgb</path>
+	              <x1>0.0586</x1>
+	              <y1>0.2969</y1>
+   	              <x2>0.3125</x2>
+	              <y2>0.4766</y2>
+               </texture>
+               <w>25</w>
+               <h>18</h>
+			</layer>
+			<layer>
+               <name>cw</name>
+              <texture>
+	             <path>Aircraft/l410uvpe/Instruments/Textures/l410-KA51B.rgb</path>
+	             <x1>0.5859</x1>
+	             <y1>0.2969</y1>
+	             <x2>0.8398</x2>
+	             <y2>0.4766</y2>
+               </texture>
+               <w>25</w>
+               <h>18</h>
+			</layer>
+         </layer>
+         <transformations>
+		   <transformation>
+              <type>y-shift</type>
+               <offset>-16</offset>
+            </transformation>
+         </transformations>		   
+      </layer>
+
+<!-- 
+ 
+ 
+
+       <layer>
+         <name>cw-ccw</name>
+         <texture>
+	          <path>Aircraft/l410uvpe/Instruments/Textures/l410-KA51B.rgb</path>
+	          <x1>0.3242</x1>
+	          <y1>0.2969</y1>
+	          <x2>0.5781</x2>
+	          <y2>0.4766</y2>
+         </texture>
+         <w>25</w>
+         <h>18</h>
+         <transformations>
+		   <transformation>
+              <type>y-shift</type>
+               <offset>-16</offset>
+            </transformation>
+         </transformations>		   
+      </layer>
+	  -->
+       <layer>
+         <name>indicator</name>
+         <texture>
+	          <path>Aircraft/l410uvpe/Instruments/Textures/l410-KA51B.rgb</path>
+	          <x1>0.0156</x1>
+	          <y1>0.0195</y1>
+	          <x2>0.1172</x2>
+	          <y2>0.0469</y2>
+         </texture>
+         <w>9</w>
+         <h>5</h>
+         <transformations>
+		   <transformation>
+              <type>x-shift</type>
+			     <property alias="../../../../../params/indicated-diff"/>   
+               <min>-5</min>
+               <max>5</max>
+               <scale>2</scale>
+            </transformation>
+		   <transformation>
+              <type>y-shift</type>
+               <offset>19</offset>
+            </transformation>
+		   <transformation>
+              <type>rotation</type>
+               <offset>90</offset>
+            </transformation>
+
+         </transformations>		   
+      </layer>	  
+
+
+</layers> 
+
+  <actions>
+ 
+  <action>
+    <name>man-auto</name>
+    <button>0</button>
+    <x>-15</x>
+    <y>-9</y>
+    <w>30</w>
+    <h>16</h>
+    <binding>
+       <command>property-adjust</command>
+       <property alias="../../../../params/auto-man"/>
+       <step>1</step>
+       <min>0</min>
+       <max>2</max>
+       <resolution>1</resolution>
+       <wrap>1</wrap>
+    </binding>
+    <binding>
+        <condition>
+            <property alias="../../../../../params/auto-man"/>
+            <value>1</value>
+        </condition>
+        <command>property-assign</command>
+        <property alias="../../../../params/quick-correction"/>
+        <value>1</value>
+    </binding>
+  </action>   
+
+ <action>
+   <name>man-correction-cw</name>
+   <button>0</button>
+   <x>-20</x>
+   <y>-31</y>
+   <w>19</w>
+   <h>25</h>
+   <binding>
+      <command>property-assign</command>
+       <property alias="../../../../params/man-correction"/>
+      <value type="int">0</value>
+  </binding>
+  <binding>
+   <condition>
+		 <greater-than>
+           <property alias="../../../../../../params/electrical-power"/>
+		   <value>10</value>
+		 </greater-than>
+   </condition>
+         <command>property-adjust</command>
+       <property alias="../../../../params/offset"/>
+       <step>0.5</step>
+       <min>0</min>
+       <max>360</max>
+       <wrap>1</wrap>	   
+    </binding>
+  <mod-up>
+   <binding>
+      <command>property-assign</command>
+       <property alias="../../../../../params/man-correction"/>
+      <value type="int">1</value>
+  </binding>
+  </mod-up>
+  </action>
+
+<action>
+   <name>man-correction-ccw</name>
+   <button>0</button>
+   <x>0</x>
+   <y>-31</y>
+   <w>19</w>
+   <h>25</h>
+   <binding>
+      <command>property-assign</command>
+       <property alias="../../../../params/man-correction"/>
+      <value type="int">2</value>
+  </binding>
+  <binding>
+   <condition>
+		 <greater-than>
+           <property alias="../../../../../../params/electrical-power"/>
+		   <value>10</value>
+		 </greater-than>
+   </condition>
+         <command>property-adjust</command>
+       <property alias="../../../../params/offset"/>
+       <step>-0.5</step>
+       <min>0</min>
+       <max>360</max>
+       <wrap>1</wrap>	   
+    </binding>
+  <mod-up>
+   <binding>
+      <command>property-assign</command>
+       <property alias="../../../../../params/man-correction"/>
+      <value type="int">1</value>
+  </binding>
+  </mod-up>
+  </action>
+
+
+</actions>
+ 
+</PropertyList>

@@ -1,0 +1,90 @@
+<?xml version="1.0"?>
+
+<!--
+trim indik
+-->
+
+<PropertyList>
+
+  <name>compass switch</name>
+
+  <w-base>60</w-base>
+  <h-base>40</h-base>
+<layers>
+
+<layer>
+      <name>compass switch</name>
+      <type>switch</type>
+ 			<layer>
+               <condition>
+		          <equals>
+                     <property alias="../../../../../../params/position"/>
+				     <value type="int">1</value>
+		          </equals>
+               </condition>
+               <name>one</name>
+               <texture>
+	              <path>Aircraft/l410uvpe/Instruments/Textures/l410-KA51B.rgb</path>
+	              <x1>0.0586</x1>
+	              <y1>0.2969</y1>
+   	              <x2>0.3125</x2>
+	              <y2>0.4766</y2>
+               </texture>
+               <w>25</w>
+               <h>18</h>
+			</layer>
+			<layer>
+               <name>two</name>
+              <texture>
+	             <path>Aircraft/l410uvpe/Instruments/Textures/l410-KA51B.rgb</path>
+	             <x1>0.5859</x1>
+	             <y1>0.2969</y1>
+	             <x2>0.8398</x2>
+	             <y2>0.4766</y2>
+               </texture>
+               <w>25</w>
+               <h>18</h>
+			</layer>
+    </layer> 
+    
+    <layer>
+      <name>label</name>
+      <texture>
+        <path>Aircraft/l410uvpe/Instruments/Textures/labels-2.rgb</path>
+        <x1>0.5</x1>
+        <x2>1.0</x2>
+        <y1>0.8125</y1>
+        <y2>0.875</y2>
+      </texture>
+      <w>56</w>
+      <h>7</h>
+      <transformations>
+        <transformation>
+          <type>x-shift</type>
+          <offset>0</offset>
+        </transformation>
+        <transformation>
+          <type>y-shift</type>
+          <offset>-13</offset>
+        </transformation>
+      </transformations>
+    </layer>
+
+</layers>
+
+<actions>
+ <action>
+   <name>change-position</name>
+   <button>0</button>
+   <x>-12</x>
+   <y>-9</y>
+   <w>25</w>
+   <h>18</h>
+   <binding>
+      <command>property-toggle</command>
+      <property alias="../../../../params/position"/>
+  </binding>
+ </action>
+</actions> 
+
+</PropertyList>

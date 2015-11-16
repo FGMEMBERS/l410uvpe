@@ -1,0 +1,1031 @@
+<?xml version="1.0"?>
+<!--
+L410 Variables settings
+(variables definition, default values)
+Javky <javky@email.cz>
+_______________________________________________________________________
+-->
+
+<PropertyList include="l410-sim.xml">
+
+  <instrumentation>
+    <voltmeters>
+	  <volt-150vac type="double">0</volt-150vac>
+      <volt-45vac type="double">0</volt-45vac>
+	  <volt-30vdc1 type="double">0</volt-30vdc1>
+	  <volt-30vdc2 type="double">0</volt-30vdc2>
+	  <amps-30vdc1 type="double">0</amps-30vdc1>
+	  <amps-30vdc2 type="double">0</amps-30vdc2>
+    </voltmeters>
+ 
+    <fire-det>
+      <fire-englh type="bool">false</fire-englh>
+      <fire-engrh type="bool">false</fire-engrh>
+      <fire-fbc type="bool">false</fire-fbc>
+      <fire-abc type="bool">false</fire-abc>
+    </fire-det>
+  
+    <encoding-alt>
+      <text-alt type="int">200</text-alt>
+      <text-alt-offset type="double">0.0</text-alt-offset>
+    </encoding-alt>
+
+    <heading-indicator>
+      <indicated-diff type="double">0.0</indicated-diff>
+      <electrical type="bool">true</electrical>
+      <auto-correction type="bool">true</auto-correction>
+      <man-correction type="int">1</man-correction>
+      <quick-correction type="bool">false</quick-correction>
+    </heading-indicator>
+    <heading-indicator>
+      <indicated-diff type="double">0.0</indicated-diff>
+      <electrical type="bool">true</electrical>
+      <auto-correction type="bool">true</auto-correction>
+      <man-correction type="int">1</man-correction>
+      <quick-correction type="bool">false</quick-correction>
+    </heading-indicator>
+    <heading-indicator-selected>
+      <selected type='int'>0</selected>
+      <indicated-heading-deg type='double'>0.0</indicated-heading-deg>
+      <spin type='double'>1.0</spin>
+    </heading-indicator-selected>
+
+    <rmi>
+      <nav-adf-sw1 type="int">0</nav-adf-sw1>
+      <nav-adf-sw2 type="int">0</nav-adf-sw2>
+	
+	  <indicated-deflection1 type="double">0.0</indicated-deflection1>
+	  <indicated-deflection2 type="double">0.0</indicated-deflection2>
+    </rmi>
+    <rmi>
+      <nav-adf-sw1 type="int">0</nav-adf-sw1>
+      <nav-adf-sw2 type="int">0</nav-adf-sw2>
+  
+	  <indicated-deflection1 type="double">0.0</indicated-deflection1>
+	  <indicated-deflection2 type="double">0.0</indicated-deflection2>
+    </rmi>
+  
+    <nav>
+      <volume type="double">0.0</volume>
+      <ident type="bool">false</ident>
+      <nav-mode type="int">0</nav-mode>
+      <indicated-heading-deflection type="double">0.0</indicated-heading-deflection>
+      <indicated-heading-deflection-goal type="double">0.0</indicated-heading-deflection-goal>
+      <indicated-gs-deflection type="double">0.0</indicated-gs-deflection>
+    </nav>
+    <nav>
+      <volume type="double">0.0</volume>
+      <ident type="bool">false</ident>
+      <indicated-heading-deflection type="double">0.0</indicated-heading-deflection>
+      <indicated-heading-deflection-goal type="double">0.0</indicated-heading-deflection-goal>
+      <indicated-gs-deflection type="double">0.0</indicated-gs-deflection>
+ 	  <indicated-in-range type="bool">false</indicated-in-range>
+
+      <nav-mode type="int">0</nav-mode>
+      <nav-freq-is-ils-freq type="bool">false</nav-freq-is-ils-freq>
+
+	  <nav-freq-displ type="double">0.0</nav-freq-displ> 
+	  <nav-rad-displ type="double">0.0</nav-rad-displ> 
+	  <nav-dist-displ type="double">0.0</nav-dist-displ> 
+      <nav-wpt-sel type="int">0</nav-wpt-sel>
+	  <nav-wpt-active type="int">0</nav-wpt-active>
+	  <nav-wpt-blink type="bool">false</nav-wpt-blink>
+    
+      <wpt-timetogo-min type="double">0.0</wpt-timetogo-min>
+      <wpt-speed-kt type="double">0.0</wpt-speed-kt>
+      <wpt-radto-deg type="double">0.0</wpt-radto-deg>
+
+	  <nav-wpt-freq type="double">115.8</nav-wpt-freq>
+      <nav-wpt-freq type="double">0</nav-wpt-freq>
+      <nav-wpt-freq type="double">0</nav-wpt-freq>
+      <nav-wpt-freq type="double">0</nav-wpt-freq>
+      <nav-wpt-freq type="double">0</nav-wpt-freq>
+      <nav-wpt-freq type="double">0</nav-wpt-freq>
+      <nav-wpt-freq type="double">0</nav-wpt-freq>
+      <nav-wpt-freq type="double">0</nav-wpt-freq>
+      <nav-wpt-freq type="double">0</nav-wpt-freq>
+      <nav-wpt-freq type="double">0</nav-wpt-freq>
+
+	  <nav-wpt-rad type="double">322</nav-wpt-rad>
+      <nav-wpt-rad type="double">0</nav-wpt-rad>
+      <nav-wpt-rad type="double">0</nav-wpt-rad>
+      <nav-wpt-rad type="double">0</nav-wpt-rad>
+      <nav-wpt-rad type="double">0</nav-wpt-rad>
+      <nav-wpt-rad type="double">0</nav-wpt-rad>
+      <nav-wpt-rad type="double">0</nav-wpt-rad>
+      <nav-wpt-rad type="double">0</nav-wpt-rad>
+      <nav-wpt-rad type="double">0</nav-wpt-rad>
+      <nav-wpt-rad type="double">0</nav-wpt-rad>
+
+      <nav-wpt-dist type="double">13.0</nav-wpt-dist>
+      <nav-wpt-dist type="double">0</nav-wpt-dist>
+      <nav-wpt-dist type="double">0</nav-wpt-dist>
+      <nav-wpt-dist type="double">0</nav-wpt-dist>
+      <nav-wpt-dist type="double">0</nav-wpt-dist>
+      <nav-wpt-dist type="double">0</nav-wpt-dist>
+      <nav-wpt-dist type="double">0</nav-wpt-dist>
+      <nav-wpt-dist type="double">0</nav-wpt-dist>
+      <nav-wpt-dist type="double">0</nav-wpt-dist>
+      <nav-wpt-dist type="double">0</nav-wpt-dist>
+
+	  <nav-data-flag type="int">0</nav-data-flag>
+	  <nav-rad-btn type="int">0</nav-rad-btn>
+      <nav-chck-btn type="bool">false</nav-chck-btn>
+    </nav>
+
+    <dme n="0">
+      <switch-position type="int">1</switch-position>
+      <rnav-rad-flag type="bool">false</rnav-rad-flag>
+      <serviceable type="bool">true</serviceable>
+      <frequencies>
+        <source>/instrumentation/nav[0]/frequencies/selected-mhz</source>
+       </frequencies>
+    </dme>
+    <dme n="1">
+      <switch-position type="int">3</switch-position>
+      <rnav-rad-flag type="bool">false</rnav-rad-flag>
+	  <indicated-in-range type="bool">false</indicated-in-range>
+      <serviceable type="bool">true</serviceable>
+      <frequencies>
+        <source>/instrumentation/nav[1]/frequencies/selected-mhz</source>
+      </frequencies>
+    </dme>
+   
+    <adf n="0">
+      <serviceable type="bool">true</serviceable>
+      <mode>adf</mode>
+      <mode-sw type="int">2</mode-sw>
+      <volume-norm type="double">0.0</volume-norm>
+      <ident-audible type="int">0</ident-audible>
+      <frequencies>
+        <selected-khz type="double">386</selected-khz>
+        <standby-khz type="double">386</standby-khz>
+      </frequencies>
+    </adf>
+
+    <adf n="1">
+      <serviceable type="bool">true</serviceable>
+      <mode>adf</mode>
+      <mode-sw type="int">2</mode-sw>
+      <volume-norm type="double">0.0</volume-norm>
+      <ident-audible type="int">0</ident-audible>
+      <frequencies>
+        <selected-khz type="double">386</selected-khz>
+        <standby-khz type="double">386</standby-khz>
+      </frequencies>
+    </adf>
+    
+    <xpdr n="0">
+      <number type='int'>0</number>
+      <serviceable type="bool">true</serviceable>
+      <on type="bool">true</on>
+      <disp type="int">0000</disp>
+      <mode type="int">0</mode>
+      <knob-pos type="int">1</knob-pos>
+      <knob-pr-time type="int">0</knob-pr-time>
+      <idt-time type="int">0</idt-time>
+      <an-sby type="bool">false</an-sby>      
+      <an-on type="bool">false</an-on>
+      <an-alt type="bool">false</an-alt>
+      <an-idt type="bool">false</an-idt>
+      <an-r type="bool">false</an-r>
+      <an-fl type="bool">false</an-fl>
+      <sel-digit type="int">3</sel-digit>
+      <code-vfr type="int">1200</code-vfr>
+      <code type="int">0000</code>
+      <external-sby type="bool">false</external-sby>
+      <in-range type="bool">true</in-range>
+    </xpdr>    
+
+    <xpdr n="1">
+      <number type='int'>1</number>
+      <serviceable type="bool">true</serviceable>
+      <on type="bool">true</on>
+      <disp type="int">0000</disp>
+      <mode type="int">0</mode>
+      <knob-pos type="int">1</knob-pos>
+      <knob-pr-time type="int">0</knob-pr-time>
+      <idt-time type="int">0</idt-time>
+      <an-sby type="bool">false</an-sby>      
+      <an-on type="bool">false</an-on>
+      <an-alt type="bool">false</an-alt>
+      <an-idt type="bool">false</an-idt>
+      <an-r type="bool">false</an-r>
+      <an-fl type="bool">false</an-fl>
+      <sel-digit type="int">3</sel-digit>
+      <code-vfr type="int">1200</code-vfr>
+      <code type="int">0000</code>
+      <external-sby type="bool">true</external-sby>
+      <in-range type="bool">true</in-range>
+    </xpdr>    
+    
+    <xpdr-selected>
+      <selected type='int'>0</selected>
+      <nasal-sel type='int'>0</nasal-sel>
+    </xpdr-selected>
+    
+    <comm n="0">
+      <sq type="bool">true</sq>
+      <sel type="bool">true</sel>  
+      <mode type="int">0</mode>      
+    </comm>
+
+    <comm n="1">
+      <sq type="bool">true</sq>
+      <sel type="bool">true</sel>  
+       <mode type="int">0</mode>      
+    </comm>
+
+    <hsi>
+      <nav-adf-sw type="int">0</nav-adf-sw>
+	  <indicated-adf-deflection type="double">0.0</indicated-adf-deflection>
+    </hsi> 
+    <hsi>
+      <nav-adf-sw type="int">0</nav-adf-sw>
+      <indicated-adf-deflection type="double">0.0</indicated-adf-deflection>
+    </hsi> 
+
+    <!-- je to k necemu uzitecne? -->
+    <turn-indicator>
+      <spin type="double">0.8</spin>
+	  <indicated-turn-rate type="double">0.0</indicated-turn-rate>
+    </turn-indicator>
+    <turn-indicator>
+      <spin type="double">0.8</spin>
+	  <indicated-turn-rate type="double">0.0</indicated-turn-rate>
+    </turn-indicator>
+
+    <altimeter-rad>
+      <lowest-ft type="double">300</lowest-ft>
+      <radar-alt-koef type="double">0</radar-alt-koef>
+      <indicated-rad-alt type="double">0</indicated-rad-alt>
+      <signal-on type="bool">true</signal-on>
+      <test-sw type="bool">false</test-sw>
+    </altimeter-rad>
+
+    <warn-disp>
+      <wd-chck-e1-on type="bool">false</wd-chck-e1-on>
+      <wd-chck-e2-on type="bool">false</wd-chck-e2-on>
+      <wd-chck-ai-on type="bool">false</wd-chck-ai-on>
+      <wd-chck-el-on type="bool">false</wd-chck-el-on>
+      <wd-chck-sg-on type="bool">false</wd-chck-sg-on>
+
+      <wd-bank-l type="bool">false</wd-bank-l>
+      <wd-bank-r type="bool">false</wd-bank-r>
+
+      <wd-el-on type="bool">true</wd-el-on>
+      <wd-external type="bool">false</wd-external>
+      <wd-battery type="bool">true</wd-battery>
+      <wd-lun2450-1 type="bool">true</wd-lun2450-1>
+      <wd-lun2450-2 type="bool">true</wd-lun2450-2>
+      <wd-generator1 type="bool">true</wd-generator1>
+      <wd-generator2 type="bool">true</wd-generator2>
+      <wd-pc250-1 type="bool">true</wd-pc250-1>
+      <wd-pc250-2 type="bool">true</wd-pc250-2>
+      <wd-alternator1 type="bool">true</wd-alternator1>
+      <wd-alternator2 type="bool">true</wd-alternator2>
+      <wd-windshield-heat-lh type="bool">false</wd-windshield-heat-lh>
+      <wd-windshield-heat-rh type="bool">false</wd-windshield-heat-rh>
+      <wd-horizon-lh type="bool">false</wd-horizon-lh>
+      <wd-horizon-rh type="bool">false</wd-horizon-rh>
+      <wd-horizon-stby type="bool">false</wd-horizon-stby>
+
+      <wd-ai-on type="bool">true</wd-ai-on>
+      <wd-spoiler type="bool">false</wd-spoiler>
+      <wd-extendgear type="bool">false</wd-extendgear>
+      <wd-flaps15 type="bool">false</wd-flaps15>
+      <wd-searchlgh type="bool">false</wd-searchlgh>
+      <wd-pedalsteering type="bool">false</wd-pedalsteering>
+      <wd-manualsteering type="bool">false</wd-manualsteering>
+      <wd-fuelcross type="bool">false</wd-fuelcross>
+      <wd-autbank-y type="bool">false</wd-autbank-y>
+      <wd-autbank-g type="bool">false</wd-autbank-g>
+      <wd-wateri type="bool">false</wd-wateri>
+      <wd-door type="bool">false</wd-door>
+      <wd-pitot-heat type="bool">false</wd-pitot-heat>
+      <wd-separat-vane type="bool">false</wd-separat-vane>
+      <wd-icing type="bool">false</wd-icing>
+      <wd-firebag-aft type="bool">false</wd-firebag-aft>
+      <wd-firebag-front type="bool">false</wd-firebag-front>
+
+      <wd-e1-on type="bool">true</wd-e1-on>
+      <wd-e2-on type="bool">true</wd-e2-on>
+
+      <wde1-fire type="bool">false</wde1-fire>
+      <wde1-beta type="bool">false</wde1-beta>
+      <wde1-start type="bool">false</wde1-start>
+      <wde1-oilpress type="bool">false</wde1-oilpress>
+      <wde1-minfuel type="bool">false</wde1-minfuel>
+      <!--    <wde1-wateri type="bool">false</wde1-wateri> -->
+      <!--    <wde1-oil type="bool">false</wde1-oil> -->
+      <wde1-isolval type="bool">false</wde1-isolval>
+      <wde1-fuelpress type="bool">false</wde1-fuelpress>
+      <wde1-ielu type="bool">false</wde1-ielu>
+      <wde1-chips type="bool">false</wde1-chips>
+      <wde1-ieluint type="bool">false</wde1-ieluint>
+      <wde1-autofeat type="bool">false</wde1-autofeat>
+      <wde1-featpump type="bool">false</wde1-featpump>
+      <!--    <wde1-fuelcross type="bool">false</wde1-fuelcross> -->
+      <wde1-fuelbypass type="bool">false</wde1-fuelbypass>
+      <wde1-hydraulics type="bool">false</wde1-hydraulics>
+      <wde1-propdeicing type="bool">false</wde1-propdeicing>
+
+      <wde2-fire type="bool">false</wde2-fire>
+      <wde2-beta type="bool">false</wde2-beta>
+      <wde2-start type="bool">false</wde2-start>
+      <wde2-oilpress type="bool">false</wde2-oilpress>
+      <wde2-minfuel type="bool">false</wde2-minfuel>
+      <!--    <wde2-wateri type="bool">false</wde2-wateri> -->
+      <!--    <wde2-oil type="bool">false</wde2-oil> -->
+      <wde2-isolval type="bool">false</wde2-isolval>
+      <wde2-fuelpress type="bool">false</wde2-fuelpress>
+      <wde2-ielu type="bool">false</wde2-ielu>
+      <wde2-chips type="bool">false</wde2-chips>
+      <wde2-ieluint type="bool">false</wde2-ieluint>
+      <wde2-autofeat type="bool">false</wde2-autofeat>
+      <wde2-featpump type="bool">false</wde2-featpump>
+      <!--    <wde2-fuelcross type="bool">false</wde2-fuelcross> -->
+      <wde2-fuelbypass type="bool">false</wde2-fuelbypass>
+      <wde1-hydraulics type="bool">false</wde1-hydraulics>
+      <wde1-propdeicing type="bool">false</wde1-propdeicing>
+
+      <wd-extinguish-eng type="bool">false</wd-extinguish-eng>
+      <wd-oil-lh type="bool">false</wd-oil-lh>
+      <wd-oil-rh type="bool">false</wd-oil-rh>
+
+      <ww-ielu-operative-lh type="bool">false</ww-ielu-operative-lh>
+      <ww-ielu-operative-rh type="bool">false</ww-ielu-operative-rh>
+
+      <ww-oil-level-lh type="bool">false</ww-oil-level-lh>
+      <ww-oil-level-rh type="bool">false</ww-oil-level-rh>
+    </warn-disp>
+    
+    <deicing>
+      <ww-section-a type="bool">false</ww-section-a>
+      <ww-section-b type="bool">false</ww-section-b>
+      <ww-section-c type="bool">false</ww-section-c>
+      
+      <sw-main type="bool">false</sw-main>
+      <sw-slow-fast type="bool">false</sw-slow-fast>
+      <sw-auto-man type="bool">false</sw-auto-man>
+      
+      <sw-section-ac type="int">0</sw-section-ac>
+      <sw-section-b type="int">0</sw-section-b>
+<!--      <sw-section-c type="bool">false</sw-section-c> -->
+
+      <sw-bulbs-test type="int">0</sw-bulbs-test>
+<!--      <sw-section-b-test type="int">0</sw-section-b-test> -->
+
+      <deicers-pressure type="double">0.0</deicers-pressure>
+      <indicated-deicers-pressure type="double">0.0</indicated-deicers-pressure>
+      
+      <bulb_section_a type="bool">false</bulb_section_a>
+      <bulb_section_b type="bool">false</bulb_section_b>
+      <bulb_section_c type="bool">false</bulb_section_c>
+      
+      <auto-section-selected type="int">0</auto-section-selected>
+      <auto-section-timer type="int">0</auto-section-timer>
+      
+      <swv-stall_probe type="int">0</swv-stall_probe>      
+      <swv-static_heads1 type="int">0</swv-static_heads1>      
+      <swv-static_heads2 type="int">0</swv-static_heads2>      
+      <swv-pitot_heads1 type="int">0</swv-pitot_heads1>      
+      <swv-pitot_heads2 type="int">0</swv-pitot_heads2>   
+
+	  <sw-ws_heat type="int">0</sw-ws_heat>
+	  <sw-prop_deice type="int">0</sw-prop_deice> 
+      <sw-ws_heat-test-lh type="bool">false</sw-ws_heat-test-lh>
+      <sw-ws_heat-test-rh type="bool">false</sw-ws_heat-test-rh>
+      
+      <separator-vane-lh-cond type="double">0.0</separator-vane-lh-cond>
+      <separator-vane-rh-cond type="double">0.0</separator-vane-rh-cond>
+    </deicing>
+
+    <engine>
+      <indicated-gen1-perc type="double">0.0</indicated-gen1-perc>
+      <indicated-gen2-perc type="double">0.0</indicated-gen2-perc>
+      <indicated-prop1-rpm type="double">0.0</indicated-prop1-rpm>
+      <indicated-prop2-rpm type="double">0.0</indicated-prop2-rpm>
+      <indicated-pshaft1-perc type="double">0.0</indicated-pshaft1-perc>
+      <indicated-pshaft2-perc type="double">0.0</indicated-pshaft2-perc>
+      <indicated-itt1-degc type="double">0.0</indicated-itt1-degc>
+      <indicated-itt2-degc type="double">0.0</indicated-itt2-degc>
+      <indicated-fuel1-kg type="double">0.0</indicated-fuel1-kg>
+      <indicated-fuel2-kg type="double">0.0</indicated-fuel2-kg>
+      <indicated-fuelfl1-kgph type="double">0.0</indicated-fuelfl1-kgph>
+      <indicated-fuelfl2-kgph type="double">0.0</indicated-fuelfl2-kgph>
+      <eng-n-koef type="double">0.0</eng-n-koef>
+
+      <indicated-throttlel-norm type="double">0.0</indicated-throttlel-norm>
+      <indicated-tl-norm type="double">0.0</indicated-tl-norm>
+      <indicated-cutoffl-norm type="double">0.0</indicated-cutoffl-norm>
+      <indicated-throttler-norm type="double">0.0</indicated-throttler-norm>
+      <indicated-tr-norm type="double">0.0</indicated-tr-norm>
+      <indicated-cutoffr-norm type="double">0.0</indicated-cutoffr-norm>
+
+      <starting1 type="double">0.0</starting1>
+      <starting2 type="double">0.0</starting2>
+
+      <fuelcross-on type="double">0.0</fuelcross-on>
+      <fuel-cross-koef type="double">0.0</fuel-cross-koef>
+      
+      <engine_start_cover type="bool">false</engine_start_cover> 
+      
+    </engine>
+
+    <wiper>
+      <switched-on type="bool">false</switched-on>
+      <position-norm type="double">0.0</position-norm>
+      <position-dir type="double">0.0</position-dir>
+    </wiper>
+
+    <pressure>
+      <indicated-parkingbrake-kp_cm2 type="double">0.0</indicated-parkingbrake-kp_cm2>
+      <indicated-leftbrake-kp_cm2 type="double">0.0</indicated-leftbrake-kp_cm2>
+      <indicated-rightbrake-kp_cm2 type="double">0.0</indicated-rightbrake-kp_cm2>
+
+      <indicated-fuel1-kp_cm2 type="double">0.0</indicated-fuel1-kp_cm2>
+      <indicated-oil1-kp_cm2 type="double">0.0</indicated-oil1-kp_cm2>
+      <indicated-fuel2-kp_cm2 type="double">0.0</indicated-fuel2-kp_cm2>
+      <indicated-oil2-kp_cm2 type="double">0.0</indicated-oil2-kp_cm2>
+
+      <indicated-maincircuit-MPa type="double">0.0</indicated-maincircuit-MPa>
+      <indicated-brakescircuit-MPa type="double">0.0</indicated-brakescircuit-MPa>
+    </pressure>
+
+    <temperature>
+      <c-f-s-konst type="double">-32</c-f-s-konst>
+      <indicated-oil1-degc type="double">0.0</indicated-oil1-degc>
+      <indicated-oil2-degc type="double">0.0</indicated-oil2-degc>
+
+      <inner-temp-degc type="double">15.0</inner-temp-degc>
+      <heating-temp-degc type="double">15.0</heating-temp-degc>
+      <indicated-inner-temp-degc type="double">15.0</indicated-inner-temp-degc>
+      <indicated-heating-temp-degc type="double">15.0</indicated-heating-temp-degc>
+      
+      <windshield-flow type="double">0.0</windshield-flow>
+    </temperature>
+
+    <lights>
+	  <instr-flash-in type="double">0.0</instr-flash-in>
+      <instr-flash-out type="double">0.0</instr-flash-out>
+
+	  <beacon-on type="bool">false</beacon-on>
+      <beacon-kinemat-in type="double">0.0</beacon-kinemat-in>
+      <beacon-kinemat-out type="double">0.0</beacon-kinemat-out>
+
+      <navigation-on type="bool">false</navigation-on>
+
+      <search-intensity type="double">0</search-intensity>
+      <search1-on type="int">0</search1-on>
+      <search2-on type="int">0</search2-on>
+
+      <passenger-intensity type="int">0</passenger-intensity>
+      <instruments-panel-intensity type="int">0</instruments-panel-intensity>
+      <control-panel-intensity type="int">0</control-panel-intensity>
+      <rear-panel-intensity type="int">0</rear-panel-intensity>
+      <overhead-panel-intensity type="int">0</overhead-panel-intensity>
+      <cabin-intensity type="int">0</cabin-intensity>
+      
+      <ice-detector type="int">0</ice-detector>
+    </lights>
+
+    <wr>
+      <serviceable type="bool">true</serviceable>
+      <mode>checklist</mode>
+      <text-alt type="string">STANDARD PROCEDURES</text-alt>     
+      <text-alt type="string">PREAMBLE</text-alt>          
+      <text-alt type="string">BEFORE TAXI</text-alt>               
+      <text-alt type="string">BEFORE TAKE OFF</text-alt>               
+      <text-alt type="string">TAKE OFF</text-alt>               
+      <text-alt type="string">CLIMBING</text-alt>               
+      <text-alt type="string">CRUISE</text-alt>               
+      <text-alt type="string">DESCENT</text-alt>               
+      <text-alt type="string">BEFORE LANDING</text-alt>               
+      <text-alt type="string">NORMAL LANDING</text-alt>               
+      <text-alt type="string">MAX RVS THRUST LANDING</text-alt>               
+      <text-alt type="string">BAULKED LANDING</text-alt>               
+      <text-alt type="string">AFTER LANDING</text-alt>               
+      <text-alt type="string">SHUT DOWN AND SECURING</text-alt>               
+      <text-alt type="string">END OF LIST</text-alt>                    
+      
+      <text-col type="int">0</text-col>
+      <text-col type="int">0</text-col>
+      <text-col type="int">0</text-col>
+      <text-col type="int">0</text-col>
+      <text-col type="int">0</text-col>
+      <text-col type="int">0</text-col>
+      <text-col type="int">0</text-col>
+      <text-col type="int">0</text-col>
+      <text-col type="int">0</text-col>
+      <text-col type="int">0</text-col>
+      <text-col type="int">0</text-col>
+      <text-col type="int">0</text-col>
+      <text-col type="int">0</text-col>
+      <text-col type="int">0</text-col>
+      <text-col type="int">0</text-col>
+      <mode-sw type="int">3</mode-sw>
+    </wr>
+    <gu>
+     <serviceable type="bool">true</serviceable>
+     <mode-sw type="int">2</mode-sw>     
+    </gu>
+    
+    <autopilot>
+        <current-heading-mode type="string">none</current-heading-mode>
+        <current-altitude-mode type="string">none</current-altitude-mode>
+        
+        <selected-alt type="double">0</selected-alt>
+        <selected-vs type="double">0</selected-vs>
+        <set-vs type="double">0</set-vs>
+
+        <as-arm-flag type="bool">false</as-arm-flag>
+        <as-alert-flag type="bool">false</as-alert-flag>
+        <as-capture-flag type="bool">false</as-capture-flag>
+        <as-vs-flag type="bool">false</as-vs-flag>
+        <as-vsdispl type="bool">false</as-vsdispl>
+        <as-vs-sw type="bool">false</as-vs-sw>
+
+        <mode-ap-on type="bool">false</mode-ap-on>
+        <mode-fd-on type="bool">false</mode-fd-on>
+        <mode-alt-on type="bool">false</mode-alt-on>
+        <mode-hdg-on type="bool">false</mode-hdg-on>
+        <mode-nav-on type="bool">false</mode-nav-on>
+        <mode-apr-on type="bool">false</mode-apr-on>
+        <mode-bc-on type="bool">false</mode-bc-on>
+        <mode-hb-on type="bool">false</mode-hb-on>
+        <mode-yd-on type="bool">false</mode-yd-on>
+
+        <ann-fd-on type="bool">false</ann-fd-on>
+        <ann-ap-on type="bool">false</ann-ap-on>
+        <ann-alt-on type="bool">false</ann-alt-on>
+        <ann-hdg-on type="bool">false</ann-hdg-on>
+        <ann-nav-on type="bool">false</ann-nav-on>
+        <ann-nav-arm-on type="bool">false</ann-nav-arm-on>
+        <ann-apr-on type="bool">false</ann-apr-on>
+        <ann-apr-arm-on type="bool">false</ann-apr-arm-on>
+        <ann-apr-ga-on type="bool">false</ann-apr-ga-on>
+        <ann-apr-gs-on type="bool">false</ann-apr-gs-on>
+        <ann-bc-on type="bool">false</ann-bc-on>
+        <ann-hb-on type="bool">false</ann-hb-on>
+        <ann-yd-on type="bool">false</ann-yd-on>
+
+        <ann-trim-on type="bool">false</ann-trim-on>
+        
+        <bulbs-test-on type="bool">false</bulbs-test-on>
+        <displ-test-str type="string">+8888</displ-test-str>
+        <test-in-progress type="bool">false</test-in-progress>
+        <tested type="bool">false</tested>
+    </autopilot>
+    
+    <airspeed-indicator n="0">
+        <serviceable type="bool">true</serviceable>
+    </airspeed-indicator>
+    <airspeed-indicator n="1">
+        <serviceable type="bool">true</serviceable>
+    </airspeed-indicator>
+  </instrumentation>
+
+  <systems>
+  <wgh type="double">0.0</wgh>
+    <l410>
+      <battery1-on type="bool">true</battery1-on>
+      <battery2-on type="bool">true</battery2-on>
+      <battery1-ok type="bool">true</battery1-ok>
+      <battery2-ok type="bool">true</battery2-ok>
+      <battery-all-ok type="bool">true</battery-all-ok>
+      <battery-one-ok type="bool">true</battery-one-ok>
+
+      <external-power type="bool">false</external-power>
+      <bus24v-on type="bool">true</bus24v-on>
+ 
+      <generator1-on type="bool">false</generator1-on>
+      <generator2-on type="bool">false</generator2-on>
+      <generator1-ok type="bool">true</generator1-ok>
+      <generator2-ok type="bool">true</generator2-ok>
+
+      <alternator1-on type="bool">false</alternator1-on>
+      <alternator2-on type="bool">false</alternator2-on>
+      <alternator1-ok type="bool">true</alternator1-ok>
+      <alternator2-ok type="bool">true</alternator2-ok>
+      <bus3x115v-on type="bool">false</bus3x115v-on>
+
+      <lun2450-1-on type="bool">true</lun2450-1-on>
+      <lun2450-2-on type="bool">true</lun2450-2-on>
+      <lun2450-1-ok type="bool">true</lun2450-1-ok>
+      <lun2450-2-ok type="bool">true</lun2450-2-ok>
+      <bus36v-on type="bool">true</bus36v-on>
+
+      <pc250-1-on type="bool">true</pc250-1-on>
+      <pc250-2-on type="bool">true</pc250-2-on>
+      <pc250-1-ok type="bool">true</pc250-1-ok>
+      <pc250-2-ok type="bool">true</pc250-2-ok>
+      <bus115v-on type="bool">true</bus115v-on>
+      <bus26v-on type="bool">true</bus26v-on>
+
+      <extinguish-e1-1-ok type="bool">true</extinguish-e1-1-ok>
+      <extinguish-e1-2-ok type="bool">true</extinguish-e1-2-ok>
+      <extinguish-e2-1-ok type="bool">true</extinguish-e2-1-ok>
+      <extinguish-e2-2-ok type="bool">true</extinguish-e2-2-ok>
+ 
+    </l410>
+  
+    <health>
+      <firesgn-englh1-ok type="bool">true</firesgn-englh1-ok>
+      <firesgn-englh2-ok type="bool">true</firesgn-englh2-ok>
+      <firesgn-englh3-ok type="bool">true</firesgn-englh3-ok>
+      <firesgn-engrh1-ok type="bool">true</firesgn-engrh1-ok>
+      <firesgn-engrh2-ok type="bool">true</firesgn-engrh2-ok>
+      <firesgn-engrh3-ok type="bool">true</firesgn-engrh3-ok>
+      <firesgn-bag-front-ok type="bool">true</firesgn-bag-front-ok>
+      <firesgn-bag-aft-ok type="bool">true</firesgn-bag-aft-ok>
+
+      <radioaltimeter1-ok type="bool">true</radioaltimeter1-ok>
+      <radioaltimeter2-ok type="bool">true</radioaltimeter2-ok>
+
+      <engine-lh-ok type="bool">true</engine-lh-ok>
+      <engine-rh-ok type="bool">true</engine-rh-ok>
+      <ignition-lh-ok type="bool">true</ignition-lh-ok>
+      <ignition-rh-ok type="bool">true</ignition-rh-ok>
+
+      <flaps-emerg-ok type="bool">true</flaps-emerg-ok>
+      <gear-emerg-ok type="bool">true</gear-emerg-ok>
+    
+      <gyro-correction-ok type="bool">true</gyro-correction-ok>
+      <heading-indicator1-ok type="bool">true</heading-indicator1-ok>
+      <heading-indicator2-ok type="bool">true</heading-indicator2-ok>
+
+      <deicing-automat-ok type="bool">true</deicing-automat-ok>
+      
+      <windshiled-lh-thermo-ok type="bool">true</windshiled-lh-thermo-ok>
+      <windshiled-rh-thermo-ok type="bool">true</windshiled-rh-thermo-ok>
+    </health>
+  
+    <fire>
+      <fire-englh1 type="bool">false</fire-englh1>
+      <fire-englh2 type="bool">false</fire-englh2>
+      <fire-englh3 type="bool">false</fire-englh3>
+      <fire-engrh1 type="bool">false</fire-engrh1>
+      <fire-engrh2 type="bool">false</fire-engrh2>
+      <fire-engrh3 type="bool">false</fire-engrh3>
+
+      <fire-bag-front type="bool">false</fire-bag-front>
+      <fire-bag-aft type="bool">false</fire-bag-aft>
+    </fire>
+  
+    <hydraulic>
+      <main-pressure-MPa type="double">14.7</main-pressure-MPa>
+      <brakes-pressure-MPa type="double">5.88</brakes-pressure-MPa>
+    </hydraulic>
+    
+    <pitot n="0">
+        <serviceable type="bool">true</serviceable>
+    </pitot>
+    <pitot n="1">
+        <serviceable type="bool">true</serviceable>
+    </pitot>
+    <static n="0">
+        <serviceable type="bool">true</serviceable>
+    </static>
+    <static n="1">
+        <serviceable type="bool">true</serviceable>
+    </static>
+  </systems> 
+ 
+  <controls>
+  
+    <steps-cmd-norm type='int'>0</steps-cmd-norm>
+    <doorr-cmd-norm type='int'>0</doorr-cmd-norm>
+    <doorf-cmd-norm type='int'>0</doorf-cmd-norm>
+    <doorfl-cmd-norm type='int'>0</doorfl-cmd-norm>
+    <doorfr-cmd-norm type='int'>0</doorfr-cmd-norm>
+    <table-cmd-norm type='int'>0</table-cmd-norm>
+  
+    <flight>
+      <spoilers-cond type="double">0.0</spoilers-cond>
+      <flaps-cond type="double">0.0</flaps-cond>
+
+      <aileron-ap type="double">0.0</aileron-ap>
+      <elevator-ap type="double">0.0</elevator-ap>
+      
+      <rudder-trim-servo type="double">0.0</rudder-trim-servo>
+      
+      <aileron-trim-servo type="double">0.0</aileron-trim-servo>
+      
+      <steps-cmd-norm type="double">0.0</steps-cmd-norm>
+    </flight>
+
+    <heating>
+      <heating-sw type="int">2</heating-sw>
+      <ventilation-sw type="int">8</ventilation-sw>
+      <windshield-sw type="int">0</windshield-sw>
+      <air-sw type="int">0</air-sw>
+    </heating>
+
+    <switches>
+      <specbus_28v_115v_36v type="bool">true</specbus_28v_115v_36v>
+      <battery1-sw type="bool">true</battery1-sw>
+      <battery2-sw type="bool">true</battery2-sw>
+      <warn-disp-el-sw type="bool">true</warn-disp-el-sw>
+      <warn-disp-ai-sw type="bool">true</warn-disp-ai-sw>
+      <warn-disp-e1-sw type="bool">true</warn-disp-e1-sw>
+      <warn-disp-e2-sw type="bool">true</warn-disp-e2-sw>
+
+      <lun2450-1-sw type="bool">true</lun2450-1-sw>
+      <lun2450-2-sw type="bool">true</lun2450-2-sw>
+      <pc250-1-sw type="bool">true</pc250-1-sw>
+      <pc250-2-sw type="bool">true</pc250-2-sw>
+      <supply115v-sw type="double">0.0</supply115v-sw>
+      <generator1-sw type="bool">true</generator1-sw>
+      <generator2-sw type="bool">true</generator2-sw>
+
+      <alternator1-sw type="bool">true</alternator1-sw>
+      <alternator2-sw type="bool">true</alternator2-sw>
+
+      <attitude1-sw type="int">2</attitude1-sw>
+      <attitude2-sw type="int">2</attitude2-sw>
+      <turn1-sw type="int">2</turn1-sw>
+      <turn2-sw type="int">2</turn2-sw>
+
+      <isolvalve1-sw type="int">0</isolvalve1-sw>
+      <isolvalve2-sw type="int">0</isolvalve2-sw>
+      <fuelcross-sw type="bool">false</fuelcross-sw>
+      <fuelpump-lh-sw type="bool">true</fuelpump-lh-sw>
+      <fuelpump-rh-sw type="bool">true</fuelpump-rh-sw>
+
+      <wiper-sw type="bool">false</wiper-sw>
+
+      <lgh-search1-sw type="int">0</lgh-search1-sw>
+      <lgh-search2-sw type="int">0</lgh-search2-sw>
+      <lgh-beacon-sw type="bool">false</lgh-beacon-sw>
+      <lgh-navigation-sw type="bool">false</lgh-navigation-sw>
+      <lgh-passenger1-door-sw type="bool">false</lgh-passenger1-door-sw>
+      <lgh-passenger1-sw type="bool">false</lgh-passenger1-sw>
+      <lgh-passenger2-sw type="bool">false</lgh-passenger2-sw>
+      <seat-belts-sw type="bool">false</seat-belts-sw>
+
+      <chck-engine1-sw type="bool">false</chck-engine1-sw>
+      <chck-engine2-sw type="bool">false</chck-engine2-sw>
+      <chck-airframe-sw type="bool">false</chck-airframe-sw>
+      <chck-electro-sw type="bool">false</chck-electro-sw>
+      <chck-sign-sw type="bool">false</chck-sign-sw>
+
+      <chck-extinguish-eng-sw type="int">0</chck-extinguish-eng-sw>
+       
+      <chck-feather-lh-sw type="bool">false</chck-feather-lh-sw>
+      <chck-feather-rh-sw type="bool">false</chck-feather-rh-sw>
+	   
+      <inv-115-select-sw type="int">0</inv-115-select-sw>
+	  <va-meter-sw type="int">0</va-meter-sw>
+	  <v-45-meter-sw type="int">0</v-45-meter-sw>	   
+	  <v-150-meter-sw type="int">0</v-150-meter-sw>	   	   
+
+
+      <start-engine1-sw type="bool">false</start-engine1-sw>
+      <start-engine2-sw type="bool">false</start-engine2-sw>
+
+      <firesgn-eng1-sw type="bool">false</firesgn-eng1-sw>
+      <firesgn-eng2-sw type="bool">false</firesgn-eng2-sw>
+      <firesgn-eng3-sw type="bool">false</firesgn-eng3-sw>
+      <firesgn-bagcomp-sw type="bool">false</firesgn-bagcomp-sw>
+       
+      <ignition-test-lh-sw type="int">0</ignition-test-lh-sw>
+      <ignition-test-rh-sw type="int">0</ignition-test-rh-sw>      
+
+      <full-steering-sw type="int">0</full-steering-sw>
+
+      <radioaltimeter1-sw type="bool">true</radioaltimeter1-sw>
+      <radioaltimeter2-sw type="bool">true</radioaltimeter2-sw>
+
+      <prop-feat1-sw type="bool">false</prop-feat1-sw>
+      <prop-feat2-sw type="bool">false</prop-feat2-sw>
+      <prop-autofeat-sw type="bool">false</prop-autofeat-sw>
+      <prop-autofeat-swv type="int">0</prop-autofeat-swv>
+      <abc-sw type="bool">false</abc-sw>
+      <abc-swv type="int">0</abc-swv>
+
+      <feat-autbank1-sw type="bool">true</feat-autbank1-sw>
+      <feat-autbank2-sw type="bool">true</feat-autbank2-sw>
+      <spoilers-swv type="int">0</spoilers-swv>
+
+      <flaps-emergency-sw type="int">0</flaps-emergency-sw>
+      <gear-emergency-sw type="int">0</gear-emergency-sw>
+
+      <aileron-trim-sw type="int">1</aileron-trim-sw>
+      <rudder-trim-sw type="int">1</rudder-trim-sw>
+       
+      <wr-sw type="bool">true</wr-sw> 
+      <fuel_locked type="bool">false</fuel_locked>
+      
+      <pitot-selector-sw type="bool">false</pitot-selector-sw>
+      <static-emergency-sw type="bool">false</static-emergency-sw>
+
+      <deicing-static-sw type="bool">false</deicing-static-sw>
+      <deicing-rotary-sw type="bool">false</deicing-rotary-sw>
+      
+      <separator-vane-lh-sw type="bool">false</separator-vane-lh-sw>
+      <separator-vane-rh-sw type="bool">false</separator-vane-rh-sw>
+<!--
+<xpdr1-sw type="bool">true</xpdr1-sw>              
+      <xpdr2-sw type="bool">true</xpdr2-sw>              
+-->
+
+    </switches>
+
+    <gear>
+      <parking-brake-cmd type="double">1.0</parking-brake-cmd>
+      <parking-brake type="double">0.0</parking-brake>
+      <wheel>
+        <brake-cmd type="double">0.0</brake-cmd>
+        <brake-cmd-cond type="double">0.0</brake-cmd-cond>
+      </wheel>
+      <wheel>
+        <brake-cmd type="double">0.0</brake-cmd>
+        <brake-cmd-cond type="double">0.0</brake-cmd-cond>
+      </wheel>
+      <wheel>
+        <brake-cmd type="double">0.0</brake-cmd>
+        <brake-cmd-cond type="double">0.0</brake-cmd-cond>
+      </wheel>
+      
+      <gear n="0">
+        <steering-lever-norm type="double">0.0</steering-lever-norm>
+      </gear>
+      
+      <gear-down-cond type="bool">true</gear-down-cond>
+    </gear>
+
+
+    <engines>
+      <aileron-abc-norm type="double">0.0</aileron-abc-norm>
+      <aileron-abc-goal-norm type="double">0.0</aileron-abc-goal-norm>
+      <reverser-lock type="bool">false</reverser-lock>
+      <engine>
+        <master-bat type="bool">true</master-bat>
+      
+        <oil-temperature-degf type="double">40</oil-temperature-degf>
+        <reverser type="bool">false</reverser>
+        <throttle-cmd type="double">0.0</throttle-cmd>
+        <cutoff-cmd type="bool">false</cutoff-cmd>
+	    <cutoff-emerg-cmd type="int">0</cutoff-emerg-cmd>
+	    <starting type="bool">false</starting>
+        <rpm type="double">700</rpm>
+	    <propeller-pitch-cmd type="double">1</propeller-pitch-cmd>
+
+	    <feather-cmd type="bool">false</feather-cmd>
+        <feather-pump-running type="bool">false</feather-pump-running>
+	    <feather-pump-timer type="double">20</feather-pump-timer>
+        
+        <ignition-on type="bool">false</ignition-on>
+      </engine>
+      <engine>
+        <oil-temperature-degf type="double">40</oil-temperature-degf>
+        <reverser type="bool">false</reverser>
+        <throttle-cmd type="double">0.0</throttle-cmd>
+        <cutoff-cmd type="bool">false</cutoff-cmd>
+	    <cutoff-emerg-cmd type="int">0</cutoff-emerg-cmd>
+	    <starting type="bool">false</starting>
+        <rpm type="double">700</rpm>
+	    <propeller-pitch-cmd type="double">1</propeller-pitch-cmd>
+
+	    <feather-cmd type="bool">false</feather-cmd>
+        <feather-pump-running type="bool">false</feather-pump-running>
+	    <feather-pump-timer type="double">20</feather-pump-timer>
+
+        <ignition-on type="bool">false</ignition-on>
+      </engine>
+    </engines>
+  
+    <electric>
+      <engine>
+        <generator type="bool">true</generator>
+      </engine>
+      <engine>
+        <generator type="bool">true</generator>
+      </engine>
+    </electric>
+  
+  </controls>
+
+  <engines>
+    <autofeather-block-lh type="bool">true</autofeather-block-lh>
+    <autofeather-block-rh type="bool">true</autofeather-block-rh>
+    <autofeather-timer type="double">0</autofeather-timer>
+    
+    <abc-timer type="double">0</abc-timer>
+    <abc-block type="bool">true</abc-block>
+    
+    <engine n="0">
+	   <feather-pump-running type="bool">false</feather-pump-running>
+	   <feather-pump-timer type="double">20</feather-pump-timer>
+       <running type="bool">true</running>
+	   <n1 type="double">60.0</n1>
+
+       <itt_degC type="double">0.0</itt_degC>
+       <fuel-flow_pph type="double">0.0</fuel-flow_pph>
+       <oil-temperature-degf type="double">0.0</oil-temperature-degf>
+       <thruster>
+           <torque type="double">0.0</torque>
+       </thruster>
+    </engine>
+    <engine n="1">
+	   <feather-pump-running type="bool">false</feather-pump-running>
+	   <feather-pump-timer type="double">20</feather-pump-timer>
+       <running type="bool">true</running>
+	   <n1 type="double">60.0</n1>
+       
+       <itt_degC type="double">0.0</itt_degC>
+       <fuel-flow_pph type="double">0.0</fuel-flow_pph>
+       <oil-temperature-degf type="double">0.0</oil-temperature-degf>
+       <thruster>
+           <torque type="double">0.0</torque>
+       </thruster>
+    </engine>
+  </engines>
+
+  <radios>
+    <kr-87>
+      <inputs>
+	    <audio-btn>false</audio-btn>
+	  </inputs>
+    </kr-87>
+    <kr-87>
+      <inputs>
+	    <audio-btn>false</audio-btn>
+	  </inputs>
+    </kr-87>
+  </radios>
+ 
+  <gear>
+    <gear n="0">
+      <spin-rpm type="double">0.0</spin-rpm>
+    </gear>
+    <gear n="1">
+      <spin-rpm type="double">0.0</spin-rpm>
+    </gear>
+    <gear n="2">
+      <spin-rpm type="double">0.0</spin-rpm>
+    </gear>
+  </gear>
+ 
+  <sim>
+    <instrument-options>
+      <hsi>
+	    <dme-freq-source type="int">1</dme-freq-source>
+      </hsi>
+      <hsi>
+        <dme-freq-source type="int">3</dme-freq-source>
+      </hsi>
+    </instrument-options>
+    <input>
+        <selected>
+            <engine type="bool">true</engine>
+            <engine type="bool">true</engine>
+        </selected>
+    </input>
+    <flaps>
+	<setting>0.0</setting>
+	<setting>0.5</setting>
+	<setting>1.0</setting>
+    </flaps>
+    <spoilers>
+	<setting>0.0</setting>
+	<setting>1.0</setting>
+    </spoilers>
+  </sim>
+  
+  <autopilot>
+    <locks>
+      <heading-ap type="string"></heading-ap>
+      <ailerons-off type="int">0</ailerons-off>
+    </locks>
+    <settings>
+      <nav-radio-selector type="int">0</nav-radio-selector>
+    </settings>
+    <internal>
+        <target-roll-deg type="double">0.0</target-roll-deg>
+    </internal>
+  </autopilot>
+  
+  <consumables>
+    <fuel>
+        <tank>
+            <level-lb type="double">0.0</level-lb>
+        </tank>
+        <tank>
+            <level-lb type="double">0.0</level-lb>
+        </tank>
+    </fuel>
+  </consumables>
+  
+  <surface>
+    <ice>
+        <ice-total-weight type="double">0.0</ice-total-weight>
+    </ice>
+  </surface>
+
+  <surface-positions>
+    <separator-vane-lh-norm type="double">0.0</separator-vane-lh-norm>
+    <separator-vane-rh-norm type="double">0.0</separator-vane-rh-norm>
+  </surface-positions>
+</PropertyList>

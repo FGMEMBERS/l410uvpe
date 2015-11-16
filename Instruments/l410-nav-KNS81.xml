@@ -1,0 +1,1300 @@
+<?xml version="1.0"?>
+
+<!--
+
+KNS 81 (NAV 2)(nase!)
+
+-->
+
+<PropertyList>
+
+ <name>kns 81</name>
+
+  <w-base>256</w-base>
+  <h-base>82</h-base>
+ <params>
+<!--   <nav-freq-selected-prop>/radios/nav[1]/frequencies/selected-mhz</nav-freq-selected-prop>
+   <nav-morse-id-volume-prop>/radios/nav[1]/volume</nav-morse-id-volume-prop>
+   <nav-morse-ident-toggle-prop>/radios/nav[1]/ident</nav-morse-ident-toggle-prop>
+   <nav-mode>/instrumentation/nav[1]/nav-mode</nav-mode>
+   <nav-wpt-sel>/instrumentation/nav[1]/nav-wpt-sel</nav-wpt-sel>
+   <nav-wpt-blink>/instrumentation/nav[1]/nav-wpt-blink</nav-wpt-blink>
+   <nav-freq-displ>/instrumentation/nav[1]/nav-freq-displ</nav-freq-displ>
+   <nav-rad-displ>/instrumentation/nav[1]/nav-rad-displ</nav-rad-displ>
+   <nav-dist-displ>/instrumentation/nav[1]/nav-dist-displ</nav-dist-displ>
+   <nav-wpt-active>/instrumentation/nav[1]/nav-wpt-active</nav-wpt-active>
+   <nav-data-flag>/instrumentation/nav[1]/nav-data-flag</nav-data-flag>
+   <nav-rad-btn>/instrumentation/nav[1]/nav-rad-btn</nav-rad-btn>	
+   <electrical-power>/systems/electrical/outputs/navcom[1]</electrical-power> -->
+   <nav-freq-selected-prop>/instrumentation/nav[1]/frequencies/selected-mhz</nav-freq-selected-prop>
+   <nav-morse-id-volume-prop>/instrumentation/nav[1]/volume</nav-morse-id-volume-prop>
+   <nav-morse-ident-toggle-prop>/instrumentation/nav[1]/ident</nav-morse-ident-toggle-prop>
+   <nav-mode>/instrumentation/nav[1]/nav-mode</nav-mode>
+   <nav-wpt-sel>/instrumentation/nav[1]/nav-wpt-sel</nav-wpt-sel>
+   <nav-wpt-blink>/instrumentation/nav[1]/nav-wpt-blink</nav-wpt-blink>
+   <nav-freq-displ>/instrumentation/nav[1]/nav-freq-displ</nav-freq-displ>
+   <nav-freq-is-ils-freq>/instrumentation/nav[1]/nav-freq-is-ils-freq</nav-freq-is-ils-freq>
+   <nav-rad-displ>/instrumentation/nav[1]/nav-rad-displ</nav-rad-displ>
+   <nav-dist-displ>/instrumentation/nav[1]/nav-dist-displ</nav-dist-displ>
+   <nav-wpt-active>/instrumentation/nav[1]/nav-wpt-active</nav-wpt-active>
+   <nav-data-flag>/instrumentation/nav[1]/nav-data-flag</nav-data-flag>
+   <nav-rad-btn>/instrumentation/nav[1]/nav-rad-btn</nav-rad-btn>	
+   <nav-chck-btn>/instrumentation/nav[1]/nav-chck-btn</nav-chck-btn>	
+   <electrical-power>/systems/electrical/outputs/nav[1]</electrical-power>
+ </params>
+
+  <layers>
+  
+    <!-- LABELS -->
+    <layer>
+      <name>podklad</name>
+      <texture>
+        <path>Aircraft/l410uvpe/Instruments/Textures/l410-kns81.rgb</path>
+        <x1>0.0</x1>
+        <x2>1</x2>
+        <y1>0.324</y1>
+        <y2>1.0</y2>
+      </texture>
+      <w>256</w>
+      <h>82</h>
+      <transformations>
+        <transformation>
+          <type>x-shift</type>
+          <offset>0</offset>
+        </transformation>
+        <transformation>
+          <type>y-shift</type>
+          <offset>0</offset>
+        </transformation>
+      </transformations>
+    </layer>
+
+<!-- napisy na displeji -->
+  <layer>
+   <name>nav wpt</name>
+		 <condition>
+		 <and>
+		 <greater-than>
+           <property alias="../../../../../../params/electrical-power"/>
+		   <value>10</value>
+		 </greater-than>
+			 <or>
+               <not>
+			   <property alias="../../../../../../../params/nav-wpt-blink"/>
+			   </not>
+				<less-than>
+               <property>/instrumentation/lights/instr-flash-out</property>
+			   <value type="double">0.25</value>
+				</less-than>
+				<greater-than>
+               <property>/instrumentation/lights/instr-flash-out</property>
+			   <value type="double">0.75</value>
+				</greater-than>
+			</or>
+			</and>
+         </condition>	  
+
+<type>text</type>
+   <font>led</font>
+   <point-size>8</point-size>
+   <color>
+    <red>1.0</red>
+    <green>0.5</green>
+    <blue>0.0</blue>
+   </color>
+   <chunks>
+    <chunk>
+     <type>number-value</type>
+     <property alias="../../../../../params/nav-wpt-sel"/>
+	 <format>%1.0f</format>
+    </chunk>
+   </chunks>
+   <transformations>
+    <transformation>
+     <type>x-shift</type>
+     <offset>-95</offset>
+    </transformation>
+    <transformation>
+     <type>y-shift</type>
+     <offset>14</offset>
+    </transformation>
+   </transformations>
+  </layer>
+
+
+  <layer>
+   <condition>
+		 <greater-than>
+           <property alias="../../../../../params/electrical-power"/>
+		   <value>10</value>
+		 </greater-than>
+   </condition>
+   <name>nav frequencies</name>
+   <type>text</type>
+   <font>led</font>
+   <point-size>8</point-size>
+   <color>
+    <red>1.0</red>
+    <green>0.5</green>
+    <blue>0.0</blue>
+   </color>
+   <chunks>
+    <chunk>
+     <type>number-value</type>
+     <property alias="../../../../../params/nav-freq-displ"/>
+	 <format>%06.2f</format>
+    </chunk>
+   </chunks>
+   <transformations>
+    <transformation>
+     <type>x-shift</type>
+     <offset>-60</offset>
+    </transformation>
+    <transformation>
+     <type>y-shift</type>
+     <offset>14</offset>
+    </transformation>
+   </transformations>
+  </layer>
+<!--
+  <layer>
+   <name>nav radial</name>
+         <condition>
+		 <and>
+		 <greater-than>
+           <property alias="../../../../../../params/electrical-power"/>
+		   <value>10</value>
+		 </greater-than>
+            <greater-than>
+               <property alias="../../../../../../params/nav-mode"/>
+               <value type="int">1</value>
+            </greater-than>
+			</and>
+         </condition>	  
+   <type>text</type>
+   <font>led</font>
+   <point-size>8</point-size>
+   <color>
+    <red>1.0</red>
+    <green>0.5</green>
+    <blue>0.0</blue>
+   </color>
+   <chunks>
+    <chunk>
+     <type>number-value</type>
+     <property alias="../../../../../params/nav-rad-displ"/>
+	 <format>%03.0f</format>
+    </chunk>
+   </chunks>
+   <transformations>
+    <transformation>
+     <type>x-shift</type>
+     <offset>12</offset>
+    </transformation>
+    <transformation>
+     <type>y-shift</type>
+     <offset>14</offset>
+    </transformation>
+   </transformations>
+  </layer>
+-->
+    <layer>
+        <name>nav radial</name>
+        <type>switch</type>
+        
+        <layer>
+            <condition>
+                <and>
+                    <greater-than>
+                        <property alias="../../../../../../../params/electrical-power"/>
+                        <value>10</value>
+                    </greater-than>
+                    <not>
+                        <property alias="../../../../../../../params/nav-freq-is-ils-freq"/>
+                    </not>
+                </and>
+            </condition>
+            <type>switch</type>
+            
+            <layer>
+                <condition>
+                    <and>
+                        <or>
+                            <greater-than>
+                                <property alias="../../../../../../../../../params/nav-mode"/>
+                                <value type="int">1</value>
+                            </greater-than>
+                            <equals>
+                                <property alias="../../../../../../../../../params/nav-chck-btn"/>
+                                <value type="bool">true</value>
+                            </equals>
+                        </or>
+                        <greater-than>
+                            <property alias="../../../../../../../../params/nav-rad-displ"/>
+                            <value type="double">-0.5</value>
+                        </greater-than>
+                    </and>
+                </condition>	  
+                <type>text</type>
+                <font>led</font>
+                <point-size>8</point-size>
+                <color>
+                    <red>1.0</red>
+                    <green>0.5</green>
+                    <blue>0.0</blue>
+                </color>
+                <chunks>
+                    <chunk>
+                        <type>number-value</type>
+                        <property alias="../../../../../../../params/nav-rad-displ"/>
+	                    <format>%03.0f</format>
+                    </chunk>
+                </chunks>
+            </layer>
+            
+            <layer>
+                <type>text</type>
+                <font>led</font>
+                <point-size>8</point-size>
+                <color>
+                    <red>1.0</red>
+                    <green>0.5</green>
+                    <blue>0.0</blue>
+                </color>
+                <chunks>
+                    <chunk>
+                        <type>literal</type>
+	                    <text>---</text>
+                    </chunk>
+                </chunks>
+            </layer>
+                
+            <transformations>
+                <transformation>
+                    <type>x-shift</type>
+                    <offset>12</offset>
+                </transformation>
+                <transformation>
+                    <type>y-shift</type>
+                    <offset>14</offset>
+                </transformation>
+            </transformations>
+        </layer>
+    </layer>
+<!--
+  <layer>
+   <name>nav distance</name>
+         <condition>
+		 <and>
+		 <greater-than>
+           <property alias="../../../../../../params/electrical-power"/>
+		   <value>10</value>
+		 </greater-than>
+            <greater-than>
+               <property alias="../../../../../../params/nav-mode"/>
+               <value type="int">1</value>
+            </greater-than>
+			</and>
+         </condition>	  
+   <type>text</type>
+   <font>led</font>
+   <point-size>8</point-size>
+   <color>
+    <red>1.0</red>
+    <green>0.5</green>
+    <blue>0.0</blue>
+   </color>
+   <chunks>
+    <chunk>
+     <type>number-value</type>
+     <property alias="../../../../../params/nav-dist-displ"/>
+	 <format>%05.1f</format>
+    </chunk>
+   </chunks>
+   <transformations>
+    <transformation>
+     <type>x-shift</type>
+     <offset>60</offset>
+    </transformation>
+    <transformation>
+     <type>y-shift</type>
+     <offset>14</offset>
+    </transformation>
+   </transformations>
+  </layer>
+-->
+    <layer>
+        <name>nav distance</name>
+        <type>switch</type>
+        
+        <layer>
+            <condition>
+                <and>
+                    <greater-than>
+                        <property alias="../../../../../../../params/electrical-power"/>
+                        <value>10</value>
+                    </greater-than>
+                    <not>
+                        <property alias="../../../../../../../params/nav-freq-is-ils-freq"/>
+                    </not>
+                </and>
+            </condition>
+            <type>switch</type>
+            
+            <layer>
+                <condition>
+                    <and>
+                        <or>
+                            <greater-than>
+                                <property alias="../../../../../../../../../params/nav-mode"/>
+                                <value type="int">1</value>
+                            </greater-than>
+                            <equals>
+                                <property alias="../../../../../../../../../params/nav-chck-btn"/>
+                                <value type="bool">true</value>
+                            </equals>
+                        </or>
+                        <greater-than>
+                            <property alias="../../../../../../../../params/nav-dist-displ"/>
+                            <value type="double">-0.5</value>
+                        </greater-than>
+                    </and>
+                </condition>	  
+                <type>text</type>
+                <font>led</font>
+                <point-size>8</point-size>
+                <color>
+                    <red>1.0</red>
+                    <green>0.5</green>
+                    <blue>0.0</blue>
+                </color>
+                <chunks>
+                    <chunk>
+                        <type>number-value</type>
+                        <property alias="../../../../../../../params/nav-dist-displ"/>
+	                    <format>%05.1f</format>
+                    </chunk>
+                </chunks>
+            </layer>
+            
+            <layer>
+                <type>text</type>
+                <font>led</font>
+                <point-size>8</point-size>
+                <color>
+                    <red>1.0</red>
+                    <green>0.5</green>
+                    <blue>0.0</blue>
+                </color>
+                <chunks>
+                    <chunk>
+                        <type>literal</type>
+	                    <text>---.-</text>
+                    </chunk>
+                </chunks>
+            </layer>
+                
+            <transformations>
+                <transformation>
+                    <type>x-shift</type>
+                    <offset>60</offset>
+                </transformation>
+                <transformation>
+                    <type>y-shift</type>
+                    <offset>14</offset>
+                </transformation>
+            </transformations>
+        </layer>
+    </layer>
+
+      <layer>
+         <name>vor-mode-label</name>	 
+         <condition>
+		 <and>
+		 <greater-than>
+           <property alias="../../../../../../params/electrical-power"/>
+		   <value>10</value>
+		 </greater-than>
+            <equals>
+               <property alias="../../../../../../params/nav-mode"/>
+               <value type="int">0</value>
+            </equals>
+			</and>
+         </condition>	  
+         <texture>
+            <path>Aircraft/l410uvpe/Instruments/Textures/l410-kns81.rgb</path>
+            <x1>0.4297</x1>
+            <x2>0.4883</x2>
+            <y1>0.1523</y1>
+            <y2>0.1992</y2>
+         </texture>
+         <w>22</w>
+         <h>15</h>
+		 <emissive>true</emissive>
+         <transformations>
+            <transformation>
+               <type>x-shift</type>
+               <offset>-110</offset>
+            </transformation>
+            <transformation>
+               <type>y-shift</type>
+               <offset>28</offset>
+            </transformation>
+         </transformations>
+      </layer>	 
+ 	  
+     <layer>
+         <name>par-mode-label</name>	 
+         <condition>
+		 <and>
+		 <greater-than>
+           <property alias="../../../../../../params/electrical-power"/>
+		   <value>10</value>
+		 </greater-than>
+            <equals>
+               <property alias="../../../../../../params/nav-mode"/>
+               <value type="int">1</value>
+            </equals>
+			</and>
+         </condition>	  
+         <texture>
+            <path>Aircraft/l410uvpe/Instruments/Textures/l410-kns81.rgb</path>
+            <x1>0.4883</x1>
+            <x2>0.5469</x2>
+            <y1>0.1523</y1>
+            <y2>0.1992</y2>
+         </texture>
+         <w>22</w>
+         <h>15</h>
+		 <emissive>true</emissive>
+         <transformations>
+            <transformation>
+               <type>x-shift</type>
+               <offset>-110</offset>
+            </transformation>
+            <transformation>
+               <type>y-shift</type>
+               <offset>18</offset>
+            </transformation>
+         </transformations>
+      </layer>	  	  	  
+
+     <layer>
+         <name>rnv-mode-label</name>	 
+         <condition>
+		 <and>
+		 <greater-than>
+           <property alias="../../../../../../params/electrical-power"/>
+		   <value>10</value>
+		 </greater-than>
+            <equals>
+               <property alias="../../../../../../params/nav-mode"/>
+               <value type="int">2</value>
+            </equals>
+			</and>
+         </condition>	  
+         <texture>
+            <path>Aircraft/l410uvpe/Instruments/Textures/l410-kns81.rgb</path>
+            <x1>0.5469</x1>
+            <x2>0.6055</x2>
+            <y1>0.1523</y1>
+            <y2>0.1992</y2>
+         </texture>
+         <w>22</w>
+         <h>15</h>
+		 <emissive>true</emissive>
+         <transformations>
+            <transformation>
+               <type>x-shift</type>
+               <offset>-75</offset>
+            </transformation>
+            <transformation>
+               <type>y-shift</type>
+               <offset>28</offset>
+            </transformation>
+         </transformations>
+      </layer>	  	  	  
+
+     <layer>
+         <name>apr-mode-label</name>	 
+         <condition>
+ 		 <and>
+		 <greater-than>
+           <property alias="../../../../../../params/electrical-power"/>
+		   <value>10</value>
+		 </greater-than>
+           <equals>
+               <property alias="../../../../../../params/nav-mode"/>
+               <value type="int">3</value>
+            </equals>
+			</and>
+         </condition>	  
+         <texture>
+            <path>Aircraft/l410uvpe/Instruments/Textures/l410-kns81.rgb</path>
+            <x1>0.6055</x1>
+            <x2>0.6641</x2>
+            <y1>0.1523</y1>
+            <y2>0.1992</y2>
+         </texture>
+         <w>22</w>
+         <h>15</h>
+		 <emissive>true</emissive>
+         <transformations>
+            <transformation>
+               <type>x-shift</type>
+               <offset>-75</offset>
+            </transformation>
+            <transformation>
+               <type>y-shift</type>
+               <offset>18</offset>
+            </transformation>
+         </transformations>
+      </layer>	  	  	  
+
+     <layer>
+   <condition>
+		 <greater-than>
+           <property alias="../../../../../params/electrical-power"/>
+		   <value>10</value>
+		 </greater-than>
+   </condition>
+         <name>wpt-label</name>	 
+		 <texture>
+            <path>Aircraft/l410uvpe/Instruments/Textures/l410-kns81.rgb</path>
+            <x1>0.6641</x1>
+            <x2>0.7227</x2>
+            <y1>0.1523</y1>
+            <y2>0.1992</y2>
+         </texture>
+         <w>22</w>
+         <h>12</h>
+		 <emissive>true</emissive>
+         <transformations>
+            <transformation>
+               <type>x-shift</type>
+               <offset>-95</offset>
+            </transformation>
+            <transformation>
+               <type>y-shift</type>
+               <offset>9</offset>
+            </transformation>
+         </transformations>
+      </layer>	  	  	  
+
+     <layer>
+   <condition>
+		 <greater-than>
+           <property alias="../../../../../params/electrical-power"/>
+		   <value>10</value>
+		 </greater-than>
+   </condition>
+         <name>data-flag</name>	 
+		 <texture>
+            <path>Aircraft/l410uvpe/Instruments/Textures/l410-kns81.rgb</path>
+            <x1>0.7227</x1>
+            <x2>0.8496</x2>
+            <y1>0.1523</y1>
+            <y2>0.1992</y2>
+         </texture>
+         <w>35</w>
+         <h>12</h>
+		 <emissive>true</emissive>
+         <transformations>
+         <transformation>
+               <type>x-shift</type>
+               <property alias="../../../../../params/nav-data-flag"/>
+               <scale>58</scale>
+               <offset>-25</offset>
+            </transformation>
+            <transformation>
+               <type>y-shift</type>
+               <offset>9</offset>
+            </transformation>
+         </transformations>
+      </layer>	  	  	  
+
+     <layer>
+   <condition>
+		 <greater-than>
+           <property alias="../../../../../params/electrical-power"/>
+		   <value>10</value>
+		 </greater-than>
+   </condition>
+         <name>main-label</name>	 
+         <texture>
+            <path>Aircraft/l410uvpe/Instruments/Textures/l410-kns81.rgb</path>
+            <x1>0.0781</x1>
+            <x2>0.4102</x2>
+            <y1>0.2422</y1>
+            <y2>0.2891</y2>
+         </texture>
+         <w>145</w>
+         <h>12</h>
+		 <emissive>true</emissive>
+         <transformations>
+            <transformation>
+               <type>x-shift</type>
+               <offset>35</offset>
+            </transformation>
+            <transformation>
+               <type>y-shift</type>
+               <offset>9</offset>
+            </transformation>
+         </transformations>
+      </layer>	  	  	  
+
+     <layer>
+         <name>nav-rad-btn-pressed</name>	 
+         <condition>
+            <equals>
+               <property alias="../../../../../params/nav-rad-btn"/>
+               <value type="int">1</value>
+            </equals>
+         </condition>	  
+         <texture>
+            <path>Aircraft/l410uvpe/Instruments/Textures/l410-kns81.rgb</path>
+            <x1>0.375</x1>
+            <x2>0.4355</x2>
+            <y1>0.0664</y1>
+            <y2>0.1367</y2>
+         </texture>
+         <w>17</w>
+         <h>9</h>
+         <transformations>
+            <transformation>
+               <type>x-shift</type>
+               <offset>-1</offset>
+            </transformation>
+            <transformation>
+               <type>y-shift</type>
+               <offset>-3</offset> 
+            </transformation>
+         </transformations>
+      </layer>	  	  	  
+      
+     <layer>
+         <name>nav-chk-btn-pressed</name>	 
+         <condition>
+            <equals>
+               <property alias="../../../../../params/nav-chck-btn"/>
+               <value type="int">1</value>
+            </equals>
+         </condition>	  
+         <texture>
+            <path>Aircraft/l410uvpe/Instruments/Textures/l410-kns81.rgb</path>
+            <x1>0.4395</x1>
+            <x2>0.5078</x2>
+            <y1>0.0664</y1>
+            <y2>0.1367</y2>
+         </texture>
+         <w>17</w>
+         <h>9</h>
+         <transformations>
+            <transformation>
+               <type>x-shift</type>
+               <offset>21</offset>
+            </transformation>
+            <transformation>
+               <type>y-shift</type>
+               <offset>-3</offset> 
+            </transformation>
+         </transformations>
+      </layer>	  	  	        
+
+     <layer>
+         <name>ident-butt</name>	 
+         <condition>
+            <equals>
+               <property alias="../../../../../params/nav-morse-ident-toggle-prop"/>
+               <value type="int">1</value>
+            </equals>
+         </condition>	  
+         <texture>
+            <path>Aircraft/l410uvpe/Instruments/Textures/l410-kns81.rgb</path>
+            <x1>0.0020</x1>
+            <x2>0.0645</x2>
+            <y1>0.0040</y1>
+            <y2>0.1797</y2>
+         </texture>
+         <w>17</w>
+         <h>25</h>
+         <transformations>
+            <transformation>
+               <type>x-shift</type>
+               <offset>33</offset>
+            </transformation>
+            <transformation>
+               <type>y-shift</type>
+               <offset>-28</offset> 
+            </transformation>
+         </transformations>
+      </layer>	  	  	        
+
+     <layer>
+         <name>ident-butt-point</name>	 
+         <texture>
+            <path>Aircraft/l410uvpe/Instruments/Textures/l410-kns81.rgb</path>
+            <x1>0.0742</x1>
+            <x2>0.1426</x2>
+            <y1>0.0391</y1>
+            <y2>0.0820</y2>
+         </texture>
+         <w>14</w>
+         <h>6</h>
+         <transformations>
+            <transformation>
+               <type>x-shift</type>
+               <offset>33</offset>
+            </transformation>
+            <transformation>
+               <type>y-shift</type>
+               <offset>-26</offset> 
+               <property alias="../../../../../params/nav-morse-ident-toggle-prop"/>
+               <scale>-6</scale>
+            </transformation>
+            <transformation>
+              <type>rotation</type>
+              <offset>0</offset>
+              <property alias="../../../../../params/nav-morse-id-volume-prop"/>
+              <scale>170</scale>
+            </transformation>
+         </transformations>
+      </layer>	  	  	        
+
+
+
+</layers>
+
+ <actions>
+
+  <action>
+   <condition>
+		 <greater-than>
+           <property alias="../../../../../params/electrical-power"/>
+		   <value>10</value>
+		 </greater-than>
+   </condition>
+    <name>small nav frequency decrease</name>
+    <button>0</button>
+    <x>62</x>
+    <y>-28</y>
+    <w>12</w>
+    <h>25</h>
+    <binding>
+      <condition>
+        <equals>
+          <property alias="../../../../../../params/nav-data-flag"/>
+          <value type="int">0</value>
+        </equals>
+      </condition>	  
+      <command>property-adjust</command>
+      <property alias="../../../../params/nav-freq-displ"/>
+      <step>-0.05</step>
+      <min>108.0</min>
+      <max>118.0</max>
+      <resolution>0.05</resolution>
+      <wrap>1</wrap>
+    </binding>
+    <binding>
+      <condition>
+        <equals>
+          <property alias="../../../../../../params/nav-data-flag"/>
+          <value type="int">1</value>
+        </equals>
+      </condition>	  
+      <command>property-adjust</command>
+      <property alias="../../../../params/nav-rad-displ"/>
+      <step>-1</step>
+      <min>0.0</min>
+      <max>360</max>
+      <resolution>1</resolution>
+      <wrap>1</wrap>
+    </binding>
+    <binding>
+      <condition>
+        <equals>
+          <property alias="../../../../../../params/nav-data-flag"/>
+          <value type="int">2</value>
+        </equals>
+      </condition>	  
+      <command>property-adjust</command>
+      <property alias="../../../../params/nav-dist-displ"/>
+      <step>-0.1</step>
+      <min>0.0</min>
+      <max>200.0</max>
+      <resolution>0.05</resolution>
+      <wrap>1</wrap>
+    </binding>
+    <binding>
+      <command>nasal</command>
+	  <script>
+	     setprop("/instrumentation/nav[1]/nav-wpt-blink",1);
+	  </script>
+     </binding>
+  </action>
+
+
+<action>
+   <condition>
+		 <greater-than>
+           <property alias="../../../../../params/electrical-power"/>
+		   <value>10</value>
+		 </greater-than>
+   </condition>
+   <name>large nav frequency decrease</name>
+   <button>1</button>
+   <x>62</x>
+   <y>-28</y>
+   <w>12</w>
+   <h>25</h>
+    <binding>
+      <condition>
+        <equals>
+          <property alias="../../../../../../params/nav-data-flag"/>
+          <value type="int">0</value>
+        </equals>
+      </condition>	  
+      <command>property-adjust</command>
+      <property alias="../../../../params/nav-freq-displ"/>
+      <step>-1.0</step>
+      <min>108.0</min>
+      <max>118.0</max>
+      <resolution>0.05</resolution>
+      <wrap>1</wrap>
+    </binding>
+    <binding>
+      <condition>
+        <equals>
+          <property alias="../../../../../../params/nav-data-flag"/>
+          <value type="int">1</value>
+        </equals>
+      </condition>	  
+      <command>property-adjust</command>
+      <property alias="../../../../params/nav-rad-displ"/>
+      <step>-10</step>
+      <min>0.0</min>
+      <max>360</max>
+      <resolution>1</resolution>
+      <wrap>1</wrap>
+    </binding>
+    <binding>
+      <condition>
+        <equals>
+          <property alias="../../../../../../params/nav-data-flag"/>
+          <value type="int">2</value>
+        </equals>
+      </condition>	  
+      <command>property-adjust</command>
+      <property alias="../../../../params/nav-dist-displ"/>
+      <step>-10</step>
+      <min>0.0</min>
+      <max>200.0</max>
+      <resolution>0.05</resolution>
+      <wrap>1</wrap>
+    </binding>
+    <binding>
+      <command>nasal</command>
+	  <script>
+	     setprop("/instrumentation/nav[1]/nav-wpt-blink",1);
+	  </script>
+     </binding>
+
+</action>
+
+  <action>
+   <condition>
+		 <greater-than>
+           <property alias="../../../../../params/electrical-power"/>
+		   <value>10</value>
+		 </greater-than>
+   </condition>
+   <name>small nav frequency increase</name>
+   <button>0</button>
+   <x>75</x>
+   <y>-28</y>
+   <w>12</w>
+   <h>25</h>
+    <binding>
+      <condition>
+        <equals>
+          <property alias="../../../../../../params/nav-data-flag"/>
+          <value type="int">0</value>
+        </equals>
+      </condition>	  
+      <command>property-adjust</command>
+      <property alias="../../../../params/nav-freq-displ"/>
+      <step>0.05</step>
+      <min>108.0</min>
+      <max>118.0</max>
+      <resolution>0.05</resolution>
+      <wrap>1</wrap>
+    </binding>
+    <binding>
+      <condition>
+        <equals>
+          <property alias="../../../../../../params/nav-data-flag"/>
+          <value type="int">1</value>
+        </equals>
+      </condition>	  
+      <command>property-adjust</command>
+      <property alias="../../../../params/nav-rad-displ"/>
+      <step>1</step>
+      <min>0.0</min>
+      <max>360</max>
+      <resolution>1</resolution>
+      <wrap>1</wrap>
+    </binding>
+    <binding>
+      <condition>
+        <equals>
+          <property alias="../../../../../../params/nav-data-flag"/>
+          <value type="int">2</value>
+        </equals>
+      </condition>	  
+      <command>property-adjust</command>
+      <property alias="../../../../params/nav-dist-displ"/>
+      <step>0.1</step>
+      <min>0.0</min>
+      <max>200.0</max>
+      <resolution>0.05</resolution>
+      <wrap>1</wrap>
+    </binding>
+    <binding>
+      <command>nasal</command>
+	  <script>
+	     setprop("/instrumentation/nav[1]/nav-wpt-blink",1);
+	  </script>
+     </binding>
+
+</action>
+
+  <action>
+   <condition>
+		 <greater-than>
+           <property alias="../../../../../params/electrical-power"/>
+		   <value>10</value>
+		 </greater-than>
+   </condition>
+   <name>large nav frequency increase</name>
+   <button>1</button>
+   <x>75</x>
+   <y>-28</y>
+   <w>12</w>
+   <h>25</h>
+    <binding>
+      <condition>
+        <equals>
+          <property alias="../../../../../../params/nav-data-flag"/>
+          <value type="int">0</value>
+        </equals>
+      </condition>	  
+      <command>property-adjust</command>
+      <property alias="../../../../params/nav-freq-displ"/>
+      <step>1.0</step>
+      <min>108.0</min>
+      <max>118.0</max>
+      <resolution>0.05</resolution>
+      <wrap>1</wrap>
+    </binding>
+    <binding>
+      <condition>
+        <equals>
+          <property alias="../../../../../../params/nav-data-flag"/>
+          <value type="int">1</value>
+        </equals>
+      </condition>	  
+      <command>property-adjust</command>
+      <property alias="../../../../params/nav-rad-displ"/>
+      <step>10</step>
+      <min>0.0</min>
+      <max>360</max>
+      <resolution>1</resolution>
+      <wrap>1</wrap>
+    </binding>
+    <binding>
+      <condition>
+        <equals>
+          <property alias="../../../../../../params/nav-data-flag"/>
+          <value type="int">2</value>
+        </equals>
+      </condition>	  
+      <command>property-adjust</command>
+      <property alias="../../../../params/nav-dist-displ"/>
+      <step>10</step>
+      <min>0.0</min>
+      <max>200.0</max>
+      <resolution>0.05</resolution>
+      <wrap>1</wrap>
+    </binding>
+    <binding>
+      <command>nasal</command>
+	  <script>
+	     setprop("/instrumentation/nav[1]/nav-wpt-blink",1);
+	  </script>
+     </binding>
+</action>
+
+
+
+  <action>
+   <name>mode-button</name>
+   <button>1</button>
+   <x>-90</x>
+   <y>-30</y>
+   <w>34</w>
+   <h>25</h>
+   <binding>
+   <condition>
+		 <greater-than>
+           <property alias="../../../../../../params/electrical-power"/>
+		   <value>10</value>
+		 </greater-than>
+   </condition>
+    <command>property-adjust</command>
+    <property alias="../../../../params/nav-mode"/>
+    <step>1</step>
+    <min>0</min>
+    <max>4</max>
+    <resolution>1</resolution>
+    <wrap>1</wrap>
+   </binding>
+  </action>
+
+
+
+  <action>
+   <name>wpt-button-incr</name>
+   <button>0</button>
+   <x>-73</x>
+   <y>-30</y>
+   <w>15</w>
+   <h>28</h>
+   <binding>
+   <condition>
+		 <greater-than>
+           <property alias="../../../../../../params/electrical-power"/>
+		   <value>10</value>
+		 </greater-than>
+   </condition>
+    <command>property-adjust</command>
+    <property alias="../../../../params/nav-wpt-sel"/>
+    <step>1</step>
+    <min>0</min>
+    <max>10</max>
+    <resolution>1</resolution>
+    <wrap>1</wrap>
+   </binding>
+   <binding>
+    <command>nasal</command>
+	<script>
+	  setprop("/instrumentation/nav[1]/nav-freq-displ",getprop("/instrumentation/nav[1]/nav-wpt-freq["~getprop("/instrumentation/nav[1]/nav-wpt-sel")~"]"));
+	  setprop("/instrumentation/nav[1]/nav-rad-displ",getprop("/instrumentation/nav[1]/nav-wpt-rad["~getprop("/instrumentation/nav[1]/nav-wpt-sel")~"]"));
+	  setprop("/instrumentation/nav[1]/nav-dist-displ",getprop("/instrumentation/nav[1]/nav-wpt-dist["~getprop("/instrumentation/nav[1]/nav-wpt-sel")~"]"));
+	  if (getprop("/instrumentation/nav[1]/nav-wpt-active")!=getprop("/instrumentation/nav[1]/nav-wpt-sel"))
+		    {setprop("/instrumentation/nav[1]/nav-wpt-blink",1);}
+	  else  {setprop("/instrumentation/nav[1]/nav-wpt-blink",0);}
+	</script>
+   </binding>
+  </action>
+  
+  <action>
+   <name>wpt-button-decr</name>
+   <button>0</button>
+   <x>-88</x>
+   <y>-30</y>
+   <w>15</w>
+   <h>28</h>
+   <binding>
+   <condition>
+		 <greater-than>
+           <property alias="../../../../../../params/electrical-power"/>
+		   <value>10</value>
+		 </greater-than>
+   </condition>
+    <command>property-adjust</command>
+    <property alias="../../../../params/nav-wpt-sel"/>
+    <step>-1</step>
+    <min>0</min>
+    <max>10</max>
+    <resolution>1</resolution>
+    <wrap>1</wrap>
+   </binding>
+   <binding>
+    <command>nasal</command>
+	<script>
+	  setprop("/instrumentation/nav[1]/nav-freq-displ",getprop("/instrumentation/nav[1]/nav-wpt-freq["~getprop("/instrumentation/nav[1]/nav-wpt-sel")~"]"));
+	  setprop("/instrumentation/nav[1]/nav-rad-displ",getprop("/instrumentation/nav[1]/nav-wpt-rad["~getprop("/instrumentation/nav[1]/nav-wpt-sel")~"]"));
+	  setprop("/instrumentation/nav[1]/nav-dist-displ",getprop("/instrumentation/nav[1]/nav-wpt-dist["~getprop("/instrumentation/nav[1]/nav-wpt-sel")~"]"));
+	  if (getprop("/instrumentation/nav[1]/nav-wpt-active")!=getprop("/instrumentation/nav[1]/nav-wpt-sel"))
+		    {setprop("/instrumentation/nav[1]/nav-wpt-blink",1);}
+	  else  {setprop("/instrumentation/nav[1]/nav-wpt-blink",0);}
+	</script>
+   </binding>
+  </action>
+
+
+  <action>
+   <name>use-button</name>
+   <button>0</button>
+   <x>-55</x>
+   <y>-10</y>
+   <w>22</w>
+   <h>15</h>
+   <binding>
+   <condition>
+		 <greater-than>
+           <property alias="../../../../../../params/electrical-power"/>
+		   <value>10</value>
+		 </greater-than>
+   </condition>
+    <command>nasal</command>
+	<script>
+	  setprop("/instrumentation/nav[1]/nav-wpt-freq["~getprop("/instrumentation/nav[1]/nav-wpt-sel")~"]",getprop("/instrumentation/nav[1]/nav-freq-displ"));
+	  setprop("/instrumentation/nav[1]/nav-wpt-rad["~getprop("/instrumentation/nav[1]/nav-wpt-sel")~"]",getprop("/instrumentation/nav[1]/nav-rad-displ"));
+	  setprop("/instrumentation/nav[1]/nav-wpt-dist["~getprop("/instrumentation/nav[1]/nav-wpt-sel")~"]",getprop("/instrumentation/nav[1]/nav-dist-displ"));
+	  setprop("/instrumentation/nav[1]/nav-wpt-active",getprop("/instrumentation/nav[1]/nav-wpt-sel"));
+	  setprop("/instrumentation/nav[1]/frequencies/selected-mhz",getprop("/instrumentation/nav[1]/nav-freq-displ"));
+	  setprop("/instrumentation/nav[1]/nav-wpt-blink",0);
+	</script>
+   </binding>
+  </action>  
+
+  <action>
+   <name>rtn-button</name>
+   <button>0</button>
+   <x>-33</x>
+   <y>-10</y>
+   <w>22</w>
+   <h>15</h>
+   <binding>
+   <condition>
+		 <greater-than>
+           <property alias="../../../../../../params/electrical-power"/>
+		   <value>10</value>
+		 </greater-than>
+   </condition>
+    <command>nasal</command>
+	<script>
+	  setprop("/instrumentation/nav[1]/nav-wpt-freq["~getprop("/instrumentation/nav[1]/nav-wpt-sel")~"]",getprop("/instrumentation/nav[1]/nav-freq-displ"));
+	  setprop("/instrumentation/nav[1]/nav-wpt-rad["~getprop("/instrumentation/nav[1]/nav-wpt-sel")~"]",getprop("/instrumentation/nav[1]/nav-rad-displ"));
+	  setprop("/instrumentation/nav[1]/nav-wpt-dist["~getprop("/instrumentation/nav[1]/nav-wpt-sel")~"]",getprop("/instrumentation/nav[1]/nav-dist-displ"));
+	  setprop("/instrumentation/nav[1]/nav-wpt-sel",getprop("/instrumentation/nav[1]/nav-wpt-active"));
+	  setprop("/instrumentation/nav[1]/nav-freq-displ",getprop("/instrumentation/nav[1]/nav-wpt-freq["~getprop("/instrumentation/nav[1]/nav-wpt-sel")~"]"));
+	  setprop("/instrumentation/nav[1]/nav-rad-displ",getprop("/instrumentation/nav[1]/nav-wpt-rad["~getprop("/instrumentation/nav[1]/nav-wpt-sel")~"]"));
+	  setprop("/instrumentation/nav[1]/nav-dist-displ",getprop("/instrumentation/nav[1]/nav-wpt-dist["~getprop("/instrumentation/nav[1]/nav-wpt-sel")~"]"));
+	  setprop("/instrumentation/nav[1]/nav-wpt-blink",0);
+	</script>
+   </binding>
+  </action>  
+
+  <action>
+   <name>rad-button</name>
+   <button>0</button>
+   <x>-11</x>
+   <y>-10</y>
+   <w>22</w>
+   <h>15</h>
+   <binding>
+       <command>property-adjust</command>
+    <property alias="../../../../params/nav-rad-btn"/>
+    <step>1</step>
+    <min>0</min>
+    <max>2</max>
+    <resolution>1</resolution>
+    <wrap>1</wrap>
+   </binding>
+  </action>  
+
+  <action>
+   <name>chck-button</name>
+   <button>0</button>
+   <x>11</x>
+   <y>-10</y>
+   <w>22</w>
+   <h>15</h>
+   <binding>
+      <command>property-assign</command>
+      <property alias="../../../../params/nav-chck-btn"/>
+      <value>true</value>
+   </binding>
+   <mod-up>
+     <binding>
+        <command>property-assign</command>
+        <property alias="../../../../../params/nav-chck-btn"/>
+        <value>false</value>
+     </binding>
+   </mod-up>
+  </action>  
+
+  <action>
+   <name>data-button</name>
+   <button>0</button>
+   <x>33</x>
+   <y>-10</y>
+   <w>22</w>
+   <h>15</h>
+   <binding>
+   <condition>
+		 <greater-than>
+           <property alias="../../../../../../params/electrical-power"/>
+		   <value>10</value>
+		 </greater-than>
+   </condition>
+       <command>property-adjust</command>
+    <property alias="../../../../params/nav-data-flag"/>
+    <step>1</step>
+    <min>0</min>
+    <max>3</max>
+    <resolution>1</resolution>
+    <wrap>1</wrap>
+   </binding>
+  </action>  
+
+  <action>
+    <name>ident-on-off</name>
+    <button>1</button>
+    <x>18</x>
+    <y>-35</y>
+    <w>30</w>
+    <h>20</h>
+    <binding>
+      <command>property-toggle</command>
+      <property alias="../../../../params/nav-morse-ident-toggle-prop"/>
+    </binding>
+  </action>  
+
+  <action>
+    <name>volume-control-down</name>
+    <button>0</button>
+    <x>18</x>
+    <y>-35</y>
+    <w>15</w>
+    <h>20</h>
+    <binding>
+      <command>property-adjust</command>
+      <property alias="../../../../params/nav-morse-id-volume-prop"/>
+      <step>-0.25</step>
+      <min>0.0</min>
+      <max>1.25</max>
+    </binding>
+  </action>
+
+  <action>
+    <name>volume-control-up</name>
+    <button>0</button>
+    <x>33</x>
+    <y>-35</y>
+    <w>15</w>
+    <h>20</h>
+    <binding>
+      <command>property-adjust</command>
+      <property alias="../../../../params/nav-morse-id-volume-prop"/>
+      <step>0.25</step>
+      <min>0.0</min>
+      <max>1.25</max>
+    </binding>
+  </action>
+
+ </actions>
+
+</PropertyList>

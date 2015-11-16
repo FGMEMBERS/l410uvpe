@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+
+<!--
+vent-nozzle
+-->
+
+<PropertyList>
+
+ <name>vent-nozzle</name>
+
+ <w-base>104</w-base>
+ <h-base>104</h-base>
+
+ <layers>
+
+<layer>
+   <name>background</name>
+   <texture>
+    <path>Aircraft/l410uvpe/Instruments/Textures/l410-ventil.rgb</path>
+    <x1>0.5</x1>
+    <y1>0.0</y1>
+    <x2>1.0</x2>
+    <y2>1.0</y2>
+   </texture>
+  </layer>
+  
+
+  
+ </layers>
+</PropertyList>

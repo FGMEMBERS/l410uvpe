@@ -1,0 +1,606 @@
+<?xml version="1.0"?>
+
+<!--
+
+KFS588 (ADF)(nase!)
+
+-->
+
+<PropertyList>
+
+ <name>kfs pokus</name>
+
+  <w-base>100</w-base>
+  <h-base>100</h-base>
+
+  <layers>
+  
+    <!-- LABELS -->
+    <layer>
+      <name>podklad</name>
+      <texture>
+        <path>Aircraft/l410uvpe/Instruments/Textures/kfs.rgb</path>
+        <x1>0.0</x1>
+        <x2>0.4922</x2>
+        <y1>0.0</y1>
+        <y2>1.0</y2>
+      </texture>
+      <w>100</w>
+      <h>100</h>
+      <transformations>
+        <transformation>
+          <type>x-shift</type>
+          <offset>0</offset>
+        </transformation>
+        <transformation>
+          <type>y-shift</type>
+          <offset>0</offset>
+        </transformation>
+      </transformations>
+    </layer>
+
+<!-- napisy na displeji -->
+
+  <layer>
+   <condition>
+		 <greater-than>
+           <property alias="../../../../../params/electrical-power"/>
+		   <value>10</value>
+		 </greater-than>
+   </condition>
+   <name>nav frequencies</name>
+   <type>text</type>
+   <font>led</font>
+   <point-size>7</point-size>
+   <color>
+    <red>1.0</red>
+    <green>0.5</green>
+    <blue>0.0</blue>
+   </color>
+   <chunks>
+    <chunk>
+     <type>number-value</type>
+    <property alias="../../../../../params/adf-freq-selected-prop"/>
+     <format>%04.0f</format>
+    </chunk>
+   </chunks>
+   <transformations>
+    <transformation>
+     <type>x-shift</type>
+     <offset>-32</offset>
+    </transformation>
+    <transformation>
+     <type>y-shift</type>
+     <offset>21</offset>
+    </transformation>
+   </transformations>
+  </layer>
+  <layer>
+   <name>nav frequencies</name>
+   <condition>
+		 <greater-than>
+           <property alias="../../../../../params/electrical-power"/>
+		   <value>10</value>
+		 </greater-than>
+   </condition>
+   <type>text</type>
+   <font>led</font>
+   <point-size>7</point-size>
+   <color>
+    <red>1.0</red>
+    <green>0.5</green>
+    <blue>0.0</blue>
+   </color>
+   <chunks>
+    <chunk>
+     <type>number-value</type>
+    <property alias="../../../../../params/adf-freq-standby-prop"/>
+     <format>%04.0f</format>
+    </chunk>
+   </chunks>
+   <transformations>
+    <transformation>
+     <type>x-shift</type>
+     <offset>-32</offset>
+    </transformation>
+    <transformation>
+     <type>y-shift</type>
+     <offset>2</offset>
+    </transformation>
+   </transformations>
+  </layer>
+
+  <layer>
+    <name>ADF-label</name>
+      <texture>
+        <path>Aircraft/l410uvpe/Instruments/Textures/kfs.rgb</path>
+        <x1>0.800</x1>
+        <x2>0.880</x2>
+        <y1>0.9180</y1>
+        <y2>0.9844</y2>
+      </texture>
+      <w>20</w>
+      <h>12</h>
+    <transformations>
+      <transformation>
+        <type>x-shift</type>
+        <offset>-5</offset>
+      </transformation>
+      <transformation>
+        <type>y-shift</type>
+        <offset>-13</offset>
+      </transformation>
+    </transformations>
+  </layer>
+
+  <layer>
+    <name>labels</name>
+      <texture>
+        <path>Aircraft/l410uvpe/Instruments/Textures/kfs.rgb</path>
+        <x1>0.7578</x1>
+        <x2>0.995</x2>
+        <y1>0.4844</y1>
+        <y2>0.6953</y2>
+      </texture>
+      <w>45</w>
+      <h>21</h>
+    <transformations>
+      <transformation>
+        <type>x-shift</type>
+        <offset>-22</offset>
+      </transformation>
+      <transformation>
+        <type>y-shift</type>
+        <offset>-25</offset>
+      </transformation>
+    </transformations>
+  </layer>
+  
+  
+  <layer>
+    <name>volume label</name>
+      <texture>
+        <path>Aircraft/l410uvpe/Instruments/Textures/kfs.rgb</path>
+        <x1>0.9414</x1>
+        <x2>1.0000</x2>
+        <y1>0.0000</y1>
+        <y2>0.0664</y2>
+      </texture>
+      <w>12</w>
+      <h>9</h>
+    <transformations>
+      <transformation>
+        <type>x-shift</type>
+        <offset>-5</offset>
+      </transformation>
+      <transformation>
+        <type>y-shift</type>
+        <offset>-40</offset>
+      </transformation>
+    </transformations>
+  </layer>
+  
+  <layer>
+   <type>switch</type>
+   <condition>
+		 <greater-than>
+           <property alias="../../../../../params/electrical-power"/>
+		   <value>10</value>
+		 </greater-than>
+   </condition>
+  <layer>
+    <name>SBY-label</name>
+      <texture>
+        <path>Aircraft/l410uvpe/Instruments/Textures/kfs.rgb</path>
+        <x1>0.96875</x1>
+        <x2>1.00000</x2>
+        <y1>0.6875</y1>
+        <y2>0.9330</y2>
+      </texture>
+      <w>8</w>
+      <h>25</h>
+    <transformations>
+      <transformation>
+        <type>x-shift</type>
+        <offset>20</offset>
+      </transformation>
+      <transformation>
+        <type>y-shift</type>
+        <offset>9</offset>
+      </transformation>
+    </transformations>
+   </layer>  
+  </layer>  
+  
+  <layer>
+    <name>mode-knob-pict</name>
+      <texture>
+        <path>Aircraft/l410uvpe/Instruments/Textures/kfs.rgb</path>
+        <x1>0.7637</x1>
+        <x2>0.8730</x2>
+        <y1>0.0820</y1>
+        <y2>0.3008</y2>
+      </texture>
+      <w>16</w>
+      <h>16</h>
+    <transformations>
+      <transformation>
+        <type>x-shift</type>
+        <offset>-22</offset>
+      </transformation>
+      <transformation>
+        <type>y-shift</type>
+        <offset>-33</offset>
+      </transformation>
+    </transformations>
+  </layer>  
+    
+<!--    
+  <layer>
+    <name>mode-knob</name>
+      <texture>
+        <path>Aircraft/l410uvpe/Instruments/Textures/kfs.rgb</path>
+        <x1>0.8750</x1>
+        <x2>0.9824</x2>
+        <y1>0.2695</y1>
+        <y2>0.4844</y2>
+      </texture>
+      <w>16</w>
+      <h>16</h>
+      <transformations>
+        <transformation>
+          <type>x-shift</type>
+          <offset>-22</offset>
+        </transformation>
+        <transformation>
+          <type>y-shift</type>
+          <layer>
+              <name>mode-knob</name>
+              <texture>
+                <path>Aircraft/l410uvpe/Instruments/Textures/kfs.rgb</path>
+                <x1>0.8750</x1>
+                <x2>0.9824</x2>
+                <y1>0.2695</y1>
+                <y2>0.4844</y2>
+              </texture>
+              <w>16</w>
+              <h>16</h>
+              <transformations>
+                <transformation>
+                  <type>x-shift</type>
+                  <offset>-22</offset>
+                </transformation>
+                <transformation>
+                  <type>y-shift</type>
+                  <offset>-33</offset>
+                </transformation>
+              </transformations>
+          </layer>  
+        <offset>-33</offset>
+      </transformation>
+    </transformations>
+  </layer>  
+-->
+  <layer>
+    <name>mode-knob</name>
+      <texture>
+        <path>Aircraft/l410uvpe/Instruments/Textures/kfs.rgb</path>
+        <x1>0.50000</x1>
+        <x2>0.53125</x2>
+        <y1>0.0000</y1>
+        <y2>0.0625</y2>
+      </texture>
+      <w>5</w>
+      <h>5</h>
+    <transformations>
+      <transformation>
+        <type>x-shift</type>
+        <offset>-22</offset>
+      </transformation>
+      <transformation>
+        <type>y-shift</type>
+        <offset>-33</offset>
+      </transformation>
+      <transformation>
+        <type>rotation</type>
+        <offset>0</offset>
+        <property alias="../../../../../params/adf-mode-sw"/>
+        <scale>36</scale>
+      </transformation>
+           <transformation>
+        <type>x-shift</type>
+        <offset>-6</offset>
+      </transformation>
+    </transformations>
+  </layer> 
+
+
+<!--
+  <layer>
+    <name>mode-knob</name>
+    <texture>
+      <path>Aircraft/l410uvpe/Instruments/Textures/kfs.rgb</path>
+      <x1>0.8750</x1>
+      <x2>0.9824</x2>
+      <y1>0.2695</y1>
+      <y2>0.4844</y2>
+    </texture>
+    <w>16</w>
+    <h>16</h>
+    <transformations>
+      <transformation>
+        <type>x-shift</type>
+        <offset>-22</offset>
+      </transformation>
+      <transformation>
+        <type>y-shift</type>
+        <offset>-33</offset>
+      </transformation>
+      <transformation>
+        <type>rotation</type>
+        <offset>0</offset>
+        <property alias="../../../../../params/adf-mode-sw"/>
+        <scale>36</scale>
+      </transformation>
+    </transformations>
+  </layer>  
+-->
+  <layer>
+    <name>volume-knob</name>
+      <texture>
+        <path>Aircraft/l410uvpe/Instruments/Textures/kfs.rgb</path>
+        <x1>0.7324</x1>
+        <x2>0.8086</x2>
+        <y1>0.7266</y1>
+        <y2>0.8828</y2>
+      </texture>
+      <w>10</w>
+      <h>10</h>
+    <transformations>
+      <transformation>
+        <type>x-shift</type>
+        <offset>-22</offset>
+      </transformation>
+      <transformation>
+        <type>y-shift</type>
+        <offset>-33</offset>
+      </transformation>
+      <transformation>
+        <type>rotation</type>
+        <offset>0</offset>
+        <property alias="../../../../../params/adf-volume-norm"/>
+        <scale>170</scale>
+      </transformation>
+    </transformations>
+  </layer>  
+
+
+
+  </layers>
+
+ <actions>
+
+  <action>
+   <name>small nav frequency decrease</name>
+   <condition>
+		 <greater-than>
+           <property alias="../../../../../params/electrical-power"/>
+		   <value>10</value>
+		 </greater-than>
+   </condition>
+   <button>0</button>
+   <x>10</x>
+   <y>-37</y>
+   <w>12</w>
+   <h>25</h>
+   <binding>
+    <command>property-adjust</command>
+    <property alias="../../../../params/adf-freq-standby-prop"/>
+    <step>-1</step>
+    <min>100.0</min>
+    <max>1799.0</max>
+    <resolution>1</resolution>
+    <wrap>1</wrap>
+   </binding>
+  </action>
+
+  <action>
+   <name>large nav frequency decrease</name>
+   <condition>
+		 <greater-than>
+           <property alias="../../../../../params/electrical-power"/>
+		   <value>10</value>
+		 </greater-than>
+   </condition>
+   <button>1</button>
+   <x>10</x>
+   <y>-37</y>
+   <w>12</w>
+   <h>25</h>
+   <binding>
+    <command>property-adjust</command>
+    <property alias="../../../../params/adf-freq-standby-prop"/>
+    <step>-50</step>
+    <min>100.0</min>
+    <max>1799.0</max>
+    <resolution>1</resolution>
+    <wrap>1</wrap>
+   </binding>
+  </action>
+
+  <action>
+   <name>small nav frequency increase</name>
+   <condition>
+		 <greater-than>
+           <property alias="../../../../../params/electrical-power"/>
+		   <value>10</value>
+		 </greater-than>
+   </condition>
+   <button>0</button>
+   <x>22</x>
+   <y>-37</y>
+   <w>12</w>
+   <h>25</h>
+   <binding>
+    <command>property-adjust</command>
+    <property alias="../../../../params/adf-freq-standby-prop"/>
+    <step>1</step>
+    <min>100.0</min>
+    <max>1799.0</max>
+    <resolution>1</resolution>
+    <wrap>1</wrap>
+   </binding>
+  </action>
+
+  <action>
+   <name>large nav frequency increase</name>
+   <condition>
+		 <greater-than>
+           <property alias="../../../../../params/electrical-power"/>
+		   <value>10</value>
+		 </greater-than>
+   </condition>
+   <button>1</button>
+   <x>22</x>
+   <y>-37</y>
+   <w>12</w>
+   <h>25</h>
+   <binding>
+    <command>property-adjust</command>
+    <property alias="../../../../params/adf-freq-standby-prop"/>
+    <step>50</step>
+    <min>100.0</min>
+    <max>1799.0</max>
+    <resolution>1</resolution>
+    <wrap>1</wrap>
+   </binding>
+  </action>
+  
+   <action>
+   <name>swap nav frequencies</name>
+   <condition>
+		 <greater-than>
+           <property alias="../../../../../params/electrical-power"/>
+		   <value>10</value>
+		 </greater-than>
+   </condition>
+   <button>0</button>
+   <x>25</x>
+   <y>-8</y>
+   <w>20</w>
+   <h>30</h>
+   <binding>
+    <command>property-swap</command>
+    <property alias="../../../../params/adf-freq-selected-prop"/>
+    <property alias="../../../../params/adf-freq-standby-prop"/>
+   </binding>
+  </action>
+
+
+  <action>
+    <name>volume-control-dwn</name>
+    <button>0</button>
+    <x>-35</x>
+    <y>-45</y>
+    <w>15</w>
+    <h>20</h>
+    <binding>
+      <command>property-adjust</command>
+      <property alias="../../../../params/adf-volume-norm"/>
+      <step>-0.25</step>
+      <min>0.0</min>
+      <max>1.25</max>
+    </binding>
+    <binding>
+      <command>property-assign</command>
+      <condition>
+        <less-than>
+          <property alias="../../../../../../params/adf-volume-norm"/>
+          <value>0.24</value>
+        </less-than>
+      </condition>
+      <property alias="../../../../params/adf-volume-switch"/>
+      <value>0</value>
+    </binding>
+  </action>  
+    
+  <action>
+    <name>volume-control-up</name>
+    <button>0</button>
+    <x>-20</x>
+    <y>-45</y>
+    <w>15</w>
+    <h>20</h>
+    <binding>
+      <command>property-adjust</command>
+      <property alias="../../../../params/adf-volume-norm"/>
+      <step>0.25</step>
+      <min>0.0</min>
+      <max>1.25</max>
+    </binding>
+    <binding>
+      <command>property-assign</command>
+<!--      <condition>
+        <greater-than>
+          <property alias="../../../../../../params/adf-volume-norm"/>
+          <value>0.24</value>
+        </greater-than>
+      </condition> -->
+      <property alias="../../../../params/adf-volume-switch"/>
+      <value>1</value>
+    </binding>
+    
+  </action>
+
+  <action>
+    <name>mode-control-dwn</name>
+    <button>1</button>
+    <x>-35</x>
+    <y>-45</y>
+    <w>15</w>
+    <h>20</h>
+    <binding>
+      <command>property-adjust</command>
+      <property alias="../../../../params/adf-mode-sw"/>
+      <step>-1</step>
+      <min>0.0</min>
+      <max>4</max>
+    </binding>
+    <binding>
+      <command>property-assign</command>
+      <condition>
+        <less-than>
+          <property alias="../../../../../../params/adf-mode-sw"/>
+          <value>1</value>
+        </less-than>
+      </condition>
+      <property alias="../../../../params/adf-power-sw"/>
+      <value>0</value>
+    </binding>
+  </action>  
+
+  <action>
+    <name>mode-control-up</name>
+    <button>1</button>
+    <x>-20</x>
+    <y>-45</y>
+    <w>15</w>
+    <h>20</h>
+    <binding>
+      <command>property-adjust</command>
+      <property alias="../../../../params/adf-mode-sw"/>
+      <step>1</step>
+      <min>0.0</min>
+      <max>4</max>
+    </binding>
+    <binding>
+      <command>property-assign</command>
+      <property alias="../../../../params/adf-power-sw"/>
+      <value>1</value>
+    </binding>
+  </action>
+
+
+</actions>
+
+</PropertyList>

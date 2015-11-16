@@ -1,0 +1,457 @@
+<?xml version="1.0"?>
+
+<!--
+
+(nase!)
+
+-->
+
+<PropertyList>
+
+ <name>pitotpanel</name>
+
+  <w-base>256</w-base>
+  <h-base>390</h-base>
+
+  <layers>
+   
+<!-- -->
+ 
+<!--but 11-1-->
+<!--
+<layer>
+   <name>test</name>
+     <texture>
+     <path>Aircraft/l410uvpe/Instruments/Textures/l410-neex.rgb</path>
+     <x1>0.0</x1>
+     <x2>0.14118</x2>
+     <y1>0.34902</y1>
+     <y2>0.47451</y2>
+     </texture>
+     <w>256</w>
+     <h>350</h>
+ 
+  </layer>
+-->
+
+ <layer>
+   <name>pitot_sw</name>
+   <type>switch</type>
+   <layer>
+     <name>on</name>
+     <condition>
+        <property>/controls/switches/pitot-selector-sw</property>
+     </condition>
+     <texture>
+     <path>Aircraft/l410uvpe/Instruments/Textures/l410-prislus.rgb</path>
+     <x1>0.0</x1>
+     <x2>0.1680</x2>
+     <y1>0.17</y1>
+     <y2>0.34</y2>
+     </texture>
+     <w>70</w>
+     <h>100</h>
+   </layer>
+   <layer>
+     <name>off</name>
+     <texture>
+     <path>Aircraft/l410uvpe/Instruments/Textures/l410-prislus.rgb</path>
+     <x1>0.0</x1>
+     <x2>0.1680</x2>
+     <y1>0.0</y1>
+     <y2>0.1680</y2>
+     </texture>
+     <w>70</w>
+     <h>100</h>
+   </layer>
+    <transformations>
+      <transformation>
+        <type>x-shift</type> 
+        <offset>-30</offset> 
+      </transformation>
+      <transformation>
+        <type>y-shift</type> 
+        <offset>100</offset> 
+      </transformation>
+    </transformations>
+  </layer>
+  
+  <layer>
+   <name>emergency static_sw</name>
+   <type>switch</type>
+   <layer>   
+     <name>on</name>
+     <condition>
+        <property>/controls/switches/static-emergency-sw</property>
+     </condition>   
+     <texture>
+     <path>Aircraft/l410uvpe/Instruments/Textures/l410-prislus.rgb</path>
+     <x1>0.1797</x1>
+     <x2>0.3477</x2>
+     <y1>0.17</y1>
+     <y2>0.34</y2>
+     </texture>
+     <w>70</w>
+     <h>100</h>
+   </layer> 
+   <layer>
+     <name>off</name>
+     <texture>
+     <path>Aircraft/l410uvpe/Instruments/Textures/l410-prislus.rgb</path>
+     <x1>0.1797</x1>
+     <x2>0.3477</x2>
+     <y1>0.0</y1>
+     <y2>0.1680</y2>
+     </texture>
+     <w>70</w>
+     <h>100</h>
+   </layer>   
+    <transformations>
+      <transformation>
+        <type>x-shift</type> 
+        <offset>-30</offset> 
+      </transformation>
+      <transformation>
+        <type>y-shift</type> 
+        <offset>-60</offset> 
+      </transformation>
+    </transformations>
+  </layer>
+
+
+
+  <layer>
+   <name>label e s pr</name>
+     <texture>
+     <path>Aircraft/l410uvpe/Instruments/Textures/labels.rgb</path>
+     <x1>0.0</x1>
+     <x2>0.625</x2>
+     <y1>0.0</y1>
+     <y2>0.125</y2>
+     </texture>
+     <w>100</w>
+     <h>40</h>
+    <transformations>
+      <transformation>
+        <type>x-shift</type> 
+        <offset>-28</offset> 
+      </transformation>
+      <transformation>
+        <type>y-shift</type> 
+        <offset>15</offset> 
+      </transformation>
+    </transformations>
+  </layer>
+
+  <layer>
+   <name>label p pr</name>
+     <texture>
+     <path>Aircraft/l410uvpe/Instruments/Textures/labels.rgb</path>
+     <x1>0.5625</x1>
+     <x2>1</x2>
+     <y1>0.75</y1>
+     <y2>0.875</y2>
+     </texture>
+     <w>73</w>
+     <h>40</h>
+    <transformations>
+      <transformation>
+        <type>x-shift</type> 
+        <offset>-30</offset> 
+      </transformation>
+      <transformation>
+        <type>y-shift</type> 
+        <offset>177</offset> 
+      </transformation>
+    </transformations>
+  </layer>
+
+  <layer>
+   <name>label windsh. heat. test</name>
+     <texture>
+     <path>Aircraft/l410uvpe/Instruments/Textures/labels.rgb</path>
+     <x1>0.0</x1>
+     <x2>0.5</x2>
+     <y1>0.625</y1>
+     <y2>0.75</y2>
+     </texture>
+     <w>80</w>
+     <h>40</h>
+    <transformations>
+      <transformation>
+        <type>x-shift</type> 
+        <offset>75</offset> 
+      </transformation>
+      <transformation>
+        <type>y-shift</type> 
+        <offset>150</offset> 
+      </transformation>
+    </transformations>
+  </layer>
+
+  <layer>
+   <name>label windsh. heat. test 2</name>
+     <texture>
+     <path>Aircraft/l410uvpe/Instruments/Textures/labels.rgb</path>
+     <x1>0.0</x1>
+     <x2>0.5</x2>
+     <y1>0.5625</y1>
+     <y2>0.625</y2>
+     </texture>
+     <w>80</w>
+     <h>20</h>
+    <transformations>
+      <transformation>
+        <type>x-shift</type> 
+        <offset>75</offset> 
+      </transformation>
+      <transformation>
+        <type>y-shift</type> 
+        <offset>30</offset> 
+      </transformation>
+    </transformations>
+  </layer>
+
+ <layer>
+   <name>label emerg light</name>
+     <texture>
+     <path>Aircraft/l410uvpe/Instruments/Textures/labels.rgb</path>
+     <x1>0.0</x1>
+     <x2>0.55</x2>
+     <y1>0.125</y1>
+     <y2>0.1875</y2>
+     </texture>
+     <w>80</w>
+     <h>20</h>
+    <transformations>
+      <transformation>
+        <type>x-shift</type> 
+        <offset>80</offset> 
+      </transformation>
+      <transformation>
+        <type>y-shift</type> 
+        <offset>5</offset> 
+      </transformation>
+    </transformations>
+  </layer>
+
+
+ <layer>
+   <name>label oil lev ch sw</name>
+     <texture>
+     <path>Aircraft/l410uvpe/Instruments/Textures/labels.rgb</path>
+     <x1>0.0</x1>
+     <x2>0.5</x2>
+     <y1>0.5</y1>
+     <y2>0.5625</y2>
+     </texture>
+     <w>80</w>
+     <h>20</h>
+    <transformations>
+      <transformation>
+        <type>x-shift</type> 
+        <offset>50</offset> 
+      </transformation>
+      <transformation>
+        <type>y-shift</type> 
+        <offset>-20</offset> 
+      </transformation>
+    </transformations>
+  </layer>
+  
+    <layer>
+      <name>WS HEATING TEST LH</name>
+      <type>switch</type>
+      <layer>
+        <condition>
+            <property>/instrumentation/deicing/sw-ws_heat-test-lh</property>
+        </condition>
+        <name>on</name>
+        <texture>
+          <path>Aircraft/l410uvpe/Instruments/Textures/l410-packy.rgb</path>
+          <x1>0.5</x1>
+          <x2>0.7</x2>
+          <y1>0.5</y1>
+          <y2>1.0</y2>
+        </texture>
+        <w>30</w>
+        <h>120</h>
+      </layer> 
+      <layer>
+        <name>off</name>
+        <texture>
+          <path>Aircraft/l410uvpe/Instruments/Textures/l410-packy.rgb</path>
+          <x1>0.5</x1>
+          <x2>0.7</x2>
+          <y1>0.0</y1>
+          <y2>0.5</y2>
+        </texture>
+        <w>30</w>
+        <h>120</h>
+      </layer> 
+     <transformations>
+        <transformation>
+          <type>x-shift</type>
+          <offset>50</offset>
+        </transformation>
+        <transformation>
+          <type>y-shift</type>
+          <offset>85</offset>
+        </transformation>
+      </transformations>
+    </layer>  
+
+   <layer>
+      <name>WS HEATING TEST RH</name>
+      <type>switch</type>
+      <layer>
+        <condition>
+            <property>/instrumentation/deicing/sw-ws_heat-test-rh</property>
+        </condition>
+        <name>on</name>
+        <texture>
+          <path>Aircraft/l410uvpe/Instruments/Textures/l410-packy.rgb</path>
+          <x1>0.5</x1>
+          <x2>0.7</x2>
+          <y1>0.5</y1>
+          <y2>1.0</y2>
+        </texture>
+        <w>30</w>
+        <h>120</h>
+      </layer> 
+      <layer>
+        <name>off</name>
+        <texture>
+          <path>Aircraft/l410uvpe/Instruments/Textures/l410-packy.rgb</path>
+          <x1>0.5</x1>
+          <x2>0.7</x2>
+          <y1>0.0</y1>
+          <y2>0.5</y2>
+        </texture>
+        <w>30</w>
+        <h>120</h>
+      </layer> 
+     <transformations>
+        <transformation>
+          <type>x-shift</type>
+          <offset>102</offset>
+        </transformation>
+        <transformation>
+          <type>y-shift</type>
+          <offset>85</offset>
+        </transformation>
+      </transformations>
+    </layer>      
+  
+    <layer>
+      <name>Emerg lighting SW</name>
+      <type>switch</type>
+      <layer>
+        <name>on</name>
+        <texture>
+          <path>Aircraft/l410uvpe/Instruments/Textures/l410-packy.rgb</path>
+          <x1>0.5</x1>
+          <x2>0.7</x2>
+          <y1>0.0</y1>
+          <y2>0.5</y2>
+        </texture>
+        <w>30</w>
+        <h>120</h>
+      </layer> 
+     <transformations>
+        <transformation>
+          <type>x-shift</type>
+          <offset>85</offset>
+        </transformation>
+        <transformation>
+          <type>y-shift</type>
+          <offset>-65</offset>
+        </transformation>
+      </transformations>
+    </layer>      
+  
+   <layer>
+      <name>Oil level check</name>
+      <type>switch</type>
+      <layer>
+        <name>on</name>
+        <texture>
+          <path>Aircraft/l410uvpe/Instruments/Textures/l410-packy.rgb</path>
+          <x1>0.5</x1>
+          <x2>0.7</x2>
+          <y1>0.0</y1>
+          <y2>0.5</y2>
+        </texture>
+        <w>30</w>
+        <h>120</h>
+      </layer> 
+     <transformations>
+        <transformation>
+          <type>x-shift</type>
+          <offset>30</offset>
+        </transformation>
+        <transformation>
+          <type>y-shift</type>
+          <offset>-90</offset>
+        </transformation>
+      </transformations>
+    </layer>      
+
+ </layers>
+
+ <actions>
+
+  <action>
+   <name>sw-pitot</name>
+   <button>0</button>
+   <x>-60</x>
+   <y>50</y>
+   <w>64</w>
+   <h>114</h>
+   <binding>
+      <command>property-toggle</command>
+      <property>/controls/switches/pitot-selector-sw</property>
+   </binding> 
+  </action>
+ 
+ <action>
+   <name>sw-static</name>
+   <button>lev</button>
+   <x>-60</x>
+   <y>-110</y>
+   <w>64</w>
+   <h>114</h>
+   <binding>
+      <command>property-toggle</command>
+      <property>/controls/switches/static-emergency-sw</property>
+   </binding> 
+  </action>
+
+  <action>
+   <name>sw-ws-heat-test-lh</name>
+   <button>0</button>
+   <x>35</x>
+   <y>25</y>
+   <w>30</w>
+   <h>120</h>
+   <binding>
+      <command>property-toggle</command>
+      <property>/instrumentation/deicing/sw-ws_heat-test-lh</property>
+   </binding> 
+  </action>
+
+  <action>
+   <name>sw-ws-heat-test-rh</name>
+   <button>0</button>
+   <x>87</x>
+   <y>25</y>
+   <w>30</w>
+   <h>120</h>
+   <binding>
+      <command>property-toggle</command>
+      <property>/instrumentation/deicing/sw-ws_heat-test-rh</property>
+   </binding> 
+  </action>
+
+</actions>
+</PropertyList>

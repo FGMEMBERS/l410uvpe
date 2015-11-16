@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+
+<!--
+VA-meter
+-->
+
+<PropertyList>
+
+ <name>termo-out</name>
+
+ <w-base>90</w-base>
+ <h-base>70</h-base>
+
+ <layers>
+
+<layer>
+   <name>background</name>
+   <texture>
+    <path>Aircraft/l410uvpe/Instruments/Textures/l410-termo-out.rgb</path>
+    <x1>0.0</x1>
+    <y1>0.29</y1>
+    <x2>1.0</x2>
+    <y2>1.0</y2>
+   </texture>
+  </layer>
+  
+
+  
+  <layer>
+   <name>needle-v</name>
+   <texture>
+    <path>Aircraft/l410uvpe/Instruments/Textures/l410-termo-out.rgb</path>
+    <x1>0.0</x1>
+    <y1>0.0195</y1>
+    <x2>0.0898</x2>
+    <y2>0.1055</y2>
+   </texture>
+   <w>15</w>
+   <h>12</h>
+
+
+<transformations>   
+     <transformation>	
+       <type>y-shift</type>
+       <offset>-25</offset>
+     </transformation>	
+
+     <transformation>
+       <type>rotation</type>
+       <property>/environment/temperature-degc</property>
+       <max>92</max>
+       <min>-92</min>	   
+       <scale>1.8</scale> 
+       <offset>-90</offset>
+     </transformation>
+     <transformation>	
+       <type>x-shift</type>
+       <offset>28</offset>
+     </transformation>	
+   </transformations>   
+
+</layer>    
+  
+ </layers>
+</PropertyList>

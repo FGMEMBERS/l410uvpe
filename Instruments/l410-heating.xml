@@ -1,0 +1,360 @@
+<?xml version="1.0"?>
+
+<!--
+
+(nase!)
+
+-->
+
+<PropertyList>
+
+ <name>Checkpanel</name>
+
+  <w-base>256</w-base>heat
+  <h-base>350</h-base>
+
+  <layers>
+   
+<!-- -->
+ 
+<!--but 11-1-->
+<!--
+<layer>
+   <name>test</name>
+     <texture>
+     <path>Aircraft/l410uvpe/Instruments/Textures/l410-neex.rgb</path>
+     <x1>0.0</x1>
+     <x2>0.14118</x2>
+     <y1>0.34902</y1>
+     <y2>0.47451</y2>
+     </texture>
+     <w>256</w>
+     <h>350</h>
+ 
+  </layer>
+-->
+ <layer>
+   <name>button prop deicing check</name>
+     <texture>
+     <path>Aircraft/l410uvpe/Instruments/Textures/l410-prislus.rgb</path>
+     <x1>0.0</x1>
+     <x2>0.14118</x2>
+     <y1>0.34902</y1>
+     <y2>0.47451</y2>
+     </texture>
+     <w>21</w>
+     <h>28</h>
+    <transformations>
+      <transformation>
+        <type>x-shift</type> 
+        <offset>-10</offset> 
+      </transformation>
+      <transformation>
+        <type>y-shift</type> 
+        <offset>140</offset> 
+      </transformation>
+    </transformations>
+  </layer>
+ <layer>
+   <name>button timer blades</name>
+     <texture>
+     <path>Aircraft/l410uvpe/Instruments/Textures/l410-prislus.rgb</path>
+     <x1>0.0</x1>
+     <x2>0.14118</x2>
+     <y1>0.34902</y1>
+     <y2>0.47451</y2>
+     </texture>
+     <w>21</w>
+     <h>28</h>
+    <transformations>
+      <transformation>
+        <type>x-shift</type> 
+        <offset>20</offset> 
+      </transformation>
+      <transformation>
+        <type>y-shift</type> 
+        <offset>140</offset> 
+      </transformation>
+    </transformations>
+  </layer>
+
+  <layer>
+   <name>label prop dei - timer blades</name>
+     <texture>
+     <path>Aircraft/l410uvpe/Instruments/Textures/labels.rgb</path>
+     <x1>0.2</x1>
+     <x2>0.5625</x2>
+     <y1>0.75</y1>
+     <y2>0.875</y2>
+     </texture>
+     <w>70</w>
+     <h>32</h>
+    <transformations>
+      <transformation>
+        <type>x-shift</type> 
+        <offset>10</offset> 
+      </transformation>
+      <transformation>
+        <type>y-shift</type> 
+        <offset>175</offset> 
+      </transformation>
+    </transformations>
+  </layer>
+
+   <layer>
+   <name>label heating</name>
+     <texture>
+     <path>Aircraft/l410uvpe/Instruments/Textures/labels.rgb</path>
+     <x1>0.0</x1>
+     <x2>0.25</x2>
+     <y1>0.9375</y1>
+     <y2>1.0</y2>
+     </texture>
+     <w>40</w>
+     <h>20</h>
+    <transformations>
+      <transformation>
+        <type>x-shift</type> 
+        <offset>-100</offset> 
+      </transformation>
+      <transformation>
+        <type>y-shift</type> 
+        <offset>100</offset> 
+      </transformation>
+    </transformations>
+  </layer>
+  <layer>
+   <name>label ventilation</name>
+     <texture>
+     <path>Aircraft/l410uvpe/Instruments/Textures/labels.rgb</path>
+     <x1>0.03</x1>
+     <x2>0.375</x2>
+     <y1>0.875</y1>
+     <y2>0.9375</y2>
+     </texture>
+     <w>70</w>
+     <h>20</h>
+    <transformations>
+      <transformation>
+        <type>x-shift</type> 
+        <offset>-44</offset> 
+      </transformation>
+      <transformation>
+        <type>y-shift</type> 
+        <offset>100</offset> 
+      </transformation>
+    </transformations>
+  </layer>
+  <layer>
+   <name>label windshield</name>
+     <texture>
+     <path>Aircraft/l410uvpe/Instruments/Textures/labels.rgb</path>
+     <x1>0.26</x1>
+     <x2>0.620</x2>
+     <y1>0.9375</y1>
+     <y2>1.0</y2>
+     </texture>
+     <w>70</w>
+     <h>20</h>
+    <transformations>
+      <transformation>
+        <type>x-shift</type> 
+        <offset>26</offset> 
+      </transformation>
+      <transformation>
+        <type>y-shift</type> 
+        <offset>100</offset> 
+      </transformation>
+    </transformations>
+  </layer>
+  <layer>
+   <name>label cocpit air</name>
+     <texture>
+     <path>Aircraft/l410uvpe/Instruments/Textures/labels.rgb</path>
+     <x1>0.375</x1>
+     <x2>0.6875</x2>
+     <y1>0.875</y1>
+     <y2>0.9375</y2>
+     </texture>
+     <w>60</w>
+     <h>20</h>
+    <transformations>
+      <transformation>
+        <type>x-shift</type> 
+        <offset>92</offset> 
+      </transformation>
+      <transformation>
+        <type>y-shift</type> 
+        <offset>100</offset> 
+      </transformation>
+    </transformations>
+  </layer>
+ 
+
+
+  </layers>
+
+
+ <actions>
+
+  <action>
+   <name>sw-heating-increase</name>
+   <button>0</button>
+   <x>-110</x>
+   <y>-20</y>
+   <w>45</w>
+   <h>60</h>
+    <binding>
+      <command>property-adjust</command>
+      <property>/controls/heating/heating-sw</property>
+      <step>-1</step>
+      <min>0.0</min>
+      <max>10.0</max>
+      <resolution>0.1</resolution>
+    </binding>
+  </action>
+ 
+  <action>
+   <name>sw-heating-decrease</name>
+   <button>0</button>
+   <x>-110</x>
+   <y>40</y>
+   <w>45</w>
+   <h>60</h>
+    <binding>
+    <command>property-adjust</command>
+      <property>/controls/heating/heating-sw</property>
+      <step>1</step>
+      <min>0.0</min>
+      <max>10.0</max>
+      <resolution>0.1</resolution>
+    </binding>
+
+</action>
+
+
+  <action>
+   <name>sw-ventilation-increase</name>
+   <button>0</button>
+   <x>-65</x>
+   <y>-20</y>
+   <w>45</w>
+   <h>60</h>
+    <binding>
+      <command>property-adjust</command>
+      <property>/controls/heating/ventilation-sw</property>
+      <step>-1</step>
+      <min>0.0</min>
+      <max>10.0</max>
+      <resolution>0.1</resolution>
+    </binding>
+  </action>
+ 
+  <action>
+   <name>sw-ventilation-decrease</name>
+   <button>0</button>
+   <x>-65</x>
+   <y>40</y>
+   <w>45</w>
+   <h>60</h>
+    <binding>
+    <command>property-adjust</command>
+      <property>/controls/heating/ventilation-sw</property>
+      <step>1</step>
+      <min>0.0</min>
+      <max>10.0</max>
+      <resolution>0.1</resolution>
+    </binding>
+
+</action>
+
+  <action>
+   <name>sw-windshield-increase</name>
+   <button>0</button>
+   <x>30</x>
+   <y>-20</y>
+   <w>45</w>
+   <h>60</h>
+    <binding>
+      <command>property-adjust</command>
+      <property>/controls/heating/windshield-sw</property>
+      <step>-1</step>
+      <min>0.0</min>
+      <max>10.0</max>
+      <resolution>0.1</resolution>
+    </binding>
+  </action>
+ 
+  <action>
+   <name>sw-windshield-decrease</name>
+   <button>0</button>
+   <x>30</x>
+   <y>40</y>
+   <w>45</w>
+   <h>60</h>
+    <binding>
+    <command>property-adjust</command>
+      <property>/controls/heating/windshield-sw</property>
+      <step>1</step>
+      <min>0.0</min>
+      <max>10.0</max>
+      <resolution>0.1</resolution>
+    </binding>
+
+</action>
+
+  <action>
+   <name>sw-air-increase</name>
+   <button>0</button>
+   <x>75</x>
+   <y>-20</y>
+   <w>45</w>
+   <h>60</h>
+    <binding>
+      <command>property-adjust</command>
+      <property>/controls/heating/air-sw</property>
+      <step>-1</step>
+      <min>0.0</min>
+      <max>10.0</max>
+      <resolution>0.1</resolution>
+    </binding>
+  </action>
+ 
+  <action>
+   <name>sw-air-decrease</name>
+   <button>0</button>
+   <x>75</x>
+   <y>40</y>
+   <w>45</w>
+   <h>60</h>
+    <binding>
+    <command>property-adjust</command>
+      <property>/controls/heating/air-sw</property>
+      <step>1</step>
+      <min>0.0</min>
+      <max>10.0</max>
+      <resolution>0.1</resolution>
+    </binding>
+
+</action>
+
+
+<!--
+
+
+
+ <action>
+   <name>sw-air-on-off</name>
+   <button>lev</button>
+   <x>55</x>
+   <y>-180</y>
+   <w>45</w>
+   <h>240</h>
+   <binding>
+      <command>property-toggle</command>
+      <property>/controls/switches/air-sw</property>
+   </binding> 
+  </action>
+--> 
+</actions>
+</PropertyList>

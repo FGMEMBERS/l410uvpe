@@ -1,0 +1,1383 @@
+<?xml version="1.0"?>
+
+<!--
+HSI instrument
+
+nase KPI 553 A HSI
+-->
+
+<PropertyList>
+   <name>HSI</name>
+   <w-base>130</w-base>
+   <h-base>104</h-base>
+
+
+   <layers>
+
+      <layer>
+         <name>background</name>
+         <texture>
+	          <path>Aircraft/l410uvpe/Instruments/Textures/l410-kpi553.rgb</path>
+	          <x1>0.289</x1>
+	          <y1>0.082</y1>
+	          <x2>0.398</x2>
+	          <y2>0.296</y2>
+         </texture>
+         <w>98</w>
+         <h>98</h>
+      </layer>
+      
+      <!--  DME -->
+      <!-- distance -->
+
+      <layer>
+         <name>display</name>
+   <condition>
+		 <greater-than>
+           <property alias="../../../../../params/electrical-power"/>
+		   <value>10</value>
+		 </greater-than>
+   </condition>
+         <type>switch</type>
+         <layer>
+            <condition>
+               <not>
+                  <property alias="../../../../../../params/dme-in-range"/>   
+               </not>
+            </condition>
+            <name>on</name>
+            <type>text</type>
+            <font>led</font>
+            <point-size>5</point-size>
+            <color>
+               <red>1.0</red>
+               <green>0.5</green>
+               <blue>0.0</blue>
+            </color>
+            <chunks>
+               <chunk>
+                  <type>literal</type>
+                  <text>--.-</text>
+               </chunk>
+            </chunks>
+         </layer>
+         <layer>
+            <name>off</name>
+            <type>text</type>
+            <font>led</font>
+            <point-size>5</point-size>
+            <color>
+               <red>1.0</red>
+               <green>0.5</green>
+               <blue>0.0</blue>
+            </color>
+            <chunks>
+               <chunk>
+                  <type>number-value</type>
+                  <property alias="../../../../../../params/dme-indicated-distance-nm"/>
+                  <format>%04.1f</format>
+               </chunk>
+            </chunks>
+         </layer>
+         <transformations>
+            <transformation>
+               <type>x-shift</type>
+               <offset>-40</offset>
+            </transformation>
+            <transformation>
+               <type>y-shift</type>
+               <offset>35</offset>
+            </transformation>
+         </transformations>
+      </layer>
+
+      <!-- ground speed -->
+      <layer>
+         <name>ground speed towards station</name>
+   <condition>
+		 <greater-than>
+           <property alias="../../../../../params/electrical-power"/>
+		   <value>10</value>
+		 </greater-than>
+   </condition>
+         <type>switch</type>
+         <layer>
+            <condition>
+               <not>
+                  <property alias="../../../../../../params/dme-in-range"/>   
+               </not>
+            </condition>
+            <name>display</name>
+            <type>text</type>
+            <font>led</font>
+            <point-size>5</point-size>
+            <color>
+               <red>1.0</red>
+               <green>0.5</green>
+               <blue>0.0</blue>
+            </color>
+            <chunks>
+               <chunk>
+                  <type>literal</type>
+                  <text>---</text>
+               </chunk>
+            </chunks>
+         </layer>
+
+         <layer>
+            <condition>
+               <greater-than>
+                  <property alias="../../../../../../params/indicated-ground-speed-kt"/>
+                  <value type="double">999</value>
+               </greater-than>
+            </condition>
+            <name>display</name>
+            <type>text</type>
+            <font>led</font>
+            <point-size>5</point-size>
+            <color>
+               <red>1.0</red>
+               <green>0.5</green>
+               <blue>0.0</blue>
+            </color>
+            <chunks>
+               <chunk>
+                  <type>literal</type>
+                  <text>999</text>
+               </chunk>
+            </chunks>
+         </layer>
+
+         <layer>
+            <type>text</type>
+            <font>led</font>
+            <point-size>5</point-size>
+            <color>
+               <red>1.0</red>
+               <green>0.5</green>
+               <blue>0.0</blue>
+            </color>
+            <chunks>
+               <chunk>
+                  <type>number-value</type>
+                  <property alias="../../../../../../params/indicated-ground-speed-kt"/>
+                  <format>%03.0f</format>
+               </chunk>
+            </chunks>
+         </layer>
+         <transformations>
+            <transformation>
+               <type>x-shift</type>
+               <offset>-3</offset>
+            </transformation>
+            <transformation>
+               <type>y-shift</type>
+               <offset>35</offset>
+            </transformation>
+         </transformations>
+      </layer>
+   
+      <layer>
+         <name>time to station</name>
+   <condition>
+		 <greater-than>
+           <property alias="../../../../../params/electrical-power"/>
+		   <value>10</value>
+		 </greater-than>
+   </condition>
+         <type>switch</type>
+
+<!--
+   <layer>
+    <condition>
+     <equals>
+      <property>/instrumentation/dme/switch-position</property>
+      <value type="int">0</value>
+     </equals>
+    </condition>
+    <type>group</type>
+   </layer>
+-->
+         <layer>
+            <condition>
+               <not>
+                  <property alias="../../../../../../params/dme-in-range"/>   
+               </not>
+            </condition>
+            <name>display</name>
+            <type>text</type>
+            <font>led</font>
+            <point-size>5</point-size>
+            <color>
+               <red>1.0</red>
+               <green>0.5</green>
+               <blue>0.0</blue>
+            </color>
+            <chunks>
+               <chunk>
+                  <type>literal</type>
+                  <text>--</text>
+               </chunk>
+            </chunks>
+         </layer>
+
+         <layer>
+            <condition>
+                  <property alias="../../../../../params/rnav-rad-flag"/>   
+            </condition>
+            <name>display</name>
+            <type>text</type>
+            <font>led</font>
+            <point-size>5</point-size>
+            <color>
+               <red>1.0</red>
+               <green>0.5</green>
+               <blue>0.0</blue>
+            </color>
+            <chunks>
+               <chunk>
+                  <type>literal</type>
+                  <text>F</text>
+               </chunk>
+            </chunks>
+         </layer>
+
+         <layer>
+            <condition>
+               <greater-than>
+                  <property alias="../../../../../../params/indicated-time-min"/>
+                  <value type="double">99</value>
+               </greater-than>
+            </condition>
+            <name>display</name>
+            <type>text</type>
+            <font>led</font>
+            <point-size>5</point-size>
+            <color>
+               <red>1.0</red>
+               <green>0.5</green>
+               <blue>0.0</blue>
+            </color>
+            <chunks>
+               <chunk>
+                  <type>literal</type>
+                  <text>99</text>
+               </chunk>
+            </chunks>
+         </layer>
+
+         <layer>
+            <type>text</type>
+            <font>led</font>
+            <point-size>5</point-size>
+            <color>
+               <red>1.0</red>
+               <green>0.5</green>
+               <blue>0.0</blue>
+            </color>
+            <chunks>
+               <chunk>
+                  <type>number-value</type>
+                  <property alias="../../../../../../params/indicated-time-min"/>
+                  <format>%02.0f</format>
+               </chunk>
+            </chunks>
+         </layer>
+         <transformations>
+            <transformation>
+               <type>x-shift</type>
+               <offset>25</offset>
+            </transformation>
+            <transformation>
+               <type>y-shift</type>
+               <offset>35</offset>
+            </transformation>
+         </transformations>
+      </layer>
+
+      <!-- DME popisky --> 
+      <layer>
+         <name>display title</name>
+         <type>text</type>
+         <point-size>5</point-size>
+         <color>
+            <red>1.0</red>
+            <green>0.5</green>
+            <blue>0.0</blue>
+         </color>
+         <chunks>
+            <chunk>
+               <type>literal</type>
+               <text>NM</text>
+            </chunk>
+         </chunks>
+         <transformations>
+            <transformation>
+               <type>x-shift</type>
+               <offset>-10</offset>
+            </transformation>
+            <transformation>
+               <type>y-shift</type>
+               <offset>34</offset>
+            </transformation>
+         </transformations>
+      </layer>
+      <!-- DME konec -->
+
+
+      <layer>
+         <name>stupnice gs</name>
+         <texture>
+	          <path>Aircraft/l410uvpe/Instruments/Textures/l410-kpi553.rgb</path>
+	          <x1>0.2637</x1>
+	          <y1>0.7148</y1>
+	          <x2>0.2988</x2>
+	          <y2>0.9648</y2>
+         </texture>
+         <w>8</w>
+         <h>34</h>
+         <transformations>
+            <transformation>
+               <type>x-shift</type>
+               <offset>-39</offset>
+            </transformation> 
+            <transformation>
+               <type>y-shift</type>
+               <offset>-8</offset>
+            </transformation> 
+         </transformations>
+      </layer>
+
+      <layer>
+         <name>stupnice deviation</name>
+         <texture>
+            <path>Aircraft/l410uvpe/Instruments/Textures/l410-kpi553.rgb</path>
+            <x1>0.0449</x1>
+            <y1>0.24611</y1>
+            <x2>0.2012</x2>
+            <y2>0.3320</y2>
+         </texture>
+         <w>40</w>
+         <h>10</h>
+         <transformations>
+            <transformation>
+               <type>y-shift</type>
+               <offset>-7</offset>
+            </transformation> 
+            <transformation>
+               <type>rotation</type>
+               <property alias="../../../../../params/heading-magnetic-deg"/>  
+               <min>0.0</min>
+               <max>360</max>
+               <scale>-1.0</scale>
+            </transformation>
+            <transformation>
+               <type>rotation</type>
+               <property alias="../../../../../params/nav-radial-selected"/>  
+               <min>0.0</min>
+               <max>360.0</max>
+               <scale>1.0</scale>
+            </transformation>
+         </transformations>
+      </layer>
+
+
+      <layer>
+         <name>TO/FROM flag</name>
+         <type>switch</type>
+         <layer>
+            <condition>
+               <property alias="../../../../../params/to-flag"/>
+            </condition>
+            <name>TO flag</name>
+            <texture>
+               <path>Aircraft/l410uvpe/Instruments/Textures/l410-kpi553.rgb</path>
+               <x1>0.4180</x1>
+               <y1>0.1680</y1>
+               <x2>0.4570</x2>
+               <y2>0.2109</y2>
+            </texture>
+            <w>14</w>
+            <h>10</h>
+            <transformations>
+               <transformation>
+                  <type>y-shift</type>
+                  <offset>-7</offset>
+               </transformation> 			
+               <transformation>
+                  <type>rotation</type>
+                  <property alias="../../../../../../params/heading-magnetic-deg"/>  
+                  <min>0.0</min>
+                  <max>360</max>
+                  <scale>-1.0</scale>
+               </transformation>
+               <transformation>
+                  <type>rotation</type>
+                  <property alias="../../../../../../params/nav-radial-selected"/>
+                  <min>0.0</min>
+                  <max>360.0</max>
+                  <scale>1.0</scale>
+               </transformation>
+               <transformation>
+                  <type>y-shift</type>
+                  <offset>10</offset>
+               </transformation>
+            </transformations>
+         </layer>
+         <layer>
+            <name>FROM flag</name>
+            <type>switch</type>
+            <layer>
+               <condition>
+                  <property alias="../../../../../../params/from-flag"/>
+               </condition>
+               <name>FROM flag</name>
+               <texture>
+                  <path>Aircraft/l410uvpe/Instruments/Textures/l410-kpi553.rgb</path>
+                  <x1>0.4180</x1>
+                  <y1>0.2188</y1>
+                  <x2>0.4570</x2>
+                  <y2>0.2656</y2>
+               </texture>
+               <w>14</w>
+               <h>10</h>
+               <transformations>
+                  <transformation>
+                     <type>y-shift</type>
+                     <offset>-7</offset>
+                  </transformation> 
+                  <transformation>
+                     <type>rotation</type>
+                     <property alias="../../../../../../../params/heading-magnetic-deg"/>  
+                     <min>0.0</min>
+                     <max>360</max>
+                     <scale>-1.0</scale>
+                  </transformation>
+                  <transformation>
+                     <type>rotation</type>
+                     <property alias="../../../../../../../params/nav-radial-selected"/>
+                     <min>0.0</min>
+                     <max>360.0</max>
+                     <scale>1.0</scale>
+                  </transformation>
+                  <transformation>
+                     <type>y-shift</type>
+                     <offset>-9</offset>
+                  </transformation>
+               </transformations>
+            </layer>
+         </layer>
+	  </layer>
+<!--
+      <layer>
+         <name>Nav-vor-ils-deviation</name>
+         <condition>
+            <equals>
+               <property alias="../../../../../params/nav-mode"/>
+               <value type="int">0</value>
+            </equals>
+         </condition>	  
+         <texture>
+            <path>Aircraft/l410uvpe/Instruments/Textures/l410-kpi553.rgb</path>
+            <x1>0.00977</x1>
+            <y1>0.3750</y1>
+            <x2>0.03320</x2>
+            <y2>0.3945</y2>
+         </texture>
+         <w>7</w>
+         <h>27</h>
+         <transformations>
+            <transformation>
+               <type>y-shift</type>
+               <offset>-7</offset>
+            </transformation> 
+            <transformation>
+               <type>rotation</type>
+               <property alias="../../../../../params/heading-magnetic-deg"/>  
+               <min>0.0</min>
+               <max>360</max>
+               <scale>-1.0</scale>
+            </transformation>
+            <transformation>
+               <type>rotation</type>
+               <property alias="../../../../../params/nav-radial-selected"/>
+               <min>0.0</min>
+               <max>360</max>
+               <scale>1.0</scale>
+            </transformation>
+            <transformation>
+               <type>x-shift</type>
+               <property alias="../../../../../params/nav-heading-needle-deflection"/>
+               <min>-10.0</min>
+               <max>10.0</max>
+               <scale>1.5</scale>
+            </transformation>
+         </transformations>
+      </layer>
+
+      <layer>
+         <name>Nav-par-deviation</name>
+         <condition>
+            <equals>
+               <property alias="../../../../../params/nav-mode"/>
+               <value type="int">1</value>
+            </equals>
+         </condition>	  		 
+         <texture>
+            <path>Aircraft/l410uvpe/Instruments/Textures/l410-kpi553.rgb</path>
+            <x1>0.00977</x1>
+            <y1>0.3750</y1>
+            <x2>0.03320</x2>
+            <y2>0.3945</y2>
+         </texture>
+         <w>7</w>
+         <h>27</h>
+         <transformations>
+            <transformation>
+               <type>y-shift</type>
+               <offset>-7</offset>
+            </transformation> 
+            <transformation>
+               <type>rotation</type>
+               <property alias="../../../../../params/heading-magnetic-deg"/>  
+               <min>0.0</min>
+               <max>360</max>
+               <scale>-1.0</scale>
+            </transformation>
+            <transformation>
+               <type>rotation</type>
+               <property alias="../../../../../params/nav-radial-selected"/>
+               <min>0.0</min>
+               <max>360</max>
+               <scale>1.0</scale>
+            </transformation>
+            <transformation>
+               <type>x-shift</type>
+               <property alias="../../../../../params/nav-heading-needle-deflection"/>
+               <min>-10.0</min>
+               <max>10.0</max>
+               <scale>1.5</scale>
+            </transformation>
+         </transformations>
+      </layer>
+-->
+
+      <layer>
+         <name>Heading-deviation</name>
+         <texture>
+            <path>Aircraft/l410uvpe/Instruments/Textures/l410-kpi553.rgb</path>
+            <x1>0.00977</x1>
+            <y1>0.3750</y1>
+            <x2>0.03320</x2>
+            <y2>0.3945</y2>
+         </texture>
+         <w>7</w>
+         <h>27</h>
+         <transformations>
+            <transformation>
+               <type>y-shift</type>
+               <offset>-7</offset>
+            </transformation> 
+            <transformation>
+               <type>rotation</type>
+               <property alias="../../../../../params/heading-magnetic-deg"/>  
+               <min>0.0</min>
+               <max>360</max>
+               <scale>-1.0</scale>
+            </transformation>
+            <transformation>
+               <type>rotation</type>
+               <property alias="../../../../../params/nav-radial-selected"/>
+               <min>0.0</min>
+               <max>360</max>
+               <scale>1.0</scale>
+            </transformation>
+            <transformation>
+               <type>x-shift</type>
+               <property alias="../../../../../params/indicated-heading-deflection"/>
+               <min>-10.0</min>
+               <max>10.0</max>
+               <scale>1.5</scale>
+            </transformation>
+         </transformations>
+      </layer>
+
+      <layer>
+         <name>compass rose</name>
+         <texture>
+	          <path>Aircraft/l410uvpe/Instruments/Textures/l410-kpi553.rgb</path>
+	          <x1>0.0</x1>
+	          <y1>0.512</y1>
+	          <x2>0.246</x2>
+	          <y2>1.0</y2>
+         </texture>
+         <w>70</w>
+         <h>70</h>
+         <transformations>
+            <transformation>
+               <type>y-shift</type>
+               <offset>-7</offset>
+            </transformation> 
+            <transformation>
+               <type>rotation</type>
+               <property alias="../../../../../params/heading-magnetic-deg"/>  
+               <min>-360.0</min>
+               <max>360.0</max>
+               <scale>-1.0</scale>
+            </transformation>
+         </transformations>
+      </layer>
+
+      <layer>
+         <name>course arrow</name>
+         <texture>
+            <path>Aircraft/l410uvpe/Instruments/Textures/l410-kpi553.rgb</path>
+            <x1>0.00977</x1>
+            <y1>0.1289</y1>
+            <x2>0.03320</x2>
+            <y2>0.4414</y2>
+         </texture>
+         <w>7</w>
+         <h>60</h>
+         <transformations>
+            <transformation>
+               <type>y-shift</type>
+               <offset>-7</offset>
+            </transformation> 
+            <transformation>
+               <type>rotation</type>
+               <property alias="../../../../../params/heading-magnetic-deg"/>  
+               <min>0.0</min>
+               <max>360</max>
+               <scale>-1.0</scale>
+            </transformation>
+            <transformation>
+               <type>rotation</type>
+               <property alias="../../../../../params/nav-radial-selected"/>
+               <min>0.0</min>
+               <max>360.0</max>
+               <scale>1.0</scale>
+            </transformation>
+         </transformations>
+      </layer>
+ 
+      <layer>
+         <name>glidescope needle</name>
+         <texture>
+            <path>Aircraft/l410uvpe/Instruments/Textures/l410-kpi553.rgb</path>
+            <x1>0.3164</x1>
+            <y1>0.9531</y1>
+            <x2>0.3535</x2>
+            <y2>0.9805</y2>
+         </texture>
+         <w>10</w>
+         <h>4</h>
+         <transformations>
+            <transformation>
+               <type>y-shift</type>
+               <property alias="../../../../../params/indicated-gs-deflection"/>
+               <min>-1.4</min>
+               <max>1.4</max>
+               <scale>10</scale>
+            </transformation>
+            <transformation>
+               <type>rotation</type>
+               <offset>0</offset>
+            </transformation>
+            <transformation>
+               <type>x-shift</type>
+               <offset>-40</offset>
+            </transformation>
+            <transformation>
+               <type>y-shift</type>
+               <offset>-7</offset>
+            </transformation>
+         </transformations>
+      </layer>
+
+      <layer>
+         <name>ADF bearing Needle</name>
+<!--         <condition>
+            <equals>
+               <property alias="../../../../../params/nav-adf-sel"/>
+               <value type="int">0</value>
+            </equals>
+         </condition>	   -->
+         <texture>
+            <path>Aircraft/l410uvpe/Instruments/Textures/l410-kpi553.rgb</path>
+            <x1>0.0137</x1>
+            <y1>0.0313</y1>
+            <x2>0.0488</x2>
+            <y2>0.0977</y2>
+         </texture>
+         <w>12</w>
+         <h>12</h>
+         <transformations>
+           <transformation>
+               <type>y-shift</type>
+               <offset>-7</offset>
+            </transformation>
+            <transformation>
+               <type>rotation</type>
+               <property alias="../../../../../params/adf-needle-deflection"/>			   
+               <min>-360</min>
+               <max>360</max>
+            </transformation>
+           <transformation>
+               <type>y-shift</type>
+               <offset>30</offset>
+            </transformation>
+            <transformation>
+               <type>x-shift</type>
+               <offset>-1</offset>
+            </transformation>
+ 
+        </transformations>
+      </layer>
+<!--
+      <layer>
+         <name>NAV bearing Needle</name>
+            <condition>
+            <equals>
+               <property alias="../../../../../params/nav-adf-sel"/>
+               <value type="int">1</value>
+            </equals>
+         </condition>	  
+
+         <texture>
+            <path>Aircraft/l410uvpe/Instruments/Textures/l410-kpi553.rgb</path>
+            <x1>0.0137</x1>
+            <y1>0.0313</y1>
+            <x2>0.0488</x2>
+            <y2>0.0977</y2>
+         </texture>
+         <w>12</w>
+         <h>12</h>
+         <transformations>
+           <transformation>
+               <type>y-shift</type>
+               <offset>-7</offset>
+            </transformation>
+            <transformation>
+               <type>rotation</type>
+               <property alias="../../../../../params/nav-needle-deflection"/>			   
+               <min>-360</min>
+               <max>360</max>
+            </transformation>
+           <transformation>
+               <type>y-shift</type>
+               <offset>30</offset>
+            </transformation>
+            <transformation>
+               <type>x-shift</type>
+               <offset>-1</offset>
+            </transformation>
+         </transformations>
+      </layer>
+-->
+      <layer>
+         <name>heading bug</name>
+         <texture>
+            <path>Aircraft/l410uvpe/Instruments/Textures/l410-kpi553.rgb</path>
+            <x1>0.0664</x1>
+            <y1>0.0273</y1>
+            <x2>0.125</x2>
+            <y2>0.0977</y2>
+         </texture>
+         <w>11</w>
+         <h>7</h>
+         <transformations>
+            <transformation>
+               <type>y-shift</type>
+               <offset>-7</offset>
+            </transformation>
+            <transformation>
+               <type>rotation</type>
+               <property  alias="../../../../../params/heading-bug-deg"/>
+               <min>-360.0</min>
+               <max>360.0</max>
+            </transformation>
+            <transformation>
+               <type>rotation</type>
+               <property alias="../../../../../params/heading-magnetic-deg"/>  
+               <min>-360.0</min>
+               <max>360.0</max>
+               <scale>-1.0</scale>
+            </transformation>
+            <transformation>
+               <type>y-shift</type>
+               <offset>33</offset>
+            </transformation>
+         </transformations>
+      </layer>
+
+      <layer>
+         <name>adf-flag</name>	 
+         <condition>
+            <equals>
+               <property alias="../../../../../params/nav-adf-sel"/>
+               <value type="int">0</value>
+            </equals>
+         </condition>	  
+         <texture>
+            <path>Aircraft/l410uvpe/Instruments/Textures/l410-kpi553.rgb</path>
+            <x1>0.2363</x1>
+            <y1>0.1211</y1>
+            <x2>0.2617</x2>
+            <y2>0.3047</y2>
+         </texture>
+         <w>5</w>
+         <h>18</h>
+         <transformations>
+            <transformation>
+               <type>x-shift</type>
+               <offset>38</offset>
+            </transformation>
+            <transformation>
+               <type>y-shift</type>
+               <offset>-23</offset>
+            </transformation>
+         </transformations>
+      </layer>	  
+	  
+      <layer>
+         <name>nav-flag</name>	 
+         <condition>
+            <equals>
+               <property alias="../../../../../params/nav-adf-sel"/>
+               <value type="int">1</value>
+            </equals>
+         </condition>	  
+         <texture>
+            <path>Aircraft/l410uvpe/Instruments/Textures/l410-kpi553.rgb</path>
+            <x1>0.1563</x1>
+            <y1>0.0313</y1>
+            <x2>0.2637</x2>
+            <y2>0.0820</y2>
+         </texture>
+         <w>18</w>
+         <h>5</h>
+         <transformations>
+            <transformation>
+               <type>x-shift</type>
+               <offset>24</offset>
+            </transformation>
+            <transformation>
+               <type>y-shift</type>
+               <offset>-35</offset>
+            </transformation>
+         </transformations>
+      </layer>	  	  
+
+      <layer>
+         <name>GS-off-flag</name>	 
+         <condition>
+            <or>
+              <not>
+                <property alias="../../../../../../params/has-gs"/>
+              </not>
+              <not>
+                <property alias="../../../../../../params/in-range"/>
+              </not>
+            </or>
+         </condition>	  
+         <texture>
+            <path>Aircraft/l410uvpe/Instruments/Textures/l410-kpi553.rgb</path>
+            <x1>0.2656</x1>
+            <y1>0.4609</y1>
+            <x2>0.2949</x2>
+            <y2>0.7109</y2>
+         </texture>
+         <w>9</w>
+         <h>40</h>
+         <transformations>
+            <transformation>
+               <type>x-shift</type>
+               <offset>-39</offset>
+            </transformation>
+            <transformation>
+               <type>y-shift</type>
+               <offset>-7</offset>
+            </transformation>
+         </transformations>
+      </layer>	  
+
+      <layer>
+         <name>compass-flag</name>
+        <condition>
+		    <less-than>
+               <property alias="../../../../../params/gyro-spin"/>
+			   <value>0.7</value>
+		    </less-than>
+         </condition>	  		 
+         <texture>
+            <path>Aircraft/l410uvpe/Instruments/Textures/l410-kpi553.rgb</path>
+            <x1>0.3242</x1>
+            <y1>0.8242</y1>
+            <x2>0.4629</x2>
+            <y2>0.8867</y2>
+         </texture>
+         <h>8</h>
+         <w>25</w>
+         <transformations>
+            <transformation>
+               <type>x-shift</type>
+               <offset>28</offset>
+            </transformation>
+            <transformation>
+               <type>y-shift</type>
+               <offset>21</offset>
+            </transformation>
+            <transformation>
+               <type>rotation</type>
+               <offset>-45</offset>
+            </transformation>
+         </transformations>
+      </layer>
+
+      <layer>
+         <name>nav-flag</name>
+         <condition>
+		    <not>
+               <property alias="../../../../../params/in-range"/>
+		    </not>
+         </condition>	  
+         <texture>
+            <path>Aircraft/l410uvpe/Instruments/Textures/l410-kpi553.rgb</path>
+            <x1>0.3242</x1>
+            <y1>0.8867</y1>
+            <x2>0.4629</x2>
+            <y2>0.9492</y2>
+         </texture>
+         <h>8</h>
+         <w>25</w>
+         <transformations>
+            <transformation>
+               <type>x-shift</type>
+               <offset>-28</offset>
+            </transformation>
+            <transformation>
+               <type>y-shift</type>
+               <offset>21</offset>
+            </transformation>
+            <transformation>
+               <type>rotation</type>
+               <offset>45</offset>
+            </transformation>
+         </transformations>
+      </layer>
+
+      <layer>
+         <name>body</name>
+         <texture>
+	          <path>Aircraft/l410uvpe/Instruments/Textures/l410-kpi553.rgb</path>
+	          <x1>0.463</x1>
+	          <y1>0.0</y1>
+	          <x2>1.0</x2>
+	          <y2>1.0</y2>
+         </texture>
+         <w>104</w>
+         <h>104</h>
+      </layer>
+
+    <layer>
+         <name>vor-nav-knob</name>
+         <texture>
+            <path>Aircraft/l410uvpe/Instruments/Textures/l410-kpi553.rgb</path>
+            <x1>0.2441</x1>
+            <y1>0.3750</y1>
+            <x2>0.3281</x2>
+            <y2>0.4180</y2>
+         </texture>
+         <w>18</w>
+         <h>5</h>
+         <transformations>
+            <transformation>
+               <type>x-shift</type>
+               <offset>38</offset>
+            </transformation>
+            <transformation>
+               <type>y-shift</type>
+               <offset>-38</offset>
+            </transformation>
+            <transformation>
+               <type>rotation</type>
+               <property alias="../../../../../params/nav-adf-sel"/> 
+               <min>0</min>
+               <max>90</max>
+               <scale>90.0</scale>
+            </transformation>
+            <transformation>
+               <type>x-shift</type>
+               <offset>5</offset>
+            </transformation>			
+         </transformations>
+      </layer>	  
+
+      <layer>
+         <name>Heading knob</name>
+         <texture>
+            <path>Aircraft/l410uvpe/Instruments/Textures/l410-kpi553.rgb</path>
+            <x1>0.334</x1>
+            <y1>0.3438</y1>
+            <x2>0.4316</x2>
+            <y2>0.5391</y2>
+         </texture>
+         <w>18</w>
+         <h>18</h>
+         <transformations>
+            <transformation>
+               <type>x-shift</type>
+               <offset>38</offset>
+            </transformation>
+            <transformation>
+               <type>y-shift</type>
+               <offset>-38</offset>
+            </transformation>
+            <transformation>
+               <type>rotation</type>
+			   <property  alias="../../../../../params/heading-bug-deg"/>
+            </transformation>
+         </transformations>
+      </layer>
+
+      <layer>
+         <name>OBS Knob</name>
+         <texture>
+            <path>Aircraft/l410uvpe/Instruments/Textures/l410-kpi553.rgb</path>
+            <x1>0.334</x1>
+            <y1>0.5547</y1>
+            <x2>0.4316</x2>
+            <y2>0.75</y2>
+         </texture>
+         <h>18</h>
+         <w>18</w>
+         <transformations>
+            <transformation>
+               <type>x-shift</type>
+               <offset>-38</offset>
+            </transformation>
+            <transformation>
+               <type>y-shift</type>
+               <offset>-38</offset>
+            </transformation>
+            <transformation>
+               <type>rotation</type>
+               <property alias="../../../../../params/nav-radial-selected"/>
+               <min>0</min>
+               <max>360</max>
+            </transformation>
+         </transformations>
+      </layer>
+	  
+      <layer>
+		 <type>switch</type>
+         <name>hold-on-sw</name>
+		 <layer>
+            <condition>
+               <equals>
+                  <property alias="../../../../../../params/dme-hold-sw"/> 			
+                  <value type="int">2</value>
+               </equals>
+            </condition>	  		 
+            <texture>
+	          <path>Aircraft/l410uvpe/Instruments/Textures/l410-kpi553.rgb</path>
+	          <x1>0.0586</x1>
+	          <y1>0.3516</y1>
+	          <x2>0.1172</x2>
+	          <y2>0.4883</y2>
+            </texture>
+            <w>15</w>
+            <h>17</h>
+		 </layer>
+		 <layer>
+            <texture>
+	          <path>Aircraft/l410uvpe/Instruments/Textures/l410-kpi553.rgb</path>
+	          <x1>0.1484</x1>
+	          <y1>0.3516</y1>
+	          <x2>0.2070</x2>
+	          <y2>0.4883</y2>
+            </texture>
+            <w>15</w>
+            <h>17</h>
+		 </layer>
+         <transformations>
+            <transformation>
+               <type>x-shift</type>
+               <offset>56</offset>
+            </transformation>
+            <transformation>
+               <type>y-shift</type>
+               <offset>41</offset>
+            </transformation>		 
+         </transformations>		 
+      </layer>
+
+   </layers>
+
+   <actions>
+      <action>
+         <name>OBS small clockwise rotation</name>
+         <button>0</button>
+         <x>-48</x>
+         <y>-47</y>
+         <w>10</w>
+         <h>20</h>
+         <binding>
+            <command>property-adjust</command>
+            <property alias="../../../../params/nav-radial-selected"/> 
+            <step>-1.0</step>
+            <min>0</min>
+            <max>360</max>
+            <wrap>1</wrap>
+         </binding>
+      </action>
+
+      <action>
+         <name>OBS large clockwise rotation</name>
+         <button>1</button>
+         <x>-48</x>
+         <y>-47</y>
+         <w>10</w>
+         <h>20</h>
+         <binding>
+            <command>property-adjust</command>
+            <property alias="../../../../params/nav-radial-selected"/> 
+            <step>-5.0</step>
+            <min>0</min>
+            <max>360</max>
+            <wrap>1</wrap>
+         </binding>
+      </action>
+
+      <action>
+         <name>OBS small counter-clockwise rotation</name>
+         <button>0</button>
+         <x>-38</x>
+         <y>-47</y>
+         <w>10</w>
+         <h>20</h>
+         <binding>
+            <command>property-adjust</command>
+            <property alias="../../../../params/nav-radial-selected"/>
+            <step>1.0</step>
+            <min>0</min>
+            <max>360</max>
+            <wrap>1</wrap>
+         </binding>
+      </action>
+
+      <action>
+         <name>OBS large counter-clockwise rotation</name>
+         <button>1</button>
+         <x>-38</x>
+         <y>-47</y>
+         <w>10</w>
+         <h>20</h>
+         <binding>
+            <command>property-adjust</command>
+            <property alias="../../../../params/nav-radial-selected"/> 
+            <step>5.0</step>
+            <min>0</min>
+            <max>360</max>
+            <wrap>1</wrap>
+         </binding>
+      </action>
+
+      <action>
+         <name>Heading hold small clockwise rotation</name>
+         <button>0</button>
+         <x>30</x>
+         <y>-47</y>
+         <w>8</w>
+         <h>16</h>
+         <binding>
+            <command>property-adjust</command>
+			<property  alias="../../../../params/heading-bug-deg"/>
+            <step>-1.0</step>
+            <min>0</min>
+            <max>360</max>
+            <wrap>1</wrap>
+         </binding>
+      </action>
+
+      <action>
+         <name>Heading hold large clockwise rotation</name>
+         <button>1</button>
+         <x>30</x>
+         <y>-47</y>
+         <w>8</w>
+         <h>16</h>
+         <binding>
+            <command>property-adjust</command>
+            <property  alias="../../../../params/heading-bug-deg"/>
+			<step>-5.0</step>
+            <min>0</min>
+            <max>360</max>
+            <wrap>1</wrap>
+         </binding>
+      </action>
+
+      <action>
+         <name>Heading hold  small counter-clockwise rotation</name>
+         <button>0</button>
+         <x>38</x>
+         <y>-47</y>
+         <w>8</w>
+         <h>16</h>
+         <binding>
+            <command>property-adjust</command>
+            <property  alias="../../../../params/heading-bug-deg"/>
+            <step>1.0</step>
+            <min>0</min>
+            <max>360</max>
+            <wrap>1</wrap>
+         </binding>
+      </action>
+
+      <action>
+         <name>Heading hold large counter-clockwise rotation</name>
+         <button>1</button>
+         <x>38</x>
+         <y>-47</y>
+         <w>8</w>
+         <h>16</h>
+         <binding>
+            <command>property-adjust</command>
+            <property  alias="../../../../params/heading-bug-deg"/>
+			<step>5.0</step>
+            <min>0</min>
+            <max>360</max>
+            <wrap>1</wrap>
+         </binding>
+      </action>
+  
+
+      <action>
+         <name>hold-off</name>
+         <button>0</button>
+         <x>42</x>
+         <y>22</y>
+         <w>20</w>
+         <h>20</h>
+         <binding>
+		    <condition>
+			   <equals>
+			      <property alias="../../../../../../params/dme-freq-source"/>
+			      <value>1</value>
+			   </equals>
+			</condition>
+            <command>property-assign</command>
+            <property alias="../../../../params/dme-hold-sw"/> 			
+            <value type="int">1</value>
+         </binding>
+         <binding>
+			<condition>
+			   <equals>
+				  <property alias="../../../../../../params/dme-freq-source"/>
+				  <value>3</value>
+			   </equals>
+			</condition>
+            <command>property-assign</command>
+            <property alias="../../../../params/dme-hold-sw"/> 			
+            <value type="int">3</value>
+         </binding>
+         <binding>
+			<condition>
+			   <equals>
+                  <property alias="../../../../../../params/dme-hold-sw"/> 			
+				  <value>1</value>
+			   </equals>
+			</condition>
+            <command>property-assign</command>
+            <property>/instrumentation/dme[0]/frequencies/source</property>
+            <value>/instrumentation/nav[0]/frequencies/selected-mhz</value>
+         </binding>
+         <binding>
+			<condition>
+			   <equals>
+                  <property alias="../../../../../../params/dme-hold-sw"/> 			
+				  <value>3</value>
+			   </equals>
+			</condition>
+            <command>property-assign</command>
+            <property>/instrumentation/dme[1]/frequencies/source</property>
+            <value>/instrumentation/nav[1]/frequencies/selected-mhz</value>
+         </binding>
+      </action>
+
+      <action>
+         <name>hold-on</name>
+         <button>0</button>
+         <x>42</x>
+         <y>42</y>
+         <w>20</w>
+         <h>20</h>
+		<binding>
+            <command>property-assign</command>
+            <property alias="../../../../params/dme-hold-sw"/> 			
+			<value type="int">2</value>
+		</binding>
+         <binding>
+			<condition>
+			   <equals>
+                  <property alias="../../../../../../params/dme-freq-source"/> 			
+				  <value>1</value>
+			   </equals>
+			</condition>
+            <command>property-assign</command>
+            <property>/instrumentation/dme[0]/frequencies/selected-mhz</property>
+            <property>/instrumentation/nav[0]/frequencies/selected-mhz</property>
+         </binding>
+         <binding>
+			<condition>
+			   <equals>
+                  <property alias="../../../../../../params/dme-freq-source"/> 			
+				  <value>1</value>
+			   </equals>
+			</condition>
+            <command>property-assign</command>
+            <property>/instrumentation/dme[0]/frequencies/source</property>
+            <value>/instrumentation/dme[0]/frequencies/selected-mhz</value>
+         </binding>
+         <binding>
+			<condition>
+			   <equals>
+                  <property alias="../../../../../../params/dme-freq-source"/> 			
+				  <value>3</value>
+			   </equals>
+			</condition>
+            <command>property-assign</command>
+            <property>/instrumentation/dme[1]/frequencies/selected-mhz</property>
+            <property>/instrumentation/nav[1]/frequencies/selected-mhz</property>
+         </binding>
+         <binding>
+			<condition>
+			   <equals>
+                  <property alias="../../../../../../params/dme-freq-source"/> 			
+				  <value>3</value>
+			   </equals>
+			</condition>
+            <command>property-assign</command>
+            <property>/instrumentation/dme[1]/frequencies/source</property>
+            <value>/instrumentation/dme[1]/frequencies/selected-mhz</value>
+         </binding>
+      </action>
+ 
+       <action>
+         <name>nav-adf-sel</name>
+         <button>0</button>
+         <x>35</x>
+         <y>-52</y>
+         <w>17</w>
+         <h>15</h>
+         <binding>
+            <command>property-toggle</command>
+            <property alias="../../../../params/nav-adf-sel"/>
+         </binding>
+      </action>
+ 
+   </actions>
+
+
+</PropertyList>

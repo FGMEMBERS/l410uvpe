@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+  <pitot>
+    <name>pitot</name>
+    <number>0</number>
+  </pitot>
+  <pitot>
+    <name>pitot</name>
+    <number>1</number>
+  </pitot>
+
+  <electrical>
+    <name>electrical</name>
+    <path>Aircraft/l410uvpe/systems/l410-electrical3.xml</path>
+  </electrical>
+
+  <static>
+    <name>static</name>
+    <number>0</number>
+  </static>
+ 
+  <vacuum>
+    <name>vacuum</name>
+    <number>0</number>
+    <rpm>/engines/engine[0]/thruster/rpm</rpm>
+    <scale>1.0</scale>
+  </vacuum>
+
+  <vacuum>
+    <name>vacuum</name>
+    <number>1</number>
+    <rpm>/engines/engine[1]/thruster/rpm</rpm>
+    <scale>1.0</scale>
+  </vacuum>
+
+</PropertyList>

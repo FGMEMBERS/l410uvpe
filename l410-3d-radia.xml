@@ -1,0 +1,308 @@
+<?xml version="1.0"?>
+
+<!--
+L410 panel.
+Javky <javky@email.cz>
+_______________________________________________________________________
+-->
+
+<!DOCTYPE PropertyList SYSTEM "panel.dtd">
+
+<PropertyList>
+
+ <name>L410-rear-panel</name>
+ <background>Aircraft/l410uvpe/transparent-bg.rgb</background>
+ <w>400</w>
+ <h>400</h>
+
+ <instruments>
+  <instrument include="./Instruments/l410-audio.xml">
+   <name>sw-box1</name>
+   <x>115</x>
+   <y>355</y>
+   <w>172</w>
+   <h>57</h>
+  </instrument>
+  <instrument include="./Instruments/l410-audio.xml">
+   <name>sw-box2</name>
+   <x>285</x>
+   <y>355</y>
+   <w>172</w>
+   <h>57</h>
+  </instrument>
+
+  <instrument include="./Instruments/l410-slav_met-KA51B.xml">
+  <params>
+    <indicated-diff>/instrumentation/heading-indicator[0]/indicated-diff</indicated-diff>
+	<auto-man>/instrumentation/heading-indicator[0]/auto-correction</auto-man>
+	<man-correction>/instrumentation/heading-indicator[0]/man-correction</man-correction>
+	<quick-correction>/instrumentation/heading-indicator[0]/quick-correction</quick-correction>
+	<offset>/instrumentation/heading-indicator[0]/offset-deg</offset>
+    <electrical-power>/systems/electrical/outputs/heading-indicator-selsyn</electrical-power>
+  </params>
+   <name>GC1</name>
+   <x>295</x>
+   <y>285</y>
+   <w>40</w>
+   <h>80</h>
+  </instrument>
+
+  <instrument include="./Instruments/l410-slav_met-KA51B.xml">
+   <name>GC2</name>
+  <params>
+    <indicated-diff>/instrumentation/heading-indicator[1]/indicated-diff</indicated-diff>
+	<auto-man>/instrumentation/heading-indicator[1]/auto-correction</auto-man>
+	<man-correction>/instrumentation/heading-indicator[1]/man-correction</man-correction>	
+	<quick-correction>/instrumentation/heading-indicator[1]/quick-correction</quick-correction>
+	<offset>/instrumentation/heading-indicator[1]/offset-deg</offset>
+    <electrical-power>/systems/electrical/outputs/heading-indicator-selsyn</electrical-power>
+  </params>
+   
+   <x>350</x>
+   <y>285</y>
+   <w>40</w>
+   <h>80</h>
+  </instrument>
+
+<!--xpdr switch-->
+  <instrument include="./Instruments/l410-xpdr_switch.xml">
+   <name>xpdr switch</name>
+   <params>
+    <position>/instrumentation/xpdr-selected/selected</position>
+   </params>
+   <x>322</x>
+   <y>310</y>
+   <w>40</w>
+   <h>40</h>
+  </instrument>
+
+<!--xpdr switch end-->
+
+
+<!--compass switch-->
+  <instrument include="./Instruments/l410-gc_switch.xml">
+   <name>compass switch</name>
+   <params>
+    <position>/instrumentation/heading-indicator-selected/selected</position>
+   </params>
+   <x>322</x>
+   <y>262</y>
+   <w>60</w>
+   <h>40</h>
+  </instrument>
+
+<!--compass switch end-->
+
+
+
+  <instrument include="./Instruments/l410-ap_mod_sel-KMC321.xml">
+   <name>ap-mode-controler</name>
+   <x>110</x>
+   <y>295</y>
+   <w>160</w>
+   <h>55</h>
+   <params>
+        <electrical-power>/systems/electrical/outputs/autopilot</electrical-power>
+        <mode-ap-on>/instrumentation/autopilot/mode-ap-on</mode-ap-on>
+        <mode-ap-on>/instrumentation/autopilot/mode-fd-on</mode-ap-on>
+        <mode-alt-on>/instrumentation/autopilot/mode-alt-on</mode-alt-on>
+        <mode-hdg-on>/instrumentation/autopilot/mode-hdg-on</mode-hdg-on>
+        <mode-nav-on>/instrumentation/autopilot/mode-nav-on</mode-nav-on>
+        <mode-apr-on>/instrumentation/autopilot/mode-apr-on</mode-apr-on>
+        <ann-fd-on>/instrumentation/autopilot/ann-fd-on</ann-fd-on>
+        <ann-ap-on>/instrumentation/autopilot/ann-ap-on</ann-ap-on>
+        <ann-yd-on>/instrumentation/autopilot/ann-yd-on</ann-yd-on>
+        <ann-hb-on>/instrumentation/autopilot/ann-hb-on</ann-hb-on>
+        <ann-alt-on>/instrumentation/autopilot/ann-alt-on</ann-alt-on>
+        <ann-hdg-on>/instrumentation/autopilot/ann-hdg-on</ann-hdg-on>
+        <ann-nav-on>/instrumentation/autopilot/ann-nav-on</ann-nav-on>
+        <ann-nav-arm-on>/instrumentation/autopilot/ann-nav-arm-on</ann-nav-arm-on>
+        <ann-apr-on>/instrumentation/autopilot/ann-apr-on</ann-apr-on>
+        <ann-apr-arm-on>/instrumentation/autopilot/ann-apr-arm-on</ann-apr-arm-on>
+        <ann-bc-on>/instrumentation/autopilot/ann-bc-on</ann-bc-on>
+        <ann-trim-on>/instrumentation/autopilot/ann-trim-on</ann-trim-on>
+
+        <bulbs-test-on>/instrumentation/autopilot/bulbs-test-on</bulbs-test-on>
+   </params>
+  </instrument>
+
+  <instrument include="./Instruments/l410-com-LUN3524.xml">
+   <name>vhf1</name>
+     <params>
+       <sq>/instrumentation/comm[0]/sq</sq>
+       <sel>/instrumentation/comm[0]/sel</sel>       
+       <mode>/instrumentation/comm[0]/mode</mode>
+       <freq>/instrumentation/comm[0]/frequencies/selected-mhz</freq>
+       <volume>/instrumentation/comm[0]/volume</volume>
+	   <electrical-power>/systems/electrical/outputs/comm[0]</electrical-power>       
+     </params>       
+   <x>70</x>
+   <y>200</y>
+   <w>90</w>
+   <h>90</h>
+  </instrument>
+  <instrument include="./Instruments/l410-com-LUN3524.xml">
+   <name>vhf2</name>
+    <params>
+       <sq>/instrumentation/comm[1]/sq</sq>
+       <sel>/instrumentation/comm[1]/sel</sel>       
+       <mode>/instrumentation/comm[1]/mode</mode>
+       <freq>/instrumentation/comm[1]/frequencies/selected-mhz</freq>
+       <volume>/instrumentation/comm[1]/volume</volume>
+	   <electrical-power>/systems/electrical/outputs/comm[1]</electrical-power>       
+     </params>       
+    <x>165</x>
+   <y>200</y>
+   <w>90</w>
+   <h>90</h>
+  </instrument>
+
+
+
+
+  <instrument include="./Instruments/l410-nav-KFS584.xml">
+    <name>nav1</name>
+    <params>
+<!--      <nav-freq-selected-prop>/radios/nav[0]/frequencies/selected-mhz</nav-freq-selected-prop>
+      <nav-freq-standby-prop>/radios/nav[0]/frequencies/standby-mhz</nav-freq-standby-prop>
+      <nav-morse-id-volume-prop>/radios/nav[0]/volume</nav-morse-id-volume-prop>
+      <nav-morse-ident-toggle-prop>/radios/nav[0]/ident</nav-morse-ident-toggle-prop>
+	  <electrical-power>/systems/electrical/outputs/navcom[0]</electrical-power> -->
+      <nav-freq-selected-prop>/instrumentation/nav[0]/frequencies/selected-mhz</nav-freq-selected-prop>
+      <nav-freq-standby-prop>/instrumentation/nav[0]/frequencies/standby-mhz</nav-freq-standby-prop>
+      <nav-morse-id-volume-prop>/instrumentation/nav[0]/volume</nav-morse-id-volume-prop>
+      <nav-morse-ident-toggle-prop>/instrumentation/nav[0]/ident</nav-morse-ident-toggle-prop>
+	  <electrical-power>/systems/electrical/outputs/nav[0]</electrical-power>
+   </params>
+   <x>230</x>
+   <y>285</y>
+   <w>80</w>
+   <h>80</h>
+  </instrument>
+
+
+  <instrument include="./Instruments/l410-adf-KFS588.xml">
+   <name>adf1</name>
+    <params>
+      <adf-freq-selected-prop>/instrumentation/adf[0]/frequencies/selected-khz</adf-freq-selected-prop>
+      <adf-freq-standby-prop>/instrumentation/adf[0]/frequencies/standby-khz</adf-freq-standby-prop>
+	  <electrical-power>/systems/electrical/outputs/adf[0]</electrical-power>
+      <adf-volume-norm>/instrumentation/adf[0]/volume-norm</adf-volume-norm>
+      <adf-volume-switch>/instrumentation/adf[0]/ident-audible</adf-volume-switch>
+      <adf-mode-sw>/instrumentation/adf[0]/mode-sw</adf-mode-sw>
+      <adf-power-sw>/controls/switches/adf1-instr-sw</adf-power-sw>
+    </params>
+   <x>255</x>
+   <y>205</y>
+   <w>80</w>
+   <h>80</h>
+  </instrument>
+
+  <instrument include="./Instruments/l410-adf-KFS588.xml">
+   <name>adf2</name>
+    <params>
+      <adf-freq-selected-prop>/instrumentation/adf[1]/frequencies/selected-khz</adf-freq-selected-prop>
+      <adf-freq-standby-prop>/instrumentation/adf[1]/frequencies/standby-khz</adf-freq-standby-prop>
+	  <electrical-power>/systems/electrical/outputs/adf[1]</electrical-power>
+      <adf-volume-norm>/instrumentation/adf[1]/volume-norm</adf-volume-norm>
+      <adf-volume-switch>/instrumentation/adf[1]/ident-audible</adf-volume-switch>
+      <adf-mode-sw>/instrumentation/adf[1]/mode-sw</adf-mode-sw>
+      <adf-power-sw>/controls/switches/adf2-instr-sw</adf-power-sw>
+    </params>
+    <x>335</x>
+   <y>205</y>
+   <w>80</w>
+   <h>80</h>
+  </instrument>
+
+  <instrument include="./Instruments/l410-xpdr-KFS576.xml">
+   <name>xpdr1</name>
+     <params>
+       <number>/instrumentation/xpdr[0]/number</number>
+       <nasal-sel>/instrumentation/xpdr-selected/nasal-sel</nasal-sel>
+       <mode>/instrumentation/xpdr[0]/mode</mode>
+       <knob-pr-time>/instrumentation/xpdr[0]/knob-pr-time</knob-pr-time>
+
+       <disp>/instrumentation/xpdr[0]/disp</disp>
+       <sel-digit>/instrumentation/xpdr[0]/sel-digit</sel-digit>
+       
+       <on-off>/instrumentation/xpdr[0]/on</on-off>
+       <electrical-power>/systems/electrical/outputs/xpdr[0]</electrical-power>
+       <sby-flag>/instrumentation/xpdr[0]/an-sby</sby-flag>
+       <on-flag>/instrumentation/xpdr[0]/an-on</on-flag>
+       <alt-flag>/instrumentation/xpdr[0]/an-alt</alt-flag>
+       <idt-flag>/instrumentation/xpdr[0]/an-idt</idt-flag>
+       <r-flag>/instrumentation/xpdr[0]/an-r</r-flag>
+       <fl-flag>/instrumentation/xpdr[0]/an-fl</fl-flag>
+       
+       <code>/instrumentation/xpdr[0]/code</code>
+       <code-vfr>/instrumentation/xpdr[0]/code-vfr</code-vfr>
+     </params>
+   <x>255</x>
+   <y>125</y>
+   <w>80</w>
+   <h>80</h>
+  </instrument>
+
+  <instrument include="./Instruments/l410-xpdr-KFS576.xml">
+   <name>xpdr2</name>
+     <params>
+       <number>/instrumentation/xpdr[1]/number</number>
+       <nasal-sel>/instrumentation/xpdr-selected/nasal-sel</nasal-sel>
+       <mode>/instrumentation/xpdr[1]/mode</mode>
+       <knob-pr-time>/instrumentation/xpdr[1]/knob-pr-time</knob-pr-time>
+       
+       <disp>/instrumentation/xpdr[1]/disp</disp>
+       <sel-digit>/instrumentation/xpdr[1]/sel-digit</sel-digit>       
+
+       <on-off>/instrumentation/xpdr[1]/on</on-off>
+       <electrical-power>/systems/electrical/outputs/xpdr[1]</electrical-power>
+       <sby-flag>/instrumentation/xpdr[1]/an-sby</sby-flag>
+       <on-flag>/instrumentation/xpdr[1]/an-on</on-flag>
+       <alt-flag>/instrumentation/xpdr[1]/an-alt</alt-flag>
+       <idt-flag>/instrumentation/xpdr[1]/an-idt</idt-flag>
+       <r-flag>/instrumentation/xpdr[1]/an-r</r-flag>
+       <fl-flag>/instrumentation/xpdr[1]/an-fl</fl-flag>
+
+       <code>/instrumentation/xpdr[1]/code</code>
+       <code-vfr>/instrumentation/xpdr[1]/code-vfr</code-vfr>
+     </params>   
+   <x>335</x>
+   <y>125</y>
+   <w>80</w>
+   <h>80</h>
+  </instrument>
+
+    <instrument include="./Instruments/l410-data_rec-BUR-1-2-G.xml">
+   <name>fd-rec</name>
+     <params>
+       <electrical-power>/systems/electrical/outputs/flight-rec</electrical-power>
+     </params>      
+   <x>292</x>
+   <y>52</y>
+   <w>168</w>
+   <h>67</h>
+  </instrument>
+
+    <instrument include="./Instruments/l410-hf-KHF950.xml">
+   <name>hf</name>
+   <x>115</x>
+   <y>123</y>
+   <w>170</w>
+   <h>66</h>
+  </instrument>
+  <instrument include="./Instruments/l410-voice_rec-A100A.xml">
+   <name>voice-rec</name>
+   <x>115</x>
+   <y>58</y>
+   <w>170</w>
+   <h>60</h>
+  </instrument>
+
+
+
+
+ </instruments>
+
+
+</PropertyList>

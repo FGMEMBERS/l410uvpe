@@ -1,0 +1,112 @@
+<?xml version="1.0"?>
+
+
+
+<PropertyList>
+
+ <name>termom</name>
+
+ <w-base>104</w-base>
+ <h-base>104</h-base>
+
+ <layers>
+
+<layer>
+   <name>background</name>
+   <texture>
+    <path>Aircraft/l410uvpe/Instruments/Textures/l410-termom.rgb</path>
+    <x1>0.0</x1>
+    <y1>0.0</y1>
+    <x2>0.5</x2>
+    <y2>1.0</y2>   
+   </texture>
+  </layer>
+  
+  <layer>
+   <name>glare shield</name>
+   <texture>
+    <path>Aircraft/l410uvpe/Instruments/Textures/bezel1.rgb</path>
+    <x1>0.5</x1>
+    <y1>0.0</y1>
+    <x2>1.0</x2>
+    <y2>0.5</y2>
+   </texture>
+  <w>110</w>
+  <h>110</h>
+   <transformations>
+    <transformation>
+     <type>x-shift</type>
+     <offset>2</offset>
+    </transformation>
+    <transformation>
+     <type>y-shift</type>
+     <offset>-2</offset>
+    </transformation>
+    </transformations>
+  </layer>  
+  
+  <layer>
+   <name>needle-1</name>
+   <texture>
+    <path>Aircraft/l410uvpe/Instruments/Textures/l410-termom.rgb</path>
+    <x1>0.6172</x1>
+    <y1>0.0859</y1>
+    <x2>0.6602</x2>
+    <y2>0.4141</y2>
+   </texture>
+   <w>8</w>
+   <h>23</h>
+   <transformations>  
+    <transformation>	
+       <type>y-shift</type>
+       <offset>3</offset>
+     </transformation>	   
+     <transformation>
+       <type>rotation</type>
+       <property>/instrumentation/temperature/indicated-inner-temp-degc</property>
+       <scale>3</scale>
+       <offset>301</offset>
+       <min>-10</min>
+       <max>50</max>
+     </transformation>
+     <transformation>	
+       <type>y-shift</type>
+       <offset>22</offset>
+     </transformation>	
+   </transformations>   
+  </layer>      
+  
+  <layer>
+   <name>needle-2</name>
+   <texture>
+    <path>Aircraft/l410uvpe/Instruments/Textures/l410-termom.rgb</path>
+    <x1>0.6172</x1>
+    <y1>0.0859</y1>
+    <x2>0.6602</x2>
+    <y2>0.4141</y2>
+   </texture>
+   <w>8</w>
+   <h>23</h>
+   <transformations>  
+    <transformation>	
+       <type>y-shift</type>
+       <offset>-38</offset>
+     </transformation>	   
+     <transformation>
+       <type>rotation</type>
+       <property>/instrumentation/temperature/indicated-heating-temp-degc</property>
+       <scale>1.2</scale> <!-- 120stupnu max hodnota na 1.0 vstup -->
+       <offset>301</offset>
+       <min>-10</min>
+       <max>110</max>
+     </transformation>
+     <transformation>	
+       <type>y-shift</type>
+       <offset>22</offset>
+     </transformation>	
+   </transformations>   
+  </layer>        
+  
+  
+ </layers>
+</PropertyList>

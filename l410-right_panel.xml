@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+
+<!--
+L410 panel.
+Javky <javky@email.cz>
+_______________________________________________________________________
+-->
+
+<!DOCTYPE PropertyList SYSTEM "panel.dtd">
+
+<PropertyList>
+
+ <name>L410-front-panel</name>
+ <background>Aircraft/l410uvpe/transparent-bg.rgb</background>
+ <w>400</w>
+ <h>400</h>
+
+ <instruments>
+  <instrument include="./Instruments/l410-table.xml">
+   <name>Engine starting</name>
+   <x>200</x>
+   <y>200</y>
+   <w>400</w>
+   <h>400</h>
+  </instrument>
+ </instruments>
+
+
+</PropertyList>

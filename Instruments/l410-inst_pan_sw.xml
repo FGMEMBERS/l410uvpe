@@ -1,0 +1,340 @@
+<?xml version="1.0"?>
+
+<!--
+
+INSTRUMENT PANEL SWITCHES - vypinani horizontu (nase!)
+
+-->
+
+<PropertyList>
+
+ <name>Instrument panel switches</name>
+
+  <w-base>80</w-base>
+  <h-base>64</h-base>
+  
+
+
+ <params>
+  <attitude-sw>/controls/switches/attitude1-sw</attitude-sw>
+  <attitude-electrical-sw>/controls/switches/attitude-gyro1-sw</attitude-electrical-sw>
+  <turn-sw>/controls/switches/turn1-sw</turn-sw>
+  <turn-electrical-sw>/controls/switches/turn-gyro1-sw</turn-electrical-sw>
+ </params>
+
+  <layers>
+  
+
+   
+<!--Zapinani generatoru -->
+
+ <layer>
+   <name>IP_horiz</name>
+   <type>switch</type>
+   <layer>
+     <condition>
+      <equals>
+      <!-- <property>/controls/switches/horizont-sw</property> -->
+      <property alias="../../../../../../params/attitude-sw"/>
+      <value>0</value>
+      </equals>
+     </condition>
+     <name>off</name>
+     <texture>
+     <path>Aircraft/l410uvpe/Instruments/Textures/l410-packy2.rgb</path>
+     <x1>0.375</x1>
+     <x2>0.475</x2>
+     <y1>0.4</y1>
+     <y2>1.0</y2>
+     </texture>
+     <w>32</w>
+     <h>64</h>
+   </layer>
+    <transformations>
+      <transformation>
+        <type>x-shift</type> 
+        <offset>20</offset> 
+      </transformation>
+    </transformations>   
+ </layer>
+ <layer>
+   <name>IP_horiz</name>
+   <type>switch</type>
+    <layer>
+     <condition>
+      <equals>
+<!--       <property>/controls/switches/horizont-sw</property> -->
+      <property alias="../../../../../../params/attitude-sw"/>
+      <value>1</value>
+      </equals>
+     </condition>
+     <name>on-kl</name>
+     <texture>
+     <path>Aircraft/l410uvpe/Instruments/Textures/l410-packy2.rgb</path>
+     <x1>0.5</x1>
+     <x2>0.6</x2>
+     <y1>0.4</y1>
+     <y2>1.0</y2>
+     </texture>
+     <w>32</w>
+     <h>64</h>
+   </layer>
+    <transformations>
+      <transformation>
+        <type>x-shift</type> 
+        <offset>20</offset> 
+      </transformation>
+    </transformations>   
+</layer>
+ <layer>
+   <name>IP_horiz</name>
+   <type>switch</type>
+    <layer>
+     <condition>
+      <equals>
+<!--      <property>/controls/switches/horizont-sw</property> -->
+      <property alias="../../../../../../params/attitude-sw"/>
+      <value>2</value>
+      </equals>
+     </condition>
+     <name>on</name>
+     <texture>
+     <path>Aircraft/l410uvpe/Instruments/Textures/l410-packy2.rgb</path>
+     <x1>0.25</x1>
+     <x2>0.35</x2>
+     <y1>0.4</y1>
+     <y2>1.0</y2>
+     </texture>
+     <w>32</w>
+     <h>64</h>
+   </layer>
+    <transformations>
+      <transformation>
+        <type>x-shift</type> 
+        <offset>20</offset> 
+      </transformation>
+    </transformations>   
+
+</layer>
+
+
+
+ <layer>
+   <name>IP_turn</name>
+   <type>switch</type>
+    <layer>
+     <condition>
+      <equals>
+<!--       <property>/controls/switches/turnbank-sw</property> -->
+      <property alias="../../../../../../params/turn-sw"/>
+      <value>0</value>
+      </equals>
+     </condition>
+     <name>on</name>
+     <texture>
+     <path>Aircraft/l410uvpe/Instruments/Textures/l410-packy2.rgb</path>
+     <x1>0.375</x1>
+     <x2>0.475</x2>
+     <y1>0.4</y1>
+     <y2>1.0</y2>
+     </texture>
+     <w>32</w>
+     <h>64</h>
+    </layer>
+   <transformations>
+    <transformation>
+    <type>x-shift</type>
+    <offset>-12</offset>
+    </transformation>
+    <transformation>
+    <type>y-shift</type>
+    <offset>0</offset>
+    </transformation>
+   </transformations>
+</layer>
+
+ <layer>
+   <name>IP_turn</name>
+   <type>switch</type>
+    <layer>
+     <condition>
+      <equals>
+      <property alias="../../../../../../params/turn-sw"/>
+<!--      <property>/controls/switches/turnbank-sw</property> -->
+      <value>1</value>
+      </equals>
+     </condition>
+     <name>on</name>
+     <texture>
+     <path>Aircraft/l410uvpe/Instruments/Textures/l410-packy2.rgb</path>
+     <x1>0.5</x1>
+     <x2>0.6</x2>
+     <y1>0.4</y1>
+     <y2>1.0</y2>
+     </texture>
+     <w>32</w>
+     <h>64</h>
+    </layer>
+   <transformations>
+    <transformation>
+    <type>x-shift</type>
+    <offset>-12</offset>
+    </transformation>
+    <transformation>
+    <type>y-shift</type>
+    <offset>0</offset>
+    </transformation>
+   </transformations>
+</layer>
+
+ <layer>
+   <name>IP_turn</name>
+   <type>switch</type>
+    <layer>
+     <condition>
+      <equals>
+      <property alias="../../../../../../params/turn-sw"/>
+<!--      <property>/controls/switches/turnbank-sw</property> -->
+      <value>2</value>
+      </equals>
+     </condition>
+     <name>on</name>
+     <texture>
+     <path>Aircraft/l410uvpe/Instruments/Textures/l410-packy2.rgb</path>
+     <x1>0.25</x1>
+     <x2>0.35</x2>
+     <y1>0.4</y1>
+     <y2>1.0</y2>
+     </texture>
+     <w>32</w>
+     <h>64</h>
+    </layer>
+   <transformations>
+    <transformation>
+    <type>x-shift</type>
+    <offset>-12</offset>
+    </transformation>
+    <transformation>
+    <type>y-shift</type>
+    <offset>0</offset>
+    </transformation>
+   </transformations>
+  </layer>
+
+
+  </layers>
+
+
+ <actions>
+
+   <action>
+     <name>sw-horiz1</name>
+     <button>0</button>
+     <x>4</x>
+     <y>0</y>
+     <w>32</w>
+     <h>32</h>
+     <binding>
+       <command>property-adjust</command>
+<!--        <property>/controls/switches/horizont-sw</property> -->
+       <property alias="../../../../params/attitude-sw"/>
+       <step>-1</step>
+       <min>0</min>
+       <max>2</max>
+       <wrap>0</wrap>
+     </binding>
+     <binding>
+       <condition>
+         <equals>
+           <property alias="../../../../../../params/attitude-sw"/>
+<!--           <property>/controls/switches/horizont-sw</property> -->
+           <value>0</value>
+         </equals>
+       </condition>
+       <command>property-assign</command>
+       <property alias="../../../../params/attitude-electrical-sw"/>
+<!--       <property>/controls/switches/attitude-gyro1-sw</property> -->
+       <value>false</value>
+     </binding>
+   </action>
+   <action>
+     <name>sw-horiz2</name>
+     <button>0</button>
+     <x>4</x>
+     <y>-32</y>
+     <w>32</w>
+     <h>32</h>
+     <binding>
+       <command>property-adjust</command>
+       <property alias="../../../../params/attitude-sw"/>
+<!--       <property>/controls/switches/horizont-sw</property> -->
+       <step>2</step>
+       <min>0</min>
+       <max>2</max>
+       <wrap>0</wrap>
+     </binding>
+     <binding>
+       <command>property-assign</command>
+       <property alias="../../../../params/attitude-electrical-sw"/>
+<!--       <property>/controls/switches/attitude-gyro1-sw</property> -->
+       <value>true</value>
+     </binding>
+   </action>
+
+   <action>
+     <name>sw-turn1</name>
+     <button>0</button>
+     <x>-28</x>
+     <y>0</y>
+     <w>32</w>
+     <h>32</h>
+     <binding>
+       <command>property-adjust</command>
+       <property alias="../../../../params/turn-sw"/>
+<!--        <property>/controls/switches/turnbank-sw</property> -->
+       <step>-1</step>
+       <min>0</min>
+       <max>2</max>
+       <wrap>0</wrap>
+     </binding>
+     <binding>
+       <condition>
+         <equals>
+           <property alias="../../../../../../params/turn-sw"/>
+<!--           <property>/controls/switches/turnbank-sw</property> -->
+           <value>0</value>
+         </equals>
+       </condition>
+       <command>property-assign</command>
+<!--       <property>/controls/switches/turn-gyro-sw</property> -->
+       <property alias="../../../../params/turn-electrical-sw"/>
+       <value>false</value>
+     </binding>
+   </action>
+   <action>
+     <name>sw-turn2</name>
+     <button>0</button>
+     <x>-28</x>
+     <y>-32</y>
+     <w>32</w>
+     <h>32</h>
+     <binding>
+       <command>property-adjust</command>
+<!--       <property>/controls/switches/turnbank-sw</property> -->
+       <property alias="../../../../params/turn-sw"/>
+       <step>2</step>
+       <min>0</min>
+       <max>2</max>
+       <wrap>0</wrap>
+     </binding>
+     <binding>
+       <command>property-assign</command>
+<!--       <property>/controls/switches/turn-gyro-sw</property> -->
+       <property alias="../../../../params/turn-electrical-sw"/>
+       <value>true</value>
+     </binding>
+   </action>
+
+ </actions>
+
+</PropertyList>

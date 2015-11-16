@@ -1,0 +1,100 @@
+<?xml version="1.0"?>
+<!--
+L410 Sim settings
+(views, autopilot, tanks, default trim)
+Javky <javky@email.cz>
+_______________________________________________________________________
+-->
+
+<PropertyList include="l410-variables.xml">
+
+
+ <sim>
+ 
+  <panel>
+   <visibility archive="y">false</visibility>
+  </panel>
+
+  <view n="0">
+   <internal archive="y">true</internal>
+   <config>
+     <x-offset-m archive="y">-0.45</x-offset-m>
+     <y-offset-m archive="y">0.4</y-offset-m>
+     <z-offset-m archive="y">-0.2</z-offset-m>
+     <pitch-offset-deg>-14</pitch-offset-deg>
+     <heading-offset-deg>-4</heading-offset-deg>
+
+     <heading>76.91</heading>
+     <pitch>-27.15</pitch>
+     <radius>0.89</radius>
+   </config>
+  </view>
+
+    <view n="101">
+  <name>passenger</name>
+   <internal archive="y" type="bool">true</internal>
+   <type>lookfrom</type>
+   <config>
+     <x-offset-m archive="y">0.55</x-offset-m>
+     <y-offset-m archive="y">0.3</y-offset-m>
+     <z-offset-m archive="y">4</z-offset-m>
+     <pitch-offset-deg>-14</pitch-offset-deg>
+     <heading-offset-deg>0</heading-offset-deg>
+
+     <heading>76.91</heading>
+     <pitch>-27.15</pitch>
+     <radius>0.89</radius>
+
+     <from-model type="bool">true</from-model>
+     <from-model-idx type="int">0</from-model-idx>
+     <ground-level-nearplane-m type="double">0.5f</ground-level-nearplane-m>
+   </config>
+  </view>
+
+  <view n="102">
+  <name>copilot</name>
+   <internal archive="y" type="bool">true</internal>
+   <type>lookfrom</type>
+   <config>
+     <x-offset-m archive="y">0.45</x-offset-m>
+     <y-offset-m archive="y">0.4</y-offset-m>
+     <z-offset-m archive="y">-0.2</z-offset-m>
+     <pitch-offset-deg>-14</pitch-offset-deg>
+     <heading-offset-deg>4</heading-offset-deg>
+
+     <heading>76.91</heading>
+     <pitch>-27.15</pitch>
+     <radius>0.89</radius>
+
+     <from-model type="bool">true</from-model>
+     <from-model-idx type="int">0</from-model-idx>
+     <ground-level-nearplane-m type="double">0.5f</ground-level-nearplane-m>
+   </config>
+  </view>
+  
+ <number-views type="int">8</number-views>
+<!--
+  <view n="2">
+   <internal archive="y" type="bool">true</internal>
+   <type>lookfrom</type>
+   <config>
+     <x-offset-m archive="y">0.45</x-offset-m>
+     <y-offset-m archive="y">0.75</y-offset-m>
+     <z-offset-m archive="y">-0.2</z-offset-m>
+     <pitch-offset-deg>-14</pitch-offset-deg>
+     <heading-offset-deg>4</heading-offset-deg>
+
+     <heading>76.91</heading>
+     <pitch>-27.15</pitch>
+     <radius>0.89</radius>
+
+     <from-model type="bool">true</from-model>
+     <from-model-idx type="int">0</from-model-idx>
+     <ground-level-nearplane-m type="double">0.5f</ground-level-nearplane-m>
+   </config>
+  </view>
+    -->
+
+ </sim>
+
+</PropertyList>

@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+
+<!--
+
+(nase!)
+
+-->
+
+<PropertyList>
+
+ <name>labels</name>
+
+  <w-base>160</w-base>
+  <h-base>35</h-base>
+
+  <layers>
+<!--
+ <layer>
+   <name>DESKA</name>
+     <texture>
+     <path>Aircraft/l410uvpe/Instruments/Textures/l410-neex.rgb</path>
+     <x1>0.0</x1>
+     <x2>1.0</x2>
+     <y1>0.0</y1>
+     <y2>0.7</y2>
+     </texture>
+     <w>200</w>
+     <h>50</h>
+  </layer>
+-->
+ <layer>
+   <name>label id</name>
+     <texture>
+     <path>Aircraft/l410uvpe/Instruments/Textures/labels-2.rgb</path>
+     <x1>0.0</x1>
+     <x2>0.52</x2>
+     <y1>0.502</y1>
+     <y2>0.748</y2>
+     </texture>
+     <w>70</w>
+     <h>30</h>
+    <transformations>
+      <transformation>
+        <type>x-shift</type> 
+        <offset>-40</offset> 
+      </transformation>
+      <transformation>
+        <type>y-shift</type> 
+        <offset>0</offset> 
+      </transformation>
+    </transformations>
+  </layer>
+
+  <layer>
+  <name>label id</name>
+  <texture>
+	  <path>Aircraft/l410uvpe/Instruments/Textures/labels-2.rgb</path>
+	  <x1>0.52</x1>
+	  <x2>1.0</x2>
+	  <y1>0.502</y1>
+	  <y2>0.748</y2>
+  </texture>
+  <w>60</w>
+  <h>35</h>
+  <transformations>
+	  <transformation>
+		  <type>x-shift</type> 
+		  <offset>60</offset> 
+	  </transformation>
+	  <transformation>
+		  <type>y-shift</type> 
+		  <offset>0</offset> 
+	  </transformation>
+  </transformations>
+  </layer>  
+  </layers>
+
+</PropertyList>

@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+
+<!--
+L410 panel.
+Javky <javky@email.cz>
+_______________________________________________________________________
+-->
+
+<!DOCTYPE PropertyList SYSTEM "panel.dtd">
+
+<PropertyList>
+
+
+<name>L410-doorpanel</name>
+ <background>Aircraft/l410uvpe/Instruments/Textures/l410-KCI310.rgb</background>
+ <w>1800</w>
+ <h>2500</h>
+
+ <instruments>
+
+   <instrument include="./Instruments/l410-door.xml">
+    <name>Airspeed Indicator</name>
+    <x>900</x>
+    <y>1250</y>
+    <w>1800</w>
+    <h>2500</h>
+</instrument>
+
+
+ </instruments>
+
+
+</PropertyList>

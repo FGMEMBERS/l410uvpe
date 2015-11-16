@@ -1,0 +1,152 @@
+<?xml version="1.0"?>
+<!--
+
+L410 WARNING DISPLAY - BANK(nas!)
+
+-->
+
+<PropertyList>
+ <name>Warning display bank</name>
+ <w-base>80</w-base>
+ <h-base>24</h-base>
+
+ <layers>
+
+<!-- sloupek 0 -->
+  <layer>
+   <name>Pozadi s rameckem 03</name>
+   <texture>
+    <path>Aircraft/l410uvpe/Instruments/Textures/l410-svet.rgb</path>
+    <x1>0.0</x1>
+    <y1>0.0</y1>
+    <x2>0.18945</x2>
+    <y2>0.09570</y2>
+   </texture>
+  <w>48</w>
+  <h>24</h>
+          <transformations>
+            <transformation>
+              <type>x-shift</type>
+              <offset>-105</offset>
+            </transformation>
+          </transformations>
+  </layer>
+  <layer>
+   <name>Pozadi s rameckem 00</name>
+   <texture>
+    <path>Aircraft/l410uvpe/Instruments/Textures/l410-svet.rgb</path>
+    <x1>0.0</x1>
+    <y1>0.0</y1>
+    <x2>0.18945</x2>
+    <y2>0.09570</y2>
+   </texture>
+  <w>48</w>
+  <h>24</h>
+          <transformations>
+            <transformation>
+              <type>x-shift</type>
+              <offset>105</offset>
+            </transformation>
+          </transformations>
+  </layer>
+<!-- svetylka  -->
+
+ <layer>
+   <name>bank-l_wd</name>
+   <type>switch</type>
+    <layer>
+     <condition>
+ 	  <and>
+		 <greater-than>
+           <property>/systems/electrical/outputs/cwd-airframe</property>
+		   <value>10</value>
+		 </greater-than>
+      <or>
+        <property>/instrumentation/warn-disp/wd-bank-l</property>
+        <property>/controls/switches/chck-airframe-sw</property>
+      </or>
+	  </and>
+    </condition>
+     <name>on</name>
+     <texture>
+     <path>Aircraft/l410uvpe/Instruments/Textures/l410-svet.rgb</path>
+     <x1>0.52734</x1>
+     <x2>0.69727</x2>
+     <y1>0.17578</y1>
+     <y2>0.25000</y2>
+     </texture>
+     <w>46</w>
+     <h>22</h>
+	 <emissive>true</emissive>
+    </layer>
+    <layer>
+     <name>off</name>
+     <texture>
+     <path>Aircraft/l410uvpe/Instruments/Textures/l410-svet.rgb</path>
+     <x1>0.52734</x1>
+     <x2>0.69727</x2>
+     <y1>0.09961</y1>
+     <y2>0.17383</y2>
+     </texture>
+     <w>46</w>
+     <h>22</h>
+   </layer>
+   <transformations>
+    <transformation>
+    <type>x-shift</type>
+    <offset>-105</offset>
+    </transformation>
+   </transformations>
+  </layer>
+
+ <layer>
+   <name>bank-r_wd</name>
+   <type>switch</type>
+    <layer>
+     <condition>
+ 	  <and>
+		 <greater-than>
+           <property>/systems/electrical/outputs/cwd-airframe</property>
+		   <value>10</value>
+		 </greater-than>
+      <or>
+        <property>/instrumentation/warn-disp/wd-bank-r</property>
+        <property>/controls/switches/chck-airframe-sw</property>
+      </or>
+	  </and>
+     </condition>
+     <name>on</name>
+     <texture>
+     <path>Aircraft/l410uvpe/Instruments/Textures/l410-svet.rgb</path>
+     <x1>0.70117</x1>
+     <x2>0.87305</x2>
+     <y1>0.17578</y1>
+     <y2>0.25000</y2>
+     </texture>
+     <w>46</w>
+     <h>22</h>
+	 <emissive>true</emissive>
+    </layer>
+    <layer>
+     <name>off</name>
+     <texture>
+     <path>Aircraft/l410uvpe/Instruments/Textures/l410-svet.rgb</path>
+     <x1>0.70117</x1>
+     <x2>0.87305</x2>
+     <y1>0.09961</y1>
+     <y2>0.17383</y2>
+     </texture>
+     <w>46</w>
+     <h>22</h>
+   </layer>
+   <transformations>
+    <transformation>
+    <type>x-shift</type>
+    <offset>+105</offset>
+    </transformation>
+   </transformations>
+  </layer>
+
+ </layers>
+
+</PropertyList>

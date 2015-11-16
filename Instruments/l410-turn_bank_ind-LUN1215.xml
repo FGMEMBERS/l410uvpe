@@ -1,0 +1,236 @@
+<?xml version="1.0"?>
+
+<!--
+
+SKLON (nase!)
+
+-->
+
+<PropertyList>
+
+ <name>Sklon</name>
+
+  <w-base>128</w-base>
+  <h-base>128</h-base>
+
+    <params>
+        <turn-rate>/instrumentation/turn-indicator[0]/indicated-turn-rate</turn-rate>
+        <spin>/instrumentation/turn-indicator[0]/spin</spin>
+    </params>
+   
+   <layers>
+    <layer>
+     <name>gauge face</name>
+     <texture>   
+     <path>Aircraft/l410uvpe/Instruments/Textures/l410-sklon.rgb</path>
+     <x1>0.0</x1>
+     <y1>0.0</y1>
+     <x2>0.5</x2>
+     <y2>1.0</y2>
+     </texture>
+     <w>120</w>
+     <h>120</h>
+    </layer>
+
+  <layer>
+    <name>Rucicka</name>
+   <texture>
+    <path>Aircraft/l410uvpe/Instruments/Textures/l410-sklon.rgb</path>
+    <x1>0.5</x1>
+    <y1>0.0</y1>
+    <x2>0.5781</x2>
+    <y2>0.7344</y2>
+   </texture>
+   <w>12</w>
+   <h>64</h>
+   <transformations>
+    <transformation>
+    <type>y-shift</type>
+    <offset>-8</offset>
+    </transformation>
+
+     <transformation>
+      <type>rotation</type>
+<!--      <property>/instrumentation/turn-indicator/indicated-turn-rate</property> -->
+      <property alias='../../../../../params/turn-rate'/>
+      <min>-1.0</min>
+      <max>1.0</max>
+      <scale>60</scale>
+     </transformation>
+    <transformation>
+    <type>y-shift</type>
+    <offset>15</offset>
+    </transformation>
+
+   </transformations>
+  </layer> 
+
+
+ <layer>
+   <name>Praporek</name>
+   <type>switch</type>
+    <layer>
+     <condition>
+<!--      <not>
+      <property>/instrumentation/turn-bank/switched-on</property>
+      </not> -->
+      <less-than>
+<!--        <property>/instrumentation/turn-indicator/spin</property> -->
+        <property alias='../../../../../../params/spin'/>
+        <value>0.9</value>
+      </less-than>
+     </condition>
+     <name>off</name>
+     <texture>
+     <path>Aircraft/l410uvpe/Instruments/Textures/l410-sklon.rgb</path>
+     <x1>0.625</x1>
+     <x2>0.8125</x2>
+     <y1>0.5</y1>
+     <y2>0.8672</y2>
+     </texture>
+     <w>40</w>
+     <h>40</h>
+   </layer>
+   <transformations>
+    <transformation>
+    <type>x-shift</type>
+    <offset>-32</offset>
+    </transformation>
+    <transformation>
+    <type>y-shift</type>
+    <offset>5</offset>
+    </transformation>
+   </transformations>
+  </layer>
+
+    <layer>
+     <name>prekryti</name>
+     <texture>   
+     <path>Aircraft/l410uvpe/Instruments/Textures/l410-sklon.rgb</path>
+     <x1>0.625</x1>
+     <y1>0.0</y1>
+     <x2>1.0</x2>
+     <y2>0.4141</y2>
+     </texture>
+     <w>120</w>
+     <h>64</h>
+   <transformations>
+    <transformation>
+     <type>y-shift</type>
+     <offset>-32</offset>
+    </transformation>
+   </transformations>
+    </layer>
+             
+
+<!-- kulicka -->
+
+  <layer>
+   <name>tube-back</name>
+   <texture>
+    <path>Aircraft/l410uvpe/Instruments/Textures/maintc.rgb</path>
+    <x1>0.01171875</x1>
+    <x2>0.9921875</x2>
+    <y1>0.7421875</y1>
+    <y2>1.0</y2>
+   </texture>
+   <w>60</w>
+   <h>20</h>
+  <transformations>
+  <transformation> 
+    <type>y-shift</type>
+	<offset>-25</offset>
+   </transformation>
+   </transformations>
+  </layer>
+
+  <layer>
+   <name>ball</name>
+   <texture>
+    <path>Aircraft/l410uvpe/Instruments/Textures/maintc.rgb</path>
+    <x1>0.00390625</x1>
+    <x2>0.16796875</x2>
+    <y1>0.2890625</y1>
+    <y2>0.453125</y2>
+   </texture>
+   <w>10</w>
+   <h>11</h>
+   <transformations>
+    <transformation>
+     <type>rotation</type>
+     <property>/instrumentation/slip-skid-ball/indicated-slip-skid</property>
+     <min>-1</min>
+     <max>1</max>
+     <scale>50.0</scale>
+    </transformation>
+    <transformation>
+     <type>y-shift</type>
+     <property>/instrumentation/slip-skid-ball/indicated-slip-skid</property>
+      <min>-1</min>
+      <max>0.0</max> 
+      <scale>5.0</scale>
+    </transformation>
+    <transformation>
+     <type>y-shift</type>
+     <property>/instrumentation/slip-skid-ball/indicated-slip-skid</property>
+      <min>0.0</min>
+      <max>1</max> 
+      <scale>-5.0</scale>
+    </transformation>
+    <transformation>
+     <type>y-shift</type>
+     <offset>-28</offset>
+    </transformation> 
+   </transformations>
+  </layer>
+  <layer>
+   <name>tube</name>
+   <texture>
+    <path>Aircraft/l410uvpe/Instruments/Textures/maintc.rgb</path>
+    <x1>0.01171875</x1>
+    <x2>0.9921875</x2>
+    <y1>0.015625</y1>
+    <y2>0.2890625</y2>
+   </texture>
+   <w>60</w>
+   <h>20</h>
+  <transformations>
+  <transformation> 
+    <type>y-shift</type>
+	<offset>-25</offset>
+   </transformation>
+   </transformations>
+  </layer>
+
+
+<!-- dekl -->
+  <layer>
+   <name>glare shield</name>
+   <texture>
+    <path>Aircraft/l410uvpe/Instruments/Textures/bezel1.rgb</path>
+    <x1>0.5</x1>
+    <y1>0.0</y1>
+    <x2>1.0</x2>
+    <y2>0.5</y2>
+   </texture>
+  <w>128</w>
+  <h>128</h>
+   <transformations>
+    <transformation>
+     <type>x-shift</type>
+     <offset>2</offset>
+    </transformation>
+    <transformation>
+     <type>y-shift</type>
+     <offset>-2</offset>
+    </transformation>
+    </transformations>
+  </layer>
+
+
+
+  </layers>
+
+
+
+</PropertyList>

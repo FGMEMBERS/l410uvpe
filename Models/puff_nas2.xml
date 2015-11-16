@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+ <path>smoke2.ac</path>
+ <animation>
+	 <type>rotate</type>
+	 <object-name>Sphere</object-name>
+	 <property>sim/time/elapsed-sec</property>
+	 <factor>-100</factor>
+	 <center>
+		 <x-m>0.0</x-m>
+		 <y-m>0.1</y-m>
+		 <z-m>0.2</z-m>
+	 </center>
+	 <axis>
+		 <x>1</x>
+		 <y>1</y>
+		 <z>0</z>
+	 </axis>
+ </animation>
+</PropertyList>

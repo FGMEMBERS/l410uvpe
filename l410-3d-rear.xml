@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+
+<!--
+L410 panel.
+Javky <javky@email.cz>
+_______________________________________________________________________
+-->
+
+<!DOCTYPE PropertyList SYSTEM "panel.dtd">
+
+<PropertyList>
+
+ <name>L410-rear-panel</name>
+ <background>Aircraft/l410uvpe/transparent-bg.rgb</background>
+ <w>400</w>
+ <h>165</h>
+
+ <instruments>
+
+  <instrument include="./Instruments/l410-rear_panel_switches.xml">
+   <name>spoil switches</name>
+   <x>255</x>
+   <y>75</y>
+   <w>150</w>
+   <h>140</h>
+  </instrument>
+
+
+
+  <instrument include="./Instruments/l410-fire.xml">
+   <name>fire buttons</name>
+   <x>125</x>
+   <y>37</y>
+   <w>95</w>
+   <h>95</h>
+  </instrument>
+
+  <instrument include="./Instruments/l410-gear_labels.xml">
+   <name>gear labels</name>
+   <x>48</x>
+   <y>100</y>
+   <w>40</w>
+   <h>140</h>
+  </instrument>
+
+  <instrument include="./Instruments/l410-flaps_labels.xml">
+   <name>flaps labels</name>
+   <x>356</x>
+   <y>90</y>
+   <w>40</w>
+   <h>130</h>
+  </instrument>
+
+
+
+
+</instruments>
+
+
+</PropertyList>

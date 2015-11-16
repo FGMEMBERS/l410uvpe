@@ -1,0 +1,142 @@
+<?xml version="1.0"?>
+
+<!--
+
+KNS 81 (NAV 2)(nase!)
+
+-->
+
+<PropertyList>
+
+ <name>kfs pokus</name>
+
+  <w-base>512</w-base>
+  <h-base>200</h-base>
+
+  <layers>
+  
+    <!-- LABELS -->
+    <layer>
+      <name>podklad</name>
+      <texture>
+        <path>Aircraft/l410uvpe/Instruments/Textures/l410-hf.rgb</path>
+        <x1>0.0</x1>
+        <x2>1.0</x2>
+        <y1>0.2266</y1>
+        <y2>1.0</y2>
+      </texture>
+      <w>512</w>
+      <h>200</h>
+      <transformations>
+        <transformation>
+          <type>x-shift</type>
+          <offset>0</offset>
+        </transformation>
+        <transformation>
+          <type>y-shift</type>
+          <offset>0</offset>
+        </transformation>
+      </transformations>
+    </layer>
+
+<!-- napisy na displeji -->
+
+  <layer>
+   <name>frequencies</name>
+   <type>text</type>
+   <font>led</font>
+   <point-size>17</point-size>
+   <color>
+    <red>1.0</red>
+    <green>0.4</green>
+    <blue>0.1</blue>
+   </color>
+   <chunks>
+    <chunk>
+     <type>number-value</type>
+     <property>/engines/engine[0]/N1</property>
+     <format>%06.2f</format>
+    </chunk>
+   </chunks>
+   <transformations>
+    <transformation>
+     <type>x-shift</type>
+     <offset>-170</offset>
+    </transformation>
+    <transformation>
+     <type>y-shift</type>
+     <offset>33</offset>
+    </transformation>
+   </transformations>
+  </layer>
+
+  <layer>
+   <name>frequencies</name>
+   <type>text</type>
+   <font>led</font>
+   <point-size>17</point-size>
+   <color>
+    <red>1.0</red>
+    <green>0.4</green>
+    <blue>0.1</blue>
+   </color>
+   <chunks>
+    <chunk>
+     <type>number-value</type>
+     <property>/surface-positions/flap-pos-norm</property>
+     <format>%1.0f</format>
+    </chunk>
+   </chunks>
+   <transformations>
+    <transformation>
+     <type>x-shift</type>
+     <offset>-10</offset>
+    </transformation>
+    <transformation>
+     <type>y-shift</type>
+     <offset>33</offset>
+    </transformation>
+   </transformations>
+  </layer>
+ 
+
+
+  </layers>
+
+ <actions>
+
+  <action>
+   <name>sw-isolvalve1</name>
+   <button>0</button>
+   <x>-70</x>
+   <y>0</y>
+   <w>32</w>
+   <h>32</h>
+   <binding>
+      <command>property-adjust</command>
+      <property>/controls/switches/isolvalve1-sw</property>
+      <step>-2</step>
+      <min>0</min>
+      <max>2</max>
+      <wrap>0</wrap>
+   </binding>
+  </action>
+  <action>
+   <name>sw-isolvalve1</name>
+   <button>0</button>
+   <x>-70</x>
+   <y>-32</y>
+   <w>32</w>
+   <h>32</h>
+   <binding>
+      <command>property-adjust</command>
+      <property>/controls/switches/isolvalve1-sw</property>
+      <step>1</step>
+      <min>0</min>
+      <max>2</max>
+      <wrap>0</wrap>
+   </binding>
+  </action>
+ </actions>
+
+</PropertyList>

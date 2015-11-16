@@ -1,0 +1,293 @@
+<?xml version="1.0"?>
+
+<!--
+
+L410 ALTIMETER (nas!)
+
+-->
+
+<PropertyList>
+
+ <name>Altimeter</name>
+ <w-base>128</w-base>
+ <h-base>128</h-base>
+
+ <layers>
+
+  <layer>
+   <name>subscale</name>
+   <texture>
+    <path>Aircraft/l410uvpe/Instruments/Textures/faces-6.rgb</path>
+    <x1>0.51</x1>
+    <y1>0.51</y1>
+    <x2>1.0</x2>
+    <y2>1.0</y2>
+   </texture>
+   <w>104</w>
+   <h>104</h>
+   <transformations>
+    <transformation>
+     <type>rotation</type>
+     <property>/instrumentation/altimeter/setting-inhg</property>
+     <scale>-152.37</scale>  <!-- degrees rotation per inHG -->
+    </transformation>
+   </transformations>
+  </layer>
+  <layer>
+   <color>
+    <red>1.0</red>
+    <green>1.0</green>
+    <blue>1.0</blue>
+   </color>
+
+   <name>guage face</name>
+   <texture>
+    <path>Aircraft/l410uvpe/Instruments/Textures/faces-1.rgb</path>
+    <x1>0.51</x1>
+    <y1>0.51</y1>
+    <x2>1.0</x2>
+    <y2>1.0</y2>
+   </texture>
+   <w>110</w>
+   <h>110</h>
+  </layer>
+  <layer>
+   <name>numeric datum</name>
+   <type>text</type>
+   <point-size>8</point-size>
+   <color>
+    <red>1.0</red>
+    <green>1.0</green>
+    <blue>1.0</blue>
+   </color>
+   <chunks>
+    <chunk>
+     <type>number-value</type>
+     <property>/instrumentation/altimeter/setting-inhg</property>
+     <format>%2.2f</format>
+    </chunk>
+   </chunks>
+   <transformations>
+    <transformation>
+     <type>x-shift</type>
+     <offset>10</offset>
+    </transformation>
+    <transformation>
+     <type>y-shift</type>
+     <offset>-5</offset>
+    </transformation>
+   </transformations>
+  </layer>
+  <layer>
+   <name>bug (ten thousands)</name>
+   <texture>
+    <path>Aircraft/l410uvpe/Instruments/Textures/misc-1.rgb</path>
+    <x1>0.8</x1>
+    <y1>0.92</y1>
+    <x2>0.8375</x2>
+    <y2>1.0</y2>
+   </texture>
+   <w>12</w>
+   <h>16</h>
+   <transformations>
+    <transformation>
+     <type>rotation</type>
+     <property>/instrumentation/altimeter/indicated-altitude-ft</property>
+     <max>100000.0</max>
+     <scale>0.0036</scale>
+    </transformation>
+    <transformation>
+     <type>y-shift</type>
+     <offset>45.0</offset>
+    </transformation>
+    <transformation>
+     <type>rotation</type>
+     <max>180</max>
+     <min>180</min>
+    </transformation>
+   </transformations>
+  </layer>
+  <layer>
+   <name>short needle (thousands)</name>
+   <texture>
+    <path>Aircraft/l410uvpe/Instruments/Textures/misc-1.rgb</path>
+    <x1>0.8</x1>
+    <y1>0.859375</y1>
+    <x2>0.8375</x2>
+    <y2>1.0</y2>
+   </texture>
+   <w>6</w>
+   <h>24</h>
+   <transformations>
+    <transformation>
+     <type>rotation</type>
+     <property>/instrumentation/altimeter/indicated-altitude-ft</property>
+     <max>100000.0</max>
+     <scale>0.036</scale>
+    </transformation>
+    <transformation>
+     <type>y-shift</type>
+     <offset>14.0</offset>
+    </transformation>
+   </transformations>
+  </layer>
+  <layer>
+   <name>long needle (hundreds)</name>
+   <texture>
+    <path>Aircraft/l410uvpe/Instruments/Textures/misc-1.rgb</path>
+    <x1>0.8</x1>
+    <y1>0.78125</y1>
+    <x2>0.8375</x2>
+    <y2>1.0</y2>
+   </texture>
+   <w>6</w>
+   <h>48</h>
+   <transformations>
+    <transformation>
+     <type>rotation</type>
+     <property>/instrumentation/altimeter/indicated-altitude-ft</property>
+     <max>100000.0</max>
+     <scale>0.36</scale>
+    </transformation>
+    <transformation>
+     <type>y-shift</type>
+     <offset>20.0</offset>
+    </transformation>
+   </transformations>
+  </layer>
+  <layer>
+   <name>button</name>
+   <texture>
+    <path>Aircraft/l410uvpe/Instruments/Textures/misc-1.rgb</path>
+    <x1>0.6171875</x1>
+    <y1>0.2421875</y1>
+    <x2>0.7890625</x2>
+    <y2>0.4140625</y2>
+   </texture>
+   <w>15</w>
+   <h>15</h>
+  </layer>
+  <layer>
+   <name>glare shield</name>
+   <texture>
+    <path>Aircraft/l410uvpe/Instruments/Textures/bezel1.rgb</path>
+    <x1>0.5</x1>
+    <y1>0.0</y1>
+    <x2>1.0</x2>
+    <y2>0.5</y2>
+   </texture>
+  <w>128</w>
+  <h>128</h>
+ <transformations>
+    <transformation>
+     <type>x-shift</type>
+     <offset>2</offset>
+    </transformation>
+    <transformation>
+     <type>y-shift</type>
+     <offset>-2</offset>
+    </transformation>
+    </transformations>
+  </layer>
+   <layer>
+   <name>Knob</name>
+   <texture>
+    <path>Aircraft/l410uvpe/Instruments/Textures/blister.rgb</path>
+    <x1>0.25</x1>
+    <y1>0.75</y1>
+    <x2>0.5</x2>
+    <y2>1.0</y2>
+   </texture>
+   <h>24</h>
+   <w>24</w>
+   <transformations>
+    <transformation>
+     <type>x-shift</type>
+     <offset>-49</offset>
+    </transformation>
+    <transformation>
+     <type>y-shift</type>
+     <offset>-49</offset>
+    </transformation>
+    <transformation>
+     <type>rotation</type>
+     <offset>180</offset>
+    </transformation>
+   </transformations>
+  </layer>
+
+ </layers>
+
+ <actions>
+
+  <action>
+   <name>calibrate fine</name>
+   <button>0</button>
+   <x>-61</x>
+   <y>-60</y>
+   <w>12</w>
+   <h>24</h>
+   <binding>
+    <command>property-adjust</command>
+    <property>/instrumentation/altimeter/setting-inhg</property>
+    <step>-0.01</step>
+    <min>26.0</min>
+    <max>33.0</max>
+    <wrap>false</wrap>
+   </binding>
+  </action>
+
+  <action>
+   <name>calibrate coarse</name>
+   <button>1</button>
+   <x>-61</x>
+   <y>-60</y>
+   <w>12</w>
+   <h>24</h>
+   <binding>
+    <command>property-adjust</command>
+    <property>/instrumentation/altimeter/setting-inhg</property>
+    <step>-0.1</step>
+    <min>26.0</min>
+    <max>33.0</max>
+    <wrap>false</wrap>
+   </binding>
+  </action>
+
+  <action>
+   <name>calibrate fine</name>
+   <button>0</button>
+   <x>-49</x>
+   <y>-60</y>
+   <w>12</w>
+   <h>24</h>
+   <binding>
+    <command>property-adjust</command>
+    <property>/instrumentation/altimeter/setting-inhg</property>
+    <step>0.01</step>
+    <min>26.0</min>
+    <max>33.0</max>
+    <wrap>false</wrap>
+   </binding>
+  </action>
+
+  <action>
+   <name>calibrate coarse</name>
+   <button>1</button>
+   <x>-49</x>
+   <y>-60</y>
+   <w>12</w>
+   <h>24</h>
+   <binding>
+    <command>property-adjust</command>
+    <property>/instrumentation/altimeter/setting-inhg</property>
+    <step>0.1</step>
+    <min>26.0</min>
+    <max>33.0</max>
+    <wrap>false</wrap>
+   </binding>
+  </action>
+
+ </actions>
+
+</PropertyList>

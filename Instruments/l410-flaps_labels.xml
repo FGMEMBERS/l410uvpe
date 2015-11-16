@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+
+<!--
+
+(nase!)
+
+-->
+
+<PropertyList>
+
+ <name>gear labels</name>
+
+  <w-base>40</w-base>
+  <h-base>130</h-base>
+
+  <layers>
+<!--
+ <layer>
+   <name>DESKA</name>
+     <texture>
+     <path>Aircraft/l410uvpe/Instruments/Textures/l410-neex.rgb</path>
+     <x1>0.0</x1>
+     <x2>1.0</x2>
+     <y1>0.0</y1>
+     <y2>0.7</y2>
+     </texture>
+     <w>40</w>
+     <h>130</h>
+  </layer>
+-->
+ <layer>
+   <name>label flaps</name>
+     <texture>
+     <path>Aircraft/l410uvpe/Instruments/Textures/labels-2.rgb</path>
+     <x1>0.375</x1>
+     <x2>0.5625</x2>
+     <y1>0.875</y1>
+     <y2>0.9375</y2>
+     </texture>
+     <w>20</w>
+     <h>7.5</h>
+    <transformations>
+      <transformation>
+        <type>x-shift</type> 
+        <offset>0</offset> 
+      </transformation>
+      <transformation>
+        <type>y-shift</type> 
+        <offset>50</offset> 
+      </transformation>
+    </transformations>
+  </layer>
+
+
+
+  </layers>
+
+
+</PropertyList>

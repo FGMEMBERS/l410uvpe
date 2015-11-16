@@ -1,0 +1,430 @@
+<?xml version="1.0"?>
+
+<!--
+RMI instrument
+
+nase KNI 582
+-->
+
+<PropertyList>
+   <name>RMI</name>
+   <w-base>104</w-base>
+   <h-base>104</h-base>
+
+
+   <layers>
+
+      <layer>
+         <name>background</name>
+         <texture>
+	          <path>Aircraft/l410uvpe/Instruments/Textures/l410-kpi553.rgb</path>
+	          <x1>0.289</x1>
+	          <y1>0.082</y1>
+	          <x2>0.398</x2>
+	          <y2>0.296</y2>
+         </texture>
+         <w>80</w>
+         <h>80</h>
+      </layer>
+      
+      <layer>
+         <name>compass rose</name>
+         <texture>
+	          <path>Aircraft/l410uvpe/Instruments/Textures/l410-kpi553.rgb</path>
+	          <x1>0.0</x1>
+	          <y1>0.512</y1>
+	          <x2>0.246</x2>
+	          <y2>1.0</y2>
+         </texture>
+         <w>70</w>
+         <h>70</h>
+         <transformations>
+            <transformation>
+               <type>y-shift</type>
+               <offset>0</offset>
+            </transformation> 
+            <transformation>
+               <type>rotation</type>
+               <property alias="../../../../../params/heading-magnetic-deg"/>  
+               <min>-360.0</min>
+               <max>360.0</max>
+               <scale>-1.0</scale>
+            </transformation>
+         </transformations>
+      </layer>
+
+      <layer>
+         <name>Double Needle nav</name>
+         <texture>
+            <path>Aircraft/l410uvpe/Instruments/Textures/l410-kni582.rgb</path>
+            <x1>0.1895</x1>
+            <y1>0.3242</y1>
+            <x2>0.2520</x2>
+            <y2>0.9727</y2>
+         </texture>
+         <w>14</w>
+         <h>65</h>
+         <transformations>
+           <transformation>
+               <type>y-shift</type>
+               <offset>0</offset>
+            </transformation>
+            <transformation>
+               <type>rotation</type>
+               <property alias="../../../../../params/double-needle-deflection"/>			   
+               <min>-360</min>
+               <max>360</max>
+            </transformation>
+           <transformation>
+               <type>y-shift</type>
+               <offset>0</offset>
+            </transformation>
+            <transformation>
+               <type>x-shift</type>
+               <offset>0</offset>
+            </transformation>
+         </transformations>
+      </layer>
+<!--
+      <layer>
+         <name>Double Needle nav</name>
+         <condition>
+            <equals>
+               <property alias="../../../../../params/nav-adf-sw2"/>
+               <value type="int">1</value>
+            </equals>
+         </condition>	  
+         <texture>
+            <path>Aircraft/l410uvpe/Instruments/Textures/l410-kni582.rgb</path>
+            <x1>0.1895</x1>
+            <y1>0.3242</y1>
+            <x2>0.2520</x2>
+            <y2>0.9727</y2>
+         </texture>
+         <w>14</w>
+         <h>65</h>
+         <transformations>
+           <transformation>
+               <type>y-shift</type>
+               <offset>0</offset>
+            </transformation>
+            <transformation>
+               <type>rotation</type>
+               <property alias="../../../../../params/nav1-needle-deflection"/>			   
+               <min>-360</min>
+               <max>360</max>
+            </transformation>
+           <transformation>
+               <type>y-shift</type>
+               <offset>0</offset>
+            </transformation>
+            <transformation>
+               <type>x-shift</type>
+               <offset>0</offset>
+            </transformation>
+         </transformations>
+      </layer>
+
+      <layer>
+         <name>Double Needle adf</name>
+         <condition>
+            <equals>
+               <property alias="../../../../../params/nav-adf-sw2"/>
+               <value type="int">0</value>
+            </equals>
+         </condition>	  
+         <texture>
+            <path>Aircraft/l410uvpe/Instruments/Textures/l410-kni582.rgb</path>
+            <x1>0.1895</x1>
+            <y1>0.3242</y1>
+            <x2>0.2520</x2>
+            <y2>0.9727</y2>
+         </texture>
+         <w>14</w>
+         <h>65</h>
+         <transformations>
+           <transformation>
+               <type>y-shift</type>
+               <offset>0</offset>
+            </transformation>
+            <transformation>
+               <type>rotation</type>
+               <property alias="../../../../../params/adf1-needle-deflection"/>			   
+               <min>-360</min>
+               <max>360</max>
+            </transformation>
+           <transformation>
+               <type>y-shift</type>
+               <offset>0</offset>
+            </transformation>
+            <transformation>
+               <type>x-shift</type>
+               <offset>0</offset>
+            </transformation>
+         </transformations>
+      </layer>
+-->
+      <layer>
+         <name>single Needle</name>
+         <texture>
+            <path>Aircraft/l410uvpe/Instruments/Textures/l410-kni582.rgb</path>
+            <x1>0.0059</x1>
+            <y1>0.3242</y1>
+            <x2>0.0391</x2>
+            <y2>0.9883</y2>
+         </texture>
+         <w>10</w>
+         <h>65</h>
+         <transformations>
+           <transformation>
+               <type>y-shift</type>
+               <offset>0</offset>
+            </transformation>
+            <transformation>
+               <type>rotation</type>
+               <property alias="../../../../../params/single-needle-deflection"/>			   
+               <min>-360</min>
+               <max>360</max>
+            </transformation>
+           <transformation>
+               <type>y-shift</type>
+               <offset>0</offset>
+            </transformation>
+            <transformation>
+               <type>x-shift</type>
+               <offset>0</offset>
+            </transformation>
+        </transformations>
+      </layer>
+<!--
+      <layer>
+         <name>single Needle</name>
+         <condition>
+            <equals>
+               <property alias="../../../../../params/nav-adf-sw1"/>
+               <value type="int">0</value>
+            </equals>
+         </condition>	  
+         <texture>
+            <path>Aircraft/l410uvpe/Instruments/Textures/l410-kni582.rgb</path>
+            <x1>0.0059</x1>
+            <y1>0.3242</y1>
+            <x2>0.0391</x2>
+            <y2>0.9883</y2>
+         </texture>
+         <w>10</w>
+         <h>65</h>
+         <transformations>
+           <transformation>
+               <type>y-shift</type>
+               <offset>0</offset>
+            </transformation>
+            <transformation>
+               <type>rotation</type>
+               <property alias="../../../../../params/adf0-needle-deflection"/>			   
+               <min>-360</min>
+               <max>360</max>
+            </transformation>
+           <transformation>
+               <type>y-shift</type>
+               <offset>0</offset>
+            </transformation>
+            <transformation>
+               <type>x-shift</type>
+               <offset>0</offset>
+            </transformation>
+        </transformations>
+      </layer>
+
+      <layer>
+         <name>single Needle</name>
+         <condition>
+            <equals>
+               <property alias="../../../../../params/nav-adf-sw1"/>
+               <value type="int">1</value>
+            </equals>
+         </condition>	  
+         <texture>
+            <path>Aircraft/l410uvpe/Instruments/Textures/l410-kni582.rgb</path>
+            <x1>0.0059</x1>
+            <y1>0.3242</y1>
+            <x2>0.0391</x2>
+            <y2>0.9883</y2>
+         </texture>
+         <w>10</w>
+         <h>65</h>
+         <transformations>
+           <transformation>
+               <type>y-shift</type>
+               <offset>0</offset>
+            </transformation>
+            <transformation>
+               <type>rotation</type>
+               <property alias="../../../../../params/nav0-needle-deflection"/>			   
+               <min>-360</min>
+               <max>360</max>
+            </transformation>
+           <transformation>
+               <type>y-shift</type>
+               <offset>0</offset>
+            </transformation>
+            <transformation>
+               <type>x-shift</type>
+               <offset>0</offset>
+            </transformation>
+        </transformations>
+      </layer>
+-->
+      <layer>
+         <name>nav-adf-sw1</name>
+         <texture>
+            <path>Aircraft/l410uvpe/Instruments/Textures/l410-kni582.rgb</path>
+            <x1>0.3027</x1>
+            <y1>0.3500</y1>
+            <x2>0.3223</x2>
+            <y2>0.5977</y2>
+         </texture>
+         <w>8</w>
+         <h>30</h>
+         <transformations>
+            <transformation>
+               <type>x-shift</type>
+               <offset>-26</offset>
+            </transformation>
+            <transformation>
+               <type>y-shift</type>
+               <offset>-26</offset>
+            </transformation>
+            <transformation>
+               <type>rotation</type>
+               <offset>315</offset>
+            </transformation>
+            <transformation>
+               <type>rotation</type>
+               <property alias="../../../../../params/nav-adf-sw1"/> 
+               <min>0</min>
+               <max>360</max>
+               <scale>-180</scale>
+            </transformation>
+         </transformations>
+      </layer>	  
+
+      <layer>
+         <name>nav-adf-sw2</name>
+         <texture>
+            <path>Aircraft/l410uvpe/Instruments/Textures/l410-kni582.rgb</path>
+            <x1>0.3281</x1>
+            <y1>0.3500</y1>
+            <x2>0.3516</x2>
+            <y2>0.5977</y2>
+         </texture>
+         <w>10</w>
+         <h>30</h>
+         <transformations>
+            <transformation>
+               <type>x-shift</type>
+               <offset>26</offset>
+            </transformation>
+            <transformation>
+               <type>y-shift</type>
+               <offset>-26</offset>
+            </transformation>
+            <transformation>
+               <type>rotation</type>
+               <offset>45</offset>
+            </transformation>
+            <transformation>
+               <type>rotation</type>
+               <property alias="../../../../../params/nav-adf-sw2"/> 
+               <min>0</min>
+               <max>360</max>
+               <scale>180</scale>
+            </transformation>
+         </transformations>
+      </layer>	  
+
+      <layer>
+         <name>HDG-flag</name>
+        <condition>
+		    <less-than>
+               <property alias="../../../../../params/gyro-spin"/>
+			   <value>0.7</value>
+		    </less-than>
+         </condition>	  		 
+         <texture>
+	          <path>Aircraft/l410uvpe/Instruments/Textures/l410-kni582.rgb</path>
+	          <x1>0.3711</x1>
+	          <y1>0.5000</y1>
+	          <x2>0.4883</x2>
+	          <y2>0.6016</y2>
+         </texture>
+         <w>25</w>
+         <h>10</h>
+         <transformations>
+            <transformation>
+               <type>x-shift</type>
+               <offset>-26</offset>
+            </transformation>
+            <transformation>
+               <type>y-shift</type>
+               <offset>23</offset>
+            </transformation>
+         </transformations>
+      </layer>	  
+
+      <layer>
+         <name>body</name>
+         <texture>
+	          <path>Aircraft/l410uvpe/Instruments/Textures/l410-kni582.rgb</path>
+	          <x1>0.5</x1>
+	          <y1>0.0</y1>
+	          <x2>1.0</x2>
+	          <y2>1.0</y2>
+         </texture>
+         <w>104</w>
+         <h>104</h>
+      </layer>
+
+   </layers> 
+
+  <actions>
+ 
+  <action>
+    <name>nav-adf-sw1</name>
+    <button>0</button>
+    <x>-45</x>
+    <y>-45</y>
+    <w>20</w>
+    <h>20</h>
+    <binding>
+       <command>property-adjust</command>
+       <property alias="../../../../params/nav-adf-sw1"/>
+       <step>1</step>
+       <min>0</min>
+       <max>2</max>
+       <resolution>1</resolution>
+       <wrap>1</wrap>
+    </binding>
+  </action>   
+ 
+  <action>
+    <name>nav-adf-sw2</name>
+    <button>0</button>
+    <x>25</x>
+    <y>-45</y>
+    <w>20</w>
+    <h>20</h>
+    <binding>
+       <command>property-adjust</command>
+       <property alias="../../../../params/nav-adf-sw2"/>
+       <step>1</step>
+       <min>0</min>
+       <max>2</max>
+       <resolution>1</resolution>
+       <wrap>1</wrap>
+    </binding>
+  </action>   
+ 
+ </actions>
+
+</PropertyList>

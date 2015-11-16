@@ -1,0 +1,170 @@
+<?xml version="1.0"?>
+
+<!--
+L410 panel.
+Javky <javky@email.cz>
+_______________________________________________________________________
+-->
+
+<!DOCTYPE PropertyList SYSTEM "panel.dtd">
+
+<PropertyList>
+
+ <name>VnejsiPanelContWD</name>
+ <background>Aircraft/l410uvpe/transparent-bg.rgb</background>
+ <w>1896</w>
+ <h>828</h>
+
+ <instruments>
+<!--
+  <instrument include="./Instruments/l410-wd-background.xml">
+   <name>Warning display background</name>
+   <x>1030</x>
+   <y>1135</y>
+   <w>2800</w>
+   <h>260</h>
+  </instrument>
+-->
+
+
+
+  <instrument include="./Instruments/l410-windscr_wiper.xml">
+   <name>Wiper switch</name>
+   <x>295</x>
+   <y>690</y>
+   <w>53</w>
+   <h>50</h>
+  </instrument>
+
+  <instrument include="./Instruments/l410-checkpanel.xml">
+   <name>Check panel</name>
+   <x>170</x>
+   <y>705</y>
+   <w>200</w>
+   <h>163</h>
+  </instrument>
+
+  <instrument include="./Instruments/l410-termom.xml">
+   <name>Thermometer</name>
+   <x>100</x>
+   <y>590</y>
+   <w>80</w>
+   <h>80</h>
+  </instrument>
+
+<instrument include="./Instruments/l410-asi.xml">
+    <name>Airspeed Indicator</name>
+   <x>185</x>
+   <y>590</y>
+   <w>80</w>
+   <h>80</h>
+    <params>
+        <indicated-speed>/instrumentation/airspeed-indicator[0]/indicated-speed-kt</indicated-speed>
+    </params>
+  </instrument>
+
+  <instrument include="./Instruments/l410-heating.xml">
+   <name>Heating levers</name>
+   <x>130</x>
+   <y>440</y>
+   <w>200</w>
+   <h>200</h>
+  </instrument>
+
+  <instrument include="./Instruments/l410-pitot_sw.xml">
+   <name>Pitot switch</name>
+   <x>145</x>
+   <y>265</y>
+   <w>200</w>
+   <h>227</h>
+  </instrument>
+
+ <instrument include="./Instruments/l410-v_meter_sw.xml">
+	 <name>v meter switch</name>
+   <x>1685</x>
+   <y>700</y>
+   <w>209</w>
+   <h>85</h>
+  </instrument>
+ 
+<instrument include="./Instruments/l410-pit_stat_heating.xml">
+   <name>Pit stat heating</name>
+   <x>1740</x>
+   <y>630</y>
+   <w>180</w>
+   <h>60</h>
+  </instrument>
+
+<instrument include="./Instruments/l410-deicing.xml">
+   <name>Deicing panel</name>
+   <x>1750</x>
+   <y>545</y>
+   <w>170</w>
+   <h>179</h>
+  </instrument>
+  
+  <instrument include="./Instruments/l410-vent_noz_l.xml">
+   <name>ventilation nozzle</name>
+   <x>388</x>
+   <y>790</y>
+   <w>50</w>
+   <h>50</h>
+  </instrument>  
+
+  <instrument include="./Instruments/l410-vent_noz_r.xml">
+   <name>ventilation nozzle</name>
+   <x>1508</x>
+   <y>790</y>
+   <w>50</w>
+   <h>50</h>
+  </instrument>  
+<!--
+  <instrument include="./Instruments/l410-labels.xml">
+   <name>labels</name>
+   <x>520</x>
+   <y>845</y>
+   <w>200</w>
+   <h>50</h>
+  </instrument>  
+
+  <instrument include="./Instruments/l410-labels.xml">
+   <name>labels</name>
+   <x>1540</x>
+   <y>1072</y>
+   <w>160</w>
+   <h>35</h>
+  </instrument>  
+-->
+<instrument include="./Instruments/l410-oil_lev_check.xml">
+   <name>Oil-level-check-lh</name>
+   <params>
+        <oil-level>/instrumentation/warn-disp/ww-oil-level-lh</oil-level>
+        <chck-sign-sw>/controls/switches/chck-sign-sw</chck-sign-sw>
+        <wde-el-input>/systems/electrical/outputs/bus28v</wde-el-input>
+   </params>
+   <x>45</x>
+   <y>340</y>
+   <w>70</w>
+   <h>60</h>
+  </instrument>
+
+  <instrument include="./Instruments/l410-oil_lev_check.xml">
+   <name>Oil-level-check-rh</name>
+   <params>
+        <oil-level>/instrumentation/warn-disp/ww-oil-level-rh</oil-level>
+        <chck-sign-sw>/controls/switches/chck-sign-sw</chck-sign-sw>
+        <wde-el-input>/systems/electrical/outputs/bus28v</wde-el-input>
+   </params>
+   <x>1850</x>
+   <y>340</y>
+   <w>70</w>
+   <h>60</h>
+  </instrument>
+  
+
+
+
+</instruments>
+
+
+</PropertyList>

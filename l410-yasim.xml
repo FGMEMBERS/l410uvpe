@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!--
+  Let L410      - 2012 - Emmanuel BARANGER with Melchior script
+
+  source        : http://en.wikipedia.org/wiki/Let_L-410_Turbolet
+
+  Wingspan      : 63.91 ft       ( 19.48 m  )
+  lenght        : 47.31 ft       ( 14.42 m  )
+  height        : 19.13 ft       (  5.83 m  )
+  Empty mass    :  8212 lb       (  3725 kg )
+  Engine        : 2 x Walter M601E turboprop (750 hp each )
+  Maximum speed : 211.5 kt       ( 388 km/h )
+  Cruise speed  : 169.5 kt       ( 311 km/h )
+-->
+
+<airplane mass="8212">
+
+  <!-- Approach configuration -->
+  <approach speed="90" aoa="4" fuel='0.8'>
+    <control-setting axis="/controls/engines/engine[0]/throttle" value="0.4"/>
+    <control-setting axis="/controls/engines/engine[0]/condition" value="1"/>
+    <control-setting axis="/controls/engines/engine[0]/propeller-pitch" value="1"/>
+
+    <control-setting axis="/controls/engines/engine[1]/throttle" value="0.4"/>
+    <control-setting axis="/controls/engines/engine[1]/condition" value="1"/>
+    <control-setting axis="/controls/engines/engine[1]/propeller-pitch" value="1"/>
+
+    <control-setting axis="/controls/flight/flaps" value="1"/>
+    <control-setting axis="/controls/gear/gear-down" value="1"/>
+  </approach>
+
+  <!-- Cruise configuration -->
+  <cruise speed="212" alt="12000">
+    <control-setting axis="/controls/engines/engine[0]/throttle" value="0.9"/>
+    <control-setting axis="/controls/engines/engine[0]/condition" value="1"/>
+    <control-setting axis="/controls/engines/engine[0]/propeller-pitch" value="1"/>
+
+    <control-setting axis="/controls/engines/engine[1]/throttle" value="0.9"/>
+    <control-setting axis="/controls/engines/engine[1]/condition" value="1"/>
+    <control-setting axis="/controls/engines/engine[1]/propeller-pitch" value="1"/>
+
+    <control-setting axis="/controls/flight/flaps" value="0"/>
+    <control-setting axis="/controls/gear/gear-down" value="0"/>
+  </cruise>
+
+  <cockpit x="4.270" y="0.328" z="0.665"/>
+
+  <fuselage ax="7.190" ay=" 0.000" az="-0.540" bx="-6.008" by="0" bz="0.508" width="2" taper="0.4" midpoint="0.25"/>
+
+  <!-- Engines -->
+  <fuselage ax="3.423" ay=" 2.330" az=" 0.817" bx=" 0.855" by=" 2.330" bz="0.800" width="0.849" taper="0.7" midpoint="0.05"/>
+  <fuselage ax="3.423" ay="-2.330" az=" 0.817" bx=" 0.855" by="-2.330" bz="0.800" width="0.849" taper="0.7" midpoint="0.05"/>
+
+  <wing x="1.217" y="0.646" z="1.138"
+        chord="2.418"
+        length="8.917"
+        taper="0.50"
+        sweep="-2"
+        dihedral="2"
+        camber="0.08">
+        <stall aoa="16" width="1" peak="1.4"/>
+        <flap0 start="0.05" end="0.68" lift="1.4" drag="1.4"/>
+        <flap1 start="0.68" end="0.96" lift="1.2" drag="1.2"/>
+
+        <control-input axis="/controls/flight/flaps" control="FLAP0"/>
+        <control-input axis="/controls/flight/aileron" control="FLAP1" split="true"/>
+        <control-input axis="/controls/flight/aileron-trim" control="FLAP1" split="true"/> 
+
+        <control-output control="FLAP0" prop="/surface-positions/flaps-pos-norm"/>
+        <control-output control="FLAP1" side="left" prop="/surface-positions/left-aileron-pos-norm"/>
+        <control-output control="FLAP1" side="right" prop="/surface-positions/right-aileron-pos-norm"/>
+
+        <control-speed control="FLAP0" transition-time="5"/>
+  </wing>
+
+  <hstab x="-4.858" y="0" z="1.495"
+         chord="1.743"
+         length="3.362"
+         taper="0.60"
+         sweep="1"
+         dihedral="6">
+         <stall aoa="14" width="1" peak="1.5"/>
+         <flap0 start="0" end="1" lift="1.5" drag="1.9"/>
+
+         <control-input axis="/controls/flight/elevator" control="FLAP0"/>
+         <control-input axis="/controls/flight/elevator-trim" control="FLAP0"/>
+
+         <control-output control="FLAP0" prop="/surface-positions/elevator-pos-norm"/>        
+  </hstab>
+
+  <vstab x="-4.717" y="0" z="0.795"
+         chord="2.7"
+         length="3.7" 
+         taper="0.65"
+         sweep="30">
+         <stall aoa="12" width="1" peak="1.5"/>
+         <flap0 start="0" end="0.935" lift="1.3" drag="1.5"/>
+
+         <control-input axis="/controls/flight/rudder" control="FLAP0" invert="true"/>
+         <control-input axis="/controls/flight/rudder-trim" control="FLAP0" invert="true"/> 
+
+         <control-output control="FLAP0" prop="/surface-positions/rudder-pos-norm" min="1" max="-1"/>         
+  </vstab>
+
+  <!--  Walter M601
+                 source       : http://en.wikipedia.org/wiki/Walter_M601
+                                http://www.geaviation.cz/editor/filestore/File/motory/61416_m601e11_datasheet.pdf
+
+                 type         : Turboprop
+                 power        : 740 hp, 657 hp continuous
+                 weight       : 178.72 kg  ( 394 lb )
+  -->  
+  <propeller x="2.8" y="2.330" z="0.810"
+             mass="394" 
+             moment="82" 
+             radius="1.16" 
+             cruise-speed="212" 
+             cruise-rpm="2000" 
+             cruise-power="657" 
+             cruise-alt="0" 
+             min-rpm="150" 
+             max-rpm="2300"> 
+             <actionpt x="3.591" y="2.330" z="0.810"/>
+             <turbine-engine eng-power="740" 
+                             eng-rpm="2700" 
+                             alt="11000" 
+                             flat-rating="2200" 
+                             min-n2="70" 
+                             max-n2="100"
+                             bsfc="0.55"/>
+             <control-input axis="/controls/engines/engine[0]/throttle" control="THROTTLE"/>
+             <control-input axis="/controls/engines/engine[0]/condition" control="CONDLEVER"/>
+             <control-input axis="/controls/engines/engine[0]/starter" control="STARTER"/>
+             <control-input axis="/controls/engines/engine[0]/propeller-pitch" control="ADVANCE"/>
+             <control-input axis="/controls/engines/engine[0]/propeller-feather" control="PROPFEATHER"/>
+  </propeller>
+
+  <propeller x="2.8" y="-2.330" z="0.810"
+             mass="394" 
+             moment="82" 
+             radius="1.16" 
+             cruise-speed="212" 
+             cruise-rpm="2000" 
+             cruise-power="657" 
+             cruise-alt="0" 
+             min-rpm="150" 
+             max-rpm="2300"> 
+             <actionpt x="3.591" y="-2.330" z="0.810"/>
+             <control-input axis="/controls/engines/engine[1]/propeller-pitch" control="ADVANCE"/>
+             <turbine-engine eng-power="740" 
+                             eng-rpm="2700" 
+                             alt="11000" 
+                             flat-rating="2200" 
+                             min-n2="70" 
+                             max-n2="100"
+                             bsfc="0.55"/>
+             <control-input axis="/controls/engines/engine[1]/throttle" control="THROTTLE"/>
+             <control-input axis="/controls/engines/engine[1]/condition" control="CONDLEVER"/>
+             <control-input axis="/controls/engines/engine[1]/starter" control="STARTER"/>
+             <control-input axis="/controls/engines/engine[1]/propeller-pitch" control="ADVANCE"/>
+             <control-input axis="/controls/engines/engine[1]/propeller-feather" control="PROPFEATHER"/>
+  </propeller>
+
+  <gear x="4.746" y="0" z="-1.723" 
+        compression="0.15" 
+        spring="0.6">
+        <control-input axis="/controls/flight/rudder" control="STEER" square="true" src0="-1.0" src1="1.0" dst0="-0.8" dst1="0.8"/>
+        <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
+        <control-speed control="EXTEND" transition-time="7"/>
+        <control-output control="EXTEND" prop="/gear/gear[0]/position-norm"/>
+  </gear>
+
+  <gear x="1.185" y="1.778" z="-1.771" 
+        compression="0.10" 
+        spring="0.6">
+        <control-input axis="/controls/gear/brake-left" control="BRAKE" split="true"/>
+        <control-input axis="/controls/gear/brake-parking" control="BRAKE" split="true"/>
+        <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
+        <control-speed control="EXTEND" transition-time="7"/>
+        <control-output control="EXTEND" prop="gear/gear[1]/position-norm"/>
+  </gear>
+
+  <gear x="1.185" y="-1.778" z="-1.771" 
+        compression="0.10" 
+        spring="0.6">
+        <control-input axis="/controls/gear/brake-right" control="BRAKE" split="true"/>
+        <control-input axis="/controls/gear/brake-parking" control="BRAKE" split="true"/>
+        <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
+        <control-speed control="EXTEND" transition-time="7"/>
+        <control-output control="EXTEND" prop="gear/gear[2]/position-norm"/>
+  </gear>
+
+  <!-- Wing tank -->
+  <tank x="1.520" y=" 2.223" z="1.136" capacity="250" />
+  <tank x="1.520" y="-2.223" z="1.136" capacity="250" />
+  <!-- Tip wing tank -->
+  <tank x="1.520" y=" 5.984" z="1.359" capacity="300" />
+  <tank x="1.520" y="-5.984" z="1.359" capacity="300" />
+
+  <!-- CG placement -->
+  <ballast x="5" y="0" z="-2" mass="2300"/>
+
+</airplane>
+
